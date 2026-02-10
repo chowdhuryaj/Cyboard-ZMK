@@ -6,6 +6,13 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+&mt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <150>;
+    flavor = "balanced";
+};
+
 / {
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
@@ -76,13 +83,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5              &kp N6     &kp N7       &kp N8       &kp N9      &kp N0       &kp MINUS
-&kp TAB    &kp Z        &kp P       &kp D       &kp L        &kp X               &kp SQT    &kp U        &kp O        &kp Y       &kp Q        &kp BSLH
-&kp W      &mt LCTRL S  &mt LALT N  &mt LGUI T  &mt LSHFT H  &kp K               &kp MINUS  &mt RSHFT E  &mt RGUI A   &mt RALT I  &mt RCTRL C  &kp B
-&kp LSHFT  &kp V        &kp F       &kp G       &kp M        &kp J               &kp SQT    &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH     &kp RSHFT
-&trans     &trans       &kp LGUI    &kp LALT    &trans                                      &trans       &kp LBKT     &kp RBKT    &trans       &trans
-                                                &lt 3 R      &kp DEL  &kp ESC    &kp GRAVE  &key_repeat  &lt 1 SPACE
-                                                &bsp_del     &mo 1    &mo 2      &kp CAPS   &mo 2        &mo 1
+&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5                  &kp N6     &kp N7       &kp N8       &kp N9      &kp N0       &kp MINUS
+&kp TAB    &kp Z        &kp P       &kp D       &kp L        &kp X                   &kp SQT    &kp U        &kp O        &kp Y       &kp Q        &kp BSLH
+&kp W      &mt LCTRL S  &mt LALT N  &mt LGUI T  &mt LSHFT H  &kp K                   &kp MINUS  &mt RSHFT E  &mt RGUI A   &mt RALT I  &mt RCTRL C  &kp B
+&kp LSHFT  &kp V        &kp F       &kp G       &kp M        &kp J                   &kp SQT    &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH     &kp RSHFT
+&trans     &trans       &kp LGUI    &kp LALT    &trans                                          &trans       &kp LBKT     &kp RBKT    &trans       &trans
+                                                &lt 3 R      &kp DEL      &kp ESC    &mkp MB1   &key_repeat  &lt 1 SPACE
+                                                &bsp_del     &kp LS(TAB)  &kp TAB    &kp F13    &mo 2        &mo 1
             >;
         };
 
@@ -146,10 +153,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };

@@ -4,16 +4,40 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Cyboard-DigitalTailor
       url-base: https://github.com/Cyboard-DigitalTailor
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: urob
+      url-base: https://github.com/urob
+
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+
     - name: zmk-keyboards
       remote: Cyboard-DigitalTailor
       revision: main
       import: config/west.yml
+
+    # urob modules
+    - name: zmk-adaptive-key
+      remote: urob
+      revision: main
+      path: modules/zmk/adaptive-key
+
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+      path: modules/zmk/auto-layer
+
+    - name: zmk-leader-key
+      remote: urob
+      revision: main
+      path: modules/zmk/leader-key
+
+    - name: zmk-tri-state
+      remote: urob
+      revision: main
+      path: modules/zmk/tri-state
+
   self:
     path: config

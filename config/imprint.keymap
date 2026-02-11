@@ -83,13 +83,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5                  &kp N6     &kp N7       &kp N8       &kp N9      &kp N0       &kp MINUS
-&kp TAB    &kp Z        &kp P       &kp D       &kp L        &kp X                   &kp SQT    &kp U        &kp O        &kp Y       &kp Q        &kp BSLH
-&kp W      &mt LCTRL S  &mt LALT N  &mt LGUI T  &mt LSHFT H  &kp K                   &kp MINUS  &mt RSHFT E  &mt RGUI A   &mt RALT I  &mt RCTRL C  &kp B
-&kp LSHFT  &kp V        &kp F       &kp G       &kp M        &kp J                   &kp SQT    &kp SEMI     &kp COMMA    &kp DOT     &kp FSLH     &kp RSHFT
-&trans     &trans       &kp LGUI    &kp LALT    &trans                                          &trans       &kp LBKT     &kp RBKT    &trans       &trans
-                                                &lt 3 R      &kp DEL      &kp ESC    &mkp MB1   &key_repeat  &lt 1 SPACE
-                                                &bsp_del     &kp LS(TAB)  &kp TAB    &kp F13    &mo 2        &mo 1
+&kp EQUAL  &kp N1       &kp N2    &kp N3    &kp N4   &kp N5               &kp N6    &kp N7       &kp N8       &kp N9    &kp N0    &kp MINUS
+&kp TAB    &kp X        &kp F     &kp L     &kp K    &kp Q                &kp P     &kp G        &kp O        &kp U     &kp APOS  &key_repeat
+&kp B      &kp N        &kp S     &kp H     &kp T    &kp M                &kp Y     &kp C        &kp A        &kp E     &kp I     &kp P
+&kp LSHFT  &key_repeat  &kp V     &kp J     &kp D    &kp Z                &kp SEMI  &kp W        &kp COMMA    &kp DOT   &kp FSLH  &kp BSLH
+&trans     &trans       &kp LGUI  &kp LALT  &trans                                  &trans       &kp UP       &kp DOWN  &kp LEFT  &kp RIGHT
+                                            &lt 3 R  &kp TAB   &kp ESC    &mkp MB1  &key_repeat  &lt 1 SPACE
+                                            &kp R    &bsp_del  &kp TAB    &kp F13   &mo 2        &mo 1
             >;
         };
 
@@ -153,10 +153,10 @@
 
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,
+        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),,,,,,,,
         <&zip_xy_scaler 1 3>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,,,,,,
         <&zip_xy_to_scroll_mapper>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,,,,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };

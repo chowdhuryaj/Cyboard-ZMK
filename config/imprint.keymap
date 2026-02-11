@@ -25,31 +25,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-        sticky_mod_stack: sticky_mod_stack {
-            compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_MOD_STACK";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&sk LALT>, <&sk LGUI>, <&sk LSHFT>;
-        };
-
-        magic_shift: magic_shift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MAGIC_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-        };
-
-        th_shift: th_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TH_SHIFT";
-            bindings = <&kp>, <&magic_shift>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "balanced";
-        };
     };
 
     combos {
@@ -111,11 +86,11 @@
         default_layer {
             bindings = <
 &kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4             &kp N5               &kp N6       &kp N7             &kp N8          &kp N9         &kp N0          &kp MINUS
-&kp TAB    &kp B        &kp F       &kp L       &kp K              &kp Q                &kp P        &kp G              &kp O           &kp U          &mt DQT SQT     &key_repeat
+&kp grave  &kp B        &kp F       &kp L       &kp K              &kp Q                &kp P        &kp G              &kp O           &kp U          &mt DQT SQT     &key_repeat
 &kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &kp T              &kp M                &kp Y        &kp C              &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
-&kp LSHFT  &kp X        &kp V       &kp J       &kp D              &kp Z                &key_repeat  &kp W              &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&kp ESC    &kp TAB      &bsp_del    &kp ENTER   &th_shift LSHFT 0                                    &th_shift LSHFT 0  &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
-                                                &lt 3 R            &kp TAB   &kp ESC    &mkp MB1     &key_repeat        &lt 1 SPACE
+&tog 3     &kp X        &kp V       &kp J       &kp D              &kp Z                &key_repeat  &kp W              &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&tog 1     &kp TAB      &bsp_del    &kp ENTER   &caps_word                                           &caps_word         &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
+                                                &key_repeat        &kp TAB   &kp ESC    &mkp MB1     &key_repeat        &lt 1 SPACE
                                                 &kp R              &bsp_del  &kp TAB    &kp F13      &mo 2              &lt 1 SPACE
             >;
         };
@@ -170,20 +145,13 @@
     };
 };
 
-// right hand trackball configuration
 &trackball_peripheral_listener {
     input-processors =
      <&zip_temp_layer 3 300>;
 };
 
-//left hand trackball configuration
-
 &trackball_central_listener {
     input-processors =
-        // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),
-        <&zip_xy_scaler 1 5>,
-        // make this trackball output scrolling events by default instead of cursor movement,
-        <&zip_xy_to_scroll_mapper>
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,
-        // <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+        <&zip_xy_scaler 1 5>
+        <&zip_xy_to_scroll_mapper>;
 };

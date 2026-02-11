@@ -96,15 +96,24 @@
         };
     };
 
+    macros {
+        dbl_click: dbl_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &mkp MB1>;
+            label = "DBL_CLICK";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
 &kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4             &kp N5               &kp N6       &kp N7             &kp N8          &kp N9         &kp N0          &kp MINUS
-&kp TAB    &kp X        &kp F       &kp L       &kp K              &kp Q                &kp P        &kp G              &kp O           &kp U          &mt DQT SQT     &key_repeat
+&kp TAB    &kp B        &kp F       &kp L       &kp K              &kp Q                &kp P        &kp G              &kp O           &kp U          &mt DQT SQT     &key_repeat
 &kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &kp T              &kp M                &kp Y        &kp C              &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
-&kp LSHFT  &key_repeat  &kp V       &kp J       &kp D              &kp Z                &key_repeat  &kp W              &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&kp LSHFT  &kp X        &kp V       &kp J       &kp D              &kp Z                &key_repeat  &kp W              &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &kp ESC    &kp TAB      &bsp_del    &kp ENTER   &th_shift LSHFT 0                                    &th_shift LSHFT 0  &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
                                                 &lt 3 R            &kp TAB   &kp ESC    &mkp MB1     &key_repeat        &lt 1 SPACE
                                                 &kp R              &bsp_del  &kp TAB    &kp F13      &mo 2              &lt 1 SPACE
@@ -137,13 +146,13 @@
 
         Auto_Mouse_Layer {
             bindings = <
-&trans  &trans    &trans    &trans    &trans    &trans              &trans    &trans    &trans    &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans    &trans              &trans    &trans    &trans    &trans    &trans    &trans
-&trans  &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1  &mkp MB5            &mkp MB5  &mkp MB1  &mkp MB3  &mkp MB2  &mkp MB4  &trans
-&trans  &trans    &trans    &trans    &trans    &trans              &trans    &trans    &trans    &trans    &trans    &trans
-&trans  &trans    &trans    &trans    &trans                                  &trans    &trans    &trans    &trans    &trans
-                                      &trans    &trans    &trans    &trans    &trans    &trans
-                                      &trans    &trans    &trans    &trans    &trans    &trans
+&trans  &trans   &trans       &trans    &trans     &trans                  &trans     &trans      &trans    &trans  &trans  &trans
+&trans  &kp ESC  &kp LS(TAB)  &kp UP    &kp TAB    &kp RET                 &trans     &trans      &trans    &trans  &trans  &trans
+&trans  &kp DEL  &kp LEFT     &kp DOWN  &kp RIGHT  &kp BSPC                &kp RGUI   &sk RSHFT   &trans    &trans  &trans  &trans
+&trans  &trans   &trans       &trans    &trans     &trans                  &kp RCTRL  &kp RALT    &trans    &trans  &trans  &trans
+&trans  &trans   &trans       &trans    &trans                                        &trans      &trans    &trans  &trans  &trans
+                                        &mkp MB3   &mkp MB1    &mkp MB2    &mkp MB2   &mkp MB1    &mkp MB3
+                                        &mkp MB4   &dbl_click  &mkp MB5    &mkp MB5   &dbl_click  &mkp MB4
             >;
         };
 
@@ -163,10 +172,7 @@
 
 // right hand trackball configuration
 
-&trackball_peripheral_listener {
-input-processors =
-<&zip_temp_layer 3 500>;
-};
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 500>; };
 
 //left hand trackball configuration
 

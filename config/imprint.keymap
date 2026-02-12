@@ -70,7 +70,7 @@
                                   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
                                   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
             >;
-            layer-id = <LAYER_base>;
+            layer-id = <0>;
         };
 
         numnav {
@@ -83,7 +83,7 @@
                                   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
                                   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
             >;
-            layer-id = <LAYER_numnav>;
+            layer-id = <1>;
         };
 
         control {
@@ -96,7 +96,7 @@
                                   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
                                   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
             >;
-            layer-id = <LAYER_control>;
+            layer-id = <2>;
         };
 
         mouse {
@@ -109,7 +109,7 @@
                                   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
                                   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
             >;
-            layer-id = <LAYER_mouse>;
+            layer-id = <3>;
         };
     };
 

@@ -304,6 +304,26 @@
             bindings = <&kp ENTER>;
             key-positions = <32 31>;
         };
+
+        left_mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <58 64>;
+        };
+
+        right_mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <63 69>;
+        };
+
+        right_mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <62 68>;
+        };
+
+        left_mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <65 59>;
+        };
     };
 
     macros {
@@ -340,11 +360,35 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(178,79,42) &tog 4>,
+                <&rgb_ug RGB_COLOR_HSB(56,100,50) &tog 3>,
                 <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(299,87,47) &tog 4>;
+                <&rgb_ug RGB_COLOR_HSB(299,87,47) &tog 3>;
 
             label = "LAYER_MACRO";
+        };
+
+        layer_numnav: layer_numnav {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(117,96,47) &tog 1>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(299,87,47) &tog 1>;
+
+            label = "LAYER_NUMNAV";
+        };
+
+        layer_control: layer_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(203,96,47) &tog 2>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(299,87,47) &tog 2>;
+
+            label = "LAYER_CONTROL";
         };
     };
 
@@ -353,13 +397,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1       &kp N2      &kp N3        &kp N4        &kp N5             &kp N6       &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
-&kp GRAVE  &kp B        &kp F       &kp L         &kp K         &kp Q              &kp P        &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
-&magic_rh  &mt LCTRL N  &mt LALT S  &mt LGUI H    &mt LSHFT T   &kp M              &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &magic_lh
-&tog 2     &kp X        &kp V       &kp J         &kp D         &kp Z              &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
-&tog 1     &kp LS(TAB)  &apps       &layer_macro  &magic_shift                                  &magic_shift  &kp UP          &kp LEFT       &kp DOWN     &kp RIGHT
-                                                  &expander     &none     &none    &mkp MB3     &mkp MB1      &expander
-                                                  &lt 2 R       &bsp_del  &none    &mkp MB2     &key_repeat   &lt 1 SPACE
+&kp EQUAL  &kp N1       &kp N2      &kp N3        &kp N4        &kp N5                &kp N6       &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
+&kp GRAVE  &kp B        &kp F       &kp L         &kp K         &kp Q                 &kp P        &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
+&magic_rh  &mt LCTRL N  &mt LALT S  &mt LGUI H    &mt LSHFT T   &kp M                 &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &magic_lh
+&tog 2     &kp X        &kp V       &kp J         &kp D         &kp Z                 &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
+&tog 1     &kp LS(TAB)  &apps       &layer_macro  &magic_shift                                     &magic_shift  &kp UP          &kp LEFT       &kp DOWN     &kp RIGHT
+                                                  &expander     &mkp MB1  &mkp MB3    &mkp MB3     &mkp MB1      &expander
+                                                  &lt 2 R       &bsp_del  &mkp MB2    &mkp MB2     &key_repeat   &lt 1 SPACE
             >;
         };
 
@@ -387,25 +431,13 @@
             >;
         };
 
-        mouse {
-            bindings = <
-&trans  &trans   &trans    &trans    &trans     &trans                  &trans     &trans      &trans    &trans  &trans  &trans
-&trans  &kp ESC  &trans    &kp UP    &kp TAB    &kp RET                 &trans     &trans      &trans    &trans  &trans  &trans
-&trans  &kp DEL  &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC                &kp RGUI   &sk RSHFT   &trans    &trans  &trans  &trans
-&trans  &trans   &trans    &trans    &trans     &trans                  &kp RCTRL  &kp RALT    &trans    &trans  &trans  &trans
-&trans  &trans   &trans    &trans    &trans                                        &trans      &trans    &trans  &trans  &trans
-                                     &mkp MB3   &mkp MB1    &mkp MB2    &mkp MB2   &mkp MB1    &mkp MB3
-                                     &mkp MB4   &dbl_click  &mkp MB5    &mkp MB5   &dbl_click  &mkp MB4
-            >;
-        };
-
         macros {
             bindings = <
 &trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &mo 4   &log_home                              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &mo 3   &log_home                              &trans  &trans  &trans  &trans  &trans
                                 &trans     &trans    &trans    &trans  &trans  &trans
                                 &log_fv    &log_umn  &trans    &trans  &trans  &trans
             >;
@@ -416,8 +448,7 @@
 // &trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
 
 &trackball_central_listener {
-    input-processors =
-        <&zip_xy_scaler 1 20>,
-        <&zip_xy_to_scroll_mapper>;
-        // <&zip_scroll_snap>;
+    input-processors = <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
+
+    // <&zip_scroll_snap>;
 };

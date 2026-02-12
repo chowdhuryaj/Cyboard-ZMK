@@ -354,14 +354,14 @@
         log_fv: log_fv {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>;
+            bindings = <&none &kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
             label = "LOG_FV";
         };
 
         log_umn: log_umn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp N2 &kp AT>;
+            bindings = <&none &kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp N2 &kp AT &kp RET>;
             label = "LOG_UMN";
         };
 
@@ -464,13 +464,13 @@
 
         macros {
             bindings = <
-&trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &mo 3   &log_home                              &trans  &trans  &trans  &trans  &trans
-                                &trans     &trans    &trans    &trans  &trans  &trans
-                                &log_fv    &log_umn  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &layer_macro  &log_home                              &trans  &trans  &trans  &trans  &trans
+                                      &trans     &trans    &trans    &trans  &trans  &trans
+                                      &log_fv    &log_umn  &trans    &trans  &trans  &trans
             >;
         };
     };

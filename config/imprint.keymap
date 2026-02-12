@@ -108,13 +108,13 @@
 
         base {
             bindings = <
-&shifted EQUAL  &shifted N1    &shifted N2  &shifted N3  &shifted N4   &shifted N5             &shifted N6  &shifted N7   &shifted N8     &shifted N9    &shifted N0    &shifted MINUS
-&kp GRAVE       &shifted BSLH  &kp F        &kp L        &kp K         &kp Q                   &kp P        &kp G         &kp O           &kp U          &shifted APOS  &key_repeat
-&kp B           &mt LCTRL N    &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                   &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &kp P
-&tog 3          &kp X          &kp V        &kp J        &kp D         &kp Z                   &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
-&tog 1          &kp TAB        &bsp_del     &kp ENTER    &magic_shift                                       &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
-                                                         &key_repeat   &kp TAB      &kp ESC    &mkp MB1     &key_repeat   &bsp_del
-                                                         &lt 2 R       &bsp_del     &kp TAB    &kp F13      &key_repeat   &lt 1 SPACE
+&shifted EQUAL  &shifted N1  &shifted N2  &shifted N3  &shifted N4   &shifted N5             &shifted N6  &shifted N7   &shifted N8     &shifted N9    &shifted N0    &shifted MINUS
+&kp GRAVE       &kp B        &kp F        &kp L        &kp K         &kp Q                   &kp P        &kp G         &kp O           &kp U          &shifted APOS  &key_repeat
+&bt BT_NXT      &mt LCTRL N  &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                   &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &kp P
+&tog 3          &kp X        &kp V        &kp J        &kp D         &kp Z                   &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
+&tog 1          &kp TAB      &bsp_del     &kp ENTER    &magic_shift                                       &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
+                                                       &key_repeat   &kp TAB      &kp ESC    &mkp MB1     &key_repeat   &bsp_del
+                                                       &lt 2 R       &bsp_del     &kp TAB    &kp F13      &key_repeat   &lt 1 SPACE
             >;
         };
 

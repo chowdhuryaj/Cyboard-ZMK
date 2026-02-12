@@ -10,10 +10,6 @@ manifest:
       url-base: https://github.com/darknao
 
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
 
     - name: zmk-keyboards
       remote: Cyboard-DigitalTailor

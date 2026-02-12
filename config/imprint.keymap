@@ -150,6 +150,6 @@
 
 &trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
 
-&trackball_central_listener { input-processors = <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>; };
+&trackball_central_listener { input-processors = <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>; };
 
 };

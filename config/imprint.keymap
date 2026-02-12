@@ -313,17 +313,42 @@
             label = "DBL_CLICK";
         };
 
-        shifted: macro_shifted_kp {
-            #binding-cells = <1>;
-            label = "MACRO_SHIFTED_KP";
-            compatible = "zmk,behavior-macro-one-param";
+        log_fv: log_fv {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>;
+            label = "LOG_FV";
+        };
+
+        log_umn: log_umn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp N2 &kp AT>;
+            label = "LOG_UMN";
+        };
+
+        log_home: log_home {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp G &kp O &kp B &kp I &kp RET>;
+            label = "LOG_HOME";
+        };
+
+        layer_macro: layer_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LSHFT &macro_param_1to1>,
+                <&mo 4>,
                 <&macro_tap>,
-                <&kp MACRO_PLACEHOLDER>,
+                <&rgb_ug RGB_COLOR_HSB(178,79,42)>,
+                <&macro_pause_for_release>,
                 <&macro_release>,
-                <&kp LSHFT>;
+                <&mo 4>,
+                <&macro_tap>,
+                <&rgb_ug RGB_COLOR_HSB(299,87,47)>;
+
+            label = "LAYER_MACRO";
         };
     };
 
@@ -332,13 +357,13 @@
 
         base {
             bindings = <
-&shifted EQUAL  &shifted N1  &shifted N2  &shifted N3  &shifted N4   &shifted N5           &shifted N6  &shifted N7   &shifted N8     &shifted N9    &shifted N0    &shifted MINUS
-&kp GRAVE       &kp B        &kp F        &kp L        &kp K         &kp Q                 &kp P        &kp G         &kp O           &kp U          &shifted APOS  &shifted BSLH
-&magic_rh       &mt LCTRL N  &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                 &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &magic_lh
-&tog 2          &kp X        &kp V        &kp J        &kp D         &kp Z                 &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
-&tog 1          &kp LS(TAB)  &apps        &kp TAB      &magic_shift                                     &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
-                                                       &expander     &none        &none    &none        &none         &expander
-                                                       &lt 2 R       &bsp_del     &none    &none        &key_repeat   &lt 1 SPACE
+&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4        &kp N5             &kp N6       &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
+&kp GRAVE  &kp B        &kp F       &kp L       &kp K         &kp Q              &kp P        &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
+&magic_rh  &mt LCTRL N  &mt LALT S  &mt LGUI H  &mt LSHFT T   &kp M              &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &magic_lh
+&tog 2     &kp X        &kp V       &kp J       &kp D         &kp Z              &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
+&tog 1     &kp LS(TAB)  &apps       &mo 3       &magic_shift                                  &magic_shift  &kp UP          &kp LEFT       &kp DOWN     &kp RIGHT
+                                                &expander     &none     &none    &none        &none         &expander
+                                                &lt 2 R       &bsp_del  &none    &none        &key_repeat   &lt 1 SPACE
             >;
         };
 
@@ -375,6 +400,18 @@
 &trans  &trans   &trans    &trans    &trans                                        &trans      &trans    &trans  &trans  &trans
                                      &mkp MB3   &mkp MB1    &mkp MB2    &mkp MB2   &mkp MB1    &mkp MB3
                                      &mkp MB4   &dbl_click  &mkp MB5    &mkp MB5   &dbl_click  &mkp MB4
+            >;
+        };
+
+        macros {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };

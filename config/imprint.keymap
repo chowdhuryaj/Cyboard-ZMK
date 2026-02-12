@@ -17,6 +17,130 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+    /*
+     * Right-hand SFB fixer key (place on LEFT hand)
+     * Default: SPACE
+     */
+    magic_rh: magic_rh {
+      compatible = "zmk,behavior-adaptive-key";
+      label = "MAGIC_RH";
+      #binding-cells = <0>;
+
+      /* default output */
+      bindings = <&kp SPACE>;
+
+      /* A -> o */
+      a_to_o {
+        trigger-keys = <A>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp O>;
+      };
+
+      /* o -> a */
+      o_to_a {
+        trigger-keys = <O>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp A>;
+      };
+
+      /* u -> e */
+      u_to_e {
+        trigger-keys = <U>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp E>;
+      };
+
+      /* e -> u */
+      e_to_u {
+        trigger-keys = <E>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp U>;
+      };
+
+      /* p -> eople (assumes you've already typed 'p') */
+      p_to_eople {
+        trigger-keys = <P>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp E &kp O &kp P &kp L &kp E>;
+      };
+
+      /* c -> y */
+      c_to_y {
+        trigger-keys = <C>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp Y>;
+      };
+
+      /* w -> ould (assumes you've already typed 'w') */
+      w_to_ould {
+        trigger-keys = <W>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp O &kp U &kp L &kp D>;
+      };
+
+      /* g -> ing (assumes you've already typed 'g') */
+      g_to_ing {
+        trigger-keys = <G>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp I &kp N &kp G>;
+      };
+    };
+
+    /*
+     * Left-hand magic key (place on RIGHT hand)
+     * Default: REPEAT
+     */
+    magic_lh: magic_lh {
+      compatible = "zmk,behavior-adaptive-key";
+      label = "MAGIC_LH";
+      #binding-cells = <0>;
+
+      /* default output */
+      bindings = <&key_repeat>;
+
+      /* t -> he (assumes you've already typed 't') */
+      t_to_he {
+        trigger-keys = <T>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp H &kp E>;
+      };
+
+      /* n -> ing (assumes you've already typed 'n') */
+      n_to_ing {
+        trigger-keys = <N>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp I &kp N &kp G>;
+      };
+
+      /* m -> ent (assumes you've already typed 'm') */
+      m_to_ent {
+        trigger-keys = <M>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp E &kp N &kp T>;
+      };
+
+      /* p -> y */
+      p_to_y {
+        trigger-keys = <P>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp Y>;
+      };
+
+      /* b -> le (assumes you've already typed 'b') */
+      b_to_le {
+        trigger-keys = <B>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp L &kp E>;
+      };
+
+      /* q -> ue (assumes you've already typed 'q') */
+      q_to_ue {
+        trigger-keys = <Q>;
+        max-prior-idle-ms = <250>;
+        bindings = <&kp U &kp E>;
+      };
+    };
+
     apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";

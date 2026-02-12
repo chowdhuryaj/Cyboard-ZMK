@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: darknao
       url-base: https://github.com/darknao
+    - name: kot149
+      url-base: https://github.com/kot149
 
   projects:
 
@@ -20,6 +22,10 @@ manifest:
       remote: darknao
       revision: zmk-perkey_ug
       import: app/west.yml
+
+    - name: zmk-scroll-snap
+      remote: kot149
+      revision: v1
 
     # urob modules
     - name: zmk-adaptive-key

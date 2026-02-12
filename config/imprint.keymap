@@ -318,9 +318,9 @@
 &kp GRAVE       &kp B        &kp F        &kp L        &kp K         &kp Q                   &kp P        &kp G         &kp O           &kp U          &shifted APOS  &shifted BSLH
 &magic_rh       &mt LCTRL N  &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                   &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &magic_lh
 &tog 2          &kp X        &kp V        &kp J        &kp D         &kp Z                   &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
-&tog 1          &kp TAB      &bsp_del     &kp ENTER    &magic_shift                                       &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
-                                                       &expander   &kp TAB      &kp ESC    &mkp MB1     &mkp MB3      &expander
-                                                       &lt 2 R     &bsp_del     &kp TAB    &kp F13      &key_repeat   &lt 1 SPACE
+&tog 1          &kp (LS)TAB  &apps        &kp TAB      &magic_shift                                       &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
+                                                       &expander   &none        &none    &none      &none         &expander
+                                                       &lt 2 R     &bsp_del     &none    &none      &key_repeat   &lt 1 SPACE
             >;
         };
 

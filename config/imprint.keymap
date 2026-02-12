@@ -17,6 +17,15 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+        as_ht: autoshift_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTOSHIFT_HOLD_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <135>;
+            flavor = "tap-preferred";
+            bindings = <&shifted>, <&kp>;
+        };
+
         bsp_del: bsp_del {
             compatible = "zmk,behavior-mod-morph";
             label = "BSP_DEL";

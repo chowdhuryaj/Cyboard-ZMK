@@ -60,7 +60,7 @@
     underglow-layer {
         compatible = "zmk,underglow-layer";
 
-        layer0_white {
+        base {
             bindings = <
                 &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
                 &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
@@ -70,10 +70,10 @@
                                   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
                                   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
             >;
-            layer-id = <LAYER_L0>;
+            layer-id = <LAYER_base>;
         };
 
-        layer1_green {
+        numnav {
             bindings = <
                 &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
                 &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
@@ -83,10 +83,10 @@
                                   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
                                   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
             >;
-            layer-id = <LAYER_L1>;
+            layer-id = <LAYER_numnav>;
         };
 
-        layer2_blue {
+        control {
             bindings = <
                 &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
                 &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
@@ -96,10 +96,10 @@
                                   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
                                   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
             >;
-            layer-id = <LAYER_L2>;
+            layer-id = <LAYER_control>;
         };
 
-        layer3_yellow {
+        mouse {
             bindings = <
                 &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
                 &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
@@ -109,15 +109,14 @@
                                   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
                                   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
             >;
-            layer-id = <LAYER_L3>;
+            layer-id = <LAYER_mouse>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        /* Layer labels L0-L3 ensure LAYER_L0..LAYER_L3 exist for underglow-layer */
-        L0: default_layer {
+        base {
             bindings = <
 &kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5               &kp N6       &kp N7       &kp N8          &kp N9         &kp N0          &kp MINUS
 &kp GRAVE  &kp BSLH     &kp F       &kp L       &kp K        &kp Q                &kp P        &kp G        &kp O           &kp U          &mt DQT SQT     &key_repeat
@@ -129,7 +128,7 @@
             >;
         };
 
-        L1: Numpad_Nav_Layer {
+        numnav {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &kp F7  &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
 &trans  &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp HOME  &kp UP    &kp END    &trans   &trans
@@ -141,7 +140,7 @@
             >;
         };
 
-        L2: Keyboard_Control_Layer {
+        control {
             bindings = <
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
@@ -153,7 +152,7 @@
             >;
         };
 
-        L3: Auto_Mouse_Layer {
+        mouse {
             bindings = <
 &trans  &trans   &trans    &trans    &trans   &trans                  &trans     &trans      &trans    &trans  &trans  &trans
 &trans  &kp ESC  &trans    &kp UP    &kp TAB  &kp RET                 &trans     &trans      &trans    &trans  &trans  &trans

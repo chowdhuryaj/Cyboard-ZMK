@@ -98,13 +98,13 @@
         base {
             layer-id = <LAYER_default_layer>;
             bindings = <
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE             &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                                  &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                                  &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF             &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
             >;
         };
 
@@ -112,17 +112,17 @@
         l1 {
             layer-id = <LAYER_Numpad_Nav_Layer>;
             bindings = <
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN             &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                                  &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                                  &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF             &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
             >;
         };
 
-        /* Layer 2: GOLD (hex) */
+        /* Layer 2: GOLD */
         l2 {
             layer-id = <LAYER_Keyboard_Control_Layer>;
             bindings = <
@@ -140,13 +140,13 @@
         l3 {
             layer-id = <LAYER_Auto_Mouse_Layer>;
             bindings = <
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE           &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                                 &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                                 &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF           &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                                 &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                                 &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
             >;
         };
     };

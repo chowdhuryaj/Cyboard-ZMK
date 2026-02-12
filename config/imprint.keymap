@@ -148,13 +148,11 @@
     };
 };
 
-&trackball_peripheral_listener {
-    input-processors =
-        <&zip_temp_layer 3 900>; };
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
 
 &trackball_central_listener {
-    input-processors =
-        <&zip_xy_to_scroll_mapper>,
-        <&zip_scroll_scaler 1 5>;
+    input-processors = <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>;
 };
+
+
 };

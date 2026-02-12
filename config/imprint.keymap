@@ -62,52 +62,52 @@
 
         base {
             bindings = <
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE   &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE               &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                                  &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
-                                  &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE &ug WHITE
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF   &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF               &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
+                                  &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF &ug 0xFFFFFF
             >;
             layer-id = <0>;
         };
 
         numnav {
             bindings = <
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN   &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN               &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                                  &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
-                                  &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN &ug GREEN
+                &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00   &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00   &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00   &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00   &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00               &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                                  &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
+                                  &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00 &ug 0x00FF00
             >;
             layer-id = <1>;
         };
 
         control {
             bindings = <
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE   &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE               &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                                  &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
-                                  &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE &ug BLUE
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF   &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF               &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                                  &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
+                                  &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF &ug 0x0000FF
             >;
             layer-id = <2>;
         };
 
         mouse {
             bindings = <
-                &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW   &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW               &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                                  &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
-                                  &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW &ug YELLOW
+                &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700   &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700   &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700   &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700   &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700               &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                                  &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
+                                  &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700 &ug 0xFFD700
             >;
             layer-id = <3>;
         };

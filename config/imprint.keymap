@@ -62,16 +62,6 @@
             key-positions = <32 33>;
         };
 
-        left_btab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <26 15>;
-        };
-
-        right_btab {
-            bindings = <&kp RS(TAB)>;
-            key-positions = <33 20>;
-        };
-
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <28 27>;
@@ -98,12 +88,12 @@
         default_layer {
             bindings = <
 &kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5               &kp N6       &kp N7       &kp N8          &kp N9         &kp N0          &kp MINUS
-&kp GRAVE  &kp B        &kp F       &kp L       &kp K        &kp Q                &kp P        &kp G        &kp O           &kp U          &mt DQT SQT     &key_repeat
-&kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &kp T        &kp M                &kp Y        &kp C        &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
+&kp GRAVE  &kp BSLH     &kp F       &kp L       &kp K        &kp Q                &kp P        &kp G        &kp O           &kp U          &mt DQT SQT     &key_repeat
+&kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &mt LSHFT T  &kp M                &kp Y        &mt RSHFT C  &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
 &tog 3     &kp X        &kp V       &kp J       &kp D        &kp Z                &key_repeat  &kp W        &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &tog 1     &kp TAB      &bsp_del    &kp ENTER   &caps_word                                     &caps_word   &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
-                                                &key_repeat  &kp TAB   &kp ESC    &mkp MB1     &key_repeat  &lt 1 SPACE
-                                                &kp R        &bsp_del  &kp TAB    &kp F13      &mo 2        &lt 1 SPACE
+                                                &key_repeat  &kp TAB   &kp ESC    &mkp MB1     &key_repeat  &bsp_del
+                                                &lt 2 R      &bsp_del  &kp TAB    &kp F13      &key_repeat  &lt 1 SPACE
             >;
         };
 
@@ -124,8 +114,8 @@
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&to 4        &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 4
-&to 4        &trans        &trans        &trans        &trans                                                  &trans           &trans           &trans           &trans           &to 4
+&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 0
+&trans       &trans        &trans        &trans        &trans                                                  &trans           &trans           &trans           &trans           &to 0
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
             >;
@@ -142,21 +132,11 @@
                                         &mkp MB4   &dbl_click  &mkp MB5    &mkp MB5   &dbl_click  &mkp MB4
             >;
         };
-
-        factory_test {
-            bindings = <
-&kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7            &kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3
-&kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9            &kp N0  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5
-&kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &kp N1            &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7
-&kp N8  &kp N9  &kp N0  &kp N1  &kp N2  &kp N3            &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9
-&kp N0  &kp N1  &kp N2  &kp N3  &kp N4                            &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-                                &kp N1  &kp N2  &kp N3    &kp N4  &kp N5  &kp N6
-                                &kp N7  &kp N8  &kp N9    &kp N0  &kp N1  &kp N2
-            >;
-        };
     };
 };
 
 &trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 300>; };
 
-&trackball_central_listener { input-processors = <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>; };
+&trackball_central_listener {
+    input-processors = <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>;
+};

@@ -25,6 +25,18 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        th_shift: th_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TH_SHIFT";
+            bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <50>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -85,13 +97,13 @@
 
         default_layer {
             bindings = <
-&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4             &kp N5               &kp N6       &kp N7             &kp N8          &kp N9         &kp N0          &kp MINUS
-&kp grave  &kp B        &kp F       &kp L       &kp K              &kp Q                &kp P        &kp G              &kp O           &kp U          &mt DQT SQT     &key_repeat
-&kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &kp T              &kp M                &kp Y        &kp C              &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
-&tog 3     &kp X        &kp V       &kp J       &kp D              &kp Z                &key_repeat  &kp W              &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&tog 1     &kp TAB      &bsp_del    &kp ENTER   &caps_word                                           &caps_word         &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
-                                                &key_repeat        &kp TAB   &kp ESC    &mkp MB1     &key_repeat        &lt 1 SPACE
-                                                &kp R              &bsp_del  &kp TAB    &kp F13      &mo 2              &lt 1 SPACE
+&kp EQUAL  &kp N1       &kp N2      &kp N3      &kp N4       &kp N5               &kp N6       &kp N7       &kp N8          &kp N9         &kp N0          &kp MINUS
+&kp GRAVE  &kp B        &kp F       &kp L       &kp K        &kp Q                &kp P        &kp G        &kp O           &kp U          &mt DQT SQT     &key_repeat
+&kp B      &mt LCTRL N  &mt LALT S  &mt LGUI H  &kp T        &kp M                &kp Y        &kp C        &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
+&tog 3     &kp X        &kp V       &kp J       &kp D        &kp Z                &key_repeat  &kp W        &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&tog 1     &kp TAB      &bsp_del    &kp ENTER   &caps_word                                     &caps_word   &kp UP          &kp DOWN       &kp LEFT        &kp RIGHT
+                                                &key_repeat  &kp TAB   &kp ESC    &mkp MB1     &key_repeat  &lt 1 SPACE
+                                                &kp R        &bsp_del  &kp TAB    &kp F13      &mo 2        &lt 1 SPACE
             >;
         };
 
@@ -145,13 +157,6 @@
     };
 };
 
-&trackball_peripheral_listener {
-    input-processors =
-     <&zip_temp_layer 3 300>;
-};
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 300>; };
 
-&trackball_central_listener {
-    input-processors =
-        <&zip_xy_scaler 1 5>
-        <&zip_xy_to_scroll_mapper>;
-};
+&trackball_central_listener { input-processors = <&zip_xy_scaler 1 5>, <&zip_xy_to_scroll_mapper>; };

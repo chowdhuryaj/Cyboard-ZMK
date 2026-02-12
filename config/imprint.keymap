@@ -89,8 +89,7 @@
         bindings = <&kp D>;         // n + EXPAND => "d"   ("nd")
       };
     };
-  };
-};
+
         bsp_del: bsp_del {
             compatible = "zmk,behavior-mod-morph";
             label = "BSP_DEL";
@@ -230,7 +229,7 @@
     };
 };
 
-&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 800>; };
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
 
 &trackball_central_listener {
     input-processors = <&zip_xy_scaler 1 12>, <&zip_xy_to_scroll_mapper>;

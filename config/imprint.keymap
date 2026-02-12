@@ -270,6 +270,13 @@
             #binding-cells = <0>;
             bindings = <&th_shift LSHFT LSHFT>, <&caps_word>;
         };
+
+        bsp_del_taps: bsp_del_taps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BSP_DEL_TAPS";
+            #binding-cells = <0>;
+            bindings = <&bsp_del>, <&bsp_del_taps>;
+        };
     };
 
     combos {
@@ -323,6 +330,16 @@
         left_mb5 {
             bindings = <&mkp MB5>;
             key-positions = <65 59>;
+        };
+
+        right_dbl_click {
+            bindings = <&dbl_click>;
+            key-positions = <62 61>;
+        };
+
+        left_dbl_click {
+            bindings = <&dbl_click>;
+            key-positions = <59 60>;
         };
     };
 
@@ -390,6 +407,20 @@
 
             label = "LAYER_CONTROL";
         };
+
+        bd_word: bd_word {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&bsp_del>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "BD_WORD";
+        };
     };
 
     keymap {
@@ -397,13 +428,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1       &kp N2      &kp N3        &kp N4        &kp N5                &kp N6       &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
-&kp GRAVE  &kp B        &kp F       &kp L         &kp K         &kp Q                 &kp P        &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
-&magic_rh  &mt LCTRL N  &mt LALT S  &mt LGUI H    &mt LSHFT T   &kp M                 &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &magic_lh
-&tog 2     &kp X        &kp V       &kp J         &kp D         &kp Z                 &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
-&tog 1     &kp LS(TAB)  &apps       &layer_macro  &magic_shift                                     &magic_shift  &kp UP          &kp LEFT       &kp DOWN     &kp RIGHT
-                                                  &expander     &mkp MB1  &mkp MB3    &mkp MB3     &mkp MB1      &expander
-                                                  &lt 2 R       &bsp_del  &mkp MB2    &mkp MB2     &key_repeat   &lt 1 SPACE
+&kp EQUAL       &kp N1       &kp N2      &kp N3        &kp N4        &kp N5                     &kp N6       &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
+&kp GRAVE       &expander    &kp F       &kp L         &kp K         &kp Q                      &kp P        &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
+&kp B           &mt LCTRL N  &mt LALT S  &mt LGUI H    &mt LSHFT T   &kp M                      &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &kp P
+&layer_control  &kp X        &kp V       &kp J         &kp D         &kp Z                      &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
+&layer_numnav   &kp LS(TAB)  &apps       &layer_macro  &magic_shift                                          &magic_shift  &dbl_click      &kp LEFT       &kp DOWN     &kp RIGHT
+                                                       &magic_rh     &mkp MB1       &mkp MB3    &mkp MB3     &mkp MB1      &magic_lh
+                                                       &lt 2 R       &bsp_del_taps  &mkp MB2    &mkp MB2     &key_repeat   &lt 1 SPACE
             >;
         };
 

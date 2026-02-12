@@ -17,6 +17,15 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+    apps: apps {
+            compatible = "zmk,behavior-tri-state";
+            label = "APPS";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+
+            ignored-key-positions = <49>;
+            ignored-layers = <3>;
+        };
 
     expander: expander {
       compatible = "zmk,behavior-adaptive-key";

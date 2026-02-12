@@ -17,131 +17,149 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-    /*
+        /*
      * Right-hand SFB fixer key (place on LEFT hand)
      * Default: SPACE
      */
-    magic_rh: magic_rh {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "MAGIC_RH";
-      #binding-cells = <0>;
 
-      /* default output */
-      bindings = <&kp SPACE>;
+        magic_rh: magic_rh {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "MAGIC_RH";
+            #binding-cells = <0>;
 
-      /* A -> o */
-      a_to_o {
-        trigger-keys = <A>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp O>;
-      };
+            /* default output */
 
-      /* o -> a */
-      o_to_a {
-        trigger-keys = <O>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp A>;
-      };
+            bindings = <&kp SPACE>;
 
-      /* u -> e */
-      u_to_e {
-        trigger-keys = <U>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp E>;
-      };
+            /* A -> o */
 
-      /* e -> u */
-      e_to_u {
-        trigger-keys = <E>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp U>;
-      };
+            a_to_o {
+                trigger-keys = <A>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp O>;
+            };
 
-      /* p -> eople (assumes you've already typed 'p') */
-      p_to_eople {
-        trigger-keys = <P>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp E &kp O &kp P &kp L &kp E>;
-      };
+            /* o -> a */
 
-      /* c -> y */
-      c_to_y {
-        trigger-keys = <C>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp Y>;
-      };
+            o_to_a {
+                trigger-keys = <O>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp A>;
+            };
 
-      /* w -> ould (assumes you've already typed 'w') */
-      w_to_ould {
-        trigger-keys = <W>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp O &kp U &kp L &kp D>;
-      };
+            /* u -> e */
 
-      /* g -> ing (assumes you've already typed 'g') */
-      g_to_ing {
-        trigger-keys = <G>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp I &kp N &kp G>;
-      };
-    };
+            u_to_e {
+                trigger-keys = <U>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp E>;
+            };
 
-    /*
+            /* e -> u */
+
+            e_to_u {
+                trigger-keys = <E>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp U>;
+            };
+
+            /* p -> eople (assumes you've already typed 'p') */
+
+            p_to_eople {
+                trigger-keys = <P>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp E &kp O &kp P &kp L &kp E>;
+            };
+
+            /* c -> y */
+
+            c_to_y {
+                trigger-keys = <C>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp Y>;
+            };
+
+            /* w -> ould (assumes you've already typed 'w') */
+
+            w_to_ould {
+                trigger-keys = <W>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp O &kp U &kp L &kp D>;
+            };
+
+            /* g -> ing (assumes you've already typed 'g') */
+
+            g_to_ing {
+                trigger-keys = <G>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp I &kp N &kp G>;
+            };
+        };
+
+        /*
      * Left-hand magic key (place on RIGHT hand)
      * Default: REPEAT
      */
-    magic_lh: magic_lh {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "MAGIC_LH";
-      #binding-cells = <0>;
 
-      /* default output */
-      bindings = <&key_repeat>;
+        magic_lh: magic_lh {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "MAGIC_LH";
+            #binding-cells = <0>;
 
-      /* t -> he (assumes you've already typed 't') */
-      t_to_he {
-        trigger-keys = <T>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp H &kp E>;
-      };
+            /* default output */
 
-      /* n -> ing (assumes you've already typed 'n') */
-      n_to_ing {
-        trigger-keys = <N>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp I &kp N &kp G>;
-      };
+            bindings = <&key_repeat>;
 
-      /* m -> ent (assumes you've already typed 'm') */
-      m_to_ent {
-        trigger-keys = <M>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp E &kp N &kp T>;
-      };
+            /* t -> he (assumes you've already typed 't') */
 
-      /* p -> y */
-      p_to_y {
-        trigger-keys = <P>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp Y>;
-      };
+            t_to_he {
+                trigger-keys = <T>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp H &kp E>;
+            };
 
-      /* b -> le (assumes you've already typed 'b') */
-      b_to_le {
-        trigger-keys = <B>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp L &kp E>;
-      };
+            /* n -> ing (assumes you've already typed 'n') */
 
-      /* q -> ue (assumes you've already typed 'q') */
-      q_to_ue {
-        trigger-keys = <Q>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp U &kp E>;
-      };
-    };
+            n_to_ing {
+                trigger-keys = <N>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp I &kp N &kp G>;
+            };
 
-    apps: apps {
+            /* m -> ent (assumes you've already typed 'm') */
+
+            m_to_ent {
+                trigger-keys = <M>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp E &kp N &kp T>;
+            };
+
+            /* p -> y */
+
+            p_to_y {
+                trigger-keys = <P>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp Y>;
+            };
+
+            /* b -> le (assumes you've already typed 'b') */
+
+            b_to_le {
+                trigger-keys = <B>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp L &kp E>;
+            };
+
+            /* q -> ue (assumes you've already typed 'q') */
+
+            q_to_ue {
+                trigger-keys = <Q>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp U &kp E>;
+            };
+        };
+
+        apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";
             #binding-cells = <0>;
@@ -151,77 +169,77 @@
             ignored-layers = <3>;
         };
 
-    expander: expander {
-      compatible = "zmk,behavior-adaptive-key";
-      #binding-cells = <0>;
-      bindings = <&key_repeat>;
+        expander: expander {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
 
-      t_exp {
-        trigger-keys = <T>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp H &kp E>;   // t + EXPAND => "he"
-      };
+            t_exp {
+                trigger-keys = <T>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp H &kp E>;   // t + EXPAND => "he"
+            };
 
-      a_exp {
-        trigger-keys = <A>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp N &kp D>;   // a + EXPAND => "nd"  (a + nd => "and")
-      };
+            a_exp {
+                trigger-keys = <A>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp N &kp D>;   // a + EXPAND => "nd"  (a + nd => "and")
+            };
 
-      i_exp {
-        trigger-keys = <I>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp N &kp G>;   // i + EXPAND => "ng"  ("ing")
-      };
+            i_exp {
+                trigger-keys = <I>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp N &kp G>;   // i + EXPAND => "ng"  ("ing")
+            };
 
-      o_exp {
-        trigger-keys = <O>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp U &kp T>;   // o + EXPAND => "ut"  ("out")
-      };
+            o_exp {
+                trigger-keys = <O>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp U &kp T>;   // o + EXPAND => "ut"  ("out")
+            };
 
-      f_exp {
-        trigger-keys = <F>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp O &kp R>;   // f + EXPAND => "or"  ("for")
-      };
+            f_exp {
+                trigger-keys = <F>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp O &kp R>;   // f + EXPAND => "or"  ("for")
+            };
 
-      w_exp {
-        trigger-keys = <W>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp I &kp T &kp H>; // w + EXPAND => "ith"  ("with")
-      };
+            w_exp {
+                trigger-keys = <W>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp I &kp T &kp H>; // w + EXPAND => "ith"  ("with")
+            };
 
-      h_exp {
-        trigger-keys = <H>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp E &kp R>;   // h + EXPAND => "er"  ("her")
-      };
+            h_exp {
+                trigger-keys = <H>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp E &kp R>;   // h + EXPAND => "er"  ("her")
+            };
 
-      y_exp {
-        trigger-keys = <Y>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp O &kp U>;   // y + EXPAND => "ou"  ("you")
-      };
+            y_exp {
+                trigger-keys = <Y>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp O &kp U>;   // y + EXPAND => "ou"  ("you")
+            };
 
-      r_exp {
-        trigger-keys = <R>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp E>;         // r + EXPAND => "e"   ("re")
-      };
+            r_exp {
+                trigger-keys = <R>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp E>;         // r + EXPAND => "e"   ("re")
+            };
 
-      s_exp {
-        trigger-keys = <S>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp T>;         // s + EXPAND => "t"   ("st")
-      };
+            s_exp {
+                trigger-keys = <S>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp T>;         // s + EXPAND => "t"   ("st")
+            };
 
-      n_exp {
-        trigger-keys = <N>;
-        max-prior-idle-ms = <250>;
-        bindings = <&kp D>;         // n + EXPAND => "d"   ("nd")
-      };
-    };
+            n_exp {
+                trigger-keys = <N>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp D>;         // n + EXPAND => "d"   ("nd")
+            };
+        };
 
         bsp_del: bsp_del {
             compatible = "zmk,behavior-mod-morph";
@@ -314,13 +332,13 @@
 
         base {
             bindings = <
-&shifted EQUAL  &shifted N1  &shifted N2  &shifted N3  &shifted N4   &shifted N5             &shifted N6  &shifted N7   &shifted N8     &shifted N9    &shifted N0    &shifted MINUS
-&kp GRAVE       &kp B        &kp F        &kp L        &kp K         &kp Q                   &kp P        &kp G         &kp O           &kp U          &shifted APOS  &shifted BSLH
-&magic_rh       &mt LCTRL N  &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                   &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &magic_lh
-&tog 2          &kp X        &kp V        &kp J        &kp D         &kp Z                   &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
-&tog 1          &kp (LS)TAB  &apps        &kp TAB      &magic_shift                                       &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
-                                                       &expander   &none        &none    &none      &none         &expander
-                                                       &lt 2 R     &bsp_del     &none    &none      &key_repeat   &lt 1 SPACE
+&shifted EQUAL  &shifted N1  &shifted N2  &shifted N3  &shifted N4   &shifted N5           &shifted N6  &shifted N7   &shifted N8     &shifted N9    &shifted N0    &shifted MINUS
+&kp GRAVE       &kp B        &kp F        &kp L        &kp K         &kp Q                 &kp P        &kp G         &kp O           &kp U          &shifted APOS  &shifted BSLH
+&magic_rh       &mt LCTRL N  &mt LALT S   &mt LGUI H   &mt LSHFT T   &kp M                 &kp Y        &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I    &magic_lh
+&tog 2          &kp X        &kp V        &kp J        &kp D         &kp Z                 &key_repeat  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP         &shifted FSLH
+&tog 1          &kp LS(TAB)  &apps        &kp TAB      &magic_shift                                     &magic_shift  &kp UP          &kp LEFT       &kp DOWN       &kp RIGHT
+                                                       &expander     &none        &none    &none        &none         &expander
+                                                       &lt 2 R       &bsp_del     &none    &none        &key_repeat   &lt 1 SPACE
             >;
         };
 

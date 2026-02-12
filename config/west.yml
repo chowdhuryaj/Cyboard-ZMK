@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/Cyboard-DigitalTailor
     - name: urob
       url-base: https://github.com/urob
+    - name: darknao
+      url-base: https://github.com/darknao
 
   projects:
     - name: zmk
@@ -17,6 +19,11 @@ manifest:
       remote: Cyboard-DigitalTailor
       revision: main
       import: config/west.yml
+
+    - name: zmk
+      remote: darknao
+      revision: zmk-perkey_ug
+      import: app/west.yml
 
     # urob modules
     - name: zmk-adaptive-key

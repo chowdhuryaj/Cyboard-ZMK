@@ -404,9 +404,9 @@
         base {
             bindings = <
 &kp EQUAL          &kp N1       &kp N2      &kp N3           &kp N4        &kp N5                   &kp N6     &kp N7        &kp N8          &kp N9         &kp N0          &kp MINUS
-&kp GRAVE          &kp B        &kp V       &kp K            &kp D         &kp Q                    &kp EXCL   &kp Y         &kp O           &kp U          &mt DQT SQT     &kp BSLH
-&kp GRAVE          &mt LCTRL N  &mt LALT S  &mt LGUI H       &mt LSHFT T   &kp M                    &kp G      &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
-&layer_control_on  &kp P        &kp F       &kp J            &kp D         &kp Z                    &kp QMARK  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp FSLH
+&kp MINUS          &kp B        &kp V       &kp F            &kp K         &kp Q                    &kp EXCL   &kp Y         &kp O           &kp U          &mt DQT SQT     &kp BSLH
+&kp GRAVE          &mt LCTRL N  &mt LALT S  &mt LGUI H       &mt LSHFT T   &kp J                    &kp X      &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp BSLH
+&layer_control_on  &kp P        &kp G       &kp M            &kp D         &kp Z                    &kp QMARK  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp FSLH
 &layer_numnav_on   &kp LS(TAB)  &apps       &layer_macro_on  &magic_shift                                      &magic_shift  &kp F17         &kp LEFT       &kp DOWN        &kp RIGHT
                                                              &kp L         &bsp_del     &mkp MB3    &mkp MB3   &mkp MB1      &magic_lh
                                                              &kp R         &key_repeat  &mkp MB2    &mkp MB2   &key_repeat   &lt 1 SPACE

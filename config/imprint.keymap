@@ -452,7 +452,7 @@
 &trans  &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans    &kp N1    &kp N2    &kp N3   &trans   &trans
 &trans  &trans        &trans       &trans     &trans                                          &trans    &kp N0    &trans   &trans   &trans
                                               &mkp MB2   &mkp MB1       &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2
-                                              &mkp MB4   &dbl_click     &mkp MB5    &trans    &trans    &trans
+                                              &mkp MB4   &dbl_click     &mkp MB5    &to 0     &trans    &trans
             >;
         };
 

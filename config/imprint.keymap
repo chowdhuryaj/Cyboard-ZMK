@@ -29,6 +29,7 @@
             #binding-cells = <0>;
 
             /* default output */
+
             bindings = <&key_repeat>;
 
             /* A -> o */
@@ -248,6 +249,13 @@
 
             tapping-term-ms = <180>;
         };
+
+        sentence_qexcl: sentence_qexcl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SENTENCE_QEXCL";
+            #binding-cells = <0>;
+            bindings = <&sentence_q>, <&sentence_excl>;
+        };
     };
 
     combos {
@@ -391,6 +399,27 @@
             bindings = <&kp LC(A) &kp BACKSPACE>;
             label = "CLEAR";
         };
+
+        sentence_dot: sentence_dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT &kp DOT &kp SPACE>;
+            label = "SENTENCE_DOT";
+        };
+
+        sentence_q: sentence_q {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT &kp QMARK &kp SPACE>;
+            label = "SENTENCE_Q";
+        };
+
+        sentence_excl: sentence_excl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&sk LSHFT &kp EXCL &kp SPACE>;
+            label = "SENTENCE_EXCL";
+        };
     };
 
     keymap {
@@ -398,13 +427,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                     &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &mt RBKT LBKT
-&kp MINUS  &kp V   &kp M   &kp K   &kp J            &trans                     &mt DQT SQT  &kp Y         &kp O               &kp U          &kp Z           &kp Q
-&kp B      &kp N   &kp S   &kp H   &kp T            &trans                     &trans       &kp C         &kp A               &kp E          &kp I           &kp X
-&kp GRAVE  &kp P   &kp G   &kp F   &kp D            &trans                     &mt GT LT    &kp W         &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                  &kp UP        &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt_control 0 L  &sk LCMD      &sk LALT     &sk RALT     &sk RCMD      &key_repeat
-                                   &lt_macros 0 R   &magic_shift  &sk LCTRL    &sk RCTRL    &magic_shift  &lt_numnav 0 SPACE
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                        &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &mt RBKT LBKT
+&kp MINUS  &kp V   &kp M   &kp K   &kp J            &sentence_qexcl               &mt DQT SQT  &kp Y         &kp O               &kp U          &kp Z           &kp Q
+&kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                     &magic_rh    &kp C         &kp A               &kp E          &kp I           &kp X
+&kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                 &mt GT LT    &kp W         &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                     &kp UP        &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
+                                   &lt_control 0 L  &sk LCMD         &sk LALT     &sk RALT     &sk RCMD      &key_repeat
+                                   &lt_macros 0 R   &magic_shift     &sk LCTRL    &sk RCTRL    &magic_shift  &lt_numnav 0 SPACE
             >;
         };
 
@@ -449,5 +478,9 @@
 &trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
 
 &trackball_central_listener {
-    input-processors = <&zip_xy_scaler 1 20>, <&zip_xy_to_scroll_mapper>, <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, <&zip_scroll_snap>;
+    input-processors =
+        <&zip_xy_scaler 1 20>,
+        <&zip_xy_to_scroll_mapper>,
+        <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+        <&zip_scroll_snap>;
 };

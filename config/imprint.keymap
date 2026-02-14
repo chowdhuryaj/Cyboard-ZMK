@@ -127,12 +127,16 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
 
-
         bapps: bapps {
             compatible = "zmk,behavior-tri-state";
-            label = "APPS";
+            label = "BAPPS";
             #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kt LSHFT>, <&kp TAB>, <&kt LSHFT>, <&kt LGUI>;
+            bindings =
+                <&kt LGUI>,
+                <&kt LSHFT>,
+                <&kp TAB>,
+                <&kt LSHFT>,
+                <&kt LGUI>;
         };
 
         magic_shift: magic_shift {
@@ -355,7 +359,7 @@
 &kp MINUS  &kp X                 &kp V        &kp L        &kp J          &sentence_qexcl                &mt DQT SQT  &kp Y     &kp O           &kp U          &kp Z           &kp Q
 &kp B      &kp N                 &kp S        &kp H        &kp T          &magic_lh                      &magic_rh    &kp C     &kp A           &kp E          &kp I           &kp X
 &kp GRAVE  &kp P                 &kp F        &kp K        &kp D          &sentence_dot                  &mt GT LT    &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&apps      &magic_shift LSHFT 0  &mt LGUI F7  &mt LALT F8  &mt LCTRL F13                                              &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
+&bapps     &magic_shift LSHFT 0  &mt LGUI F7  &mt LALT F8  &mt LCTRL F13                                              &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
                                                            &tap_bspc      &tap_del         &dbl_click    &mkp MB3     &mkp MB1  &mkp MB2
                                                            &lt 1 R        &lt 3 G          &sk LCTRL     &mkp MB4     &mkp MB5  &lt 2 SPACE
             >;

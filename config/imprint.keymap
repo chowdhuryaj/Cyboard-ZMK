@@ -369,7 +369,7 @@
                 <&macro_press>,
                 <&mo 3>,
                 <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(57,100,47)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(45,100,100)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 3>,
@@ -482,7 +482,7 @@
     };
 };
 
-&trackball_peripheral_listener { input-processors = <&zip_temp_layer 3 900>; };
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 900>; };
 
 &trackball_central_listener {
     input-processors =

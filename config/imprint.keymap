@@ -402,7 +402,7 @@
 &trans  &trans               &trans           &trans           &trans     &trans            &log_fv  &log_fv  &trans     &trans  &trans  &trans
 &trans  &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
 &trans  &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
-&trans  &trans               &trans           &trans           &trans     &trans            &trans   &trans   &trans     &trans  &trans  &trans
+&trans  &kp LC(MINUS)        &kp LC(EQUAL)    &trans           &trans     &trans            &trans   &trans   &trans     &trans  &trans  &trans
 &trans  &trans               &trans           &trans           &trans                                &trans   &trans     &trans  &trans  &trans
                                                                &trans     &trans  &trans    &trans   &trans   &log_home
                                                                &trans     &trans  &trans    &trans   &trans   &trans

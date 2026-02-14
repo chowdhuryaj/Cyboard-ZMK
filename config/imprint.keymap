@@ -365,7 +365,7 @@
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                          &kp UP                &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
                                    &lt 1 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
-                                   &lt 3 R   &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &l 2 SPACE
+                                   &lt 3 R  &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &lt 2 SPACE
             >;
         };
 

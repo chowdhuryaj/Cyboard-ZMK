@@ -175,7 +175,7 @@
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
 
-            tapping-term-ms = <165>;
+            tapping-term-ms = <175>;
         };
 
         tap_del: tap_del {
@@ -184,7 +184,7 @@
             #binding-cells = <0>;
             bindings = <&kp DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
 
-            tapping-term-ms = <165>;
+            tapping-term-ms = <175>;
         };
 
         sentence_qexcl: sentence_qexcl {

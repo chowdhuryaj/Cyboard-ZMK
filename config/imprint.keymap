@@ -357,40 +357,6 @@
             label = "LAYER_NUMNAV";
         };
 
-        layer_control: layer_control {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 2>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(206,100,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 2>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-
-            label = "LAYER_CONTROL";
-        };
-
-        layer_macros: layer_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 3>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(45,100,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 3>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-
-            label = "LAYER_MACRO";
-        };
-
         paren: paren {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -438,6 +404,40 @@
             #binding-cells = <0>;
             bindings = <&sk LSHFT &kp EXCL &kp SPACE>;
             label = "SENTENCE_EXCL";
+        };
+
+        lt_control: lt_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 2>,
+                <&macro_tap>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(235,100,47)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 2>,
+                <&macro_tap>,
+                <&rgb_ug RGB_OFF>;
+
+            label = "LT_CONTROL";
+        };
+
+        lt_macros: lt_macros {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 3>,
+                <&macro_tap>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(46,100,47)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3>,
+                <&macro_tap>,
+                <&rgb_ug RGB_OFF>;
+
+            label = "LT_MACROS";
         };
     };
 

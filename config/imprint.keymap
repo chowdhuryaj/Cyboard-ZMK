@@ -55,6 +55,14 @@
                 max-prior-idle-ms = <250>;
                 bindings = <&kp Y>;
             };
+
+            /* q -> ue (assumes you've already typed 'q') */
+
+            q_to_ue {
+                trigger-keys = <Q>;
+                max-prior-idle-ms = <250>;
+                bindings = <&kp U &kp E>;
+            };
         };
 
         /*
@@ -111,13 +119,14 @@
                 bindings = <&kp L &kp E>;
             };
 
-            /* q -> ue (assumes you've already typed 'q') */
+            /* g -> r */
 
-            q_to_ue {
-                trigger-keys = <Q>;
+            g_to_r {
+                trigger-keys = <G>;
                 max-prior-idle-ms = <250>;
-                bindings = <&kp U &kp E>;
+                bindings = <&kp R>;
             };
+
         };
 
         apps: apps {

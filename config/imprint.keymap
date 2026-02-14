@@ -304,36 +304,6 @@
             bindings = <&kp ENTER>;
             key-positions = <32 31>;
         };
-
-        left_mb4 {
-            bindings = <&mkp MB4>;
-            key-positions = <58 64>;
-        };
-
-        right_mb4 {
-            bindings = <&mkp MB4>;
-            key-positions = <63 69>;
-        };
-
-        right_mb5 {
-            bindings = <&mkp MB5>;
-            key-positions = <62 68>;
-        };
-
-        left_mb5 {
-            bindings = <&mkp MB5>;
-            key-positions = <65 59>;
-        };
-
-        right_dbl_click {
-            bindings = <&dbl_click>;
-            key-positions = <62 61>;
-        };
-
-        left_dbl_click {
-            bindings = <&dbl_click>;
-            key-positions = <59 60>;
-        };
     };
 
     macros {
@@ -364,38 +334,6 @@
             bindings = <&kp G &kp O &kp B &kp I &kp RET>;
             label = "LOG_HOME";
         };
-
-        layer_macro_on: layer_macro_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&rgb_ug RGB_COLOR_HSB(56,100,50) &to 3>;
-
-            label = "LAYER_MACRO_ON";
-        };
-
-        layer_numnav_on: layer_numnav_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&rgb_ug RGB_COLOR_HSB(117,96,47) &to 1>;
-
-            label = "LAYER_NUMNAV_ON";
-        };
-
-        layer_control_on: layer_control_on {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&rgb_ug RGB_COLOR_HSB(203,96,47) &to 2>;
-
-            label = "LAYER_CONTROL_ON";
-        };
-
-        layer_base: layer_base {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&rgb_ug RGB_COLOR_HSB(299,87,47) &to 0>;
-
-            label = "LAYER_BASE";
-        };
     };
 
     keymap {
@@ -408,20 +346,20 @@
 &kp B      &kp N   &kp S   &kp H   &kp T    &trans                     &trans       &kp C         &kp A           &kp E          &kp I           &kp X
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D    &trans                     &mt DQT SQT  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &bsp_del   &apps   &kp F7  &kp F8  &kp F13                                          &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT       &bsp_del
-                                   &kp L    &sk LCMD      &sk LALT     &sk RALT     &sk RCMD      &key_repeat
-                                   &kp R    &magic_shift  &sk LCTRL    &sk RCTRL    &magic_shift  &lt 1 SPACE
+                                   &lt 2 L  &sk LCMD      &sk LALT     &sk RALT     &sk RCMD      &key_repeat
+                                   &lt 3 R  &magic_shift  &sk LCTRL    &sk RCTRL    &magic_shift  &lt 1 SPACE
             >;
         };
 
         numnav {
             bindings = <
-&kp F1       &kp F2  &kp F3  &kp F4  &kp F5  &kp F6            &kp F7  &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
-&trans       &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp HOME  &kp UP    &kp END    &trans   &trans
-&trans       &trans  &kp N4  &kp N5  &kp N6  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &trans
-&none        &trans  &kp N1  &kp N2  &kp N3  &trans            &trans  &trans    &trans    &trans     &trans   &trans
-&layer_base  &trans  &trans  &kp N0  &trans                            &trans    &trans    &trans     &trans   &trans
-                                     &trans  &trans  &trans    &trans  &trans    &trans
-                                     &trans  &trans  &trans    &trans  &trans    &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6                  &kp F7    &kp F8      &kp F9    &kp F10  &kp F11  &kp F12
+&trans  &trans  &kp N7  &kp N8  &kp N9    &trans                  &trans    &kp N7      &kp N8    &kp N9   &trans   &trans
+&trans  &trans  &kp N4  &kp N5  &kp N6    &trans                  &trans    &kp N4      &kp N5    &kp N6   &trans   &trans
+&trans  &trans  &kp N1  &kp N2  &kp N3    &trans                  &trans    &kp N1      &kp N2    &kp N3   &trans   &trans
+&trans  &trans  &trans  &kp N0  &trans                                      &trans      &kp N0    &trans   &trans   &trans
+                                &mkp MB2  &mkp MB1    &mkp MB3    &mkp MB3  &mkp MB1    &mkp MB2
+                                &mkp MB4  &dbl_click  &mkp MB5    &mkp MB5  &dbl_click  &mkp MB4
             >;
         };
 
@@ -430,8 +368,8 @@
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&none        &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 0
-&layer_base  &trans        &trans        &none         &trans                                                  &trans           &trans           &trans           &trans           &to 0
+&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 0
+&trans       &trans        &trans        &trans        &trans                                                  &trans           &trans           &trans           &trans           &to 0
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
             >;
@@ -439,13 +377,13 @@
 
         macros {
             bindings = <
-&trans       &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&none        &trans  &trans  &trans  &trans     &trans              &trans  &trans  &trans  &trans  &trans  &trans
-&layer_base  &trans  &trans  &none   &log_home                              &trans  &trans  &trans  &trans  &trans
-                                     &trans     &trans    &trans    &trans  &trans  &trans
-                                     &log_fv    &log_umn  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };

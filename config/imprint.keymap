@@ -246,41 +246,65 @@
         left_esc {
             bindings = <&kp ESC>;
             key-positions = <25 26>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+            timeout-ms = <35>;
         };
 
         right_esc {
             bindings = <&kp ESC>;
             key-positions = <34 33>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+            timeout-ms = <35>;
         };
 
         left_tab {
             bindings = <&kp TAB>;
             key-positions = <26 27>;
+            layers = <0>;
+            require-prior-idle-ms = <100>;
+            timeout-ms = <35>;
         };
 
         right_tab {
             bindings = <&kp TAB>;
             key-positions = <32 33>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+            timeout-ms = <35>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <28 27>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
+            timeout-ms = <35>;
         };
 
         right_enter {
             bindings = <&kp ENTER>;
             key-positions = <32 31>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
 
         screenshot {
             bindings = <&kp LG(LS(N4))>;
             key-positions = <25 24>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
 
         screenshot_prev {
             bindings = <&kp LS(LC(N4))>;
             key-positions = <25 36>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <100>;
+            layers = <0>;
         };
     };
 

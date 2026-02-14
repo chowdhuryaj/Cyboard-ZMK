@@ -403,11 +403,11 @@
 
         base {
             bindings = <
-&kp EQUAL          &kp N1       &kp N2      &kp N3           &kp N4        &kp N5                &kp N6     &kp N7        &kp N8          &kp N9         &kp N0       &kp MINUS
-&kp GRAVE          &kp X        &kp V       &kp J            &kp K         &kp Q                 &kp EXCL   &kp G         &kp O           &kp U          &kp SQT      &kp BSLH
-&kp B              &mt LCTRL N  &mt LALT S  &mt LGUI H       &mt LSHFT T   &kp M                 &kp Y      &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I  &kp P
-&layer_control_on  &kp P        &kp F       &kp L            &kp D         &kp Z                 &kp QMARK  &kp W         &mt SEMI COMMA  &mt COLON DOT  &kp UP       &kp FSLH
-&layer_numnav_on   &kp LS(TAB)  &apps       &layer_macro_on  &magic_shift                                   &magic_shift  &kp F17         &kp LEFT       &kp DOWN     &kp RIGHT
+&kp EQUAL          &kp N1       &kp N2      &kp N3           &kp N4        &kp N5                &kp N6     &kp N7        &kp N8          &kp N9         &kp N0          &kp MINUS
+&kp GRAVE          &kp X        &kp V       &kp J            &kp K         &kp Q                 &kp EXCL   &kp G         &kp O           &kp U          &mt DQT SQT     &kp BSLH
+&kp B              &mt LCTRL N  &mt LALT S  &mt LGUI H       &mt LSHFT T   &kp M                 &kp Y      &mt RSHFT C   &mt RGUI A      &mt RALT E     &mt RCTRL I     &kp P
+&layer_control_on  &kp P        &kp F       &kp L            &kp D         &kp Z                 &kp QMARK  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp FSLH
+&layer_numnav_on   &kp LS(TAB)  &apps       &layer_macro_on  &magic_shift                                   &magic_shift  &kp F17         &kp LEFT       &kp DOWN        &kp RIGHT
                                                              &kp R         &kp BSPC  &mkp MB3    &mkp MB3   &mkp MB1      &magic_lh
                                                              &kp SPACE     &bsp_del  &mkp MB2    &mkp MB2   &key_repeat   &lt 1 SPACE
             >;

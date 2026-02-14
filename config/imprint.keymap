@@ -167,23 +167,16 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
 
-        th_shift: th_shift {
+        magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "TH_SHIFT";
-            bindings = <&kp>, <&sk>;
+            label = "MAGIC_SHIFT";
+            bindings = <&kp>, <&magic_caps_word>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <180>;
-            require-prior-idle-ms = <50>;
+            tapping-term-ms = <180>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <0>;
             flavor = "balanced";
-        };
-
-        magic_shift: magic_shift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MAGIC_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&th_shift LSHFT LSHFT>, <&caps_word>;
         };
 
         hold_clear: hold_clear {
@@ -223,7 +216,7 @@
         lt_macros: lt_macros {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_MACROS";
-            bindings = <&layer_control>, <&kp>;
+            bindings = <&lt_macros>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -238,7 +231,7 @@
             #binding-cells = <0>;
             bindings = <&kp BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
 
-            tapping-term-ms = <180>;
+            tapping-term-ms = <150>;
         };
 
         tap_del: tap_del {
@@ -247,7 +240,7 @@
             #binding-cells = <0>;
             bindings = <&kp DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
 
-            tapping-term-ms = <180>;
+            tapping-term-ms = <150>;
         };
 
         sentence_qexcl: sentence_qexcl {
@@ -262,6 +255,15 @@
             label = "TD_OPENCLOSE";
             #binding-cells = <0>;
             bindings = <&paren>, <&bracket>, <&brace>;
+        };
+
+        magic_caps_word: magic_caps_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MAGIC_CAPS_WORD";
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -369,7 +371,7 @@
                 <&macro_press>,
                 <&mo 3>,
                 <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(45,100,100)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(45,100,47)>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&mo 3>,
@@ -434,13 +436,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                        &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp V   &kp M   &kp K   &kp J            &sentence_qexcl               &mt DQT SQT  &kp Y         &kp O               &kp U          &kp Z           &kp Q
-&kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                     &magic_rh    &kp C         &kp A               &kp E          &kp I           &kp X
-&kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                 &mt GT LT    &kp W         &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                     &kp UP        &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt_control 0 L  &sk LCMD         &sk LALT     &sk RALT     &sk RCMD      &key_repeat
-                                   &lt_macros 0 R   &magic_shift     &sk LCTRL    &sk RCTRL    &magic_shift  &lt_numnav 0 SPACE
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                             &kp N6       &kp N7                &kp N8              &kp N9         &kp N0          &td_openclose
+&kp MINUS  &kp V   &kp M   &kp K   &kp J            &sentence_qexcl                    &mt DQT SQT  &kp Y                 &kp O               &kp U          &kp Z           &kp Q
+&kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                          &magic_rh    &kp C                 &kp A               &kp E          &kp I           &kp X
+&kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                          &kp UP                &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
+                                   &lt_control 0 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
+                                   &lt_macros 0 R   &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &lt_numnav 0 SPACE
             >;
         };
 

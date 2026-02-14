@@ -170,16 +170,6 @@
             ignored-layers = <3>;
         };
 
-        bsp_del: bsp_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BSP_DEL";
-            bindings = <&kp BSPC>, <&kp DEL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
-
         th_shift: th_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "TH_SHIFT";
@@ -197,6 +187,70 @@
             label = "MAGIC_SHIFT";
             #binding-cells = <0>;
             bindings = <&th_shift LSHFT LSHFT>, <&caps_word>;
+        };
+
+        hold_clear: hold_clear {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_CLEAR";
+            bindings = <&clear>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+        };
+
+        lt_numnav: lt_numnav {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_NUMNAV";
+            bindings = <&layer_numnav>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            flavor = "balanced";
+        };
+
+        lt_control: lt_control {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_CONTROL";
+            bindings = <&layer_control>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            flavor = "balanced";
+        };
+
+        lt_macros: lt_macros {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_MACROS";
+            bindings = <&layer_control>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            flavor = "balanced";
+        };
+
+        tap_bspc: tap_bspc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_BSPC";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
+
+            tapping-term-ms = <180>;
+        };
+
+        tap_del: tap_del {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DEL";
+            #binding-cells = <0>;
+            bindings = <&kp DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
+
+            tapping-term-ms = <180>;
         };
     };
 
@@ -334,6 +388,13 @@
             bindings = <&kp LBRC &kp RBRC &kp LEFT_ARROW>;
             label = "BRACE";
         };
+
+        clear: clear {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A) &kp BACKSPACE>;
+            label = "CLEAR";
+        };
     };
 
     keymap {
@@ -341,35 +402,35 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                      &kp N6       &kp N7        &kp N8          &kp N9         &kp N0          &mt RBKT LBKT
-&kp MINUS  &kp V   &kp M   &kp K   &kp J    &kp GT                      &trans       &kp Y         &kp O           &kp U          &kp Z           &kp Q
-&kp B      &kp N   &kp S   &kp H   &kp T    &trans                      &trans       &kp C         &kp A           &kp E          &kp I           &kp X
-&kp GRAVE  &kp P   &kp G   &kp F   &kp D    &kp LESS_THAN               &mt DQT SQT  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&bsp_del   &apps   &kp F7  &kp F8  &kp F13                                           &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT       &bsp_del
-                                   &lt 2 L  &sk LCMD       &sk LALT     &sk RALT     &sk RCMD      &key_repeat
-                                   &lt 3 R  &magic_shift   &sk LCTRL    &sk RCTRL    &magic_shift  &lt 1 SPACE
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                     &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &mt RBKT LBKT
+&kp MINUS  &kp V   &kp M   &kp K   &kp J            &trans                     &mt DQT SQT  &kp Y         &kp O               &kp U          &kp Z           &kp Q
+&kp B      &kp N   &kp S   &kp H   &kp T            &trans                     &trans       &kp C         &kp A               &kp E          &kp I           &kp X
+&kp GRAVE  &kp P   &kp G   &kp F   &kp D            &trans                     &mt GT LT    &kp W         &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                  &kp UP        &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
+                                   &lt_control 0 L  &sk LCMD      &sk LALT     &sk RALT     &sk RCMD      &key_repeat
+                                   &lt_macros 0 R   &magic_shift  &sk LCTRL    &sk RCTRL    &magic_shift  &lt_numnav 0 SPACE
             >;
         };
 
         numnav {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6                  &kp F7    &kp F8      &kp F9    &kp F10  &kp F11  &kp F12
-&trans  &trans  &kp N7  &kp N8  &kp N9    &trans                  &trans    &kp N7      &kp N8    &kp N9   &trans   &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6    &trans                  &trans    &kp N4      &kp N5    &kp N6   &trans   &trans
-&trans  &trans  &kp N1  &kp N2  &kp N3    &trans                  &trans    &kp N1      &kp N2    &kp N3   &trans   &trans
-&trans  &trans  &trans  &kp N0  &trans                                      &trans      &kp N0    &trans   &trans   &trans
-                                &mkp MB2  &mkp MB1    &mkp MB3    &mkp MB3  &mkp MB1    &mkp MB2
-                                &mkp MB4  &dbl_click  &mkp MB5    &mkp MB5  &dbl_click  &mkp MB4
+&kp F1  &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                     &kp F7    &kp F8    &kp F9    &kp F10  &kp F11  &kp F12
+&trans  &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &trans    &kp N7    &kp N8    &kp N9   &trans   &trans
+&trans  &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)              &trans    &kp N4    &kp N5    &kp N6   &trans   &trans
+&trans  &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans    &kp N1    &kp N2    &kp N3   &trans   &trans
+&trans  &trans        &trans       &trans     &trans                                          &trans    &kp N0    &trans   &trans   &trans
+                                              &mkp MB2   &mkp MB1       &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2
+                                              &mkp MB4   &dbl_click     &mkp MB5    &trans    &trans    &trans
             >;
         };
 
         control {
             bindings = <
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans           &trans           &trans
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans          &trans           &trans           &trans           &trans           &trans
 &sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &studio_unlock  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &sys_reset
 &bootloader  &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &trans           &trans           &trans           &trans           &to 0
-&trans       &trans        &trans        &trans        &trans                                                  &trans           &trans           &trans           &trans           &to 0
+&trans       &trans        &trans        &trans        &trans        &trans                    &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
+&trans       &trans        &trans        &trans        &trans                                                  &trans           &trans           &trans           &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
                                                        &trans        &trans          &trans    &trans          &trans           &trans
             >;
@@ -377,13 +438,13 @@
 
         macros {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans               &trans           &trans           &trans     &trans            &log_fv  &log_fv  &trans     &trans  &trans  &trans
+&trans  &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
+&trans  &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
+&trans  &trans               &trans           &trans           &trans     &trans            &trans   &trans   &trans     &trans  &trans  &trans
+&trans  &trans               &trans           &trans           &trans                                &trans   &trans     &trans  &trans  &trans
+                                                               &trans     &trans  &trans    &trans   &trans   &log_home
+                                                               &trans     &trans  &trans    &trans   &trans   &trans
             >;
         };
     };

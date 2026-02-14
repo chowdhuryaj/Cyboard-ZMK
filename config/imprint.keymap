@@ -360,12 +360,12 @@
         base {
             bindings = <
 &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                             &kp N6       &kp N7                &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp V   &kp M   &kp K   &kp J    &sentence_qexcl                    &mt DQT SQT  &kp Y                 &kp O           &kp U          &kp Z           &kp Q
+&kp MINUS  &kp V   &kp K   &kp M   &kp J    &sentence_qexcl                    &mt DQT SQT  &kp Y                 &kp O           &kp U          &kp Z           &kp Q
 &kp B      &kp N   &kp S   &kp H   &kp T    &magic_lh                          &magic_rh    &kp C                 &kp A           &kp E          &kp I           &kp X
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D    &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                  &kp UP                &kp DOWN        &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt 1 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
-                                   &lt 3 R  &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &lt 2 SPACE
+                                   &lt 1 R  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &lt 2 SPACE
+                                   &lt 3 L  &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &key_repeat
             >;
         };
 

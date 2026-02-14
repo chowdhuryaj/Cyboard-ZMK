@@ -192,7 +192,7 @@
         lt_numnav: lt_numnav {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_NUMNAV";
-            bindings = <&layer_numnav>, <&kp>;
+            bindings = <&ug_numnav>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -216,7 +216,7 @@
         lt_macros: lt_macros {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_MACROS";
-            bindings = <&lt_macros>, <&kp>;
+            bindings = <&ug_macros>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -340,7 +340,7 @@
             label = "LOG_HOME";
         };
 
-        layer_numnav: layer_numnav {
+        ug_numnav: ug_numnav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -354,7 +354,7 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_OFF>;
 
-            label = "LAYER_NUMNAV";
+            label = "UG_NUMNAV";
         };
 
         paren: paren {
@@ -406,7 +406,7 @@
             label = "SENTENCE_EXCL";
         };
 
-        lt_control: lt_control {
+        ug_control: ug_control {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -420,10 +420,10 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_OFF>;
 
-            label = "LT_CONTROL";
+            label = "UG_CONTROL";
         };
 
-        lt_macros: lt_macros {
+        ug_macros: ug_macros {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -437,7 +437,7 @@
                 <&macro_tap>,
                 <&rgb_ug RGB_OFF>;
 
-            label = "LT_MACROS";
+            label = "UG_MACROS";
         };
     };
 
@@ -451,8 +451,8 @@
 &kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                          &magic_rh    &kp C                 &kp A               &kp E          &kp I           &kp X
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                          &kp UP                &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt_control 0 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
-                                   &lt_macros 0 R   &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &lt_numnav 0 SPACE
+                                   &ug_control 0 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
+                                   &ug_macros 0 R   &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &lt_numnav 0 SPACE
             >;
         };
 

@@ -189,42 +189,6 @@
             flavor = "tap-preferred";
         };
 
-        lt_numnav: lt_numnav {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_NUMNAV";
-            bindings = <&ug_numnav>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            flavor = "balanced";
-        };
-
-        lt_control: lt_control {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_CONTROL";
-            bindings = <&layer_control>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            flavor = "balanced";
-        };
-
-        lt_macros: lt_macros {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_MACROS";
-            bindings = <&ug_macros>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            flavor = "balanced";
-        };
-
         tap_bspc: tap_bspc {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_BSPC";
@@ -340,57 +304,6 @@
             label = "LOG_HOME";
         };
 
-        ug_numnav: ug_numnav {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 1>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(123,100,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 1>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-
-            label = "UG_NUMNAV";
-        };
-
-        ug_control: ug_control {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 2>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(235,100,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 2>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-
-            label = "UG_CONTROL";
-        };
-
-        ug_macros: ug_macros {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&mo 3>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(46,100,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&mo 3>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-
-            label = "UG_MACROS";
-        };
-
         paren: paren {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -451,8 +364,8 @@
 &kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                          &magic_rh    &kp C                 &kp A               &kp E          &kp I           &kp X
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                          &kp UP                &kp DOWN            &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt 2 L  &sk LCMD &sk LALT    &sk RALT              &sk RCMD              &key_repeat
-                                   &lt 3 R   &magic_shift LSHFT 0                      &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0   &lt 1 SPACE
+                                   &lt 1 L  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &key_repeat
+                                   &lt 3 R   &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &l 2 SPACE
             >;
         };
 

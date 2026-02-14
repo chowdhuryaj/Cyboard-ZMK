@@ -351,6 +351,40 @@
 
             label = "LAYER_NUMNAV";
         };
+
+        layer_control: layer_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 2>,
+                <&macro_tap>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(206,100,47)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 2>,
+                <&macro_tap>,
+                <&rgb_ug RGB_OFF>;
+
+            label = "LAYER_CONTROL";
+        };
+
+        layer_macros: layer_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 3>,
+                <&macro_tap>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(57,100,47)>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3>,
+                <&macro_tap>,
+                <&rgb_ug RGB_OFF>;
+
+            label = "LAYER_MACRO";
+        };
     };
 
     keymap {

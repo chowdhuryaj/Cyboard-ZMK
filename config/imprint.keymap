@@ -170,78 +170,6 @@
             ignored-layers = <3>;
         };
 
-        expander: expander {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
-
-            t_exp {
-                trigger-keys = <T>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp H &kp E>;   // t + EXPAND => "he"
-            };
-
-            a_exp {
-                trigger-keys = <A>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp N &kp D>;   // a + EXPAND => "nd"  (a + nd => "and")
-            };
-
-            i_exp {
-                trigger-keys = <I>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp N &kp G>;   // i + EXPAND => "ng"  ("ing")
-            };
-
-            o_exp {
-                trigger-keys = <O>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp U &kp T>;   // o + EXPAND => "ut"  ("out")
-            };
-
-            f_exp {
-                trigger-keys = <F>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp O &kp R>;   // f + EXPAND => "or"  ("for")
-            };
-
-            w_exp {
-                trigger-keys = <W>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp I &kp T &kp H>; // w + EXPAND => "ith"  ("with")
-            };
-
-            h_exp {
-                trigger-keys = <H>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp E &kp R>;   // h + EXPAND => "er"  ("her")
-            };
-
-            y_exp {
-                trigger-keys = <Y>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp O &kp U>;   // y + EXPAND => "ou"  ("you")
-            };
-
-            r_exp {
-                trigger-keys = <R>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp E>;         // r + EXPAND => "e"   ("re")
-            };
-
-            s_exp {
-                trigger-keys = <S>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp T>;         // s + EXPAND => "t"   ("st")
-            };
-
-            n_exp {
-                trigger-keys = <N>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp D>;         // n + EXPAND => "d"   ("nd")
-            };
-        };
-
         bsp_del: bsp_del {
             compatible = "zmk,behavior-mod-morph";
             label = "BSP_DEL";
@@ -385,6 +313,27 @@
 
             label = "LAYER_MACRO";
         };
+
+        paren: paren {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT_ARROW>;
+            label = "PAREN";
+        };
+
+        bracket: brac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT_ARROW>;
+            label = "BRAC";
+        };
+
+        brace: brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT_ARROW>;
+            label = "BRACE";
+        };
     };
 
     keymap {
@@ -392,13 +341,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                     &kp N6       &kp N7        &kp N8          &kp N9         &kp N0          &mt RBKT LBKT
-&kp MINUS  &kp V   &kp M   &kp K   &kp J    &trans                     &trans       &kp Y         &kp O           &kp U          &kp Z           &kp Q
-&kp B      &kp N   &kp S   &kp H   &kp T    &trans                     &trans       &kp C         &kp A           &kp E          &kp I           &kp X
-&kp GRAVE  &kp P   &kp G   &kp F   &kp D    &trans                     &mt DQT SQT  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&bsp_del   &apps   &kp F7  &kp F8  &kp F13                                          &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT       &bsp_del
-                                   &lt 2 L  &sk LCMD      &sk LALT     &sk RALT     &sk RCMD      &key_repeat
-                                   &lt 3 R  &magic_shift  &sk LCTRL    &sk RCTRL    &magic_shift  &lt 1 SPACE
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                      &kp N6       &kp N7        &kp N8          &kp N9         &kp N0          &mt RBKT LBKT
+&kp MINUS  &kp V   &kp M   &kp K   &kp J    &kp GT                      &trans       &kp Y         &kp O           &kp U          &kp Z           &kp Q
+&kp B      &kp N   &kp S   &kp H   &kp T    &trans                      &trans       &kp C         &kp A           &kp E          &kp I           &kp X
+&kp GRAVE  &kp P   &kp G   &kp F   &kp D    &kp LESS_THAN               &mt DQT SQT  &kp W         &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&bsp_del   &apps   &kp F7  &kp F8  &kp F13                                           &kp UP        &kp DOWN        &kp LEFT       &kp RIGHT       &bsp_del
+                                   &lt 2 L  &sk LCMD       &sk LALT     &sk RALT     &sk RCMD      &key_repeat
+                                   &lt 3 R  &magic_shift   &sk LCTRL    &sk RCTRL    &magic_shift  &lt 1 SPACE
             >;
         };
 

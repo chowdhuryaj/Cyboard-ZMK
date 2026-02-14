@@ -229,6 +229,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        mtap_del: mtap_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MTAP_DEL";
+            bindings = <&tap_bspc>, <&tap_del>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RCTL)>;
+        };
     };
 
     combos {
@@ -359,13 +368,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5                             &kp N6       &kp N7                &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp V   &kp K   &kp M   &kp J    &sentence_qexcl                    &mt DQT SQT  &kp Y                 &kp O           &kp U          &kp Z           &kp Q
-&kp B      &kp N   &kp S   &kp H   &kp T    &magic_lh                          &magic_rh    &kp C                 &kp A           &kp E          &kp I           &kp X
-&kp GRAVE  &kp P   &kp G   &kp F   &kp D    &sentence_dot                      &mt GT LT    &kp W                 &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&tap_bspc  &apps   &kp F7  &kp F8  &kp F13                                                  &kp UP                &kp DOWN        &kp LEFT       &kp RIGHT       &tap_del
-                                   &lt 1 R  &sk LCMD              &sk LALT     &sk RALT     &sk RCMD              &lt 2 SPACE
-                                   &lt 3 L  &magic_shift LSHFT 0  &sk LCTRL    &sk RCTRL    &magic_shift RSHFT 0  &key_repeat
+&kp EQUAL  &kp N1                &kp N2       &kp N3       &kp N4         &kp N5                        &kp N6       &kp N7                &kp N8          &kp N9         &kp N0          &td_openclose
+&kp MINUS  &kp V                 &kp K        &kp M        &kp J          &sentence_qexcl               &mt DQT SQT  &kp Y                 &kp O           &kp U          &kp Z           &kp Q
+&kp B      &kp N                 &kp S        &kp H        &kp T          &magic_lh                     &magic_rh    &kp C                 &kp A           &kp E          &kp I           &kp X
+&kp GRAVE  &kp P                 &kp G        &kp F        &kp D          &sentence_dot                 &mt GT LT    &kp W                 &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&apps      &magic_shift LSHFT 0  &mt LGUI F7  &mt LALT F8  &mt LCTRL F13                                             &kp UP                &kp DOWN        &kp LEFT       &kp RIGHT       &apps
+                                                           &lt 1 R        &sk LCMD         &sk LALT     &mkp MB3     &mkp MB1              &lt 2 SPACE
+                                                           &lt 3 L        &mtap_del        &sk LCTRL    &mkp MB2     &magic_shift RSHFT 0  &key_repeat
             >;
         };
 

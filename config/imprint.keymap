@@ -19,8 +19,8 @@
 
     behaviors {
         /*
-     * Right-hand SFB fixer key (place on LEFT hand)
-     * Default: SPACE
+     * Right-hand SFB fixer key
+     * Default: REPEAT
      */
 
         magic_rh: magic_rh {
@@ -29,8 +29,7 @@
             #binding-cells = <0>;
 
             /* default output */
-
-            bindings = <&kp SPACE>;
+            bindings = <&key_repeat>;
 
             /* A -> o */
 
@@ -98,7 +97,7 @@
         };
 
         /*
-     * Left-hand magic key (place on RIGHT hand)
+     * Left-hand magic key
      * Default: REPEAT
      */
 
@@ -165,9 +164,6 @@
             label = "APPS";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-
-            ignored-key-positions = <49>;
-            ignored-layers = <3>;
         };
 
         th_shift: th_shift {

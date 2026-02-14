@@ -40,22 +40,6 @@
                 bindings = <&kp O>;
             };
 
-            /* o -> a */
-
-            o_to_a {
-                trigger-keys = <O>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp A>;
-            };
-
-            /* u -> e */
-
-            u_to_e {
-                trigger-keys = <U>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp E>;
-            };
-
             /* e -> u */
 
             e_to_u {
@@ -64,36 +48,12 @@
                 bindings = <&kp U>;
             };
 
-            /* p -> eople (assumes you've already typed 'p') */
-
-            p_to_eople {
-                trigger-keys = <P>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp E &kp O &kp P &kp L &kp E>;
-            };
-
             /* c -> y */
 
             c_to_y {
                 trigger-keys = <C>;
                 max-prior-idle-ms = <250>;
                 bindings = <&kp Y>;
-            };
-
-            /* w -> ould (assumes you've already typed 'w') */
-
-            w_to_ould {
-                trigger-keys = <W>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp O &kp U &kp L &kp D>;
-            };
-
-            /* g -> ing (assumes you've already typed 'g') */
-
-            g_to_ing {
-                trigger-keys = <G>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp I &kp N &kp G>;
             };
         };
 
@@ -165,6 +125,14 @@
             label = "APPS";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+        };
+
+
+        bapps: bapps {
+            compatible = "zmk,behavior-tri-state";
+            label = "APPS";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kt LSHFT>, <&kp TAB>, <&kt LSHFT>, <&kt LGUI>;
         };
 
         magic_shift: magic_shift {

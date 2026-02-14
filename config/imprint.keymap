@@ -256,6 +256,13 @@
             #binding-cells = <0>;
             bindings = <&sentence_q>, <&sentence_excl>;
         };
+
+        td_openclose: td_openclose {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OPENCLOSE";
+            #binding-cells = <0>;
+            bindings = <&paren>, <&bracket>, <&brace>;
+        };
     };
 
     combos {
@@ -427,7 +434,7 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                        &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &mt RBKT LBKT
+&kp EQUAL  &kp N1  &kp N2  &kp N3  &kp N4           &kp N5                        &kp N6       &kp N7        &kp N8              &kp N9         &kp N0          &td_openclose
 &kp MINUS  &kp V   &kp M   &kp K   &kp J            &sentence_qexcl               &mt DQT SQT  &kp Y         &kp O               &kp U          &kp Z           &kp Q
 &kp B      &kp N   &kp S   &kp H   &kp T            &magic_lh                     &magic_rh    &kp C         &kp A               &kp E          &kp I           &kp X
 &kp GRAVE  &kp P   &kp G   &kp F   &kp D            &sentence_dot                 &mt GT LT    &kp W         &mt SEMI COMMA      &mt COLON DOT  &mt FSLH QMARK  &kp BSLH

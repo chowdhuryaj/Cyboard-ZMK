@@ -416,7 +416,7 @@
     };
 };
 
-&trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 900>; };
+// &trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 900>; };
 
 &trackball_central_listener {
     input-processors =

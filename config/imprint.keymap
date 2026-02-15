@@ -18,57 +18,148 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-         /* =======================================================
+        /* =======================================================
          * Magic RH (default = Repeat)
          * ======================================================= */
+
         magic_rh: magic_rh {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
 
             /* REQUIRED default binding (no-match case) */
+
             bindings = <&key_repeat>;
 
             /* letters / suffix logic */
-            a_to_o    { trigger-keys = <A>;     bindings = <&kp O>; };
-            u_to_e    { trigger-keys = <U>;     bindings = <&kp E>; };
-            c_to_y    { trigger-keys = <C>;     bindings = <&kp Y>; };
-            q_to_ue   { trigger-keys = <Q>;     bindings = <&kp U &kp E>; };
-            i_to_on   { trigger-keys = <I>;     bindings = <&kp O &kp N>; };
-            m_to_ent  { trigger-keys = <M>;     bindings = <&kp E &kp N &kp T>; };
-            n_to_ion  { trigger-keys = <N>;     bindings = <&kp I &kp O &kp N>; };
-            t_to_ment { trigger-keys = <T>;     bindings = <&kp M &kp E &kp N &kp T>; };
-            w_to_y    { trigger-keys = <W>;     bindings = <&kp Y>; };
-            g_to_ing  { trigger-keys = <G>;     bindings = <&kp I &kp N &kp G>; };
+
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+            };
+
+            u_to_e {
+                trigger-keys = <U>;
+                bindings = <&kp E>;
+            };
+
+            c_to_y {
+                trigger-keys = <C>;
+                bindings = <&kp Y>;
+            };
+
+            q_to_ue {
+                trigger-keys = <Q>;
+                bindings = <&kp U &kp E>;
+            };
+
+            i_to_on {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp N>;
+            };
+
+            m_to_ent {
+                trigger-keys = <M>;
+                bindings = <&kp E &kp N &kp T>;
+            };
+
+            n_to_ion {
+                trigger-keys = <N>;
+                bindings = <&kp I &kp O &kp N>;
+            };
+
+            t_to_ment {
+                trigger-keys = <T>;
+                bindings = <&kp M &kp E &kp N &kp T>;
+            };
+
+            w_to_y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
+            };
+
+            g_to_ing {
+                trigger-keys = <G>;
+                bindings = <&kp I &kp N &kp G>;
+            };
 
             /* punctuation -> space + sticky shift */
-            comma_to_space_shift { trigger-keys = <COMMA>; bindings = <&kp SPACE &sk LSHFT>; };
-            dot_to_space_shift   { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; };
-            qmark_to_space_shift { trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>; };
-            excl_to_space_shift  { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; };
+
+            comma_to_space_shift {
+                trigger-keys = <COMMA>;
+                bindings = <&kp SPACE &sk LSHFT>;
+            };
+
+            dot_to_space_shift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+            };
+
+            qmark_to_space_shift {
+                trigger-keys = <QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+            };
+
+            excl_to_space_shift {
+                trigger-keys = <EXCL>;
+                bindings = <&kp SPACE &sk LSHFT>;
+            };
 
             /* space -> THE */
-            space_to_the { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+            };
 
             /* deletion helpers */
-            backspace_word { trigger-keys = <BSPC>; bindings = <&kp LC(BSPC)>; };
-            delete_word    { trigger-keys = <DEL>;  bindings = <&kp LC(DEL)>;  };
+
+            backspace_word {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+            };
+
+            delete_word {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(DEL)>;
+            };
         };
 
         /* =======================================================
          * Expand (no default output)
          * ======================================================= */
+
         expand: expand {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
 
             /* REQUIRED default binding; &none = do nothing */
+
             bindings = <&none>;
 
-            a_to_tion { trigger-keys = <A>; bindings = <&kp T &kp I &kp O &kp N>; };
-            i_to_tion { trigger-keys = <I>; bindings = <&kp T &kp I &kp O &kp N>; };
-            s_to_sion { trigger-keys = <S>; bindings = <&kp S &kp I &kp O &kp N>; };
-            t_to_heir { trigger-keys = <T>; bindings = <&kp H &kp E &kp I &kp R>; };
-            w_to_hich { trigger-keys = <W>; bindings = <&kp H &kp I &kp C &kp H>; };
+            a_to_tion {
+                trigger-keys = <A>;
+                bindings = <&kp T &kp I &kp O &kp N>;
+            };
+
+            i_to_tion {
+                trigger-keys = <I>;
+                bindings = <&kp T &kp I &kp O &kp N>;
+            };
+
+            s_to_sion {
+                trigger-keys = <S>;
+                bindings = <&kp S &kp I &kp O &kp N>;
+            };
+
+            t_to_heir {
+                trigger-keys = <T>;
+                bindings = <&kp H &kp E &kp I &kp R>;
+            };
+
+            w_to_hich {
+                trigger-keys = <W>;
+                bindings = <&kp H &kp I &kp C &kp H>;
+            };
         };
 
         apps: apps {
@@ -286,9 +377,9 @@
 &kp EQUAL              &kp N1                  &kp N2                 &kp N3  &kp N4   &kp N5                       &kp N6     &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
 &kp MINUS              &kp P                   &kp F                  &kp L   &kp K    &kp Q                        &sentence  &kp Y     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
 &kp B                  &kp N                   &kp S                  &kp H   &kp T    &kp M                        &kp G      &kp C     &kp A           &kp E          &kp I           &key_repeat
-&sticky_mt LALT GRAVE  &kp X                   &kp V                  &kp J   &kp D    &kp Z                        &trans     &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&sticky_mt LALT GRAVE  &kp X                   &kp V                  &kp J   &kp D    &kp Z                        &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &sticky_mt LCTRL LGUI  &sticky_mt LSHFT LSHFT  &mt LS(LA(LCTRL)) F13  &kp F7  &kp F8                                           &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                                                              &trans   &kp DEL   &dbl_click         &mkp MB3   &mkp MB1  &mkp MB2
+                                                                              &expand  &kp DEL   &dbl_click         &mkp MB3   &mkp MB1  &mkp MB2
                                                                               &lt 1 R  &kp BSPC  &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &lt 2 SPACE
             >;
         };

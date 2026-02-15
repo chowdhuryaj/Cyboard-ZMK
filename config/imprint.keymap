@@ -197,13 +197,6 @@
             tapping-term-ms = <175>;
         };
 
-        sentence: sentence {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SENTENCE";
-            #binding-cells = <0>;
-            bindings = <&sentence_dot>, <&sentence_q>, <&sentence_excl>;
-        };
-
         td_openclose: td_openclose {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_OPENCLOSE";
@@ -288,6 +281,71 @@
             require-prior-idle-ms = <100>;
             layers = <0>;
         };
+
+        left_bspc {
+            bindings = <&kp BSPC>;
+            key-positions = <15 28>;
+        };
+
+        left_bspc_word {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <28 14>;
+        };
+
+        left_bpsc_line {
+            bindings = <&kp LG(BSPC)>;
+            key-positions = <28 13>;
+        };
+
+        left_del {
+            bindings = <&kp DEL>;
+            key-positions = <16 27>;
+        };
+
+        left_del_word {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <16 26>;
+        };
+
+        left_del_line {
+            bindings = <&kp LG(DEL)>;
+            key-positions = <16 25>;
+        };
+
+        right_bpsc {
+            bindings = <&kp BSPC>;
+            key-positions = <31 20>;
+        };
+
+        right_bpsc_word {
+            bindings = <&kp LC(BSPC)>;
+            key-positions = <31 21>;
+        };
+
+        right_bpsc_line {
+            bindings = <&kp LG(BSPC)>;
+            key-positions = <31 22>;
+        };
+
+        right_del {
+            bindings = <&kp DEL>;
+            key-positions = <19 32>;
+        };
+
+        right_del_word {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <19 33>;
+        };
+
+        right_del_line {
+            bindings = <&kp LG(DEL)>;
+            key-positions = <19 34>;
+        };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <49 50>;
+        };
     };
 
     macros {
@@ -346,27 +404,6 @@
             bindings = <&kp LC(A) &kp BACKSPACE>;
             label = "CLEAR";
         };
-
-        sentence_dot: sentence_dot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DOT &kp SPACE &sk LSHFT>;
-            label = "SENTENCE_DOT";
-        };
-
-        sentence_q: sentence_q {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp QMARK &kp SPACE &sk LSHFT>;
-            label = "SENTENCE_Q";
-        };
-
-        sentence_excl: sentence_excl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EXCL &kp SPACE &sk LSHFT>;
-            label = "SENTENCE_EXCL";
-        };
     };
 
     keymap {
@@ -375,9 +412,9 @@
         base {
             bindings = <
 &kp EQUAL              &kp N1                 &kp N2   &kp N3  &kp N4      &kp N5                        &kp N6     &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS              &kp X                  &kp V    &kp L   &kp K       &kp Q                         &sentence  &kp G     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
+&kp MINUS              &kp P                  &kp F    &kp L   &kp K       &kp Q                         &none      &kp G     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
 &kp B                  &kp N                  &kp S    &kp H   &kp T       &kp M                         &kp Y      &kp C     &kp A           &kp E          &kp I           &key_repeat
-&kp GRAVE              &kp P                  &kp F    &kp J   &kp D       &kp Z                         &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&kp GRAVE              &kp X                  &kp V    &kp J   &kp D       &kp Z                         &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &sticky_mt LCTRL LGUI  &sticky_mt LALT LSHFT  &kp F13  &kp F7  &kp F8                                               &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
                                                                &lt 1 R     &expand    &dbl_click         &mkp MB3   &mkp MB1  &kp SPACE
                                                                &lt 3 BSPC  &lt 2 DEL  &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &mkp MB2

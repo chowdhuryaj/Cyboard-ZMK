@@ -18,63 +18,58 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-     magic_rh: magic_rh {
-       compatible = "zmk,behavior-adaptive-key";
-       label = "MAGIC_RH";
-       #binding-cells = <0>;
+         /* =======================================================
+         * Magic RH (default = Repeat)
+         * ======================================================= */
+        magic_rh: magic_rh {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
 
-       bindings = <&key_repeat>;
+            /* REQUIRED default binding (no-match case) */
+            bindings = <&key_repeat>;
 
-       /* letters / suffix logic */
-       a_to_o        { trigger-keys = <A>;      bindings = <&kp O>; };
-       u_to_e        { trigger-keys = <U>;      bindings = <&kp E>; };
-       c_to_y        { trigger-keys = <C>;      bindings = <&kp Y>; };
-       q_to_ue       { trigger-keys = <Q>;      bindings = <&kp U &kp E>; };
-       i_to_on       { trigger-keys = <I>;      bindings = <&kp O &kp N>; };
-       m_to_ent      { trigger-keys = <M>;      bindings = <&kp E &kp N &kp T>; };
-       n_to_ion      { trigger-keys = <N>;      bindings = <&kp I &kp O &kp N>; };
-       t_to_ment     { trigger-keys = <T>;      bindings = <&kp M &kp E &kp N &kp T>; };
-       w_to_y        { trigger-keys = <W>;      bindings = <&kp Y>; };
-       g_to_ing      { trigger-keys = <G>;      bindings = <&kp I &kp N &kp G>; };
+            /* letters / suffix logic */
+            a_to_o    { trigger-keys = <A>;     bindings = <&kp O>; };
+            u_to_e    { trigger-keys = <U>;     bindings = <&kp E>; };
+            c_to_y    { trigger-keys = <C>;     bindings = <&kp Y>; };
+            q_to_ue   { trigger-keys = <Q>;     bindings = <&kp U &kp E>; };
+            i_to_on   { trigger-keys = <I>;     bindings = <&kp O &kp N>; };
+            m_to_ent  { trigger-keys = <M>;     bindings = <&kp E &kp N &kp T>; };
+            n_to_ion  { trigger-keys = <N>;     bindings = <&kp I &kp O &kp N>; };
+            t_to_ment { trigger-keys = <T>;     bindings = <&kp M &kp E &kp N &kp T>; };
+            w_to_y    { trigger-keys = <W>;     bindings = <&kp Y>; };
+            g_to_ing  { trigger-keys = <G>;     bindings = <&kp I &kp N &kp G>; };
 
-       /* punctuation -> space + sticky shift */
-       comma_to_space_shift { trigger-keys = <COMMA>; bindings = <&kp SPACE &sk LSHIFT>; };
-       dot_to_space_shift   { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHIFT>; };
-       qmark_to_space_shift { trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHIFT>; };
-       excl_to_space_shift  { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHIFT>; };
+            /* punctuation -> space + sticky shift */
+            comma_to_space_shift { trigger-keys = <COMMA>; bindings = <&kp SPACE &sk LSHFT>; };
+            dot_to_space_shift   { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; };
+            qmark_to_space_shift { trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>; };
+            excl_to_space_shift  { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; };
 
-       /* space -> THE */
-       space_to_the { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; };
+            /* space -> THE */
+            space_to_the { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; };
 
-       /* word deletion helpers */
-       backspace_word { trigger-keys = <BSPC>; bindings = <&kp LC(BSPC)>; };
-       delete_word    { trigger-keys = <DEL>;  bindings = <&kp LC(DEL)>;  };
-     };
+            /* deletion helpers */
+            backspace_word { trigger-keys = <BSPC>; bindings = <&kp LC(BSPC)>; };
+            delete_word    { trigger-keys = <DEL>;  bindings = <&kp LC(DEL)>;  };
+        };
 
+        /* =======================================================
+         * Expand (no default output)
+         * ======================================================= */
+        expand: expand {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
 
-     /* =======================================================
-      * Expand (no default output)
-      * ======================================================= */
-     expand: expand {
-       compatible = "zmk,behavior-adaptive-key";
-       label = "EXPAND";
-       #binding-cells = <0>;
+            /* REQUIRED default binding; &none = do nothing */
+            bindings = <&none>;
 
-       /* A -> tion */
-       a_to_tion { trigger-keys = <A>; bindings = <&kp T &kp I &kp O &kp N>; };
-
-       /* I -> tion */
-       i_to_tion { trigger-keys = <I>; bindings = <&kp T &kp I &kp O &kp N>; };
-
-       /* S -> sion */
-       s_to_sion { trigger-keys = <S>; bindings = <&kp S &kp I &kp O &kp N>; };
-
-       /* T -> heir */
-       t_to_heir { trigger-keys = <T>; bindings = <&kp H &kp E &kp I &kp R>; };
-
-       /* W -> hich */
-       w_to_hich { trigger-keys = <W>; bindings = <&kp H &kp I &kp C &kp H>; };
-     };
+            a_to_tion { trigger-keys = <A>; bindings = <&kp T &kp I &kp O &kp N>; };
+            i_to_tion { trigger-keys = <I>; bindings = <&kp T &kp I &kp O &kp N>; };
+            s_to_sion { trigger-keys = <S>; bindings = <&kp S &kp I &kp O &kp N>; };
+            t_to_heir { trigger-keys = <T>; bindings = <&kp H &kp E &kp I &kp R>; };
+            w_to_hich { trigger-keys = <W>; bindings = <&kp H &kp I &kp C &kp H>; };
+        };
 
         apps: apps {
             compatible = "zmk,behavior-tri-state";

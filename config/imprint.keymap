@@ -374,13 +374,13 @@
 
         base {
             bindings = <
-&kp EQUAL              &kp N1                  &kp N2                 &kp N3  &kp N4   &kp N5                       &kp N6     &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS              &kp P                   &kp F                  &kp L   &kp K    &kp Q                        &sentence  &kp Y     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
-&kp B                  &kp N                   &kp S                  &kp H   &kp T    &kp M                        &kp G      &kp C     &kp A           &kp E          &kp I           &key_repeat
-&sticky_mt LALT GRAVE  &kp X                   &kp V                  &kp J   &kp D    &kp Z                        &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&sticky_mt LCTRL LGUI  &sticky_mt LSHFT LSHFT  &mt LS(LA(LCTRL)) F13  &kp F7  &kp F8                                           &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                                                              &expand  &kp DEL   &dbl_click         &mkp MB3   &mkp MB1  &mkp MB2
-                                                                              &lt 1 R  &kp BSPC  &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &lt 2 SPACE
+&kp EQUAL              &kp N1                  &kp N2                 &kp N3  &kp N4      &kp N5                        &kp N6     &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
+&kp MINUS              &kp P                   &kp F                  &kp L   &kp K       &kp Q                         &sentence  &kp Y     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
+&kp B                  &kp N                   &kp S                  &kp H   &kp T       &kp M                         &kp G      &kp C     &kp A           &kp E          &kp I           &key_repeat
+&sticky_mt LALT GRAVE  &kp X                   &kp V                  &kp J   &kp D       &kp Z                         &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&sticky_mt LCTRL LGUI  &sticky_mt LSHFT LSHFT  &mt LS(LA(LCTRL)) F13  &kp F7  &kp F8                                               &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
+                                                                              &lt 1 BSPC  &lt 2 DEL  &dbl_click         &mkp MB3   &mkp MB1  &mkp MB2
+                                                                              &lt 3 R     &expand    &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &lt 2 SPACE
             >;
         };
 

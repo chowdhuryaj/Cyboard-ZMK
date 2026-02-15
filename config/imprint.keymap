@@ -379,8 +379,8 @@
 &kp B                  &kp N                   &kp S                  &kp H   &kp T       &kp M                         &kp Y      &kp C     &kp A           &kp E          &kp I           &key_repeat
 &sticky_mt LALT GRAVE  &kp P                   &kp F                  &kp J   &kp D       &kp Z                         &magic_rh  &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
 &sticky_mt LCTRL LGUI  &sticky_mt LSHFT LSHFT  &mt LS(LA(LCTRL)) F13  &kp F7  &kp F8                                               &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                                                              &lt 1 R     &lt 2 DEL  &dbl_click         &mkp MB3   &mkp MB1  &mkp MB2
-                                                                              &lt 3 BSPC  &expand    &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &lt 2 SPACE
+                                                                              &lt 1 R     &lt 2 DEL  &dbl_click         &mkp MB3   &mkp MB1  &kp SPACE
+                                                                              &lt 3 BSPC  &expand    &rgb_ug RGB_TOG    &mkp MB4   &mkp MB5  &mkp MB2
             >;
         };
 

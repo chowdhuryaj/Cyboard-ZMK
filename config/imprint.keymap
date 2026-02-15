@@ -350,21 +350,21 @@
         sentence_dot: sentence_dot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT &kp DOT &kp SPACE>;
+            bindings = <&kp DOT &kp SPACE &sk LSHFT>;
             label = "SENTENCE_DOT";
         };
 
         sentence_q: sentence_q {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT &kp QMARK &kp SPACE>;
+            bindings = <&kp QMARK &kp SPACE &sk LSHFT>;
             label = "SENTENCE_Q";
         };
 
         sentence_excl: sentence_excl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&sk LSHFT &kp EXCL &kp SPACE>;
+            bindings = <&kp EXCL &kp SPACE &sk LSHFT>;
             label = "SENTENCE_EXCL";
         };
     };
@@ -410,7 +410,7 @@
 
         macros {
             bindings = <
-&trans  &trans               &trans           &trans           &trans     &trans            &log_fv  &log_fv  &trans     &trans  &trans  &trans
+&trans  &trans               &trans           &kp LS(LC(T))    &trans     &trans            &log_fv  &log_fv  &trans     &trans  &trans  &trans
 &trans  &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
 &trans  &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
 &trans  &kp LC(MINUS)        &kp LC(EQUAL)    &trans           &trans     &trans            &trans   &trans   &trans     &trans  &trans  &trans

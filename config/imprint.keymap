@@ -179,24 +179,6 @@
             flavor = "tap-preferred";
         };
 
-        tap_bspc: tap_bspc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_BSPC";
-            #binding-cells = <0>;
-            bindings = <&kp BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
-
-            tapping-term-ms = <175>;
-        };
-
-        tap_del: tap_del {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DEL";
-            #binding-cells = <0>;
-            bindings = <&kp DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
-
-            tapping-term-ms = <175>;
-        };
-
         td_openclose: td_openclose {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_OPENCLOSE";

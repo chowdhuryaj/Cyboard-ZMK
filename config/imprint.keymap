@@ -135,18 +135,6 @@
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
         };
 
-        bapps: bapps {
-            compatible = "zmk,behavior-tri-state";
-            label = "BAPPS";
-            #binding-cells = <0>;
-            bindings =
-                <&kt LGUI>,
-                <&kt LSHFT>,
-                <&kp TAB>,
-                <&kt LSHFT>,
-                <&kt LGUI>;
-        };
-
         magic_shift: magic_shift {
             compatible = "zmk,behavior-hold-tap";
             label = "MAGIC_SHIFT";
@@ -198,7 +186,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_OPENCLOSE";
             #binding-cells = <0>;
-            bindings = <&paren>, <&bracket>, <&brace>;
+            bindings = <&paren>, <&bracket>, <&brace>, <&kp GT>, <&kp LT>;
         };
 
         magic_caps_word: magic_caps_word {
@@ -208,6 +196,16 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
+        };
+
+        sticky_mt: sticky_mt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "STICKY_MT";
+            bindings = <&kp>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
         };
     };
 
@@ -363,13 +361,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1                &kp N2       &kp N3       &kp N4         &kp N5                              &kp N6       &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp V                 &kp M        &kp L        &kp K          &sentence_qexcl                     &mt DQT SQT  &kp Y     &kp O           &kp U          &kp Z           &kp Q
-&kp B      &kp N                 &kp S        &kp H        &kp T          &magic_lh                           &magic_rh    &kp C     &kp A           &kp E          &kp I           &kp X
-&kp GRAVE  &kp P                 &kp F        &kp J        &kp D          &sentence_dot                       &mt GT LT    &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&bapps     &magic_shift LSHFT 0  &mt LGUI F7  &mt LALT F8  &mt LCTRL F13                                                   &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                                           &tap_bspc      &tap_del         &dbl_click         &mkp MB3     &mkp MB1  &mkp MB2
-                                                           &lt 1 R        &lt 3 G          &rgb_ug RGB_TOG    &mkp MB4     &mkp MB5  &lt 2 SPACE
+&kp EQUAL              &kp N1                  &kp N2                         &kp N3  &kp N4     &kp N5                          &kp N6           &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
+&kp MINUS              &kp P                   &kp F                          &kp L   &kp K      &kp Q                           &sentence_qexcl  &kp Y     &kp O           &kp U          &mt DQT SQT     &kp LC(BSPC)
+&kp B                  &kp N                   &kp S                          &kp H   &kp T      &kp M                           &kp G            &kp C     &kp A           &kp E          &kp I           &key_repeat
+&kp GRAVE              &kp X                   &kp V                          &kp J   &kp D      &kp Z                           &sentence_dot    &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
+&sticky_mt LCTRL LGUI  &sticky_mt LSHFT LSHFT  &sticky_mt LS(LA(LCTRL)) LALT  &kp F7  &kp F8                                                      &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
+                                                                                      &tap_bspc  &tap_del     &dbl_click         &mkp MB3         &mkp MB1  &mkp MB2
+                                                                                      &lt 1 R    &lt 3 SPACE  &rgb_ug RGB_TOG    &mkp MB4         &mkp MB5  &lt 2 SPACE
             >;
         };
 

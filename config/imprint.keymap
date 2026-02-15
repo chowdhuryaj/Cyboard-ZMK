@@ -52,9 +52,9 @@
                 bindings = <&kp U &kp E>;
             };
 
-            i_to_on {
+            i_to_ng {
                 trigger-keys = <I>;
-                bindings = <&kp O &kp N>;
+                bindings = <&kp N &kp G>;
             };
 
             m_to_ent {

@@ -290,67 +290,67 @@
 
         left_bspc {
             bindings = <&kp BSPC>;
-            key-positions = <15 28>;
+            key-positions = <28 39>;
         };
 
         left_bspc_word {
             bindings = <&kp LC(BSPC)>;
-            key-positions = <28 14>;
+            key-positions = <28 38>;
         };
 
         left_bpsc_line {
             bindings = <&kp LG(BSPC)>;
-            key-positions = <28 13>;
+            key-positions = <28 37>;
         };
 
         left_del {
             bindings = <&kp DEL>;
-            key-positions = <16 27>;
+            key-positions = <40 27>;
         };
 
         left_del_word {
             bindings = <&kp LC(DEL)>;
-            key-positions = <16 26>;
+            key-positions = <40 26>;
         };
 
         left_del_line {
             bindings = <&kp LG(DEL)>;
-            key-positions = <16 25>;
+            key-positions = <25 40>;
         };
 
         right_bpsc {
             bindings = <&kp BSPC>;
-            key-positions = <31 20>;
+            key-positions = <31 44>;
         };
 
         right_bpsc_word {
             bindings = <&kp LC(BSPC)>;
-            key-positions = <31 21>;
+            key-positions = <31 45>;
         };
 
         right_bpsc_line {
             bindings = <&kp LG(BSPC)>;
-            key-positions = <31 22>;
+            key-positions = <31 46>;
         };
 
         right_del {
             bindings = <&kp DEL>;
-            key-positions = <19 32>;
+            key-positions = <32 43>;
         };
 
         right_del_word {
             bindings = <&kp LC(DEL)>;
-            key-positions = <19 33>;
+            key-positions = <33 43>;
         };
 
         right_del_line {
             bindings = <&kp LG(DEL)>;
-            key-positions = <19 34>;
+            key-positions = <34 43>;
         };
 
         caps_word {
             bindings = <&caps_word>;
-            key-positions = <49 50>;
+            key-positions = <58 63>;
         };
     };
 
@@ -417,13 +417,13 @@
 
         base {
             bindings = <
-&kp EQUAL                      &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                  &kp N6     &kp N7    &kp N8           &kp N9         &kp N0          &td_openclose
-&kp MINUS                      &kp B     &kp F     &kp L     &kp K        &kp Q                   &kp X      &kp G     &kp O            &kp U          &mt DQT SQT     &kp GT
-&mod_magic_rh LS(LA(LCTRL)) 0  &kp N     &kp S     &kp H     &kp T        &kp M                   &kp Y      &kp C     &kp A            &kp E          &kp I           &mod_magic_rh RS(RA(RCTRL)) 0
-&kp GRAVE                      &kp P     &kp V     &kp J     &kp D        &kp Z                   &kp V      &kp W     &mt SEMI COMMA   &mt COLON DOT  &mt FSLH QMARK  &kp LT
-&sk LCTRL                      &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                        &kp UP    &kp DOWN         &kp LEFT       &kp RIGHT       &apps
-                                                             &mt LSHFT R  &expand   &dbl_click    &mkp MB3   &mkp MB1  &mkp MB2
-                                                             &lrep 1 0    &mkp MB4  &mkp MB5      &kp GRAVE  &kp BSLH  &mt LSHFT SPACE
+&kp EQUAL  &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                  &kp N6    &kp N7    &kp N8           &kp N9         &kp N0          &td_openclose
+&kp MINUS  &kp B     &kp F     &kp L     &kp K        &kp Q                   &kp X     &kp G     &kp O            &kp U          &mt DQT SQT     &kp GT
+&trans     &kp N     &kp S     &kp H     &kp T        &kp M                   &kp Y     &kp C     &kp A            &kp E          &kp I           &trans
+&kp GRAVE  &kp P     &kp V     &kp J     &kp D        &kp Z                   &kp V     &kp W     &mt SEMI COMMA   &mt COLON DOT  &mt FSLH QMARK  &kp LT
+&sk LCTRL  &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                       &kp UP    &kp DOWN         &kp LEFT       &kp RIGHT       &apps
+                                         &mt LSHFT R  &expand   &dbl_click    &mkp MB3  &mkp MB1  &mt LSHFT SPACE
+                                         &lrep 1 0    &mkp MB4  &mkp MB5      &mkp MB2  &kp BSLH  &trans
             >;
         };
 

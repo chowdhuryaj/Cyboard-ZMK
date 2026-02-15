@@ -195,6 +195,30 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        lrep: lrep {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LREP";
+            bindings = <&mo>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+        };
+
+        mod_magic_rh: mod_magic_rh {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_MAGIC_RH";
+            bindings = <&kp>, <&magic_rh>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <165>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -393,13 +417,13 @@
 
         base {
             bindings = <
-&kp EQUAL              &kp N1                 &kp N2    &kp N3  &kp N4       &kp N5                 &kp N6    &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS              &kp P                  &kp F     &kp L   &kp K        &kp Q                  &kp GT    &kp G     &kp O           &kp U          &mt DQT SQT     &kp GRAVE
-&kp B                  &kp N                  &kp S     &kp H   &kp T        &kp M                  &kp Y     &kp C     &kp A           &kp E          &kp I           &magic_rh
-&kp GRAVE              &kp X                  &kp V     &kp J   &kp D        &kp Z                  &kp LT    &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp BSLH
-&sticky_mt LCTRL LGUI  &sticky_mt LALT LSHFT  &kp BSLH  &kp F7  &kp F8                                        &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                                                &lt 1 R      &expand  &dbl_click    &mkp MB3  &mkp MB1  &mkp MB2
-                                                                &key_repeat  &mo 3    &mo 2         &mkp MB4  &mkp MB5  &kp SPACE
+&kp EQUAL                      &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                  &kp N6     &kp N7    &kp N8           &kp N9         &kp N0          &td_openclose
+&kp MINUS                      &kp B     &kp F     &kp L     &kp K        &kp Q                   &kp X      &kp G     &kp O            &kp U          &mt DQT SQT     &kp GT
+&mod_magic_rh LS(LA(LCTRL)) 0  &kp N     &kp S     &kp H     &kp T        &kp M                   &kp Y      &kp C     &kp A            &kp E          &kp I           &mod_magic_rh RS(RA(RCTRL)) 0
+&kp GRAVE                      &kp P     &kp V     &kp J     &kp D        &kp Z                   &kp V      &kp W     &mt SEMI COMMA   &mt COLON DOT  &mt FSLH QMARK  &kp LT
+&sk LCTRL                      &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                        &kp UP    &kp DOWN         &kp LEFT       &kp RIGHT       &apps
+                                                             &mt LSHFT R  &expand   &dbl_click    &mkp MB3   &mkp MB1  &mkp MB2
+                                                             &lrep 1 0    &mkp MB4  &mkp MB5      &kp GRAVE  &kp BSLH  &mt LSHFT SPACE
             >;
         };
 

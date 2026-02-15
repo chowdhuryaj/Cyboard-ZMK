@@ -22,129 +22,16 @@
      * Right-hand SFB fixer key
      * Default: REPEAT
      */
-
-        magic_rh: magic_rh {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MAGIC_RH";
-            #binding-cells = <0>;
-
-            /* default output */
-
-            bindings = <&key_repeat>;
-
-            /* A -> o */
-
-            a_to_o {
-                trigger-keys = <A>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp O>;
-            };
-
-            /* e -> u */
-
-            e_to_u {
-                trigger-keys = <E>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp U>;
-            };
-
-            /* c -> y */
-
-            c_to_y {
-                trigger-keys = <C>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp Y>;
-            };
-
-            /* q -> ue (assumes you've already typed 'q') */
-
-            q_to_ue {
-                trigger-keys = <Q>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp U &kp E>;
-            };
-        };
-
         /*
      * Left-hand magic key
      * Default: REPEAT
      */
-
-        magic_lh: magic_lh {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MAGIC_LH";
-            #binding-cells = <0>;
-
-            /* default output */
-
-            bindings = <&key_repeat>;
-
-            /* t -> he (assumes you've already typed 't') */
-
-            t_to_he {
-                trigger-keys = <T>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp H &kp E>;
-            };
-
-            /* n -> ing (assumes you've already typed 'n') */
-
-            n_to_ing {
-                trigger-keys = <N>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp I &kp N &kp G>;
-            };
-
-            /* m -> ent (assumes you've already typed 'm') */
-
-            m_to_ent {
-                trigger-keys = <M>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp E &kp N &kp T>;
-            };
-
-            /* p -> y */
-
-            p_to_y {
-                trigger-keys = <P>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp Y>;
-            };
-
-            /* b -> le (assumes you've already typed 'b') */
-
-            b_to_le {
-                trigger-keys = <B>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp L &kp E>;
-            };
-
-            /* g -> r */
-
-            g_to_r {
-                trigger-keys = <G>;
-                max-prior-idle-ms = <250>;
-                bindings = <&kp R>;
-            };
-        };
 
         apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-        };
-
-        magic_shift: magic_shift {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_SHIFT";
-            bindings = <&kp>, <&magic_caps_word>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <0>;
-            flavor = "balanced";
         };
 
         hold_clear: hold_clear {
@@ -187,15 +74,6 @@
             label = "TD_OPENCLOSE";
             #binding-cells = <0>;
             bindings = <&paren>, <&bracket>, <&brace>, <&kp GT>, <&kp LT>;
-        };
-
-        magic_caps_word: magic_caps_word {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MAGIC_CAPS_WORD";
-            bindings = <&sk LSHFT>, <&caps_word>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
         };
 
         sticky_mt: sticky_mt {

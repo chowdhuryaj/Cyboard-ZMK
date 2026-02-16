@@ -352,6 +352,11 @@
             bindings = <&caps_word>;
             key-positions = <58 63>;
         };
+
+        layer_numnav {
+            bindings = <&mo 1>;
+            key-positions = <58 64>;
+        };
     };
 
     macros {
@@ -417,13 +422,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                  &kp N6    &kp N7    &kp N8           &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp B     &kp F     &kp L     &kp K        &kp Q                   &kp X     &kp G     &kp O            &kp U          &mt DQT SQT     &kp GT
-&trans     &kp N     &kp S     &kp H     &kp T        &kp M                   &kp Y     &kp C     &kp A            &kp E          &kp I           &trans
-&kp GRAVE  &kp P     &kp V     &kp J     &kp D        &kp Z                   &kp V     &kp W     &mt SEMI COMMA   &mt COLON DOT  &mt FSLH QMARK  &kp LT
-&sk LCTRL  &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                       &kp UP    &kp DOWN         &kp LEFT       &kp RIGHT       &apps
-                                         &mt LSHFT R  &expand   &dbl_click    &mkp MB3  &mkp MB1  &mt LSHFT SPACE
-                                         &lrep 1 0    &mkp MB4  &mkp MB5      &mkp MB2  &kp BSLH  &trans
+&kp EQUAL  &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                   &kp N6       &kp N7    &kp N8           &kp N9         &kp N0          &td_openclose
+&kp MINUS  &kp B     &kp F     &kp L     &kp K        &kp Q                    &kp X        &kp G     &kp O            &kp U          &mt DQT SQT     &kp GT
+&trans     &kp N     &kp S     &kp H     &kp T        &key_repeat              &key_repeat  &kp C     &kp A            &kp E          &kp I           &trans
+&kp GRAVE  &kp P     &kp V     &kp J     &kp D        &kp Z                    &kp V        &kp W     &mt SEMI COMMA   &mt COLON DOT  &mt FSLH QMARK  &kp LT
+&sk LCTRL  &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                           &kp UP    &kp DOWN         &kp LEFT       &kp RIGHT       &apps
+                                         &mt LGUI M   &mkp MB4     &mkp MB5    &mkp MB3     &mkp MB1  &mt RGUI Y
+                                         &mt LSHFT R  &mkp MB4     &mkp MB5    &mkp MB2     &kp BSLH  &mt LSHFT SPACE
             >;
         };
 

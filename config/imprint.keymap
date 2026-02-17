@@ -288,84 +288,9 @@
             layers = <0>;
         };
 
-        left_bspc {
-            bindings = <&kp BSPC>;
-            key-positions = <28 39>;
-        };
-
-        left_bspc_word {
-            bindings = <&kp LC(BSPC)>;
-            key-positions = <28 38>;
-        };
-
-        left_bpsc_line {
-            bindings = <&kp LG(BSPC)>;
-            key-positions = <28 37>;
-        };
-
-        left_del {
-            bindings = <&kp DEL>;
-            key-positions = <40 27>;
-        };
-
-        left_del_word {
-            bindings = <&kp LC(DEL)>;
-            key-positions = <40 26>;
-        };
-
-        left_del_line {
-            bindings = <&kp LG(DEL)>;
-            key-positions = <25 40>;
-        };
-
-        right_bpsc {
-            bindings = <&kp BSPC>;
-            key-positions = <31 44>;
-        };
-
-        right_bpsc_word {
-            bindings = <&kp LC(BSPC)>;
-            key-positions = <31 45>;
-        };
-
-        right_bpsc_line {
-            bindings = <&kp LG(BSPC)>;
-            key-positions = <31 46>;
-        };
-
-        right_del {
-            bindings = <&kp DEL>;
-            key-positions = <32 43>;
-        };
-
-        right_del_word {
-            bindings = <&kp LC(DEL)>;
-            key-positions = <33 43>;
-        };
-
-        right_del_line {
-            bindings = <&kp LG(DEL)>;
-            key-positions = <34 43>;
-        };
-
         caps_word {
             bindings = <&caps_word>;
             key-positions = <58 63>;
-        };
-
-        layer_numnav {
-            bindings = <&mo 1>;
-            key-positions = <58 64>;
-        };
-
-        q {
-            bindings = <&kp Q>;
-            key-positions = <13 25>;
-        };
-
-        z {
-            bindings = <&kp Z>;
-            key-positions = <37 25>;
         };
     };
 
@@ -432,13 +357,13 @@
 
         base {
             bindings = <
-&kp EQUAL  &kp N1    &kp N2    &kp N3    &kp N4       &kp N5                   &kp N6       &kp N7    &kp N8          &kp N9         &kp N0          &td_openclose
-&kp MINUS  &kp B     &kp F     &kp L     &kp K        &trans                   &trans       &kp G     &kp O           &kp U          &mt DQT SQT     &kp GT
-&kp SPACE  &kp N     &kp S     &kp H     &kp T        &key_repeat              &key_repeat  &kp C     &kp A           &kp E          &kp I           &kp SPACE
-&kp GRAVE  &kp X     &kp V     &kp J     &kp D        &trans                   &trans       &kp W     &mt SEMI COMMA  &mt COLON DOT  &mt FSLH QMARK  &kp LT
-&sk LCTRL  &sk LGUI  &sk LALT  &lt 3 F7  &lt 2 F8                                           &kp UP    &kp DOWN        &kp LEFT       &kp RIGHT       &apps
-                                         &mt LGUI M   &mkp MB4     &mkp MB5    &mkp MB3     &mkp MB1  &mt RGUI Y
-                                         &mt LSHFT R  &trans       &trans      &mkp MB2     &trans    &mt LSHFT P
+&kp EQUAL    &kp N1           &kp N2      &kp N3      &kp N4   &kp N5                    &kp N6       &kp N7    &kp N8      &kp N9      &kp N0           &td_openclose
+&kp MINUS    &kp B            &kp F       &kp L       &kp K    &kp Q                     &kp X        &kp G     &kp O       &kp U       &kp SQT          &kp BSLH
+&key_repeat  &mt LCTRL N      &mt LALT S  &mt LGUI H  &kp T    &key_repeat               &key_repeat  &kp C     &mt RGUI A  &mt RALT E  &mt RCTRL I      &key_repeat
+&kp GRAVE    &mt LSHFT SPACE  &kp V       &kp J       &kp D    &kp Z                     &kp SEMI     &kp W     &kp COMMA   &kp DOT     &mt LSHFT SPACE  &kp FSLH
+&apps        &kp LEFT         &kp RIGHT   &kp DOWN    &kp UP                                          &kp UP    &kp DOWN    &kp LEFT    &kp RIGHT        &apps
+                                                      &lt 1 M  &mkp MB4     &mkp MB5     &mkp MB3     &mkp MB1  &lt 1 P
+                                                      &lt 3 R  &kp BSPC     &kp GRAVE    &mkp MB2     &kp DEL   &lt 3 Y
             >;
         };
 

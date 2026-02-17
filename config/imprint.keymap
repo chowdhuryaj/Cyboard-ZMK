@@ -357,13 +357,13 @@
 
         base {
             bindings = <
-&kp EQUAL    &kp N1           &kp N2      &kp N3      &kp N4   &kp N5                    &kp N6       &kp N7    &kp N8      &kp N9      &kp N0           &td_openclose
-&kp MINUS    &kp B            &kp F       &kp L       &kp K    &kp Q                     &kp X        &kp G     &kp O       &kp U       &kp SQT          &kp BSLH
-&key_repeat  &mt LCTRL N      &mt LALT S  &mt LGUI H  &kp T    &key_repeat               &key_repeat  &kp C     &mt RGUI A  &mt RALT E  &mt RCTRL I      &key_repeat
-&kp GRAVE    &mt LSHFT SPACE  &kp V       &kp J       &kp D    &kp Z                     &kp SEMI     &kp W     &kp COMMA   &kp DOT     &mt LSHFT SPACE  &kp FSLH
-&apps        &kp LEFT         &kp RIGHT   &kp DOWN    &kp UP                                          &kp UP    &kp DOWN    &kp LEFT    &kp RIGHT        &apps
-                                                      &lt 1 M  &mkp MB4     &mkp MB5     &mkp MB3     &mkp MB1  &lt 1 P
-                                                      &lt 3 R  &kp BSPC     &kp GRAVE    &mkp MB2     &kp DEL   &lt 3 Y
+&kp EQUAL    &kp N1         &kp N2      &kp N3      &kp N4       &kp N5                 &kp N6    &kp N7       &kp N8      &kp N9      &kp N0         &td_openclose
+&kp MINUS    &kp COMMA      &kp C       &kp K       &kp W        &kp Y                  &kp Y     &kp B        &kp F       &kp G       &kp COMMA      &kp BSLH
+&key_repeat  &kp SPACE      &mt LALT E  &mt LGUI T  &mt R LSHFT  &kp V                  &kp J     &mt RSHFT L  &mt RGUI N  &mt RALT E  &kp SPACE      &key_repeat
+&kp LS(TAB)  &mt LCTRL DOT  &kp S       &kp D       &kp M        &kp X                  &kp Q     &kp H        &kp P       &kp S       &mt RCTRL DOT  &kp FSLH
+&apps        &kp LEFT       &kp RIGHT   &kp DOWN    &kp UP                                        &kp Z        &kp SEMI    &kp SQT     &kp LS(DQT)    &kp LS(COLON)
+                                                    &lt 1 I      &mkp MB4  &mkp MB5     &mkp MB3  &mkp MB1     &lt 1 A
+                                                    &lt 3 U      &kp BSPC  &kp GRAVE    &mkp MB2  &kp DEL      &lt 3 O
             >;
         };
 
@@ -401,6 +401,15 @@
                                                                &trans     &trans  &trans    &trans   &trans   &log_home
                                                                &trans     &trans  &trans    &trans   &trans   &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        control {
+            if-layers = <1 3>;
+            then-layer = <2>;
         };
     };
 };

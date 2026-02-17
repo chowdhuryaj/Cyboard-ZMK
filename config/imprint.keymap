@@ -362,8 +362,8 @@
 &key_repeat  &kp SPACE      &mt LALT E  &mt LGUI T  &mt R LSHFT  &kp V                  &kp J     &mt RSHFT L  &mt RGUI N  &mt RALT E  &kp SPACE      &key_repeat
 &kp LS(TAB)  &mt LCTRL DOT  &kp S       &kp D       &kp M        &kp X                  &kp Q     &kp H        &kp P       &kp S       &mt RCTRL DOT  &kp FSLH
 &apps        &kp LEFT       &kp RIGHT   &kp DOWN    &kp UP                                        &kp Z        &kp SEMI    &kp SQT     &kp LS(DQT)    &kp LS(COLON)
-                                                    &lt 1 I      &mkp MB4  &mkp MB5     &mkp MB3  &mkp MB1     &lt 1 A
-                                                    &lt 3 U      &kp BSPC  &kp GRAVE    &mkp MB2  &kp DEL      &lt 3 O
+                                                    &lt 1 I      &mkp MB4  &mkp MB5     &mkp MB3  &mkp MB1     &lt 1 O
+                                                    &lt 3 U      &kp BSPC  &kp GRAVE    &mkp MB2  &kp DEL      &lt 3 A
             >;
         };
 

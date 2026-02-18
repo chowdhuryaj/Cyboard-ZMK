@@ -17,6 +17,40 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+    leader_fn: leader_fn {
+      compatible = "zmk,behavior-leader-key";
+      #binding-cells = <0>;
+
+      /* Optional: allow shift to be held without terminating sequences */
+      ignore-keys = <LSHFT RSHFT>; /* see README: ignore-keys */  [oai_citation:1‡GitHub](https://github.com/urob/zmk-leader-key)
+
+      /* --- F-row: F1..F12 -> F13..F24 --- */
+      f1  { sequence = <F1>;  bindings = <&kp F13>; };
+      f2  { sequence = <F2>;  bindings = <&kp F14>; };
+      f3  { sequence = <F3>;  bindings = <&kp F15>; };
+      f4  { sequence = <F4>;  bindings = <&kp F16>; };
+      f5  { sequence = <F5>;  bindings = <&kp F17>; };
+      f6  { sequence = <F6>;  bindings = <&kp F18>; };
+      f7  { sequence = <F7>;  bindings = <&kp F19>; };
+      f8  { sequence = <F8>;  bindings = <&kp F20>; };
+      f9  { sequence = <F9>;  bindings = <&kp F21>; };
+      f10 { sequence = <F10>; bindings = <&kp F22>; };
+      f11 { sequence = <F11>; bindings = <&kp F23>; };
+      f12 { sequence = <F12>; bindings = <&kp F24>; };
+
+      /* --- Number row: 1..0 -> shifted symbols --- */
+      n1 { sequence = <N1>; bindings = <&kp EXCL>;  };  /* ! */
+      n2 { sequence = <N2>; bindings = <&kp AT>;    };  /* @ */
+      n3 { sequence = <N3>; bindings = <&kp HASH>;  };  /* # */
+      n4 { sequence = <N4>; bindings = <&kp DLLR>;  };  /* $ */
+      n5 { sequence = <N5>; bindings = <&kp PRCNT>; };  /* % */
+      n6 { sequence = <N6>; bindings = <&kp CARET>; };  /* ^ */
+      n7 { sequence = <N7>; bindings = <&kp AMPS>;  };  /* & */
+      n8 { sequence = <N8>; bindings = <&kp STAR>;  };  /* * */
+      n9 { sequence = <N9>; bindings = <&kp LPAR>;  };  /* ( */
+      n0 { sequence = <N0>; bindings = <&kp RPAR>;  };  /* ) */
+    };
+
         apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";
@@ -539,7 +573,7 @@
         bigram_vy: bigram_vy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <>;
+            bindings = <<&kp V &kp Y>;
             label = "BIGRAM_VY";
         };
     };
@@ -562,7 +596,7 @@
         numnav {
             bindings = <
 &kp F1     &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                     &kp F7        &kp F8     &kp F9     &kp F10  &kp F11       &kp F12
-&trans     &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &kp FSLH      &kp N7     &kp N8     &kp N9   &kp LS(PLUS)  &trans
+&leader_fn     &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &kp FSLH      &kp N7     &kp N8     &kp N9   &kp LS(PLUS)  &trans
 &trans     &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)              &kp LS(STAR)  &kp N4     &kp N5     &kp N6   &kp MINUS     &trans
 &trans     &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans        &kp N1     &kp N2     &kp N3   &kp EQUAL     &trans
 &rgb_home  &trans        &trans       &trans     &trans                                              &kp COMMA  &kp N0     &kp DOT  &kp RET       &trans

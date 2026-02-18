@@ -554,20 +554,20 @@
 &apps          &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp Y                           &kp Y     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
 &kp LS(TAB)    &kp PERIOD  &kp S        &hml D LCTRL  &kp M         &kp X                           &kp Q     &kp H            &hmr LCTRL P  &kp S        &kp DOT      &kp FSLH
 &kp DOWN       &kp UP      &kp LEFT     &kp RIGHT     &rgb_macros                                             &kp Z            &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
-                                                      &lt 1 I       &mkp MB4           &mkp MB5     &mkp MB3  &mkp MB1         &lt 1 A
+                                                      &kp I         &mkp MB4           &mkp MB5     &mkp MB3  &mkp MB1         &lt 1 A
                                                       &lt 3 U       &mt LC(BSPC) BSPC  &kp GRAVE    &mkp MB2  &mt LC(DEL) DEL  &lt 3 O
             >;
         };
 
         numnav {
             bindings = <
-&kp F1     &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                   &kp F7        &kp F8     &kp F9  &kp F10  &kp F11       &kp F12
-&trans     &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                  &kp FSLH      &kp N7     &kp N8  &kp N9   &kp LS(PLUS)  &trans
-&trans     &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)            &kp LS(STAR)  &kp N4     &kp N5  &kp N6   &kp MINUS     &trans
-&trans     &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                   &trans        &kp N1     &kp N2  &kp N3   &kp EQUAL     &trans
-&rgb_home  &trans        &trans       &trans     &trans                                            &kp COMMA  &kp N0  &kp DOT  &kp RET       &trans
-                                                 &trans     &trans         &trans    &trans        &trans     &trans
-                                                 &trans     &trans         &trans    &trans        &trans     &trans
+&kp F1     &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                     &kp F7        &kp F8     &kp F9  &kp F10  &kp F11       &kp F12
+&trans     &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &kp FSLH      &kp N7     &kp N8  &kp N9   &kp LS(PLUS)  &trans
+&trans     &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)              &kp LS(STAR)  &kp N4     &kp N5  &kp N6   &kp MINUS     &trans
+&trans     &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans        &kp N1     &kp N2  &kp N3   &kp EQUAL     &trans
+&rgb_home  &trans        &trans       &trans     &trans                                              &kp COMMA  &kp N0  &kp DOT  &kp RET       &trans
+                                                 &mkp MB2   &mkp MB1       &mkp MB3    &trans        &trans     &trans
+                                                 &trans     &trans         &trans      &trans        &trans     &trans
             >;
         };
 
@@ -588,8 +588,8 @@
 &trans     &trans               &trans           &kp LS(LC(T))    &trans     &trans            &log_fv  &log_umn  &log_hcmc  &log_hcmcmail  &trans  &trans
 &trans     &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans    &trans     &trans         &trans  &trans
 &trans     &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans    &trans     &trans         &trans  &trans
-&trans     &kp LC(MINUS)        &kp LC(EQUAL)    &trans           &trans     &trans            &trans   &trans    &trans     &trans         &trans  &trans
-&rgb_home  &trans               &trans           &trans           &trans                                &trans    &trans     &trans         &trans  &trans
+&trans     &kp LC(MINUS)        &kp LC(EQUAL)    &kp LC(F)        &kp LC(H)  &trans            &trans   &trans    &trans     &trans         &trans  &trans
+&rgb_home  &kp LC(B)            &kp LC(I)        &kp LC(U)        &trans                                &trans    &trans     &trans         &trans  &trans
                                                                   &trans     &trans  &trans    &trans   &trans    &log_home
                                                                   &trans     &trans  &trans    &trans   &trans    &trans
             >;

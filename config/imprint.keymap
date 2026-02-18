@@ -23,6 +23,7 @@
             label = "APPS";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <36>;
         };
 
         hold_clear: hold_clear {

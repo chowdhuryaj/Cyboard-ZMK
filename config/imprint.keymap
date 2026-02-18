@@ -17,12 +17,12 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-
         apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+
             ignored-key-positions = <36>;
         };
 
@@ -48,9 +48,11 @@
             #binding-cells = <0>;
 
             /* default output: SPACE */
+
             bindings = <&kp SPACE>;
 
             /* If prior key was RIGHT-HAND -> output REPEAT */
+
             rh_to_repeat {
                 trigger-keys = <
                     /* right-hand letters (exclude Y) */
@@ -67,6 +69,7 @@
                     LBKT RBKT LPAR RPAR LBRC RBRC
                     EQUAL PLUS MINUS STAR
                 >;
+
                 bindings = <&key_repeat>;
             };
         };
@@ -77,9 +80,11 @@
             #binding-cells = <0>;
 
             /* default output: SPACE */
+
             bindings = <&kp SPACE>;
 
             /* If prior key was LEFT-HAND -> output REPEAT */
+
             lh_to_repeat {
                 trigger-keys = <
                     /* left-hand letters (exclude C because you use it on LH; include it) */
@@ -92,6 +97,7 @@
                     /* include any LH symbols you actually emit */
                     /* (leave COMMA out because it’s duplicated in your base) */
                 >;
+
                 bindings = <&key_repeat>;
             };
         };
@@ -510,6 +516,20 @@
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(61,100,50) &to 3>;
             label = "RGB_MACROS";
         };
+
+        log_hcmc: log_hcmc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            label = "LOG_HCMC";
+        };
+
+        log_hcmcmail: log_hcmcmail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            label = "LOG_HCMCMAIL";
+        };
     };
 
     keymap {
@@ -553,13 +573,13 @@
 
         macros {
             bindings = <
-&trans     &trans               &trans           &kp LS(LC(T))    &trans     &trans            &log_fv  &log_fv  &trans     &trans  &trans  &trans
-&trans     &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
-&trans     &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans   &trans     &trans  &trans  &trans
-&trans     &kp LC(MINUS)        &kp LC(EQUAL)    &trans           &trans     &trans            &trans   &trans   &trans     &trans  &trans  &trans
-&log_home  &trans               &trans           &trans           &trans                                &trans   &trans     &trans  &trans  &trans
-                                                                  &trans     &trans  &trans    &trans   &trans   &log_home
-                                                                  &trans     &trans  &trans    &trans   &trans   &trans
+&trans     &trans               &trans           &kp LS(LC(T))    &trans     &trans            &log_fv  &log_umn  &log_hcmc  &log_hcmcmail  &trans  &trans
+&trans     &kp LG(Q)            &kp LC(W)        &kp LC(T)        &kp LC(R)  &trans            &trans   &trans    &trans     &trans         &trans  &trans
+&trans     &hold_clear 0 LC(A)  &mt LC(Y) LC(Z)  &mt LC(X) LC(C)  &kp LC(V)  &trans            &trans   &trans    &trans     &trans         &trans  &trans
+&trans     &kp LC(MINUS)        &kp LC(EQUAL)    &trans           &trans     &trans            &trans   &trans    &trans     &trans         &trans  &trans
+&rgb_home  &trans               &trans           &trans           &trans                                &trans    &trans     &trans         &trans  &trans
+                                                                  &trans     &trans  &trans    &trans   &trans    &log_home
+                                                                  &trans     &trans  &trans    &trans   &trans    &trans
             >;
         };
     };

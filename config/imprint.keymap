@@ -108,24 +108,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
             hold-trigger-on-release;
-        };
-
-        hmr: hmr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
             flavor = "tap-preferred";
         };
 
@@ -567,7 +554,7 @@
 &rgb_numnav    &kp N1      &kp N2       &kp N3        &kp N4        &kp N5                          &kp N6    &kp N7           &kp N8        &kp N9       &kp N0       &paren
 &rgb_controls  &kp COMMA   &kp C        &kp K         &kp W         &kp V                           &kp J     &kp B            &kp F         &kp G        &kp COMMA    &bracket
 &apps          &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp Y                           &kp Y     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
-&kp LS(TAB)    &kp PERIOD  &kp S        &hml LCTRL D  &kp M         &kp X                           &kp Q     &kp H            &hmr LCTRL P  &kp S        &kp DOT      &kp FSLH
+&kp LS(TAB)    &kp PERIOD  &kp S        &hml LCTRL D  &kp M         &kp X                           &kp Q     &kp H            &hmr RCTRL P  &kp S        &kp DOT      &kp FSLH
 &kp DOWN       &kp UP      &kp LEFT     &kp RIGHT     &rgb_macros                                             &kp Z            &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
                                                       &kp U         &mkp MB4           &mkp MB5     &mkp MB3  &mkp MB1         &lt 1 O
                                                       &lt 3 I       &mt LC(BSPC) BSPC  &kp GRAVE    &mkp MB2  &mt LC(DEL) DEL  &lt 3 A

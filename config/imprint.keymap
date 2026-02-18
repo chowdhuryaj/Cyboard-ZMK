@@ -136,14 +136,14 @@
 
         left_esc {
             bindings = <&kp ESC>;
-            key-positions = <25 26>;
+            key-positions = <38 37>;
             layers = <0>;
             timeout-ms = <15>;
         };
 
         right_esc {
             bindings = <&kp ESC>;
-            key-positions = <34 33>;
+            key-positions = <45 46>;
             layers = <0>;
             timeout-ms = <15>;
         };

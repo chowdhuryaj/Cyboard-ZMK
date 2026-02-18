@@ -23,33 +23,33 @@
       #binding-cells = <0>;
 
       /* Optional: allow shift to be held without terminating sequences */
-      ignore-keys = <LSHFT RSHFT>; /* see README: ignore-keys */  [oai_citation:1‡GitHub](https://github.com/urob/zmk-leader-key)
+      ignore-keys = <LSHFT RSHFT>;
 
       /* --- F-row: F1..F12 -> F13..F24 --- */
-      f1  { sequence = <F1>;  bindings = <&kp F13>; };
-      f2  { sequence = <F2>;  bindings = <&kp F14>; };
-      f3  { sequence = <F3>;  bindings = <&kp F15>; };
-      f4  { sequence = <F4>;  bindings = <&kp F16>; };
-      f5  { sequence = <F5>;  bindings = <&kp F17>; };
-      f6  { sequence = <F6>;  bindings = <&kp F18>; };
-      f7  { sequence = <F7>;  bindings = <&kp F19>; };
-      f8  { sequence = <F8>;  bindings = <&kp F20>; };
-      f9  { sequence = <F9>;  bindings = <&kp F21>; };
-      f10 { sequence = <F10>; bindings = <&kp F22>; };
-      f11 { sequence = <F11>; bindings = <&kp F23>; };
-      f12 { sequence = <F12>; bindings = <&kp F24>; };
+      f1  { sequence = <&kp F1>;  bindings = <&kp F13>; };
+      f2  { sequence = <&kp F2>;  bindings = <&kp F14>; };
+      f3  { sequence = <&kp F3>;  bindings = <&kp F15>; };
+      f4  { sequence = <&kp F4>;  bindings = <&kp F16>; };
+      f5  { sequence = <&kp F5>;  bindings = <&kp F17>; };
+      f6  { sequence = <&kp F6>;  bindings = <&kp F18>; };
+      f7  { sequence = <&kp F7>;  bindings = <&kp F19>; };
+      f8  { sequence = <&kp F8>;  bindings = <&kp F20>; };
+      f9  { sequence = <&kp F9>;  bindings = <&kp F21>; };
+      f10 { sequence = <&kp F10>; bindings = <&kp F22>; };
+      f11 { sequence = <&kp F11>; bindings = <&kp F23>; };
+      f12 { sequence = <&kp F12>; bindings = <&kp F24>; };
 
       /* --- Number row: 1..0 -> shifted symbols --- */
-      n1 { sequence = <N1>; bindings = <&kp EXCL>;  };  /* ! */
-      n2 { sequence = <N2>; bindings = <&kp AT>;    };  /* @ */
-      n3 { sequence = <N3>; bindings = <&kp HASH>;  };  /* # */
-      n4 { sequence = <N4>; bindings = <&kp DLLR>;  };  /* $ */
-      n5 { sequence = <N5>; bindings = <&kp PRCNT>; };  /* % */
-      n6 { sequence = <N6>; bindings = <&kp CARET>; };  /* ^ */
-      n7 { sequence = <N7>; bindings = <&kp AMPS>;  };  /* & */
-      n8 { sequence = <N8>; bindings = <&kp STAR>;  };  /* * */
-      n9 { sequence = <N9>; bindings = <&kp LPAR>;  };  /* ( */
-      n0 { sequence = <N0>; bindings = <&kp RPAR>;  };  /* ) */
+      n1 { sequence = <&kp N1>; bindings = <&kp EXCL>;  };  /* ! */
+      n2 { sequence = <&kp N2>; bindings = <&kp AT>;    };  /* @ */
+      n3 { sequence = <&kp N3>; bindings = <&kp HASH>;  };  /* # */
+      n4 { sequence = <&kp N4>; bindings = <&kp DLLR>;  };  /* $ */
+      n5 { sequence = <&kp N5>; bindings = <&kp PRCNT>; };  /* % */
+      n6 { sequence = <&kp N6>; bindings = <&kp CARET>; };  /* ^ */
+      n7 { sequence = <&kp N7>; bindings = <&kp AMPS>;  };  /* & */
+      n8 { sequence = <&kp N8>; bindings = <&kp STAR>;  };  /* * */
+      n9 { sequence = <&kp N9>; bindings = <&kp LPAR>;  };  /* ( */
+      n0 { sequence = <&kp N0>; bindings = <&kp RPAR>;  };  /* ) */
     };
 
         apps: apps {
@@ -574,7 +574,7 @@
         bigram_vy: bigram_vy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <<&kp V &kp Y>;
+            bindings = <&kp V &kp Y>;
             label = "BIGRAM_VY";
         };
     };

@@ -318,6 +318,11 @@
             bindings = <&bigram_by>;
             key-positions = <19 18>;
         };
+
+        vy {
+            bindings = <&bigram_vy>;
+            key-positions = <17 29>;
+        };
     };
 
     macros {
@@ -530,6 +535,13 @@
             bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
             label = "LOG_HCMCMAIL";
         };
+
+        bigram_vy: bigram_vy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <>;
+            label = "BIGRAM_VY";
+        };
     };
 
     keymap {
@@ -538,8 +550,8 @@
         base {
             bindings = <
 &rgb_numnav    &kp N1      &kp N2       &kp N3        &kp N4        &kp N5                          &kp N6    &kp N7           &kp N8        &kp N9       &kp N0       &paren
-&rgb_controls  &kp COMMA   &kp C        &kp K         &kp W         &kp Y                           &kp Y     &kp B            &kp F         &kp G        &kp COMMA    &bracket
-&apps          &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp V                           &kp J     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
+&rgb_controls  &kp COMMA   &kp C        &kp K         &kp W         &kp V                           &kp J     &kp B            &kp F         &kp G        &kp COMMA    &bracket
+&apps          &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp Y                           &kp Y     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
 &kp LS(TAB)    &kp PERIOD  &kp S        &hml D LCTRL  &kp M         &kp X                           &kp Q     &kp H            &hmr LCTRL P  &kp S        &kp DOT      &kp FSLH
 &kp DOWN       &kp UP      &kp LEFT     &kp RIGHT     &rgb_macros                                             &kp Z            &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
                                                       &lt 1 I       &mkp MB4           &mkp MB5     &mkp MB3  &mkp MB1         &lt 1 A

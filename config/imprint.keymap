@@ -17,6 +17,7 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+
     leader_fn: leader_fn {
       compatible = "zmk,behavior-leader-key";
       #binding-cells = <0>;
@@ -633,7 +634,7 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-// &trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 900>; };
+&trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 1000>; };
 
 &trackball_central_listener {
     input-processors =

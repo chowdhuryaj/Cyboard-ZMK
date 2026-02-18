@@ -17,12 +17,6 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        /* =======================================================
-         * Magic RH (default = Repeat)
-         * ======================================================= */
-        /* =======================================================
-         * Expand (no default output)
-         * ======================================================= */
 
         apps: apps {
             compatible = "zmk,behavior-tri-state";
@@ -39,6 +33,66 @@
             #binding-cells = <2>;
             tapping-term-ms = <250>;
             flavor = "tap-preferred";
+        };
+
+        /* =======================================================
+         * Directional Space / Repeat (hand-aware via trigger-keys)
+         *  - sp_rep_l: SPACE after LH keys, REPEAT after RH keys
+         *  - sp_rep_r: SPACE after RH keys, REPEAT after LH keys
+         * ======================================================= */
+
+        sp_rep_l: sp_rep_l {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "SP_REP_L";
+            #binding-cells = <0>;
+
+            /* default output: SPACE */
+            bindings = <&kp SPACE>;
+
+            /* If prior key was RIGHT-HAND -> output REPEAT */
+            rh_to_repeat {
+                trigger-keys = <
+                    /* right-hand letters (exclude Y) */
+                    U I O P H J K L N M
+
+                    /* right-hand number row (your right side) */
+                    N6 N7 N8 N9 N0
+
+                    /* right-hand punctuation (exclude COMMA) */
+                    DOT SEMI SQT BSLH FSLH GRAVE
+                    EXCL QMARK COLON DQT
+
+                    /* other common RH symbols if you ever emit them */
+                    LBKT RBKT LPAR RPAR LBRC RBRC
+                    EQUAL PLUS MINUS STAR
+                >;
+                bindings = <&key_repeat>;
+            };
+        };
+
+        sp_rep_r: sp_rep_r {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "SP_REP_R";
+            #binding-cells = <0>;
+
+            /* default output: SPACE */
+            bindings = <&kp SPACE>;
+
+            /* If prior key was LEFT-HAND -> output REPEAT */
+            lh_to_repeat {
+                trigger-keys = <
+                    /* left-hand letters (exclude C because you use it on LH; include it) */
+                    Q W E R T A S D F G Z X C V B
+
+                    /* left-hand number row (your left side) */
+                    N1 N2 N3 N4 N5
+
+                    /* left-hand punctuation (exclude COMMA; PERIOD is DOT, so already handled above) */
+                    /* include any LH symbols you actually emit */
+                    /* (leave COMMA out because it’s duplicated in your base) */
+                >;
+                bindings = <&key_repeat>;
+            };
         };
 
         hmr: hmr {
@@ -464,7 +518,7 @@
             bindings = <
 &rgb_numnav    &kp N1      &kp N2       &kp N3        &kp N4        &kp N5                          &kp N6    &kp N7           &kp N8        &kp N9       &kp N0       &paren
 &rgb_controls  &kp COMMA   &kp C        &kp K         &kp W         &kp Y                           &kp Y     &kp B            &kp F         &kp G        &kp COMMA    &bracket
-&apps          &kp SPACE   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp V                           &kp J     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &kp SPACE    &kp BSLH
+&apps          &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp V                           &kp J     &hmr RSHFT L     &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
 &kp LS(TAB)    &kp PERIOD  &kp S        &hml D LCTRL  &kp M         &kp X                           &kp Q     &kp H            &hmr LCTRL P  &kp S        &kp DOT      &kp FSLH
 &kp DOWN       &kp UP      &kp LEFT     &kp RIGHT     &rgb_macros                                             &kp Z            &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
                                                       &lt 1 I       &mkp MB4           &mkp MB5     &mkp MB3  &mkp MB1         &lt 1 A

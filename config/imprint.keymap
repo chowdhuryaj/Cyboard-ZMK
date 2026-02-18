@@ -227,70 +227,85 @@
         left_esc {
             bindings = <&kp ESC>;
             key-positions = <25 26>;
-            require-prior-idle-ms = <150>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <15>;
         };
 
         right_esc {
             bindings = <&kp ESC>;
             key-positions = <34 33>;
-            require-prior-idle-ms = <150>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <15>;
         };
 
         left_tab {
             bindings = <&kp TAB>;
-            key-positions = <26 27>;
+            key-positions = <38 39>;
             layers = <0>;
-            require-prior-idle-ms = <100>;
-            timeout-ms = <35>;
+            timeout-ms = <15>;
         };
 
         right_tab {
             bindings = <&kp TAB>;
-            key-positions = <32 33>;
-            require-prior-idle-ms = <150>;
+            key-positions = <45 44>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <15>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
-            key-positions = <28 27>;
-            require-prior-idle-ms = <150>;
+            key-positions = <39 40>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <15>;
         };
 
         right_enter {
             bindings = <&kp ENTER>;
-            key-positions = <32 31>;
+            key-positions = <44 43>;
             timeout-ms = <25>;
-            require-prior-idle-ms = <150>;
             layers = <0>;
         };
 
         screenshot {
             bindings = <&kp LG(LS(N4))>;
             key-positions = <25 24>;
-            timeout-ms = <35>;
-            require-prior-idle-ms = <100>;
+            timeout-ms = <15>;
             layers = <0>;
         };
 
         screenshot_prev {
             bindings = <&kp LS(LC(N4))>;
             key-positions = <25 36>;
-            timeout-ms = <35>;
-            require-prior-idle-ms = <100>;
+            timeout-ms = <15>;
             layers = <0>;
         };
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <58 63>;
+        o {
+            bindings = <&kp O>;
+            key-positions = <26 27>;
+            layers = <0>;
+            timeout-ms = <15>;
+        };
+
+        a {
+            bindings = <&kp A>;
+            key-positions = <27 28>;
+            layers = <0>;
+            timeout-ms = <15>;
+        };
+
+        i {
+            bindings = <&kp I>;
+            key-positions = <31 32>;
+            layers = <0>;
+            timeout-ms = <15>;
+        };
+
+        u {
+            bindings = <&kp U>;
+            key-positions = <32 33>;
+            layers = <0>;
+            timeout-ms = <15>;
         };
     };
 
@@ -350,6 +365,118 @@
             bindings = <&kp LC(A) &kp BACKSPACE>;
             label = "CLEAR";
         };
+
+        bigram_ui: bigram_ui {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U &kp I>;
+            label = "BIGRAM_UI";
+        };
+
+        bigram_oa: bigram_oa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp A>;
+            label = "BIGRAM_OA";
+        };
+
+        bigram_es: bigram_es {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp S>;
+            label = "BIGRAM_ES";
+        };
+
+        bigram_ec: bigram_ec {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp C>;
+            label = "BIGRAM_EC";
+        };
+
+        bigram_kt: bigram_kt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp T>;
+            label = "BIGRAM_KT";
+        };
+
+        bigram_dt: bigram_dt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp T>;
+            label = "BIGRAM_DT";
+        };
+
+        bigram_wr: bigram_wr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp R>;
+            label = "BIGRAM_WR";
+        };
+
+        bigram_rm: bigram_rm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp M>;
+            label = "BIGRAM_RM";
+        };
+
+        bigram_rv: bigram_rv {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp V>;
+            label = "BIGRAM_RV";
+        };
+
+        bigram_bj: bigram_bj {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp J>;
+            label = "BIGRAM_BJ";
+        };
+
+        bigram_by: bigram_by {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp Y>;
+            label = "BIGRAM_BY";
+        };
+
+        bigram_bl: bigram_bl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp B &kp L>;
+            label = "BIGRAM_BL";
+        };
+
+        bigram_hl: bigram_hl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp H &kp L>;
+            label = "BIGRAM_HL";
+        };
+
+        bigram_nf: bigram_nf {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp F>;
+            label = "BIGRAM_NF";
+        };
+
+        bigram_np: bigram_np {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N &kp P>;
+            label = "BIGRAM_NP";
+        };
+
+        bigram_eg: bigram_eg {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp G>;
+            label = "BIGRAM_EG";
+        };
     };
 
     keymap {
@@ -357,25 +484,25 @@
 
         base {
             bindings = <
-&kp EQUAL    &kp N1         &kp N2      &kp N3      &kp N4       &kp N5                 &kp N6    &kp N7       &kp N8      &kp N9      &kp N0         &td_openclose
-&kp MINUS    &kp COMMA      &kp C       &kp K       &kp W        &kp Y                  &kp Y     &kp B        &kp F       &kp G       &kp COMMA      &kp BSLH
-&key_repeat  &kp SPACE      &mt LALT E  &mt LGUI T  &mt R LSHFT  &kp V                  &kp J     &mt RSHFT L  &mt RGUI N  &mt RALT E  &kp SPACE      &key_repeat
-&kp LS(TAB)  &mt LCTRL DOT  &kp S       &kp D       &kp M        &kp X                  &kp Q     &kp H        &kp P       &kp S       &mt RCTRL DOT  &kp FSLH
-&apps        &kp LEFT       &kp RIGHT   &kp DOWN    &kp UP                                        &kp Z        &kp SEMI    &kp SQT     &kp LS(DQT)    &kp LS(COLON)
-                                                    &lt 1 I      &mkp MB4  &mkp MB5     &mkp MB3  &mkp MB1     &lt 1 O
-                                                    &lt 3 U      &kp BSPC  &kp GRAVE    &mkp MB2  &kp DEL      &lt 3 A
+&kp EQUAL    &kp N1      &kp N2      &kp N3       &kp N4       &kp N5                   &kp N6    &kp N7       &kp N8       &kp N9      &kp N0         &td_openclose
+&kp MINUS    &kp COMMA   &kp C       &kp K        &kp W        &kp Y                    &kp Y     &kp B        &kp F        &kp G       &kp COMMA      &kp BSLH
+&apps        &kp SPACE   &mt LALT E  &mt LGUI T   &mt LSHFT R  &kp V                    &kp J     &mt RSHFT L  &mt RGUI N   &mt RALT E  &kp SPACE      &kp BSLH
+&kp LS(TAB)  &kp PERIOD  &kp S       &mt D LCTRL  &kp M        &kp X                    &kp Q     &kp H        &mt LCTRL P  &kp S       &mt RCTRL DOT  &kp FSLH
+&kp DOWN     &kp UP      &kp LEFT    &kp RIGHT    &kp Z                                           &kp Z        &kp SEMI     &kp SQT     &kp LS(DQT)    &kp LS(COLON)
+                                                  &lt 1 I      &mkp MB4    &mkp MB5     &mkp MB3  &mkp MB1     &lt 1 O
+                                                  &lt 3 U      &lt 2 BSPC  &kp GRAVE    &mkp MB2  &lt 2 DEL    &lt 3 A
             >;
         };
 
         numnav {
             bindings = <
-&kp F1  &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                     &kp F7    &kp F8    &kp F9    &kp F10  &kp F11  &kp F12
-&trans  &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &trans    &kp N7    &kp N8    &kp N9   &trans   &trans
-&trans  &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)              &trans    &kp N4    &kp N5    &kp N6   &trans   &trans
-&trans  &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans    &kp N1    &kp N2    &kp N3   &trans   &trans
-&trans  &trans        &trans       &trans     &trans                                          &trans    &kp N0    &trans   &trans   &trans
-                                              &trans     &dbl_click     &mkp MB4    &mkp MB3  &mkp MB1  &mkp MB2
-                                              &trans     &trans         &mkp MB5    &to 0     &trans    &trans
+&kp F1  &kp F2        &kp F3       &kp F4     &kp F5     &kp F6                     &kp F7        &kp F8     &kp F9    &kp F10  &kp F11       &kp F12
+&trans  &kp ESC       &kp LS(TAB)  &kp UP     &kp TAB    &kp RET                    &kp FSLH      &kp N7     &kp N8    &kp N9   &kp LS(PLUS)  &trans
+&trans  &kp LC(LEFT)  &kp LEFT     &kp DOWN   &kp RIGHT  &kp LC(RIGHT)              &kp LS(STAR)  &kp N4     &kp N5    &kp N6   &kp MINUS     &trans
+&trans  &kp HOME      &kp END      &kp PG_UP  &kp PG_DN  &trans                     &trans        &kp N1     &kp N2    &kp N3   &kp EQUAL     &trans
+&trans  &trans        &trans       &trans     &trans                                              &kp COMMA  &kp N0    &kp DOT  &kp RET       &trans
+                                              &trans     &dbl_click     &mkp MB4    &mkp MB3      &mkp MB1   &mkp MB2
+                                              &trans     &trans         &mkp MB5    &to 0         &trans     &trans
             >;
         };
 
@@ -404,14 +531,7 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        control {
-            if-layers = <1 3>;
-            then-layer = <2>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
 // &trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 900>; };

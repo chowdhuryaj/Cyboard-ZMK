@@ -307,6 +307,94 @@
             layers = <0>;
             timeout-ms = <15>;
         };
+
+        ec {
+            bindings = <&bigram_ec>;
+            key-positions = <26 14>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        es_l {
+            bindings = <&bigram_es>;
+            key-positions = <26 38>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        kt {
+            bindings = <&bigram_kt>;
+            key-positions = <27 15>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        dt {
+            bindings = <&bigram_dt>;
+            key-positions = <39 27>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        rm {
+            bindings = <&bigram_rm>;
+            key-positions = <40 28>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        wr {
+            bindings = <&bigram_wr>;
+            key-positions = <28 16>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        rv {
+            bindings = <&bigram_rv>;
+            key-positions = <28 29>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        bj {
+            bindings = <&bigram_bj>;
+            key-positions = <31 30>;
+        };
+
+        bl {
+            bindings = <&bigram_bl>;
+            key-positions = <19 31>;
+        };
+
+        hl {
+            bindings = <&bigram_hl>;
+            key-positions = <31 43>;
+        };
+
+        nf {
+            bindings = <&bigram_nf>;
+            key-positions = <32 20>;
+        };
+
+        np {
+            bindings = <&bigram_np>;
+            key-positions = <32 44>;
+        };
+
+        es_r {
+            bindings = <&bigram_es>;
+            key-positions = <33 45>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
+
+        eg {
+            bindings = <&bigram_eg>;
+            key-positions = <33 21>;
+            timeout-ms = <15>;
+            layers = <0>;
+        };
     };
 
     macros {

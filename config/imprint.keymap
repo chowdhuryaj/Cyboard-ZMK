@@ -26,6 +26,44 @@
             ignored-key-positions = <36>;
         };
 
+        magic: magic_keys {
+            compatible = "zmk,behavior-magic-keys";
+            #binding-cells = <1>;
+            magic-rules = <
+                A O
+                G S
+                H Y
+                U E
+                X T
+                Y H
+            >;
+            skip-magic-rules = <
+                A O
+                B N
+                D T
+                F S
+                G S
+                H Y
+                J Y
+                K T
+                L R
+                M K
+                O A
+                P N
+                Q E
+                R L
+                U E
+                V T
+                X T
+                Y H
+                COMMA I
+                DOT I
+                MINUS I
+                SLASH A
+                SEMI E
+            >;
+        };
+
         hold_clear: hold_clear {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_CLEAR";

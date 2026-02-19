@@ -328,13 +328,6 @@
             bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
             label = "LOG_HCMCMAIL";
         };
-
-        bigram_vy: bigram_vy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp V &kp Y>;
-            label = "BIGRAM_VY";
-        };
     };
 
     keymap {

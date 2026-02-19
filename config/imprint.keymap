@@ -343,6 +343,11 @@
             timeout-ms = <25>;
             layers = <0>;
         };
+
+        dictate_right {
+            bindings = <&kp GRAVE>;
+            key-positions = <61 67>;
+        };
     };
 
     macros {

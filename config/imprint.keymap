@@ -26,45 +26,6 @@
             ignored-key-positions = <36>;
         };
 
-        magic: magic_keys {
-            compatible = "zmk,behavior-magic-keys";
-            #binding-cells = <1>;
-            magic-rules = <
-                A O
-                G S
-                H Y
-                U E
-                X T
-                Y H
-            >;
-
-            skip-magic-rules = <
-                A O
-                B N
-                D T
-                F S
-                G S
-                H Y
-                J Y
-                K T
-                L R
-                M K
-                O A
-                P N
-                Q E
-                R L
-                U E
-                V T
-                X T
-                Y H
-                COMMA I
-                DOT I
-                MINUS I
-                SLASH A
-                SEMI E
-            >;
-        };
-
         hold_clear: hold_clear {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_CLEAR";
@@ -80,66 +41,6 @@
          *  - sp_rep_l: SPACE after LH keys, REPEAT after RH keys
          *  - sp_rep_r: SPACE after RH keys, REPEAT after LH keys
          * ======================================================= */
-
-        sp_rep_l: sp_rep_l {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "SP_REP_L";
-            #binding-cells = <0>;
-
-            /* default output: SPACE */
-
-            bindings = <&kp SPACE>;
-
-            /* If prior key was RIGHT-HAND -> output REPEAT */
-
-            rh_to_repeat {
-                trigger-keys = <
-                    /* right-hand letters (exclude Y) */
-                    U I O P H J K L N M
-
-                    /* right-hand number row (your right side) */
-                    N6 N7 N8 N9 N0
-
-                    /* right-hand punctuation (exclude COMMA) */
-                    DOT SEMI SQT BSLH FSLH GRAVE
-                    EXCL QMARK COLON DQT
-
-                    /* other common RH symbols if you ever emit them */
-                    LBKT RBKT LPAR RPAR LBRC RBRC
-                    EQUAL PLUS MINUS STAR
-                >;
-
-                bindings = <&key_repeat>;
-            };
-        };
-
-        sp_rep_r: sp_rep_r {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "SP_REP_R";
-            #binding-cells = <0>;
-
-            /* default output: SPACE */
-
-            bindings = <&kp SPACE>;
-
-            /* If prior key was LEFT-HAND -> output REPEAT */
-
-            lh_to_repeat {
-                trigger-keys = <
-                    /* left-hand letters (exclude C because you use it on LH; include it) */
-                    Q W E R T A S D F G Z X C V B
-
-                    /* left-hand number row (your left side) */
-                    N1 N2 N3 N4 N5
-
-                    /* left-hand punctuation (exclude COMMA; PERIOD is DOT, so already handled above) */
-                    /* include any LH symbols you actually emit */
-                    /* (leave COMMA out because it’s duplicated in your base) */
-                >;
-
-                bindings = <&key_repeat>;
-            };
-        };
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -340,7 +241,7 @@
 &key_repeat    &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                   &kp Y           &hmr RSHFT C   &mt RGUI A           &hmr RALT A  &hmr RCTRL I  &key_repeat
 &kp LS(TAB)    &kp X         &kp V        &kp J        &kp D         &kp Z                                   &kp SQT         &kp W          &kp FSLH             &kp SEMI     &kp DOT       &kp BSLH
 &apps          &kp F9        &kp F10      &kp F11      &kp F12                                                               &rgb_macros    &kp DOWN             &kp UP       &kp LEFT      &kp RIGHT
-                                                       &lt 3 L       &mt HOME PAGE_UP   &mt END PAGE_DOWN    &hmr RALT F13   &kp GRAVE      &lt 1 LG(BACKSPACE)
+                                                       &lt 3 L       &mt HOME PAGE_UP   &mt END PAGE_DOWN    &hmr RALT F13   &kp GRAVE      &key_repeat
                                                        &lt 1 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL      &hmr LC(F7) F7  &mt LC(F8) F8  &mt LG(SPACE) SPACE
             >;
         };

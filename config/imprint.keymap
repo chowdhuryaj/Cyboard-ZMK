@@ -189,28 +189,28 @@
 
         left_tab {
             bindings = <&kp TAB>;
-            key-positions = <38 39>;
+            key-positions = <26 27>;
             layers = <0>;
             timeout-ms = <25>;
         };
 
         right_tab {
             bindings = <&kp TAB>;
-            key-positions = <45 44>;
+            key-positions = <32 33>;
             layers = <0>;
             timeout-ms = <25>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
-            key-positions = <39 40>;
+            key-positions = <28 27>;
             layers = <0>;
             timeout-ms = <25>;
         };
 
         right_enter {
             bindings = <&kp ENTER>;
-            key-positions = <44 43>;
+            key-positions = <31 32>;
             timeout-ms = <25>;
             layers = <0>;
         };

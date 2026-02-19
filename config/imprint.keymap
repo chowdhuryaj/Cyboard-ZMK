@@ -613,13 +613,13 @@
 
         base {
             bindings = <
-&rgb_numnav    &kp N1  &kp N2   &kp N3   &kp N4   &kp N5                              &kp N6     &kp N7   &kp N8     &kp N9    &kp N0       &paren
-&rgb_controls  &kp J   &kp B    &kp G    &kp D    &kp K                               &kp Z      &kp C    &kp O      &kp U     &kp COMMA    &bracket
-&kp Q          &kp H   &kp N    &kp S    &kp T    &kp M                               &magic 0   &magic 1   &kp A      &kp E     &kp I        &kp MINUS
-&kp LS(TAB)    &kp Y   &kp P    &kp F    &kp V    &kp X                               &kp SQT  &kp W    &kp FSLH   &kp SEMI  &kp DOT      &kp FSLH
-&apps          &kp F9  &kp F10  &kp F11  &kp F12                                               &kp Z    &kp SEMI   &kp SQT   &kp LS(DQT)  &kp LS(COLON)
-                                         &kp L    &kp PAGE_UP        &kp PAGE_DOWN    &kp F7   &kp F8   &kp A
-                                         &kp R    &mt LC(BSPC) BSPC  &kp GRAVE        &kp F13  &kp F14  &kp SPACE
+&rgb_numnav    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6         &kp N7            &kp N8                &kp N9    &kp N0       &paren
+&rgb_controls  &kp J         &kp B        &kp G        &kp V         &kp X                                 &kp SQT        &kp W             &kp O                 &kp U     &kp COMMA    &bracket
+&kp Q          &hml LCTRL H  &hml LALT N  &hml LGUI S  &hml LSHFT T  &kp M                                 &magic 0       &magic 1          &kp A                 &kp E     &kp I        &kp MINUS
+&kp LS(TAB)    &kp Y         &kp P        &kp F        &kp D         &kp K                                 &kp Z          &kp C             &kp FSLH              &kp SEMI  &kp DOT      &kp FSLH
+&apps          &kp F9        &kp F10      &kp F11      &kp F12                                                            &kp Z             &kp SEMI              &kp SQT   &kp LS(DQT)  &kp LS(COLON)
+                                                       &lt 1 L       &kp PAGE_UP        &kp PAGE_DOWN      &hmr RALT F13  &hmr RGUI GRAVE   &hmr RCTRL F14
+                                                       &lt 3 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &hmr LALT F13  &hmr LCTRL GRAVE  &hmr LC(LSHFT) SPACE
             >;
         };
 

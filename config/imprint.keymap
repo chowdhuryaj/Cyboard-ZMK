@@ -580,7 +580,7 @@
 &kp LS(TAB)    &kp PERIOD  &kp S        &hml LCTRL D  &kp M         &kp X                               &kp Q    &kp H         &hmr RCTRL P  &kp S        &kp DOT      &kp FSLH
 &apps          &kp F9      &kp F10      &kp F11       &kp F12                                                    &kp Z         &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
                                                       &kp I         &kp PAGE_UP        &kp PAGE_DOWN    &kp F7   &kp F8        &kp A
-                                                      &kp U         &mt LC(BSPC) BSPC  &kp GRAVE        &kp F13  &kp F14       &kp O
+                                                      &lt 3 U       &mt LC(BSPC) BSPC  &kp GRAVE        &kp F13  &kp F14       &kp O
             >;
         };
 

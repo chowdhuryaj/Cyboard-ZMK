@@ -37,6 +37,7 @@
                 X T
                 Y H
             >;
+
             skip-magic-rules = <
                 A O
                 B N
@@ -612,13 +613,13 @@
 
         base {
             bindings = <
-&rgb_numnav    &kp N1      &kp N2       &kp N3        &kp N4        &kp N5                              &kp N6   &kp N7        &kp N8        &kp N9       &kp N0       &paren
-&rgb_controls  &kp COMMA   &kp C        &kp K         &kp W         &kp V                               &kp J    &kp B         &kp F         &kp G        &kp COMMA    &bracket
-&rgb_macros    &sp_rep_l   &hml LALT E  &hml LGUI T   &hml LSHFT R  &kp Y                               &kp Y    &hmr RSHFT L  &hmr RGUI N   &hmr RALT E  &sp_rep_r    &kp BSLH
-&kp LS(TAB)    &kp PERIOD  &kp S        &hml LCTRL D  &kp M         &kp X                               &kp Q    &kp H         &hmr RCTRL P  &kp S        &kp DOT      &kp FSLH
-&apps          &kp F9      &kp F10      &kp F11       &kp F12                                                    &kp Z         &kp SEMI      &kp SQT      &kp LS(DQT)  &kp LS(COLON)
-                                                      &kp I         &kp PAGE_UP        &kp PAGE_DOWN    &kp F7   &kp F8        &kp A
-                                                      &lt 3 U       &mt LC(BSPC) BSPC  &kp GRAVE        &kp F13  &kp F14       &kp O
+&rgb_numnav    &kp N1  &kp N2   &kp N3   &kp N4   &kp N5                              &kp N6   &kp N7   &kp N8     &kp N9    &kp N0       &paren
+&rgb_controls  &kp J   &kp B    &kp G    &kp D    &kp K                               &kp Z    &kp C    &kp O      &kp U     &kp COMMA    &bracket
+&kp Q          &kp H   &kp N    &kp S    &kp T    &kp M                               &magic   &magic   &kp A      &kp E     &kp I        &kp MINUS
+&kp LS(TAB)    &kp Y   &kp P    &kp F    &kp V    &kp X                               &kp SQT  &kp W    &kp FSLH   &kp SEMI  &kp DOT      &kp FSLH
+&apps          &kp F9  &kp F10  &kp F11  &kp F12                                               &kp Z    &kp SEMI   &kp SQT   &kp LS(DQT)  &kp LS(COLON)
+                                         &kp L    &kp PAGE_UP        &kp PAGE_DOWN    &kp F7   &kp F8   &kp A
+                                         &kp R    &mt LC(BSPC) BSPC  &kp GRAVE        &kp F13  &kp F14  &kp SPACE
             >;
         };
 

@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/darknao
     - name: kot149
       url-base: https://github.com/kot149
+    - name: ambrosia
+      url-base: https://github.com/ambrosia
 
   projects:
 
@@ -47,6 +49,11 @@ manifest:
       remote: urob
       revision: main
       path: modules/zmk/tri-state
+
+    - name: zmk-behavior-magic-keys
+      remote: ambrosia
+      revision: single-instance
+      path: modules/zmk/zmk-behavior-magic-keys
 
   self:
     path: config

@@ -17,44 +17,45 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-    ak_expand: ak_expand {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "AK_EXPAND";
-      #binding-cells = <0>;
+        ak_expand: ak_expand {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "AK_EXPAND";
+            #binding-cells = <0>;
 
-      /* default output (no trigger match) */
-      bindings = <&key_repeat>;
+            /* default output (no trigger match) */
 
-      a_to_o {
-        trigger-keys = <A>;
-        bindings = <&kp O>;
-      };
+            bindings = <&key_repeat>;
 
-      w_to_y {
-        trigger-keys = <W>;
-        bindings = <&kp Y>;
-      };
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+            };
 
-      v_to_s {
-        trigger-keys = <V>;
-        bindings = <&kp S>;
-      };
+            w_to_y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
+            };
 
-      u_to_i {
-        trigger-keys = <U>;
-        bindings = <&kp I>;
-      };
+            v_to_s {
+                trigger-keys = <V>;
+                bindings = <&kp S>;
+            };
 
-      dot_to_space_shift {
-        trigger-keys = <DOT>;
-        bindings = <&kp SPACE &sk LSHFT>;
-      };
+            u_to_i {
+                trigger-keys = <U>;
+                bindings = <&kp I>;
+            };
 
-      space_to_the {
-        trigger-keys = <SPACE>;
-        bindings = <&kp T &kp H &kp E>;
-      };
-    };
+            dot_to_space_shift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+            };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+            };
+        };
 
         apps: apps {
             compatible = "zmk,behavior-tri-state";
@@ -290,7 +291,7 @@
 &kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T    &kp V                                   &kp EQUAL  &kp C        &mt RGUI A       &hmr RALT E  &hmr RCTRL I  &rgb_macros
 &kp LS(TAB)    &kp P         &kp G        &kp M        &kp D    &kp Z                                   &kp SQT    &kp W        &kp COMMA        &kp DOT      &kp FSLH      &kp BSLH
 &apps          &kp F9        &kp F10      &kp F11      &kp F12                                                     &rgb_macros  &kp UP           &kp DOWN     &kp LEFT      &kp RIGHT
-                                                       &lt 3 L  &mt HOME PAGE_UP   &mt END PAGE_DOWN    &kp F7     &kp F8       &key_repeat
+                                                       &lt 3 L  &mt HOME PAGE_UP   &mt END PAGE_DOWN    &kp F7     &kp F8       &ak_expand
                                                        &lt 1 R  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL      &kp F13    &kp GRAVE    &mt LSHFT SPACE
             >;
         };

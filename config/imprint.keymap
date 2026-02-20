@@ -17,6 +17,45 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+    ak_expand: ak_expand {
+      compatible = "zmk,behavior-adaptive-key";
+      label = "AK_EXPAND";
+      #binding-cells = <0>;
+
+      /* default output (no trigger match) */
+      bindings = <&key_repeat>;
+
+      a_to_o {
+        trigger-keys = <A>;
+        bindings = <&kp O>;
+      };
+
+      w_to_y {
+        trigger-keys = <W>;
+        bindings = <&kp Y>;
+      };
+
+      v_to_s {
+        trigger-keys = <V>;
+        bindings = <&kp S>;
+      };
+
+      u_to_i {
+        trigger-keys = <U>;
+        bindings = <&kp I>;
+      };
+
+      dot_to_space_shift {
+        trigger-keys = <DOT>;
+        bindings = <&kp SPACE &sk LSHFT>;
+      };
+
+      space_to_the {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+      };
+    };
+
         apps: apps {
             compatible = "zmk,behavior-tri-state";
             label = "APPS";

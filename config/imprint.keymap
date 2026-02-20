@@ -117,21 +117,18 @@
         left_esc {
             bindings = <&kp ESC>;
             key-positions = <26 25>;
-            layers = <0>;
             timeout-ms = <20>;
         };
 
         left_tab {
             bindings = <&kp TAB>;
             key-positions = <26 27>;
-            layers = <0>;
             timeout-ms = <20>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <28 27>;
-            layers = <0>;
             timeout-ms = <20>;
         };
 

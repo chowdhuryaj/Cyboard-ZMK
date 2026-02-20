@@ -173,6 +173,11 @@
             bindings = <&roll_ie>;
             key-positions = <34 33>;
         };
+
+        right_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <31 32>;
+        };
     };
 
     macros {

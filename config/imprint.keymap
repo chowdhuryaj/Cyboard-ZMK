@@ -292,7 +292,7 @@
 &kp LS(TAB)    &kp P         &kp G        &kp M        &kp D    &kp Z                                   &kp SQT    &kp W        &kp COMMA        &kp DOT      &kp FSLH      &kp BSLH
 &apps          &kp F9        &kp F10      &kp F11      &kp F12                                                     &rgb_macros  &kp UP           &kp DOWN     &kp LEFT      &kp RIGHT
                                                        &lt 3 L  &mt HOME PAGE_UP   &mt END PAGE_DOWN    &kp F7     &kp F8       &ak_expand
-                                                       &lt 1 R  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL      &kp F13    &kp GRAVE    &mt LSHFT SPACE
+                                                       &lt 1 R  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL      &kp F13    &kp F14      &mt LSHFT SPACE
             >;
         };
 

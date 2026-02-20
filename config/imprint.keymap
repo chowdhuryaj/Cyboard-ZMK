@@ -29,32 +29,33 @@
             a_to_o {
                 trigger-keys = <A>;
                 bindings = <&kp O>;
+                max-prior-idle-ms = <300>;
             };
 
             w_to_y {
                 trigger-keys = <W>;
                 bindings = <&kp Y>;
+                max-prior-idle-ms = <300>;
             };
 
             v_to_s {
                 trigger-keys = <V>;
                 bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
             };
 
             u_to_i {
                 trigger-keys = <U>;
                 bindings = <&kp I>;
+                max-prior-idle-ms = <300>;
             };
 
-            dot_to_space_shift {
-                trigger-keys = <DOT>;
+            punct_to_space_shift {
+                trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
                 bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
             };
 
-            space_to_the {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-            };
         };
 
         apps: apps {
@@ -306,13 +307,13 @@
 
         base {
             bindings = <
-&rgb_numnav    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6         &kp N7         &kp N8            &kp N9       &kp N0        &paren
-&rgb_controls  &kp X         &kp F        &kp J        &kp K         &kp Q                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp COMMA     &bracket
-&kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp V                                 &kp EQUAL      &kp C          &mt RGUI A        &hmr RALT E  &hmr RCTRL I  &sk LS(LC(LA(LG(ENTER))))
-&kp LS(TAB)    &kp P         &kp G        &kp M        &kp D         &kp Z                                 &kp SQT        &kp W          &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
-&apps          &kp F9        &kp F10      &kp F11      &kp F12                                                            &rgb_macros    &kp UP            &kp DOWN     &kp LEFT      &kp RIGHT
-                                                       &hmr LSHFT L  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &kp F7         &kp F8         &ak_expand
-                                                       &lt 3 R       &mt PAGE_UP UP     &mt PG_DN DOWN     &mt HOME LEFT  &mt END RIGHT  &hmr RSHFT SPACE
+&rgb_numnav    &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                                &kp N6         &kp N7         &kp N8            &kp N9       &kp N0        &paren
+&rgb_controls  &kp X         &kp F        &kp J        &kp K         &kp Q                                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp COMMA     &bracket
+&kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp V                                                 &kp EQUAL      &kp C          &mt RGUI A        &hmr RALT E  &hmr RCTRL I  &sk LS(LC(LA(LG(ENTER))))
+&kp LS(TAB)    &kp P         &kp G        &kp M        &kp D         &kp Z                                                 &kp SQT        &kp W          &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
+&apps          &kp F9        &kp F10      &kp F11      &kp F12                                                                            &rgb_macros    &kp UP            &kp DOWN     &kp LEFT      &kp RIGHT
+                                                       &hmr LSHFT L  &mt PAGE_UP UP     &mt PG_DN DOWN      &kp F7         &kp F8         &ak_expand
+                                                       &lt 3 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL     &mt HOME LEFT  &mt END RIGHT  &hmr RSHFT SPACE
             >;
         };
 

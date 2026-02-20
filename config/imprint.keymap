@@ -121,23 +121,9 @@
             timeout-ms = <20>;
         };
 
-        right_esc {
-            bindings = <&kp ESC>;
-            key-positions = <33 34>;
-            layers = <0>;
-            timeout-ms = <20>;
-        };
-
         left_tab {
             bindings = <&kp TAB>;
             key-positions = <26 27>;
-            layers = <0>;
-            timeout-ms = <20>;
-        };
-
-        right_tab {
-            bindings = <&kp TAB>;
-            key-positions = <32 33>;
             layers = <0>;
             timeout-ms = <20>;
         };
@@ -147,13 +133,6 @@
             key-positions = <28 27>;
             layers = <0>;
             timeout-ms = <20>;
-        };
-
-        right_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <31 32>;
-            timeout-ms = <20>;
-            layers = <0>;
         };
 
         screenshot {
@@ -290,6 +269,20 @@
             #binding-cells = <0>;
             bindings = <&kp R &kp L>;
             label = "BG_RL";
+        };
+
+        roll_ea: roll_ea {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp A>;
+            label = "ROLL_EA";
+        };
+
+        roll_ie: roll_ie {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp E>;
+            label = "ROLL_IE";
         };
     };
 

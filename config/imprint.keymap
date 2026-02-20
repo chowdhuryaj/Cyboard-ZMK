@@ -118,41 +118,41 @@
             bindings = <&kp ESC>;
             key-positions = <26 25>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
         };
 
         right_esc {
             bindings = <&kp ESC>;
             key-positions = <33 34>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
         };
 
         left_tab {
             bindings = <&kp TAB>;
             key-positions = <26 27>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
         };
 
         right_tab {
             bindings = <&kp TAB>;
             key-positions = <32 33>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
         };
 
         left_enter {
             bindings = <&kp ENTER>;
             key-positions = <28 27>;
             layers = <0>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
         };
 
         right_enter {
             bindings = <&kp ENTER>;
             key-positions = <31 32>;
-            timeout-ms = <25>;
+            timeout-ms = <20>;
             layers = <0>;
         };
 
@@ -178,6 +178,11 @@
         left_dictate {
             bindings = <&kp GRAVE>;
             key-positions = <62 68>;
+        };
+
+        rl {
+            bindings = <&bg_rl>;
+            key-positions = <58 64>;
         };
     };
 
@@ -278,6 +283,13 @@
             #binding-cells = <0>;
             bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
             label = "LOG_HCMCMAIL";
+        };
+
+        bg_rl: bg_rl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp L>;
+            label = "BG_RL";
         };
     };
 

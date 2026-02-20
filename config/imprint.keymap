@@ -163,6 +163,16 @@
             bindings = <&bg_rl>;
             key-positions = <58 64>;
         };
+
+        ea {
+            bindings = <&roll_ea>;
+            key-positions = <33 32>;
+        };
+
+        ie {
+            bindings = <&roll_ie>;
+            key-positions = <34 33>;
+        };
     };
 
     macros {

@@ -129,6 +129,16 @@
             timeout-ms = <25>;
             layers = <0>;
         };
+
+        right_dictate {
+            bindings = <&kp GRAVE>;
+            key-positions = <59 65>;
+        };
+
+        left_dictate {
+            bindings = <&kp GRAVE>;
+            key-positions = <62 68>;
+        };
     };
 
     macros {

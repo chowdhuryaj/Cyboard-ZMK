@@ -248,7 +248,7 @@
             bindings = <
 &rgb_numnav    &kp N1        &kp N2       &kp N3       &kp N4   &kp N5                                  &kp N6     &kp N7       &kp N8           &kp N9       &kp N0        &paren
 &rgb_controls  &kp X         &kp F        &kp J        &kp K    &kp Q                                   &kp MINUS  &kp Y        &kp O            &kp U        &kp COMMA     &bracket
-&kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T    &kp V                                   &kp EQUAL  &kp C        &mt RGUI A       &hmr RALT A  &hmr RCTRL I  &rgb_macros
+&kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T    &kp V                                   &kp EQUAL  &kp C        &mt RGUI A       &hmr RALT E  &hmr RCTRL I  &rgb_macros
 &kp LS(TAB)    &kp P         &kp G        &kp M        &kp D    &kp Z                                   &kp SQT    &kp W        &kp COMMA        &kp DOT      &kp FSLH      &kp BSLH
 &apps          &kp F9        &kp F10      &kp F11      &kp F12                                                     &rgb_macros  &kp UP           &kp DOWN     &kp LEFT      &kp RIGHT
                                                        &lt 3 L  &mt HOME PAGE_UP   &mt END PAGE_DOWN    &kp F7     &kp F8       &key_repeat

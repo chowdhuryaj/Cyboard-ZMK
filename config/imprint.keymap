@@ -17,13 +17,10 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        ak_expand: ak_expand {
+        ak_right: ak_right {
             compatible = "zmk,behavior-adaptive-key";
             label = "AK_EXPAND";
             #binding-cells = <0>;
-
-            /* default output (no trigger match) */
-
             bindings = <&key_repeat>;
 
             a_to_o {
@@ -222,7 +219,7 @@
 &kp ESC    &kp X     &kp V     &kp J     &kp K         &kp Q                             &kp FSLH           &kp Y          &kp O             &kp U    &kp SQT     &kp BSLH
 &kp B      &kp N     &kp S     &kp H     &kp T         &kp M                             &kp GRAVE          &kp C          &kp A             &kp E    &kp I       &kp ENTER
 &kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI           &kp W          &kp COMMA         &kp DOT  &kp F7      &kp F8
-&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10           &kp F11  &ak_expand  &key_repeat
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10           &kp F11  &ak_right  &key_repeat
                                          &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &left_dance        &right_dance   &mt RCTRL F24
                                          &hml LSHFT R  &bspc_dance     &del_dance        &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
             >;

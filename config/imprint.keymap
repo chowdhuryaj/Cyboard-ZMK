@@ -228,16 +228,6 @@
             key-positions = <58 64>;
         };
 
-        drag_scroll {
-            bindings = <&mo 1>;
-            key-positions = <64 65>;
-        };
-
-        right_drag_scroll {
-            bindings = <&mo 1>;
-            key-positions = <61 67>;
-        };
-
         mb4 {
             bindings = <&mkp MB4>;
             key-positions = <50 51>;

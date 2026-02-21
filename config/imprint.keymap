@@ -201,25 +201,13 @@
 
         base {
             bindings = <
-&kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4        &kp N5                             &kp N6         &kp N7         &kp N8              &kp N9       &kp N0    &kp EQUAL
-&kp ESC    &kp X     &kp F     &kp J     &kp K         &kp Q                              &kp MINUS      &kp Y          &kp O               &kp U        &kp SQT   &sl 1
-&kp B      &kp N     &kp S     &kp H     &kp T         &kp M                              &kp EQUAL      &kp C          &kp A               &kp E        &kp I     &kp ENTER
-&kp TAB    &kp P     &kp V     &kp D     &kp G         &kp Z                              &kp SEMI       &kp W          &kp COMMA           &kp DOT      &kp FSLH  &kp BSLH
-&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                        &kp GRAVE      &kp ESC             &kp LS(TAB)  &kp TAB   &rgb_ug RGB_TOG
-                                         &hml LGUI L   &mt PAGE_UP UP   &mt PG_DN DOWN    &mt HOME LEFT  &mt END RIGHT  &magic_hold RGUI 0
-                                         &hml LSHFT R  &hml LCTRL BSPC  &hml LALT DEL     &hmr RALT F7   &hmr RCTRL F8  &hmr RSHFT SPACE
-            >;
-        };
-
-        fn {
-            bindings = <
-&kp F1     &kp F2     &kp F3     &kp F4       &kp F5         &kp F6               &kp F7   &kp F8   &kp F9   &kp F10  &kp F11  &kp F12
-&kp F13    &kp F14    &kp F15    &kp F16      &kp F17        &kp F18              &kp F19  &kp F20  &kp F21  &kp F22  &kp F23  &kp F24
-&trans     &kp LC(A)  &kp LC(S)  &kp LC(RET)  &kp LC(SPACE)  &trans               &trans   &trans   &trans   &trans   &trans   &trans
-&kp LC(T)  &kp LC(Z)  &kp LC(X)  &kp LC(C)    &kp LC(V)      &kp LC(Y)            &trans   &trans   &trans   &trans   &trans   &trans
-&kp LC(W)  &kp LG(B)  &kp LG(I)  &kp LG(U)    &trans                                       &trans   &trans   &trans   &trans   &trans
-                                              &trans         &trans     &trans    &trans   &trans   &trans
-                                              &trans         &trans     &trans    &trans   &trans   &trans
+&kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4        &kp N5                            &kp N6             &kp N7         &kp N8               &kp N9   &kp N0   &kp EQUAL
+&kp ESC    &kp X     &kp V     &kp J     &kp K         &kp Q                             &kp FSLH           &kp Y          &kp O                &kp U    &kp SQT  &kp BSLH
+&kp B      &kp N     &kp S     &kp H     &kp T         &kp M                             &kp GRAVE          &kp C          &kp A                &kp E    &kp I    &kp ENTER
+&kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI           &kp W          &kp COMMA            &kp DOT  &kp F7   &kp F8
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10              &kp F11  &kp F12  &kp F13
+                                         &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &mt HOME LEFT      &mt END RIGHT  &magic_hold RCTRL 0
+                                         &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL     &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
             >;
         };
 

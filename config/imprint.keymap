@@ -304,7 +304,7 @@
         base {
             bindings = <
 &rgb_controls  &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6         &kp N7         &kp N8            &kp N9       &kp N0        &paren
-&rgb_numnav    &kp X         &kp F        &kp J        &kp K         &kp Q                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp COMMA     &bracket
+&rgb_numnav    &kp X         &kp F        &kp J        &kp K         &kp Q                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp SEMI      &bracket
 &kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp M                                 &kp EQUAL      &kp C          &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &kp ENTER
 &kp LS(TAB)    &kp P         &kp V        &kp D        &kp G         &kp Z                                 &kp SQT        &kp W          &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
 &kp TAB        &kp F9        &kp F10      &kp F11      &kp F12                                                            &kp GRAVE      &kp ESC           &kp LS(TAB)  &kp TAB       &sk LS(LA(LCTRL))

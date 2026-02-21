@@ -247,6 +247,11 @@
             bindings = <&mkp MB5>;
             key-positions = <51 52>;
         };
+
+        gaming {
+            bindings = <&tog 3>;
+            key-positions = <28 31>;
+        };
     };
 
     keymap {
@@ -285,6 +290,18 @@
 &tog 0       &trans        &trans        &trans        &none                                           &trans           &trans           &trans           &trans           &trans
                                                        &trans        &trans          &trans    &trans  &trans           &trans
                                                        &trans        &trans          &trans    &trans  &trans           &trans
+            >;
+        };
+
+        gaming {
+            bindings = <
+&kp MINUS  &kp N1    &kp N2    &kp N3  &kp N4     &kp N5            &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp EQUAL
+&kp ESC    &kp Q     &kp W     &kp E   &kp R      &kp T             &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH
+&kp TAB    &kp A     &kp S     &kp D   &kp F      &kp G             &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z     &kp X     &kp C   &kp V      &kp B             &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+&kp LCTRL  &kp LALT  &kp LGUI  &trans  &trans                               &trans  &trans     &trans   &trans    &trans
+                                       &trans     &trans  &trans    &trans  &trans  &trans
+                                       &kp SPACE  &trans  &trans    &trans  &trans  &kp SPACE
             >;
         };
     };

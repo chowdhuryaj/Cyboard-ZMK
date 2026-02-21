@@ -84,6 +84,7 @@
                 SLASH A
                 SEMI E
             >;
+        };
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";

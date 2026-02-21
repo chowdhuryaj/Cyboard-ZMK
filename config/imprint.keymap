@@ -168,13 +168,13 @@
 
         base {
             bindings = <
-&kp MINUS  &kp N1  &kp N2  &kp N3  &kp N4            &kp N5                             &kp N6        &kp N7          &kp N8            &kp N9         &kp N0    &none
-&kp EQUAL  &kp X   &kp V   &kp L   &kp K             &kp Q                              &kp P         &kp G           &kp O             &kp U          &kp SQT   &none
-&bdel      &kp N   &kp S   &kp H   &kp T             &kp M                              &kp Y         &kp C           &kp A             &kp E          &kp I     &kp ENTER
-&kp PG_UP  &kp B   &kp F   &kp J   &kp D             &kp Z                              &kp GRAVE     &kp W           &mt SEMI COMMA    &mt COLON DOT  &kp FSLH  &kp BSLH
-&kp PG_DN  &ak     &kp F7  &kp F8  &kp F9                                                             &kp F10         &kp F11           &kp F12        &bdel     &none
-                                   &hml LCTRL SPACE  &mkp MB4        &mkp MB5           &rmb_mmb      &mkp MB1        &ak
-                                   &hml LSHFT R      &hml LGUI LEFT  &hml LALT RIGHT    &hmr RALT UP  &hmr RGUI DOWN  &hmr RSHFT SPACE
+&kp MINUS  &kp N1     &kp N2  &kp N3  &kp N4        &kp N5                             &kp N6        &kp N7          &kp N8            &kp N9         &kp N0     &none
+&kp EQUAL  &kp X      &kp V   &kp L   &kp K         &kp Q                              &kp P         &kp G           &kp O             &kp U          &kp GRAVE  &none
+&bdel      &kp N      &kp S   &kp H   &kp T         &kp M                              &kp Y         &kp C           &kp A             &kp E          &kp I      &kp ENTER
+&kp PG_UP  &kp B      &kp F   &kp J   &kp D         &kp Z                              &kp SQT       &kp W           &mt SEMI COMMA    &mt COLON DOT  &kp FSLH   &kp BSLH
+&kp PG_DN  &sk LCTRL  &kp F7  &kp F8  &kp F9                                                         &kp F10         &kp F11           &kp F12        &sk RCTRL  &none
+                                      &ak           &mkp MB4        &mkp MB5           &rmb_mmb      &mkp MB1        &ak
+                                      &hml LSHFT R  &hml LGUI LEFT  &hml LALT RIGHT    &hmr RALT UP  &hmr RGUI DOWN  &hmr RSHFT SPACE
             >;
         };
 

@@ -169,6 +169,11 @@
             bindings = <&mo 2>;
             key-positions = <58 64>;
         };
+
+        drag_scroll {
+            bindings = <&mo 1>;
+            key-positions = <64 65>;
+        };
     };
 
     macros {

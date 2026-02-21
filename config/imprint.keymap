@@ -307,7 +307,7 @@
 &rgb_numnav    &kp X         &kp F        &kp J        &kp K         &kp Q                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp COMMA     &bracket
 &kp B          &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp M                                 &kp EQUAL      &kp C          &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &kp ENTER
 &kp LS(TAB)    &kp P         &kp V        &kp D        &kp G         &kp Z                                 &kp SQT        &kp W          &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
-&kp TAB        &kp F9        &kp F10      &kp F11      &kp F12                                                            &kp GRAVE      &kp UP            &kp DOWN     &kp LEFT      &kp RIGHT
+&kp TAB        &kp F9        &kp F10      &kp F11      &kp F12                                                            &kp GRAVE      &kp ESC           &kp LS(TAB)  &kp TAB       &sk LS(RET)
                                                        &lt 3 L       &mt PAGE_UP UP     &mt PG_DN DOWN     &mt HOME LEFT  &mt END RIGHT  &ak_expand
                                                        &hml LSHFT R  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &kp F7         &kp F8         &hmr RSHFT SPACE
             >;

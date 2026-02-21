@@ -161,6 +161,12 @@
             key-positions = <25 26>;
             timeout-ms = <20>;
         };
+
+        right_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <31 32>;
+            timeout-ms = <20>;
+        };
     };
 
     keymap {
@@ -169,9 +175,9 @@
         base {
             bindings = <
 &kp MINUS  &kp N1     &kp N2  &kp N3  &kp N4        &kp N5                             &kp N6        &kp N7          &kp N8            &kp N9         &kp N0     &none
-&kp EQUAL  &kp X      &kp F   &kp L   &kp K         &kp Q                              &none         &kp Y           &kp O             &kp U          &kp GRAVE  &none
-&kp B      &kp N      &kp S   &kp H   &kp T         &kp M                              &kp G         &kp C           &kp A             &kp E          &kp I      &kp ENTER
-&kp PG_UP  &kp P      &kp V   &kp J   &kp D         &kp Z                              &kp SQT       &kp W           &mt SEMI COMMA    &mt COLON DOT  &kp FSLH   &kp BSLH
+&kp EQUAL  &kp X      &kp F   &kp L   &kp K         &kp Q                              &kp BSLH      &kp Y           &kp O             &kp U          &kp GRAVE  &none
+&kp B      &kp N      &kp S   &kp H   &kp T         &kp M                              &kp G         &kp C           &kp A             &kp E          &kp I      &none
+&kp PG_UP  &kp P      &kp V   &kp J   &kp D         &kp Z                              &kp SQT       &kp W           &mt SEMI COMMA    &mt COLON DOT  &kp FSLH   &none
 &kp PG_DN  &sk LCTRL  &kp F7  &kp F8  &kp F9                                                         &kp F10         &kp F11           &kp F12        &sk RCTRL  &none
                                       &bdel         &mkp MB4        &mkp MB5           &rmb_mmb      &mkp MB1        &ak
                                       &hml LSHFT R  &hml LGUI LEFT  &hml LALT RIGHT    &hmr RALT UP  &hmr RGUI DOWN  &hmr RSHFT SPACE

@@ -224,7 +224,7 @@
         };
 
         controls {
-            bindings = <&mo 3>;
+            bindings = <&mo 2>;
             key-positions = <58 64>;
         };
 
@@ -239,7 +239,7 @@
         };
 
         gaming {
-            bindings = <&tog 2>;
+            bindings = <&tog 1>;
             key-positions = <28 31>;
         };
     };
@@ -256,18 +256,6 @@
 &hml_rep LGUI 0  &hml_space LALT SPACE  &mkp MB2  &mkp MB3  &mkp MB1                                                     &kp F9        &kp F10           &kp F11  &hmr_ak RALT 0  &hmr_rep RGUI 0
                                                             &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &left_dance  &right_dance  &mt RCTRL F24
                                                             &hml LSHFT R  &bspc_dance     &del_dance        &mkp MB1     &rmb_mmb      &hmr RSHFT SPACE
-            >;
-        };
-
-        drag_scroll {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 

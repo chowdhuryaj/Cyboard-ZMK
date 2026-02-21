@@ -103,6 +103,24 @@
             flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
         };
+
+        bspc_danc: bspc_danc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BSPC_DANC";
+            #binding-cells = <0>;
+            bindings = <&hml LGUI BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
+
+            tapping-term-ms = <180>;
+        };
+
+        del_dance: del_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DEL_DANCE";
+            #binding-cells = <0>;
+            bindings = <&hml LGUI DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
+
+            tapping-term-ms = <180>;
+        };
     };
 
     combos {
@@ -188,7 +206,7 @@
 &kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI           &kp W          &kp COMMA            &kp DOT  &kp F7   &kp F8
 &mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10              &kp F11  &kp F12  &kp F13
                                          &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &mt HOME LEFT      &mt END RIGHT  &magic_hold RCTRL 0
-                                         &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL     &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
+                                         &hml LSHFT R  &bspc_danc      &del_dance        &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
             >;
         };
 

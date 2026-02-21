@@ -117,7 +117,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "DEL_DANCE";
             #binding-cells = <0>;
-            bindings = <&hml LGUI DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
+            bindings = <&hml LALT DEL>, <&kp LC(DEL)>, <&kp LG(DEL)>;
 
             tapping-term-ms = <180>;
         };
@@ -127,6 +127,15 @@
             label = "RIGHT_DANCE";
             #binding-cells = <0>;
             bindings = <&hml HOME RIGHT>, <&kp LC(RIGHT)>, <&kp LG(RIGHT)>;
+
+            tapping-term-ms = <180>;
+        };
+
+        bspc_dance: bspc_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BSPC_DANCE";
+            #binding-cells = <0>;
+            bindings = <&hml LGUI BSPC>, <&kp LC(BSPC)>, <&kp LG(BSPC)>;
 
             tapping-term-ms = <180>;
         };
@@ -174,6 +183,11 @@
             bindings = <&mo 1>;
             key-positions = <64 65>;
         };
+
+        right_drag_scroll {
+            bindings = <&mo 1>;
+            key-positions = <61 67>;
+        };
     };
 
     macros {
@@ -208,9 +222,9 @@
 &kp ESC    &kp X     &kp V     &kp J     &kp K         &kp Q                             &kp FSLH           &kp Y          &kp O                &kp U    &kp SQT  &kp BSLH
 &kp B      &kp N     &kp S     &kp H     &kp T         &kp M                             &kp GRAVE          &kp C          &kp A                &kp E    &kp I    &kp ENTER
 &kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI           &kp W          &kp COMMA            &kp DOT  &kp F7   &kp F8
-&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10              &kp F11  &kp F12  &kp F13
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10              &kp F11  &kp F12  &ak_expand
                                          &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &left_dance        &right_dance   &magic_hold RCTRL 0
-                                         &hml LSHFT R  &left_dance     &del_dance        &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
+                                         &hml LSHFT R  &bspc_dance     &del_dance        &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
             >;
         };
 

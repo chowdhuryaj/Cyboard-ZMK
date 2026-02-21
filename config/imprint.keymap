@@ -4,6 +4,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 &mt {
@@ -108,22 +109,23 @@
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57 61 62 63 67 68 69>;
             flavor = "tap-preferred";
         };
+
+        magic_hold: magic_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAGIC_HOLD";
+            bindings = <&kp>, <&ak_expand>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <175>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        left_esc {
-            bindings = <&kp ESC>;
-            key-positions = <26 25>;
-            timeout-ms = <20>;
-        };
-
-        left_tab {
-            bindings = <&kp TAB>;
-            key-positions = <26 27>;
-            timeout-ms = <20>;
-        };
 
         left_enter {
             bindings = <&kp ENTER>;
@@ -169,35 +171,9 @@
             bindings = <&roll_ie>;
             key-positions = <34 33>;
         };
-
-        right_enter {
-            bindings = <&kp ENTER>;
-            key-positions = <31 32>;
-        };
     };
 
     macros {
-        paren: paren {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR &kp RPAR &kp LEFT_ARROW>;
-            label = "PAREN";
-        };
-
-        bracket: brac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT_ARROW>;
-            label = "BRAC";
-        };
-
-        brace: brace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBRC &kp RBRC &kp LEFT_ARROW>;
-            label = "BRACE";
-        };
-
         bg_rl: bg_rl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -225,13 +201,13 @@
 
         base {
             bindings = <
-&sl 1        &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6         &kp N7         &kp N8            &kp N9       &kp N0        &paren
-&none        &kp X         &kp F        &kp J        &kp K         &kp Q                                 &kp MINUS      &kp Y          &kp O             &kp U        &kp SEMI      &bracket
-&kp B        &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp M                                 &kp EQUAL      &kp C          &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &kp ENTER
-&kp LS(TAB)  &kp P         &kp V        &kp D        &kp G         &kp Z                                 &kp SQT        &kp W          &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
-&kp TAB      &kp F9        &kp F10      &kp F11      &kp F12                                                            &kp GRAVE      &kp ESC           &kp LS(TAB)  &kp TAB       &rgb_ug RGB_TOG
-                                                     &hml LGUI L   &mt PAGE_UP UP     &mt PG_DN DOWN     &mt HOME LEFT  &mt END RIGHT  &ak_expand
-                                                     &hml LSHFT R  &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &lt 0 F7       &lt 2 F8       &hmr RSHFT SPACE
+&kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4        &kp N5                             &kp N6         &kp N7         &kp N8              &kp N9       &kp N0    &kp EQUAL
+&kp ESC    &kp X     &kp F     &kp J     &kp K         &kp Q                              &kp MINUS      &kp Y          &kp O               &kp U        &kp SQT   &sl 1
+&kp B      &kp N     &kp S     &kp H     &kp T         &kp M                              &kp EQUAL      &kp C          &kp A               &kp E        &kp I     &kp ENTER
+&kp TAB    &kp P     &kp V     &kp D     &kp G         &kp Z                              &kp SEMI       &kp W          &kp COMMA           &kp DOT      &kp FSLH  &kp BSLH
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                        &kp GRAVE      &kp ESC             &kp LS(TAB)  &kp TAB   &rgb_ug RGB_TOG
+                                         &hml LGUI L   &mt PAGE_UP UP   &mt PG_DN DOWN    &mt HOME LEFT  &mt END RIGHT  &magic_hold RGUI 0
+                                         &hml LSHFT R  &hml LCTRL BSPC  &hml LALT DEL     &hmr RALT F7   &hmr RCTRL F8  &hmr RSHFT SPACE
             >;
         };
 
@@ -239,7 +215,7 @@
             bindings = <
 &kp F1     &kp F2     &kp F3     &kp F4       &kp F5         &kp F6               &kp F7   &kp F8   &kp F9   &kp F10  &kp F11  &kp F12
 &kp F13    &kp F14    &kp F15    &kp F16      &kp F17        &kp F18              &kp F19  &kp F20  &kp F21  &kp F22  &kp F23  &kp F24
-&paren     &kp LC(A)  &kp LC(S)  &kp LC(RET)  &kp LC(SPACE)  &bracket             &trans   &trans   &trans   &trans   &trans   &trans
+&trans     &kp LC(A)  &kp LC(S)  &kp LC(RET)  &kp LC(SPACE)  &trans               &trans   &trans   &trans   &trans   &trans   &trans
 &kp LC(T)  &kp LC(Z)  &kp LC(X)  &kp LC(C)    &kp LC(V)      &kp LC(Y)            &trans   &trans   &trans   &trans   &trans   &trans
 &kp LC(W)  &kp LG(B)  &kp LG(I)  &kp LG(U)    &trans                                       &trans   &trans   &trans   &trans   &trans
                                               &trans         &trans     &trans    &trans   &trans   &trans

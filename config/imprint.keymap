@@ -88,19 +88,6 @@
             flavor = "tap-preferred";
         };
 
-        magic_hold: magic_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_HOLD";
-            bindings = <&kp>, <&ak_expand>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <175>;
-            flavor = "balanced";
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
-        };
-
         left_dance: left_dance {
             compatible = "zmk,behavior-tap-dance";
             label = "LEFT_DANCE";
@@ -144,6 +131,34 @@
             bindings = <&mkp MB3>, <&mkp MB2>;
 
             tapping-term-ms = <200>;
+        };
+
+        hmr_ak: hmr_ak {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_AK";
+            bindings = <&kp>, <&ak_right>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "balanced";
+        };
+
+        hmr_rep: hmr_rep {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_REP";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "balanced";
         };
     };
 
@@ -196,39 +211,16 @@
         };
     };
 
-    macros {
-        bg_rl: bg_rl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp R &kp L>;
-            label = "BG_RL";
-        };
-
-        roll_ea: roll_ea {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp E &kp A>;
-            label = "ROLL_EA";
-        };
-
-        roll_ie: roll_ie {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp I &kp E>;
-            label = "ROLL_IE";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4        &kp N5                            &kp N6       &kp N7        &kp N8            &kp N9   &kp N0     &kp EQUAL
-&kp ESC    &kp X     &kp V     &kp J     &kp K         &kp Q                             &kp FSLH     &kp Y         &kp O             &kp U    &kp SQT    &kp BSLH
-&kp B      &kp N     &kp S     &kp H     &kp T         &kp M                             &kp GRAVE    &kp C         &kp A             &kp E    &kp I      &kp ENTER
-&kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI     &kp W         &kp COMMA         &kp DOT  &kp F7     &kp F8
-&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                     &kp F9        &kp F10           &kp F11  &ak_right  &key_repeat
+&kp MINUS  &kp N1    &kp N2    &kp N3    &kp N4        &kp N5                            &kp N6       &kp N7        &kp N8            &kp N9   &kp N0          &kp EQUAL
+&kp ESC    &kp X     &kp V     &kp J     &kp K         &kp Q                             &kp FSLH     &kp Y         &kp O             &kp U    &kp SQT         &kp BSLH
+&kp B      &kp N     &kp S     &kp H     &kp T         &kp M                             &kp GRAVE    &kp C         &kp A             &kp E    &kp I           &kp ENTER
+&kp TAB    &kp P     &kp F     &kp D     &kp G         &kp Z                             &kp SEMI     &kp W         &kp COMMA         &kp DOT  &kp F7          &kp F8
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                     &kp F9        &kp F10           &kp F11  &hmr_ak RALT 0  &hmr_rep RGUI 0
                                          &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &left_dance  &right_dance  &mt RCTRL F24
                                          &hml LSHFT R  &bspc_dance     &del_dance        &mkp MB1     &rmb_mmb      &hmr RSHFT SPACE
             >;

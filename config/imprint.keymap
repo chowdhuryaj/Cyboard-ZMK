@@ -164,6 +164,11 @@
             bindings = <&kp GRAVE>;
             key-positions = <62 68>;
         };
+
+        controls {
+            bindings = <&mo 2>;
+            key-positions = <58 64>;
+        };
     };
 
     macros {
@@ -201,6 +206,18 @@
 &mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                           &kp F9         &kp F10              &kp F11  &kp F12  &kp F13
                                          &hml LCTRL L  &mt PAGE_UP UP  &mt PG_DN DOWN    &left_dance        &right_dance   &magic_hold RCTRL 0
                                          &hml LSHFT R  &left_dance     &del_dance        &hmr RALT LS(TAB)  &hmr RGUI TAB  &hmr RSHFT SPACE
+            >;
+        };
+
+        drag_scroll {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 

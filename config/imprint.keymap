@@ -57,25 +57,6 @@
             };
         };
 
-        apps: apps {
-            compatible = "zmk,behavior-tri-state";
-            label = "APPS";
-            #binding-cells = <0>;
-            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-
-            ignored-key-positions = <36>;
-        };
-
-        hold_clear: hold_clear {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_CLEAR";
-            bindings = <&clear>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            flavor = "tap-preferred";
-        };
-
         /* =======================================================
          * Directional Space / Repeat (hand-aware via trigger-keys)
          *  - sp_rep_l: SPACE after LH keys, REPEAT after RH keys

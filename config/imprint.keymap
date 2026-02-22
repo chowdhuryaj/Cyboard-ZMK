@@ -221,13 +221,13 @@
 
         base {
             bindings = <
-&kp MINUS  &kp N1   &kp N2   &kp N3  &kp N4        &kp N5                        &kp N6     &kp N7    &kp N8            &kp N9    &kp N0     &kp F1
-&kp EQUAL  &kp J    &kp B    &kp G   &kp V         &kp X                         &kp SQT    &kp W     &kp O             &kp U     &kp COMMA  &kp F2
-&kp Q      &kp H    &kp N    &kp S   &kp T         &kp M                         &magic 0   &magic 1  &kp A             &kp E     &kp I      &kp MINUS
-&kp F9     &kp Y    &kp P    &kp F   &kp D         &kp K                         &kp Z      &kp C     &kp FSLH          &kp SEMI  &kp COMMA  &kp F3
-&kp F10    &kp F11  &kp F12  &kp F7  &kp F8                                                 &kp DOWN  &kp UP            &kp LEFT  &kp RIGHT  &kp F4
-                                     &hml LCTRL L  &mkp MB4      &mkp MB5        &rmb_mmb   &mkp MB1  &ak
-                                     &hml LSHFT R  &hml LGUI F5  &hml LALT F6    &kp GRAVE  &bdel     &hmr RSHFT SPACE
+&kp MINUS  &kp N1   &kp N2   &kp N3  &kp N4        &kp N5                           &kp N6     &kp N7       &kp N8            &kp N9    &kp N0     &kp F1
+&kp EQUAL  &kp J    &kp B    &kp G   &kp V         &kp X                            &kp SQT    &kp W        &kp O             &kp U     &kp COMMA  &kp F2
+&kp Q      &kp H    &kp N    &kp S   &kp T         &kp M                            &magic 0   &magic 1     &kp A             &kp E     &kp I      &kp MINUS
+&kp F9     &kp Y    &kp P    &kp F   &kp D         &kp K                            &kp Z      &kp C        &kp FSLH          &kp SEMI  &kp COMMA  &kp F3
+&kp F10    &kp F11  &kp F12  &kp F7  &kp F8                                                    &kp DOWN     &kp UP            &kp LEFT  &kp RIGHT  &kp F4
+                                     &hml LCTRL L  &mkp MB4        &mkp MB5         &rmb_mmb   &mkp MB1     &ak
+                                     &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &kp GRAVE  &hml RGUI Y  &hmr RSHFT SPACE
             >;
         };
 

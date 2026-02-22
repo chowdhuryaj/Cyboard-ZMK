@@ -349,8 +349,8 @@ x_to_t {
             bindings = <
 &kp MINUS      &kp N1    &kp N2     &kp N3       &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
 &kp EQUAL      &kp Q     &kp J      &kp G        &kp K         &kp V                            &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
-&kp B          &kp N     &kp S      &kp H        &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E     &kp I      &kp X
-&kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE    &kp D         &kp Z                            &kp SEMI  &magic 1         &kp SPACE     &ak_r     &kp DOT    &kp F4
+&kp B          &kp N     &kp S      &kp H        &kp T         &kp M                            &kp FSLH  &magic 1         &kp A         &kp E     &kp I      &kp X
+&kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE     &kp D         &kp Z                           &kp SEMI  &kp C            &kp SPACE     &ak_r     &kp DOT    &kp F4
 &kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP       &kp DOWN                                                 &kp F7           &kp F8        &kp F10   &kp F11    &kp F12
                                                  &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
                                                  &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P

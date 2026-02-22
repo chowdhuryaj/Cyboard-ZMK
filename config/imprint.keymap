@@ -169,7 +169,7 @@
 
         controls {
             bindings = <&mo 2>;
-            key-positions = <52 51>;
+            key-positions = <27 32>;
         };
 
         gaming {
@@ -192,12 +192,6 @@
         right_enter {
             bindings = <&kp ENTER>;
             key-positions = <31 32>;
-            timeout-ms = <20>;
-        };
-
-        bd {
-            bindings = <&bdel>;
-            key-positions = <28 26>;
             timeout-ms = <20>;
         };
 

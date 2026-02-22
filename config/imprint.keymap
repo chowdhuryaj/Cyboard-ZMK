@@ -167,13 +167,13 @@
 
         base {
             bindings = <
-&kp MINUS      &kp N1    &kp N2     &kp N3  &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
-&kp EQUAL      &kp Q     &kp J      &kp G   &kp K         &kp GRAVE                        &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
-&kp B          &kp N     &kp S      &kp H   &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E     &kp I      &kp F3
-&kp LC(EQUAL)  &ak       &kp V      &kp F   &kp D         &kp Z                            &kp X     &ak              &kp SPACE     &kp SEMI  &kp DOT    &kp F4
-&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP  &kp DOWN                                                 &kp F9           &kp F10       &kp F11   &kp F12    &kp F5
-                                            &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &hml RALT SPACE  &hmr RCTRL Y
-                                            &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &rmb_mmb  &hml RGUI SPACE  &hmr RSHFT P
+&kp MINUS      &kp N1    &kp N2     &kp N3     &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
+&kp EQUAL      &kp Q     &kp J      &kp G      &kp K         &kp GRAVE                        &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
+&kp B          &kp N     &kp S      &kp H      &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E     &kp I      &kp F3
+&kp LC(EQUAL)  &kp F     &kp V      &kp SPACE  &kp D         &kp Z                            &kp X     &ak              &kp SPACE     &kp SEMI  &kp DOT    &kp F4
+&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP     &kp DOWN                                                 &kp F9           &kp F10       &kp F11   &kp F12    &kp F5
+                                               &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
+                                               &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P
             >;
         };
 

@@ -113,12 +113,6 @@ g_to_ging {
     max-prior-idle-ms = <300>;
 };
 
-d_to_ea {
-    trigger-keys = <D>;
-    bindings = <&kp E &kp A>;
-    max-prior-idle-ms = <300>;
-};
-
 d_to_v {
     trigger-keys = <D>;
     bindings = <&kp V>;

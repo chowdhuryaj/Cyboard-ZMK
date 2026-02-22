@@ -17,152 +17,185 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        /* =======================================================
- * Directional Space / Repeat for current base layer
- *  - sp_rep_l: tap = SPACE, repeat if prior key was RIGHT hand
- *  - sp_rep_r: tap = SPACE, repeat if prior key was LEFT hand
- * ======================================================= */
 
-        sp_rep_l: sp_rep_l {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "SP_REP_L";
-            #binding-cells = <0>;
+ak_l: ak_l {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "AK_L";
+    #binding-cells = <0>;
 
-            /* default output */
+    /* default output for AK key itself */
+    bindings = <&key_repeat>;
 
-            bindings = <&kp SPACE>;
-
-            /* right-hand keys -> REPEAT */
-
-            rh_to_repeat {
-                trigger-keys = <
+    /* right-hand preceding keys -> REPEAT (gate OFF the expansions) */
+    rh_to_repeat {
+        trigger-keys = <
             /* right side number row */
             N6 N7 N8 N9 N0
 
-            /* right side letters */
+            /* right side letters (includes P Y per your note) */
             W O U C A E I X P Y
 
             /* right side punctuation */
             COMMA DOT SEMI SQT FSLH BSLH
 
-            /* right side function keys */
+            /* right side function keys (per your example) */
             F1 F2 F3 F4 F5 F9 F10 F11 F12
-                >;
+        >;
 
-                bindings = <&key_repeat>;
-                max-prior-idle-ms = <300>;
-            };
-        };
+        bindings = <&key_repeat>;
+        max-prior-idle-ms = <300>;
+    };
 
-        sp_rep_r: sp_rep_r {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "SP_REP_R";
-            #binding-cells = <0>;
+    t_to_he {
+        trigger-keys = <T>;
+        bindings = <&kp H &kp E>;
+        max-prior-idle-ms = <300>;
+    };
 
-            /* default output */
+    n_to_ion {
+        trigger-keys = <N>;
+        bindings = <&kp I &kp O &kp N>;
+        max-prior-idle-ms = <300>;
+    };
 
-            bindings = <&kp SPACE>;
+b_to_le {
+    trigger-keys = <B>;
+    bindings = <&kp L &kp E>;
+    max-prior-idle-ms = <300>;
+};
 
-            /* left-hand keys -> REPEAT */
+q_to_u {
+    trigger-keys = <Q>;
+    bindings = <&kp U>;
+    max-prior-idle-ms = <300>;
+};
 
-            lh_to_repeat {
-                trigger-keys = <
-            /* left side symbols + number row */
-            MINUS EQUAL
+g_to_ging {
+    trigger-keys = <G>;
+    bindings = <&kp G &kp I &kp N &kp G>;
+    max-prior-idle-ms = <300>;
+};
+
+d_to_ea {
+    trigger-keys = <D>;
+    bindings = <&kp E &kp A>;
+    max-prior-idle-ms = <300>;
+};
+
+d_to_v {
+    trigger-keys = <D>;
+    bindings = <&kp V>;
+    max-prior-idle-ms = <300>;
+};
+
+f_to_s {
+    trigger-keys = <F>;
+    bindings = <&kp S>;
+    max-prior-idle-ms = <300>;
+};
+
+    space_to_the {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+        max-prior-idle-ms = <300>;
+    };
+};
+
+ak_r: ak_r {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "AK_R";
+    #binding-cells = <0>;
+
+    /* default output for AK key itself */
+    bindings = <&key_repeat>;
+
+    /* left-hand preceding keys -> REPEAT (gate OFF the expansions) */
+    lh_to_repeat {
+        trigger-keys = <
+            /* left side number row */
             N1 N2 N3 N4 N5
 
-            /* left side letters */
-            Q J G K B N S H T M F V D Z L R
+            /* left side letters (includes L R per your note) */
+            Q J G K
+            N S H T
+            F V D Z
+            B M
+            L R
 
-            /* left side misc keys */
-            GRAVE
-            LEFT RIGHT UP DOWN
-                >;
+            /* left-side symbols you actually emit on LH */
+            MINUS EQUAL
+        >;
 
-                bindings = <&key_repeat>;
-                max-prior-idle-ms = <300>;
-            };
-        };
+        bindings = <&key_repeat>;
+        max-prior-idle-ms = <300>;
+    };
 
-        ak: ak {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "AK";
-            #binding-cells = <0>;
+    i_to_ou {
+        trigger-keys = <I>;
+        bindings = <&kp O &kp U>;
+        max-prior-idle-ms = <300>;
+    };
 
-            /* default output */
+y_to_ou {
+    trigger-keys = <Y>;
+    bindings = <&kp O &kp U>;
+    max-prior-idle-ms = <300>;
+};
 
-            bindings = <&key_repeat>;
+p_to_people {
+    trigger-keys = <P>;
+    bindings = <&kp P &kp E &kp O &kp P &kp L &kp E>;
+    max-prior-idle-ms = <300>;
+};
 
-            /* ===== existing rules (unchanged) ===== */
+x_to_t {
+    trigger-keys = <X>;
+    bindings = <&kp T>;
+    max-prior-idle-ms = <300>;
+};
 
-            i_to_ou {
-                trigger-keys = <I>;
-                bindings = <&kp O &kp U>;
-                max-prior-idle-ms = <300>;
-            };
+    u_to_i {
+        trigger-keys = <U>;
+        bindings = <&kp I>;
+        max-prior-idle-ms = <300>;
+    };
 
-            b_to_y {
-                trigger-keys = <B>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <300>;
-            };
+    punct_to_space_shift {
+        trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <300>;
+    };
 
-            u_to_i {
-                trigger-keys = <U>;
-                bindings = <&kp I>;
-                max-prior-idle-ms = <300>;
-            };
+    a_to_nd {
+        trigger-keys = <A>;
+        bindings = <&kp N &kp D>;
+        max-prior-idle-ms = <300>;
+    };
 
-            punct_to_space_shift {
-                trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <300>;
-            };
+    c_to_h {
+        trigger-keys = <C>;
+        bindings = <&kp H>;
+        max-prior-idle-ms = <300>;
+    };
 
-            /* ===== added expansions (no conflicts with the above) ===== */
+    o_to_u {
+        trigger-keys = <O>;
+        bindings = <&kp U>;
+        max-prior-idle-ms = <300>;
+    };
 
-            a_to_nd {
-                trigger-keys = <A>;
-                bindings = <&kp N &kp D>;
-                max-prior-idle-ms = <300>;
-            };
+    e_to_r {
+        trigger-keys = <E>;
+        bindings = <&kp R>;
+        max-prior-idle-ms = <300>;
+    };
 
-            c_to_h {
-                trigger-keys = <C>;
-                bindings = <&kp H>;
-                max-prior-idle-ms = <300>;
-            };
-
-            t_to_he {
-                trigger-keys = <T>;
-                bindings = <&kp H &kp E>;
-                max-prior-idle-ms = <300>;
-            };
-
-            n_to_ion {
-                trigger-keys = <N>;
-                bindings = <&kp I &kp O &kp N>;
-                max-prior-idle-ms = <300>;
-            };
-
-            o_to_u {
-                trigger-keys = <O>;
-                bindings = <&kp U>;
-                max-prior-idle-ms = <300>;
-            };
-
-            e_to_r {
-                trigger-keys = <E>;
-                bindings = <&kp R>;
-                max-prior-idle-ms = <300>;
-            };
-
-            space_to_the {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-                max-prior-idle-ms = <300>;
-            };
-        };
+    space_to_the {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+        max-prior-idle-ms = <300>;
+    };
+};
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -284,10 +317,10 @@
         base {
             bindings = <
 &kp MINUS      &kp N1    &kp N2     &kp N3       &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
-&kp EQUAL      &kp Q     &kp J      &kp G        &kp K         &kp GRAVE                        &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
+&kp EQUAL      &kp Q     &kp J      &kp G        &kp K         &kp V                            &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
 &kp B          &kp N     &kp S      &kp H        &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E     &kp I      &kp F3
-&kp LC(EQUAL)  &kp F     &kp V      &key_repeat  &kp D         &kp Z                            &kp X     &ak              &kp SPACE     &kp SEMI  &kp DOT    &kp F4
-&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP       &kp DOWN                                                 &kp F9           &kp F10       &kp F11   &kp F12    &kp F5
+&kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE    &kp D         &kp Z                            &kp X     &kp SEMI         &kp SPACE     &ak_r     &kp DOT    &kp F4
+&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP       &kp DOWN                                                 &kp F7           &kp F8        &kp F10   &kp F11    &kp F12
                                                  &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
                                                  &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P
             >;

@@ -17,23 +17,25 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-/* =======================================================
+        /* =======================================================
  * Directional Space / Repeat for current base layer
  *  - sp_rep_l: tap = SPACE, repeat if prior key was RIGHT hand
  *  - sp_rep_r: tap = SPACE, repeat if prior key was LEFT hand
  * ======================================================= */
 
-sp_rep_l: sp_rep_l {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "SP_REP_L";
-    #binding-cells = <0>;
+        sp_rep_l: sp_rep_l {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "SP_REP_L";
+            #binding-cells = <0>;
 
-    /* default output */
-    bindings = <&kp SPACE>;
+            /* default output */
 
-    /* right-hand keys -> REPEAT */
-    rh_to_repeat {
-        trigger-keys = <
+            bindings = <&kp SPACE>;
+
+            /* right-hand keys -> REPEAT */
+
+            rh_to_repeat {
+                trigger-keys = <
             /* right side number row */
             N6 N7 N8 N9 N0
 
@@ -45,24 +47,26 @@ sp_rep_l: sp_rep_l {
 
             /* right side function keys */
             F1 F2 F3 F4 F5 F9 F10 F11 F12
-        >;
+                >;
 
-        bindings = <&key_repeat>;
-        max-prior-idle-ms = <300>;
-    };
-};
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
-sp_rep_r: sp_rep_r {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "SP_REP_R";
-    #binding-cells = <0>;
+        sp_rep_r: sp_rep_r {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "SP_REP_R";
+            #binding-cells = <0>;
 
-    /* default output */
-    bindings = <&kp SPACE>;
+            /* default output */
 
-    /* left-hand keys -> REPEAT */
-    lh_to_repeat {
-        trigger-keys = <
+            bindings = <&kp SPACE>;
+
+            /* left-hand keys -> REPEAT */
+
+            lh_to_repeat {
+                trigger-keys = <
             /* left side symbols + number row */
             MINUS EQUAL
             N1 N2 N3 N4 N5
@@ -73,91 +77,92 @@ sp_rep_r: sp_rep_r {
             /* left side misc keys */
             GRAVE
             LEFT RIGHT UP DOWN
-        >;
+                >;
 
-        bindings = <&key_repeat>;
-        max-prior-idle-ms = <300>;
-    };
-};
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
-ak: ak {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "AK";
-    #binding-cells = <0>;
+        ak: ak {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "AK";
+            #binding-cells = <0>;
 
-    /* default output */
-    bindings = <&key_repeat>;
+            /* default output */
 
-    /* ===== existing rules (unchanged) ===== */
+            bindings = <&key_repeat>;
 
-    i_to_ou {
-        trigger-keys = <I>;
-        bindings = <&kp O &kp U>;
-        max-prior-idle-ms = <300>;
-    };
+            /* ===== existing rules (unchanged) ===== */
 
-    b_to_y {
-        trigger-keys = <B>;
-        bindings = <&kp Y>;
-        max-prior-idle-ms = <300>;
-    };
+            i_to_ou {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-    u_to_i {
-        trigger-keys = <U>;
-        bindings = <&kp I>;
-        max-prior-idle-ms = <300>;
-    };
+            b_to_y {
+                trigger-keys = <B>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <300>;
+            };
 
-    punct_to_space_shift {
-        trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
-        bindings = <&kp SPACE &sk LSHFT>;
-        max-prior-idle-ms = <300>;
-    };
+            u_to_i {
+                trigger-keys = <U>;
+                bindings = <&kp I>;
+                max-prior-idle-ms = <300>;
+            };
 
-    /* ===== added expansions (no conflicts with the above) ===== */
+            punct_to_space_shift {
+                trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
 
-    a_to_nd {
-        trigger-keys = <A>;
-        bindings = <&kp N &kp D>;
-        max-prior-idle-ms = <300>;
-    };
+            /* ===== added expansions (no conflicts with the above) ===== */
 
-    c_to_h {
-        trigger-keys = <C>;
-        bindings = <&kp H>;
-        max-prior-idle-ms = <300>;
-    };
+            a_to_nd {
+                trigger-keys = <A>;
+                bindings = <&kp N &kp D>;
+                max-prior-idle-ms = <300>;
+            };
 
-    t_to_he {
-        trigger-keys = <T>;
-        bindings = <&kp H &kp E>;
-        max-prior-idle-ms = <300>;
-    };
+            c_to_h {
+                trigger-keys = <C>;
+                bindings = <&kp H>;
+                max-prior-idle-ms = <300>;
+            };
 
-    n_to_ion {
-        trigger-keys = <N>;
-        bindings = <&kp I &kp O &kp N>;
-        max-prior-idle-ms = <300>;
-    };
+            t_to_he {
+                trigger-keys = <T>;
+                bindings = <&kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
 
-    o_to_u {
-        trigger-keys = <O>;
-        bindings = <&kp U>;
-        max-prior-idle-ms = <300>;
-    };
+            n_to_ion {
+                trigger-keys = <N>;
+                bindings = <&kp I &kp O &kp N>;
+                max-prior-idle-ms = <300>;
+            };
 
-    e_to_r {
-        trigger-keys = <E>;
-        bindings = <&kp R>;
-        max-prior-idle-ms = <300>;
-    };
+            o_to_u {
+                trigger-keys = <O>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-    space_to_the {
-        trigger-keys = <SPACE>;
-        bindings = <&kp T &kp H &kp E>;
-        max-prior-idle-ms = <300>;
-    };
-};
+            e_to_r {
+                trigger-keys = <E>;
+                bindings = <&kp R>;
+                max-prior-idle-ms = <300>;
+            };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -281,7 +286,7 @@ ak: ak {
 &kp MINUS      &kp N1    &kp N2     &kp N3     &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
 &kp EQUAL      &kp Q     &kp J      &kp G      &kp K         &kp GRAVE                        &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
 &kp B          &kp N     &kp S      &kp H      &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E     &kp I      &kp F3
-&kp LC(EQUAL)  &kp F     &kp V      &sp_rep_l  &kp D         &kp Z                            &kp X     &ak              &sp_rep_r     &kp SEMI  &kp DOT    &kp F4
+&kp LC(EQUAL)  &kp F     &kp V      &kp SPACE  &kp D         &kp Z                            &kp X     &ak              &kp SPACE     &kp SEMI  &kp DOT    &kp F4
 &kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP     &kp DOWN                                                 &kp F9           &kp F10       &kp F11   &kp F12    &kp F5
                                                &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
                                                &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P

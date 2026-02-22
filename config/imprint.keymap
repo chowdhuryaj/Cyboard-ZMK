@@ -80,36 +80,78 @@ sp_rep_r: sp_rep_r {
     };
 };
 
-        ak: ak {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "AK";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
+ak: ak {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "AK";
+    #binding-cells = <0>;
 
-            i_to_ou {
-                trigger-keys = <I>;
-                bindings = <&kp O &kp U>;
-                max-prior-idle-ms = <300>;
-            };
+    /* default output */
+    bindings = <&key_repeat>;
 
-            b_to_y {
-                trigger-keys = <B>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <300>;
-            };
+    /* ===== existing rules (unchanged) ===== */
 
-            u_to_i {
-                trigger-keys = <U>;
-                bindings = <&kp I>;
-                max-prior-idle-ms = <300>;
-            };
+    i_to_ou {
+        trigger-keys = <I>;
+        bindings = <&kp O &kp U>;
+        max-prior-idle-ms = <300>;
+    };
 
-            punct_to_space_shift {
-                trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <300>;
-            };
-        };
+    b_to_y {
+        trigger-keys = <B>;
+        bindings = <&kp Y>;
+        max-prior-idle-ms = <300>;
+    };
+
+    u_to_i {
+        trigger-keys = <U>;
+        bindings = <&kp I>;
+        max-prior-idle-ms = <300>;
+    };
+
+    punct_to_space_shift {
+        trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <300>;
+    };
+
+    /* ===== added expansions (no conflicts with the above) ===== */
+
+    a_to_nd {
+        trigger-keys = <A>;
+        bindings = <&kp N &kp D>;
+        max-prior-idle-ms = <300>;
+    };
+
+    t_to_he {
+        trigger-keys = <T>;
+        bindings = <&kp H &kp E>;
+        max-prior-idle-ms = <300>;
+    };
+
+    n_to_ion {
+        trigger-keys = <N>;
+        bindings = <&kp I &kp O &kp N>;
+        max-prior-idle-ms = <300>;
+    };
+
+    o_to_u {
+        trigger-keys = <O>;
+        bindings = <&kp U>;
+        max-prior-idle-ms = <300>;
+    };
+
+    e_to_r {
+        trigger-keys = <E>;
+        bindings = <&kp R>;
+        max-prior-idle-ms = <300>;
+    };
+
+    space_to_the {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+        max-prior-idle-ms = <300>;
+    };
+};
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";

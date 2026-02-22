@@ -122,6 +122,12 @@ ak: ak {
         max-prior-idle-ms = <300>;
     };
 
+    c_to_h {
+        trigger-keys = <C>;
+        bindings = <&kp H>;
+        max-prior-idle-ms = <300>;
+    };
+
     t_to_he {
         trigger-keys = <T>;
         bindings = <&kp H &kp E>;

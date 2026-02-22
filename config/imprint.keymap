@@ -38,7 +38,7 @@ sp_rep_l: sp_rep_l {
             N6 N7 N8 N9 N0
 
             /* right side letters */
-            W O U C A E I X
+            W O U C A E I X P Y
 
             /* right side punctuation */
             COMMA DOT SEMI SQT FSLH BSLH
@@ -68,7 +68,7 @@ sp_rep_r: sp_rep_r {
             N1 N2 N3 N4 N5
 
             /* left side letters */
-            Q J G K B N S H T M F V D Z
+            Q J G K B N S H T M F V D Z L R
 
             /* left side misc keys */
             GRAVE

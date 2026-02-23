@@ -35,6 +35,7 @@
                 F S
                 G S
                 H Y
+                I G
                 J Y
                 K T
                 L R
@@ -43,6 +44,7 @@
                 P N
                 Q E
                 R L
+                T K
                 U E
                 V T
                 X T
@@ -89,27 +91,21 @@ ak_l: ak_l {
         max-prior-idle-ms = <300>;
     };
 
-    n_to_ion {
+    n_to_g {
         trigger-keys = <N>;
-        bindings = <&kp I &kp O &kp N>;
+        bindings = <&kp G>;
         max-prior-idle-ms = <300>;
     };
 
-b_to_le {
+b_to_n {
     trigger-keys = <B>;
-    bindings = <&kp L &kp E>;
+    bindings = <&kp N>;
     max-prior-idle-ms = <300>;
 };
 
 q_to_u {
     trigger-keys = <Q>;
     bindings = <&kp U>;
-    max-prior-idle-ms = <300>;
-};
-
-g_to_ging {
-    trigger-keys = <G>;
-    bindings = <&kp G &kp I &kp N &kp G>;
     max-prior-idle-ms = <300>;
 };
 
@@ -130,6 +126,7 @@ f_to_s {
         bindings = <&kp T &kp H &kp E>;
         max-prior-idle-ms = <300>;
     };
+
 };
 
 ak_r: ak_r {
@@ -173,9 +170,9 @@ y_to_ou {
     max-prior-idle-ms = <300>;
 };
 
-p_to_people {
+p_to_y {
     trigger-keys = <P>;
-    bindings = <&kp P &kp E &kp O &kp P &kp L &kp E>;
+    bindings = <&kp Y>;
     max-prior-idle-ms = <300>;
 };
 
@@ -209,22 +206,25 @@ x_to_t {
         max-prior-idle-ms = <300>;
     };
 
-    o_to_u {
+    o_to_a {
         trigger-keys = <O>;
-        bindings = <&kp U>;
+        bindings = <&kp A>;
         max-prior-idle-ms = <300>;
     };
 
-    e_to_r {
+    e_to_u {
         trigger-keys = <E>;
-        bindings = <&kp R>;
-        max-prior-idle-ms = <300>;
+        bindings = <&kp U>;
     };
 
     space_to_the {
         trigger-keys = <SPACE>;
         bindings = <&kp T &kp H &kp E>;
-        max-prior-idle-ms = <300>;
+    };
+
+    bword {
+        trigger-keys = <BSPC>;
+        bindings = <&kp LS(BSPC)>;
     };
 };
 

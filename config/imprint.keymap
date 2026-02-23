@@ -34,7 +34,7 @@
             N6 N7 N8 N9 N0
 
             /* right side letters (includes P Y per your note) */
-            W O U C A E I X P Y
+            W O C A E I X P Y
 
             /* right side punctuation */
             COMMA DOT SEMI SQT FSLH BSLH
@@ -80,6 +80,24 @@
             f_to_s {
                 trigger-keys = <F>;
                 bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
+
+            l_to_r {
+                trigger-keys = <L>;
+                bindings = <&kp R>;
+                max-prior-idle-ms = <300>;
+            };
+
+            r_to_l {
+                trigger-keys = <R>;
+                bindings = <&kp L>;
+                max-prior-idle-ms = <300>;
+            };
+
+            u_to_e {
+                trigger-keys = <U>;
+                bindings = <&kp E>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -302,7 +320,7 @@
         base {
             bindings = <
 &kp MINUS      &kp N1    &kp N2     &kp N3     &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9   &kp N0     &kp F1
-&kp EQUAL      &kp Q     &kp J      &kp G      &kp K         &kp V                            &kp SQT   &kp U            &kp O         &kp U    &kp COMMA  &kp F2
+&kp EQUAL      &kp Q     &kp J      &kp G      &kp K         &kp V                            &kp SQT   &ak_r            &kp O         &kp U    &kp COMMA  &kp F2
 &kp B          &kp N     &kp S      &kp H      &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E    &kp I      &kp X
 &kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE  &kp D         &kp Z                            &kp SEMI  &kp W            &kp SPACE     &ak_r    &kp DOT    &kp F4
 &kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP     &kp DOWN                                                 &kp F7           &kp F8        &kp F10  &kp F11    &kp F12

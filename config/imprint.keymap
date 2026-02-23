@@ -28,6 +28,7 @@
                 X T
                 Y H
             >;
+
             skip-magic-rules = <
                 A O
                 B N
@@ -57,17 +58,19 @@
             >;
         };
 
-ak_l: ak_l {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "AK_L";
-    #binding-cells = <0>;
+        ak_l: ak_l {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "AK_L";
+            #binding-cells = <0>;
 
-    /* default output for AK key itself */
-    bindings = <&key_repeat>;
+            /* default output for AK key itself */
 
-    /* right-hand preceding keys -> REPEAT (gate OFF the expansions) */
-    rh_to_repeat {
-        trigger-keys = <
+            bindings = <&key_repeat>;
+
+            /* right-hand preceding keys -> REPEAT (gate OFF the expansions) */
+
+            rh_to_repeat {
+                trigger-keys = <
             /* right side number row */
             N6 N7 N8 N9 N0
 
@@ -79,67 +82,68 @@ ak_l: ak_l {
 
             /* right side function keys (per your example) */
             F1 F2 F3 F4 F5 F9 F10 F11 F12
-        >;
+                >;
 
-        bindings = <&key_repeat>;
-        max-prior-idle-ms = <300>;
-    };
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <300>;
+            };
 
-    t_to_he {
-        trigger-keys = <T>;
-        bindings = <&kp H &kp E>;
-        max-prior-idle-ms = <300>;
-    };
+            t_to_he {
+                trigger-keys = <T>;
+                bindings = <&kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
 
-    n_to_g {
-        trigger-keys = <N>;
-        bindings = <&kp G>;
-        max-prior-idle-ms = <300>;
-    };
+            n_to_g {
+                trigger-keys = <N>;
+                bindings = <&kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-b_to_n {
-    trigger-keys = <B>;
-    bindings = <&kp N>;
-    max-prior-idle-ms = <300>;
-};
+            b_to_n {
+                trigger-keys = <B>;
+                bindings = <&kp N>;
+                max-prior-idle-ms = <300>;
+            };
 
-q_to_u {
-    trigger-keys = <Q>;
-    bindings = <&kp U>;
-    max-prior-idle-ms = <300>;
-};
+            q_to_u {
+                trigger-keys = <Q>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-d_to_v {
-    trigger-keys = <D>;
-    bindings = <&kp V>;
-    max-prior-idle-ms = <300>;
-};
+            d_to_v {
+                trigger-keys = <D>;
+                bindings = <&kp V>;
+                max-prior-idle-ms = <300>;
+            };
 
-f_to_s {
-    trigger-keys = <F>;
-    bindings = <&kp S>;
-    max-prior-idle-ms = <300>;
-};
+            f_to_s {
+                trigger-keys = <F>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
 
-    space_to_the {
-        trigger-keys = <SPACE>;
-        bindings = <&kp T &kp H &kp E>;
-        max-prior-idle-ms = <300>;
-    };
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
-};
+        ak_r: ak_r {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "AK_R";
+            #binding-cells = <0>;
 
-ak_r: ak_r {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "AK_R";
-    #binding-cells = <0>;
+            /* default output for AK key itself */
 
-    /* default output for AK key itself */
-    bindings = <&key_repeat>;
+            bindings = <&key_repeat>;
 
-    /* left-hand preceding keys -> REPEAT (gate OFF the expansions) */
-    lh_to_repeat {
-        trigger-keys = <
+            /* left-hand preceding keys -> REPEAT (gate OFF the expansions) */
+
+            lh_to_repeat {
+                trigger-keys = <
             /* left side number row */
             N1 N2 N3 N4 N5
 
@@ -152,81 +156,81 @@ ak_r: ak_r {
 
             /* left-side symbols you actually emit on LH */
             MINUS EQUAL
-        >;
+                >;
 
-        bindings = <&key_repeat>;
-        max-prior-idle-ms = <300>;
-    };
+                bindings = <&key_repeat>;
+                max-prior-idle-ms = <300>;
+            };
 
-    i_to_ou {
-        trigger-keys = <I>;
-        bindings = <&kp O &kp U>;
-        max-prior-idle-ms = <300>;
-    };
+            i_to_ou {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-y_to_ou {
-    trigger-keys = <Y>;
-    bindings = <&kp O &kp U>;
-    max-prior-idle-ms = <300>;
-};
+            y_to_ou {
+                trigger-keys = <Y>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-p_to_y {
-    trigger-keys = <P>;
-    bindings = <&kp Y>;
-    max-prior-idle-ms = <300>;
-};
+            p_to_y {
+                trigger-keys = <P>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <300>;
+            };
 
-x_to_t {
-    trigger-keys = <X>;
-    bindings = <&kp T>;
-    max-prior-idle-ms = <300>;
-};
+            x_to_t {
+                trigger-keys = <X>;
+                bindings = <&kp T>;
+                max-prior-idle-ms = <300>;
+            };
 
-    u_to_i {
-        trigger-keys = <U>;
-        bindings = <&kp I>;
-        max-prior-idle-ms = <300>;
-    };
+            u_to_i {
+                trigger-keys = <U>;
+                bindings = <&kp I>;
+                max-prior-idle-ms = <300>;
+            };
 
-    punct_to_space_shift {
-        trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
-        bindings = <&kp SPACE &sk LSHFT>;
-        max-prior-idle-ms = <300>;
-    };
+            punct_to_space_shift {
+                trigger-keys = <DOT COMMA SEMI EXCL QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
 
-    a_to_nd {
-        trigger-keys = <A>;
-        bindings = <&kp N &kp D>;
-        max-prior-idle-ms = <300>;
-    };
+            a_to_nd {
+                trigger-keys = <A>;
+                bindings = <&kp N &kp D>;
+                max-prior-idle-ms = <300>;
+            };
 
-    c_to_h {
-        trigger-keys = <C>;
-        bindings = <&kp H>;
-        max-prior-idle-ms = <300>;
-    };
+            c_to_h {
+                trigger-keys = <C>;
+                bindings = <&kp H>;
+                max-prior-idle-ms = <300>;
+            };
 
-    o_to_a {
-        trigger-keys = <O>;
-        bindings = <&kp A>;
-        max-prior-idle-ms = <300>;
-    };
+            o_to_a {
+                trigger-keys = <O>;
+                bindings = <&kp A>;
+                max-prior-idle-ms = <300>;
+            };
 
-    e_to_u {
-        trigger-keys = <E>;
-        bindings = <&kp U>;
-    };
+            e_to_u {
+                trigger-keys = <E>;
+                bindings = <&kp U>;
+            };
 
-    space_to_the {
-        trigger-keys = <SPACE>;
-        bindings = <&kp T &kp H &kp E>;
-    };
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+            };
 
-    bword {
-        trigger-keys = <BSPC>;
-        bindings = <&kp LS(BSPC)>;
-    };
-};
+            bword {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LS(BSPC)>;
+            };
+        };
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -347,13 +351,13 @@ x_to_t {
 
         base {
             bindings = <
-&kp MINUS      &kp N1    &kp N2     &kp N3       &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9    &kp N0     &kp F1
-&kp EQUAL      &kp Q     &kp J      &kp G        &kp K         &kp V                            &kp SQT   &kp W            &kp O         &kp U     &kp COMMA  &kp F2
-&kp B          &kp N     &kp S      &kp H        &kp T         &kp M                            &kp FSLH  &magic 1         &kp A         &kp E     &kp I      &kp X
-&kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE     &kp D         &kp Z                           &kp SEMI  &kp C            &kp SPACE     &ak_r     &kp DOT    &kp F4
-&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP       &kp DOWN                                                 &kp F7           &kp F8        &kp F10   &kp F11    &kp F12
-                                                 &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
-                                                 &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P
+&kp MINUS      &kp N1    &kp N2     &kp N3     &kp N4        &kp N5                           &kp N6    &kp N7           &kp N8        &kp N9   &kp N0     &kp F1
+&kp EQUAL      &kp Q     &kp J      &kp G      &kp K         &kp V                            &kp SQT   &kp U            &kp O         &kp U    &kp COMMA  &kp F2
+&kp B          &kp N     &kp S      &kp H      &kp T         &kp M                            &kp FSLH  &kp C            &kp A         &kp E    &kp I      &kp X
+&kp LC(EQUAL)  &kp F     &ak_l      &kp SPACE  &kp D         &kp Z                            &kp SEMI  &kp W            &kp SPACE     &ak_r    &kp DOT    &kp F4
+&kp LC(MINUS)  &kp LEFT  &kp RIGHT  &kp UP     &kp DOWN                                                 &kp F7           &kp F8        &kp F10  &kp F11    &kp F12
+                                               &hml LCTRL L  &mkp MB4        &mkp MB5         &mkp MB1  &mkp MB3         &hmr RCTRL Y
+                                               &hml LSHFT R  &hml LGUI BSPC  &hml LALT DEL    &mkp MB2  &hml RGUI SPACE  &hmr RSHFT P
             >;
         };
 

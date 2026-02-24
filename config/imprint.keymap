@@ -47,7 +47,7 @@
       /* punctuation / whitespace */
       dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
       excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QUES>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
 
       space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
 
@@ -56,10 +56,7 @@
 
       apos_to_s                 { trigger-keys = <SQT>;   bindings = <&kp S>; max-prior-idle-ms = <300>; };
 
-      dqt_to_comma_left         { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>; max-prior-idle-ms = <300>; };
       lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-      lbkt_to_rbkt_left         { trigger-keys = <LBKT>;  bindings = <&kp RBKT &kp LEFT>; max-prior-idle-ms = <300>; };
-      lcur_to_rcur_left         { trigger-keys = <LCUR>;  bindings = <&kp RCUR &kp LEFT>; max-prior-idle-ms = <300>; };
     };
 
 
@@ -92,7 +89,7 @@
       /* punctuation / whitespace */
       dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
       excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QUES>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
 
       space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
 
@@ -103,8 +100,6 @@
 
       dqt_to_comma_left         { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>; max-prior-idle-ms = <300>; };
       lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-      lbkt_to_rbkt_left         { trigger-keys = <LBKT>;  bindings = <&kp RBKT &kp LEFT>; max-prior-idle-ms = <300>; };
-      lcur_to_rcur_left         { trigger-keys = <LCUR>;  bindings = <&kp RCUR &kp LEFT>; max-prior-idle-ms = <300>; };
     };
 
 
@@ -140,7 +135,7 @@ c_to_ious     { trigger-keys = <C>; bindings = <&kp I &kp O &kp U &kp S>; max-pr
       /* punctuation / whitespace */
       dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
       excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QUES>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
 
       space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
 
@@ -151,8 +146,6 @@ c_to_ious     { trigger-keys = <C>; bindings = <&kp I &kp O &kp U &kp S>; max-pr
 
       dqt_to_comma_left         { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>; max-prior-idle-ms = <300>; };
       lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-      lbkt_to_rbkt_left         { trigger-keys = <LBKT>;  bindings = <&kp RBKT &kp LEFT>; max-prior-idle-ms = <300>; };
-      lcur_to_rcur_left         { trigger-keys = <LCUR>;  bindings = <&kp RCUR &kp LEFT>; max-prior-idle-ms = <300>; };
     };
 
 

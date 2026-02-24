@@ -17,8 +17,6 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-/ {
-  behaviors {
 
     /* =========================
      * LIT  (default: H)
@@ -43,10 +41,7 @@
 
       n_to_g  { trigger-keys = <N>; bindings = <&kp G>; max-prior-idle-ms = <300>; };
       d_to_g  { trigger-keys = <D>; bindings = <&kp G>; max-prior-idle-ms = <300>; };
-c_to_h        { trigger-keys = <C>; bindings = <&kp H>; max-prior-idle-ms = <300>; };
-a_to_nd       { trigger-keys = <A>; bindings = <&kp N &kp D>; max-prior-idle-ms = <300>; };
-i_to_nd       { trigger-keys = <I>; bindings = <&kp N &kp D>; max-prior-idle-ms = <300>; };
-
+      c_to_h  { trigger-keys = <C>; bindings = <&kp H>; max-prior-idle-ms = <300>; };
       t_to_he { trigger-keys = <T>; bindings = <&kp H &kp E>; max-prior-idle-ms = <300>; };
 
       /* punctuation / whitespace */

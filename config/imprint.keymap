@@ -417,7 +417,7 @@
 
         lpb: lpb {
             compatible = "zmk,behavior-adaptive-key";
-            label = "LIT";
+            label = "LPB";
             #binding-cells = <0>;
 
             /* default output */

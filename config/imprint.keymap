@@ -458,7 +458,13 @@
             bspc_to_ctrl_bspc {
                 trigger-keys = <BSPC>;
                 bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <300>;
+                max-prior-idle-ms = <165>;
+            };
+
+            ctrl_bspc_passthrough {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <165>;
             };
         };
 
@@ -472,7 +478,13 @@
             #binding-cells = <0>;
             bindings = <&kp DEL>;
 
-            del_to_ctrl_bspc {
+            del_to_ctrl_del {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(DEL)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            ctrl_del_passthrough {
                 trigger-keys = <DEL>;
                 bindings = <&kp LC(DEL)>;
                 max-prior-idle-ms = <300>;
@@ -597,8 +609,8 @@
         base {
             bindings = <
 &kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                &kp N6     &kp N7        &kp N8            &kp N9       &kp N0        &kp PG_UP
-&kp END    &kp X         &kp F        &kp K        &kp G         &kp Q                 &kp SEMI   &lit          &kp O             &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                 &kp DOT    &hmr RSHFT C  &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp FSLH
+&kp END    &kp X         &kp G        &kp F        &kp K         &kp Q                 &kp SEMI   &lit          &kp O             &kp U        &kp SQT       &kp PG_DN
+&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                 &kp DOT    &hmr RSHFT C  &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp FSLH
 &kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                 &kp COMMA  &kp W         &lmb              &lrb         &lpb          &kp BSLH
 &kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                        &kp DOWN      &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
                                                    &hml LGUI L   &mkp MB4  &mkp MB5    &mkp MB1   &mkp MB3      &hmr RCTRL Y

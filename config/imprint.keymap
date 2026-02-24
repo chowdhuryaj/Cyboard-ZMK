@@ -326,13 +326,13 @@
 
         base {
             bindings = <
-&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6          &kp N7           &kp N8             &kp N9       &kp N0        &kp PG_UP
-&kp END    &kp Z         &kp F        &kp Y        &kp K         &kp V                                 &kp FSLH        &ak_l            &kp O              &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp DOT         &hmr RSHFT C     &hml RGUI A        &hml RALT E  &hmr LCTRL I  &kp Q
-&kp MINUS  &kp P         &kp G        &kp J        &kp D         &kp X                                 &mt SEMI COMMA  &kp W            &ak_l              &ak_r        &kp UP        &kp BSLH
-&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                                             &kp F7           &kp F8             &kp LEFT     &kp DOWN      &kp RIGHT
-                                                   &lt 2 L       &mt EXCLAMATION QUESTION  &mkp MB5    &mkp MB1        &mkp MB3         &kp SPACE
-                                                   &lt 1 R       &mt LC(BSPC) BSPC         &mkp MB4    &mkp MB2        &mt LC(DEL) DEL  &mt LC(BSPC) BSPC
+&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                         &kp N6          &kp N7           &kp N8             &kp N9       &kp N0        &kp PG_UP
+&kp END    &kp Z         &kp F        &kp Y        &kp K         &kp V                          &kp FSLH        &ak_l            &kp O              &kp U        &kp SQT       &kp PG_DN
+&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                          &kp DOT         &hmr RSHFT C     &hml RGUI A        &hml RALT E  &hmr LCTRL I  &kp Q
+&kp MINUS  &kp P         &kp G        &kp J        &kp D         &kp X                          &mt SEMI COMMA  &kp W            &ak_l              &ak_r        &kp UP        &kp BSLH
+&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                                      &kp F7           &kp F8             &kp LEFT     &kp DOWN      &kp RIGHT
+                                                   &lt 2 L       &mt LC(DEL) DEL    &mkp MB5    &mkp MB1        &mkp MB3         &kp SPACE
+                                                   &lt 1 R       &mt LC(BSPC) BSPC  &mkp MB4    &mkp MB2        &mt LC(DEL) DEL  &mt LC(BSPC) BSPC
             >;
         };
 

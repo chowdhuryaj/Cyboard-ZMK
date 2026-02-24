@@ -236,6 +236,13 @@
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57 61 62 63 67 68 69>;
             flavor = "tap-preferred";
         };
+
+        mrb: mrb {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MRB";
+            #binding-cells = <0>;
+            bindings = <&mkp MB3>, <&mkp MB2>;
+        };
     };
 
     combos {
@@ -333,13 +340,13 @@
 
         base {
             bindings = <
-&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6          &kp N7           &kp N8       &kp N9       &kp N0        &kp PG_UP
-&kp END    &kp Z         &kp J        &ak_r        &kp K         &kp V                                 &kp FSLH        &ak_l            &kp O        &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp DOT         &hmr RSHFT C     &hml RGUI A  &hml RALT E  &hmr LCTRL I  &kp Q
-&kp MINUS  &kp P         &kp F        &kp G        &kp D         &kp X                                 &mt SEMI COMMA  &kp W            &ak_l        &ak_r        &kp UP        &kp BSLH
-&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                                             &kp F7           &kp F8       &kp LEFT     &kp DOWN      &kp RIGHT
-                                                   &lt 2 L       &mkp MB4           &mkp MB5           &mkp MB1        &mkp MB3         &kp SPACE
-                                                   &lt 1 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &mkp MB2        &mt LC(DEL) DEL  &kp Y
+&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6     &kp N7        &kp N8       &kp N9       &kp N0        &kp PG_UP
+&kp END    &kp X         &kp F        &kp K        &kp G         &kp Q                                 &kp FSLH   &ak_l         &kp O        &kp U        &kp SQT       &kp PG_DN
+&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp COMMA  &hmr RSHFT Y  &hml RGUI A  &hml RALT E  &hmr LCTRL I  &kp DOT
+&kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                                 &kp SEMI   &kp W         &ak_l        &ak_r        &kp UP        &kp BSLH
+&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                                        &kp F7        &kp F8       &kp LEFT     &kp DOWN      &kp RIGHT
+                                                   &lt 2 L       &mkp MB4           &mkp MB5           &mkp MB1   &mkp MB3      &kp C
+                                                   &lt 1 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &mrb       &key_repeat   &kp SPACE
             >;
         };
 

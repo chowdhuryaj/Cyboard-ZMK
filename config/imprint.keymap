@@ -328,10 +328,10 @@
             bindings = <
 &kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                                &kp N6     &kp N7        &kp N8       &kp N9       &kp N0        &kp PG_UP
 &kp END    &kp X         &kp F        &kp K        &kp G         &kp Q                                 &kp FSLH   &ak_l         &kp O        &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp COMMA  &hmr RSHFT Y  &hml RGUI A  &hml RALT E  &hmr LCTRL I  &kp DOT
+&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp COMMA  &hmr RSHFT C  &hml RGUI A  &hml RALT E  &hmr LCTRL I  &kp DOT
 &kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                                 &kp SEMI   &kp W         &ak_l        &ak_r        &kp UP        &kp BSLH
 &kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                                        &kp F7        &kp F8       &kp LEFT     &kp DOWN      &kp RIGHT
-                                                   &lt 2 L       &mkp MB4           &mkp MB5           &mkp MB1   &mkp MB3      &kp C
+                                                   &lt 2 L       &mkp MB4           &mkp MB5           &mkp MB1   &mkp MB3      &kp Y
                                                    &lt 1 R       &mt LC(BSPC) BSPC  &mt LC(DEL) DEL    &mrb       &key_repeat   &kp SPACE
             >;
         };

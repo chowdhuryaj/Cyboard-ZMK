@@ -17,172 +17,443 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-
-    /* =========================
+        /* =========================
      * LIT  (default: H)
      * ========================= */
-    lit: lit {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "LIT";
-      #binding-cells = <0>;
 
-      /* default output */
-      bindings = <&kp H>;
+        lit: lit {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "LIT";
+            #binding-cells = <0>;
 
-      /* letters / multi-letter expansions */
-      u_to_i { trigger-keys = <U>; bindings = <&kp I>; max-prior-idle-ms = <300>; };
-      o_to_u { trigger-keys = <O>; bindings = <&kp U>; max-prior-idle-ms = <300>; };
+            /* default output */
 
-      /* NOTE: E had two rules; using the later one: E -> NG */
-      e_to_ng { trigger-keys = <E>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
+            bindings = <&kp H>;
 
-      i_to_ou { trigger-keys = <I>; bindings = <&kp O &kp U>; max-prior-idle-ms = <300>; };
-      a_to_o  { trigger-keys = <A>; bindings = <&kp O>; max-prior-idle-ms = <300>; };
+            /* letters / multi-letter expansions */
 
-      n_to_g  { trigger-keys = <N>; bindings = <&kp G>; max-prior-idle-ms = <300>; };
-      d_to_g  { trigger-keys = <D>; bindings = <&kp G>; max-prior-idle-ms = <300>; };
-      c_to_h  { trigger-keys = <C>; bindings = <&kp H>; max-prior-idle-ms = <300>; };
-      t_to_he { trigger-keys = <T>; bindings = <&kp H &kp E>; max-prior-idle-ms = <300>; };
+            u_to_i {
+                trigger-keys = <U>;
+                bindings = <&kp I>;
+                max-prior-idle-ms = <300>;
+            };
 
-      /* punctuation / whitespace */
-      dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+            o_to_u {
+                trigger-keys = <O>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-      space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
+            /* NOTE: E had two rules; using the later one: E -> NG */
 
-      semi_to_space             { trigger-keys = <SEMI>;  bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
-      colon_to_space            { trigger-keys = <COLON>; bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
+            e_to_ng {
+                trigger-keys = <E>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-      apos_to_s                 { trigger-keys = <SQT>;   bindings = <&kp S>; max-prior-idle-ms = <300>; };
+            i_to_ou {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-      lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-    };
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+                max-prior-idle-ms = <300>;
+            };
 
+            n_to_g {
+                trigger-keys = <N>;
+                bindings = <&kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-    /* =========================
+            d_to_g {
+                trigger-keys = <D>;
+                bindings = <&kp G>;
+                max-prior-idle-ms = <300>;
+            };
+
+            c_to_h {
+                trigger-keys = <C>;
+                bindings = <&kp H>;
+                max-prior-idle-ms = <300>;
+            };
+
+            t_to_he {
+                trigger-keys = <T>;
+                bindings = <&kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* punctuation / whitespace */
+
+            dot_to_space_skshift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            excl_to_space_skshift {
+                trigger-keys = <EXCL>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            ques_to_space_skshift {
+                trigger-keys = <QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+
+            semi_to_space {
+                trigger-keys = <SEMI>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            colon_to_space {
+                trigger-keys = <COLON>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            apos_to_s {
+                trigger-keys = <SQT>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
+
+            lpar_to_rpar_left {
+                trigger-keys = <LPAR>;
+                bindings = <&kp RPAR &kp LEFT>;
+                max-prior-idle-ms = <300>;
+            };
+        };
+
+        /* =========================
      * LMB  (default: G)
      * ========================= */
-    lmb: lmb {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "LMB";
-      #binding-cells = <0>;
 
-      /* default output */
-      bindings = <&kp G>;
+        lmb: lmb {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "LMB";
+            #binding-cells = <0>;
 
-      e_to_u   { trigger-keys = <E>; bindings = <&kp U>; max-prior-idle-ms = <300>; };
-      c_to_ial { trigger-keys = <C>; bindings = <&kp I &kp A &kp L>; max-prior-idle-ms = <300>; };
-      y_to_ou  { trigger-keys = <Y>; bindings = <&kp O &kp U>; max-prior-idle-ms = <300>; };
-      r_to_l   { trigger-keys = <R>; bindings = <&kp L>; max-prior-idle-ms = <300>; };
-      l_to_r   { trigger-keys = <L>; bindings = <&kp R>; max-prior-idle-ms = <300>; };
+            /* default output */
 
-      g_to_h  { trigger-keys = <G>; bindings = <&kp H>; max-prior-idle-ms = <300>; };
+            bindings = <&kp G>;
 
-      /* NOTE: W had two rules; using the later one: W -> HA */
-      w_to_ha { trigger-keys = <W>; bindings = <&kp H &kp A>; max-prior-idle-ms = <300>; };
+            e_to_u {
+                trigger-keys = <E>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-      a_to_o  { trigger-keys = <A>; bindings = <&kp O>; max-prior-idle-ms = <300>; };
-      i_to_on { trigger-keys = <I>; bindings = <&kp O &kp N>; max-prior-idle-ms = <300>; };
-      t_to_hi { trigger-keys = <T>; bindings = <&kp H &kp I>; max-prior-idle-ms = <300>; };
+            c_to_ial {
+                trigger-keys = <C>;
+                bindings = <&kp I &kp A &kp L>;
+                max-prior-idle-ms = <300>;
+            };
 
-      /* punctuation / whitespace */
-      dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+            y_to_ou {
+                trigger-keys = <Y>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+            };
 
-      space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
+            r_to_l {
+                trigger-keys = <R>;
+                bindings = <&kp L>;
+                max-prior-idle-ms = <300>;
+            };
 
-      semi_to_space             { trigger-keys = <SEMI>;  bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
-      colon_to_space            { trigger-keys = <COLON>; bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
+            l_to_r {
+                trigger-keys = <L>;
+                bindings = <&kp R>;
+                max-prior-idle-ms = <300>;
+            };
 
-      apos_to_s                 { trigger-keys = <SQT>;   bindings = <&kp S>; max-prior-idle-ms = <300>; };
+            g_to_h {
+                trigger-keys = <G>;
+                bindings = <&kp H>;
+                max-prior-idle-ms = <300>;
+            };
 
-      dqt_to_comma_left         { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>; max-prior-idle-ms = <300>; };
-      lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-    };
+            /* NOTE: W had two rules; using the later one: W -> HA */
 
+            w_to_ha {
+                trigger-keys = <W>;
+                bindings = <&kp H &kp A>;
+                max-prior-idle-ms = <300>;
+            };
 
-    /* =========================
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+                max-prior-idle-ms = <300>;
+            };
+
+            i_to_on {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp N>;
+                max-prior-idle-ms = <300>;
+            };
+
+            t_to_hi {
+                trigger-keys = <T>;
+                bindings = <&kp H &kp I>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* punctuation / whitespace */
+
+            dot_to_space_skshift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            excl_to_space_skshift {
+                trigger-keys = <EXCL>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            ques_to_space_skshift {
+                trigger-keys = <QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+
+            semi_to_space {
+                trigger-keys = <SEMI>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            colon_to_space {
+                trigger-keys = <COLON>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            apos_to_s {
+                trigger-keys = <SQT>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
+
+            dqt_to_comma_left {
+                trigger-keys = <DQT>;
+                bindings = <&kp COMMA &kp LEFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            lpar_to_rpar_left {
+                trigger-keys = <LPAR>;
+                bindings = <&kp RPAR &kp LEFT>;
+                max-prior-idle-ms = <300>;
+            };
+        };
+
+        /* =========================
      * LRB  (default: N)
      * ========================= */
-    lrb: lrb {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "LRB";
-      #binding-cells = <0>;
 
-      /* default output */
-      bindings = <&kp N>;
+        lrb: lrb {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "LRB";
+            #binding-cells = <0>;
 
-      h_to_t  { trigger-keys = <H>; bindings = <&kp T>; max-prior-idle-ms = <300>; };
-u_to_ng       { trigger-keys = <U>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
-c_to_ious     { trigger-keys = <C>; bindings = <&kp I &kp O &kp U &kp S>; max-prior-idle-ms = <300>; };
+            /* default output */
 
-      i_to_ng { trigger-keys = <I>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
-      a_to_ng { trigger-keys = <A>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
-      o_to_ng { trigger-keys = <O>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
-      e_to_ng { trigger-keys = <E>; bindings = <&kp N &kp G>; max-prior-idle-ms = <300>; };
+            bindings = <&kp N>;
 
-      g_to_s  { trigger-keys = <G>; bindings = <&kp S>; max-prior-idle-ms = <300>; };
-      w_to_he { trigger-keys = <W>; bindings = <&kp H &kp E>; max-prior-idle-ms = <300>; };
+            h_to_t {
+                trigger-keys = <H>;
+                bindings = <&kp T>;
+                max-prior-idle-ms = <300>;
+            };
 
-      /* arrow keys -> ctrl+arrow keys */
-      left_to_ctrl_left   { trigger-keys = <LEFT>;  bindings = <&kp LC(LEFT)>;  max-prior-idle-ms = <300>; };
-      right_to_ctrl_right { trigger-keys = <RIGHT>; bindings = <&kp LC(RIGHT)>; max-prior-idle-ms = <300>; };
-      up_to_ctrl_up       { trigger-keys = <UP>;    bindings = <&kp LC(UP)>;    max-prior-idle-ms = <300>; };
-      down_to_ctrl_down   { trigger-keys = <DOWN>;  bindings = <&kp LC(DOWN)>;  max-prior-idle-ms = <300>; };
+            u_to_ng {
+                trigger-keys = <U>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-      /* punctuation / whitespace */
-      dot_to_space_skshift      { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      excl_to_space_skshift     { trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
-      ques_to_space_skshift     { trigger-keys = <QMARK>;  bindings = <&kp SPACE &sk LSHFT>; max-prior-idle-ms = <300>; };
+            c_to_ious {
+                trigger-keys = <C>;
+                bindings = <&kp I &kp O &kp U &kp S>;
+                max-prior-idle-ms = <300>;
+            };
 
-      space_to_the              { trigger-keys = <SPACE>; bindings = <&kp T &kp H &kp E>; max-prior-idle-ms = <300>; };
+            i_to_ng {
+                trigger-keys = <I>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-      semi_to_space             { trigger-keys = <SEMI>;  bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
-      colon_to_space            { trigger-keys = <COLON>; bindings = <&kp SPACE>; max-prior-idle-ms = <300>; };
+            a_to_ng {
+                trigger-keys = <A>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-      apos_to_s                 { trigger-keys = <SQT>;   bindings = <&kp S>; max-prior-idle-ms = <300>; };
+            o_to_ng {
+                trigger-keys = <O>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
-      dqt_to_comma_left         { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>; max-prior-idle-ms = <300>; };
-      lpar_to_rpar_left         { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>; max-prior-idle-ms = <300>; };
-    };
+            e_to_ng {
+                trigger-keys = <E>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <300>;
+            };
 
+            g_to_s {
+                trigger-keys = <G>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
 
-    /* =========================
+            w_to_he {
+                trigger-keys = <W>;
+                bindings = <&kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* arrow keys -> ctrl+arrow keys */
+
+            left_to_ctrl_left {
+                trigger-keys = <LEFT>;
+                bindings = <&kp LC(LEFT)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            right_to_ctrl_right {
+                trigger-keys = <RIGHT>;
+                bindings = <&kp LC(RIGHT)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            up_to_ctrl_up {
+                trigger-keys = <UP>;
+                bindings = <&kp LC(UP)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            down_to_ctrl_down {
+                trigger-keys = <DOWN>;
+                bindings = <&kp LC(DOWN)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* punctuation / whitespace */
+
+            dot_to_space_skshift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            excl_to_space_skshift {
+                trigger-keys = <EXCL>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            ques_to_space_skshift {
+                trigger-keys = <QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <300>;
+            };
+
+            semi_to_space {
+                trigger-keys = <SEMI>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            colon_to_space {
+                trigger-keys = <COLON>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <300>;
+            };
+
+            apos_to_s {
+                trigger-keys = <SQT>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
+
+            dqt_to_comma_left {
+                trigger-keys = <DQT>;
+                bindings = <&kp COMMA &kp LEFT>;
+                max-prior-idle-ms = <300>;
+            };
+
+            lpar_to_rpar_left {
+                trigger-keys = <LPAR>;
+                bindings = <&kp RPAR &kp LEFT>;
+                max-prior-idle-ms = <300>;
+            };
+        };
+
+        /* =========================
      * Bspc (default: BSPC; BSPC -> Ctrl+BSPC)
      * ========================= */
-    bword: bword {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "BWord";
-      #binding-cells = <0>;
 
-      bindings = <&kp BSPC>;
+        bword: bword {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "BWord";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>;
 
-      bspc_to_ctrl_bspc {
-        trigger-keys = <BSPC>;
-        bindings = <&kp LC(BSPC)>;
-        max-prior-idle-ms = <300>;
-      };
-    };
+            bspc_to_ctrl_bspc {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
-
-    /* =========================
+        /* =========================
      * Del (default: BSPC; DEL -> Ctrl+BSPC)
      * ========================= */
-    dword: dword {
-      compatible = "zmk,behavior-adaptive-key";
-      label = "DWord";
-      #binding-cells = <0>;
 
-      bindings = <&kp BSPC>;
+        dword: dword {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "DWord";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>;
 
-      del_to_ctrl_bspc {
-        trigger-keys = <DEL>;
-        bindings = <&kp LC(BSPC)>;
-        max-prior-idle-ms = <300>;
-      };
-    };
+            del_to_ctrl_bspc {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <300>;
+            };
+        };
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -301,13 +572,13 @@ c_to_ious     { trigger-keys = <C>; bindings = <&kp I &kp O &kp U &kp S>; max-pr
 
         base {
             bindings = <
-&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                  &kp N6     &kp N7        &kp N8            &kp N9       &kp N0        &kp PG_UP
-&kp END    &kp X         &kp F        &kp K        &kp G         &kp Q                   &kp FSLH   &lit         &kp O             &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                   &kp COMMA  &hmr RSHFT Y  &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp DOT
-&kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                   &kp SEMI   &kp W         &lmb              &lrb        &kp UP        &kp BSLH
-&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                          &kp F7        &kp F8            &kp LEFT     &kp DOWN      &kp RIGHT
-                                                   &hml LGUI L   &mkp MB4  &mkp MB5      &mkp MB1   &mkp MB3      &hmr RCTRL C
-                                                   &hml LSHFT R  &bword    &dword        &mrb       &key_repeat   &hmr RSHFT SPACE
+&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                &kp N6     &kp N7        &kp N8            &kp N9       &kp N0        &kp PG_UP
+&kp END    &kp X         &kp F        &kp K        &kp G         &kp Q                 &kp SEMI   &lit          &kp O             &kp U        &kp SQT       &kp PG_DN
+&kp B      &hml N LCTRL  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                 &kp DOT    &hmr RSHFT C  &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp FSLH
+&kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                 &kp COMMA  &kp W         &lmb              &lrb         &trans        &kp BSLH
+&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                        &kp DOWN      &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
+                                                   &hml LGUI L   &mkp MB4  &mkp MB5    &mkp MB1   &mkp MB3      &hmr RCTRL Y
+                                                   &hml LSHFT R  &bword    &dword      &mkp MB2   &key_repeat   &hmr RSHFT SPACE
             >;
         };
 

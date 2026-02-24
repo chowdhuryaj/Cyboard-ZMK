@@ -17,8 +17,8 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        /* =========================
-     * LIT  (default: H)
+    /* =========================
+     * Left index top  (default: H)
      * ========================= */
 
         lit: lit {
@@ -73,12 +73,6 @@
             d_to_g {
                 trigger-keys = <D>;
                 bindings = <&kp G>;
-                max-prior-idle-ms = <300>;
-            };
-
-            c_to_h {
-                trigger-keys = <C>;
-                bindings = <&kp H>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -140,7 +134,7 @@
         };
 
         /* =========================
-     * LMB  (default: G)
+     * Left middle bottom row  (default: G)
      * ========================= */
 
         lmb: lmb {
@@ -158,9 +152,9 @@
                 max-prior-idle-ms = <300>;
             };
 
-            c_to_ial {
+            c_to_h {
                 trigger-keys = <C>;
-                bindings = <&kp I &kp A &kp L>;
+                bindings = <&kp H>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -188,8 +182,6 @@
                 max-prior-idle-ms = <300>;
             };
 
-            /* NOTE: W had two rules; using the later one: W -> HA */
-
             w_to_ha {
                 trigger-keys = <W>;
                 bindings = <&kp H &kp A>;
@@ -213,8 +205,6 @@
                 bindings = <&kp H &kp I>;
                 max-prior-idle-ms = <300>;
             };
-
-            /* punctuation / whitespace */
 
             dot_to_space_skshift {
                 trigger-keys = <DOT>;
@@ -272,7 +262,7 @@
         };
 
         /* =========================
-     * LRB  (default: N)
+     * Left ring bottom  (default: N)
      * ========================= */
 
         lrb: lrb {
@@ -421,7 +411,41 @@
             };
         };
 
-        /* =========================
+    /* =========================
+     * Left pinky bottom  (default: D)
+     * ========================= */
+
+        lpb: lpb {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "LIT";
+            #binding-cells = <0>;
+
+            /* default output */
+
+            bindings = <&kp D>;
+
+            /* letters / multi-letter expansions */
+
+            a_to_t {
+                trigger-keys = <A>;
+                bindings = <&kp T>;
+                max-prior-idle-ms = <300>;
+            };
+
+            i_to_ch {
+                trigger-keys = <I>;
+                bindings = <&kp CH>;
+                max-prior-idle-ms = <300>;
+            };
+
+            e_to_s {
+                trigger-keys = <E>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <300>;
+            };
+        };
+
+    /* =========================
      * Bspc (default: BSPC; BSPC -> Ctrl+BSPC)
      * ========================= */
 
@@ -438,7 +462,7 @@
             };
         };
 
-        /* =========================
+    /* =========================
      * Del (default: BSPC; DEL -> Ctrl+BSPC)
      * ========================= */
 
@@ -446,11 +470,11 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "DWord";
             #binding-cells = <0>;
-            bindings = <&kp BSPC>;
+            bindings = <&kp DEL>;
 
             del_to_ctrl_bspc {
                 trigger-keys = <DEL>;
-                bindings = <&kp LC(BSPC)>;
+                bindings = <&kp LC(DEL)>;
                 max-prior-idle-ms = <300>;
             };
         };

@@ -18,7 +18,7 @@
 
     behaviors {
     /* =========================
-     * Left index top  (default: H)
+     * Left index top  (default: G)
      * ========================= */
 
         lit: lit {
@@ -28,7 +28,7 @@
 
             /* default output */
 
-            bindings = <&kp H>;
+            bindings = <&kp G>;
 
             /* letters / multi-letter expansions */
 
@@ -61,18 +61,6 @@
             a_to_o {
                 trigger-keys = <A>;
                 bindings = <&kp O>;
-                max-prior-idle-ms = <300>;
-            };
-
-            n_to_g {
-                trigger-keys = <N>;
-                bindings = <&kp G>;
-                max-prior-idle-ms = <300>;
-            };
-
-            d_to_g {
-                trigger-keys = <D>;
-                bindings = <&kp G>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -134,7 +122,7 @@
         };
 
         /* =========================
-     * Left middle bottom row  (default: G)
+     * Left middle bottom row  (default: U)
      * ========================= */
 
         lmb: lmb {
@@ -144,7 +132,7 @@
 
             /* default output */
 
-            bindings = <&kp G>;
+            bindings = <&kp U>;
 
             e_to_u {
                 trigger-keys = <E>;

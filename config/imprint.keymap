@@ -319,20 +319,6 @@
             bindings = <&kp R &kp L>;
             label = "RL";
         };
-
-        ue: ue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "UE";
-        };
-
-        oa: oa {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "OA";
-        };
     };
 
     keymap {

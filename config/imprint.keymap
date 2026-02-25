@@ -344,13 +344,13 @@
 
         base {
             bindings = <
-&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                      &kp N6    &kp N7          &kp N8            &kp N9       &kp N0        &kp PG_UP
-&kp END    &kp X         &kp F        &kp G        &kp K         &kp Q                       &kp FSLH  &rth            &kp O             &kp U        &kp SQT       &kp PG_DN
-&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                       &kp Y     &hmr RSHFT C    &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp LS(QMARK)
-&kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                       &kp SEMI  &kp W           &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
-&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                             &kp DOWN        &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
-                                                   &hml LCTRL L  &hml LALT BSPC  &mkp MB5    &mkp MB1  &hmr RALT DEL   &rth
-                                                   &hml LSHFT R  &lth            &mkp MB4    &mrb      &hmr RGUI BSPC  &hmr RSHFT SPACE
+&kp HOME   &kp N1        &kp N2       &kp N3       &kp N4        &kp N5                      &kp N6    &kp N7        &kp N8            &kp N9       &kp N0        &kp PG_UP
+&kp END    &kp X         &kp F        &kp G        &kp K         &kp Q                       &kp FSLH  &rth          &kp O             &kp U        &kp SQT       &kp PG_DN
+&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                       &kp Y     &hmr RSHFT C  &hml RGUI A       &hml RALT E  &hmr LCTRL I  &kp LS(QMARK)
+&kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                       &kp SEMI  &kp W         &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
+&kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                             &kp DOWN      &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
+                                                   &hml LCTRL L  &lth            &mkp MB5    &mkp MB1  &rth          &hml RGUI BSPC
+                                                   &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mrb      &key_repeat   &hmr RSHFT SPACE
             >;
         };
 

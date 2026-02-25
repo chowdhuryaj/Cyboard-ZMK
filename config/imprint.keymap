@@ -30,15 +30,9 @@
 
             bindings = <&key_repeat>;
 
-            u_to_i {
-                trigger-keys = <U>;
-                bindings = <&kp I>;
-                max-prior-idle-ms = <300>;
-            };
-
-            o_to_u {
+            o_to_a {
                 trigger-keys = <O>;
-                bindings = <&kp U>;
+                bindings = <&kp A>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -123,12 +117,6 @@
             /* default output */
 
             bindings = <&key_repeat>;
-
-            e_to_u {
-                trigger-keys = <E>;
-                bindings = <&kp U>;
-                max-prior-idle-ms = <300>;
-            };
 
             c_to_h {
                 trigger-keys = <C>;

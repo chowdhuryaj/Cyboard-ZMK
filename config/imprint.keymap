@@ -350,11 +350,11 @@
 
         base {
             bindings = <
-&kp HOME   &kp N1  &kp N2   &kp N3   &kp N4            &kp N5                      &kp N6     &kp N7          &kp N8            &kp N9     &kp N0    &kp PG_UP
-&kp END    &kp X   &kp F    &kp L    &kp K             &kp Q                       &kp COLON  &kp Y           &kp O             &kp U      &kp SQT   &kp PG_DN
-&kp B      &kp N   &kp S    &kp H    &kp T             &kp M                       &kp G      &kp C           &kp A             &kp E      &kp I     &kp LS(QMARK)
-&kp MINUS  &kp P   &kp V    &kp J    &kp D             &kp Z                       &kp SEMI   &kp W           &kp COMMA         &kp DOT    &kp FSLH  &kp BSLH
-&kp EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                                  &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
+&kp HOME   &as N1  &as N2   &as N3   &as N4            &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
+&kp END    &as X   &as F    &as L    &as K             &as Q                       &kp COLON  &as Y           &as O             &as U      &as SQT   &kp PG_DN
+&as B      &as N   &as S    &as H    &as T             &as M                       &as G      &as C           &as A             &as E      &as I     &kp LS(QMARK)
+&as MINUS  &as P   &as V    &as J    &as D             &as Z                       &as SEMI   &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
+&as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                                  &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
                                      &lth_hold LGUI 0  &hml LCTRL DEL  &mkp MB5    &mkp MB1   &hmr RCTRL DEL  &rth_hold RGUI 0
                                      &hml LSHFT R      &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
             >;

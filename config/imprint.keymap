@@ -30,27 +30,9 @@
 
             bindings = <&key_repeat>;
 
-            o_to_a {
-                trigger-keys = <O>;
-                bindings = <&kp A>;
-                max-prior-idle-ms = <300>;
-            };
-
-            e_to_u {
-                trigger-keys = <E>;
-                bindings = <&kp U>;
-                max-prior-idle-ms = <300>;
-            };
-
-            i_to_apos {
-                trigger-keys = <I>;
-                bindings = <&kp SQT>;
-                max-prior-idle-ms = <300>;
-            };
-
-            a_to_o {
-                trigger-keys = <A>;
-                bindings = <&kp O>;
+            y_to_ou {
+                trigger-keys = <Y>;
+                bindings = <&kp O &kp U>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -118,33 +100,9 @@
 
             bindings = <&key_repeat>;
 
-            c_to_h {
-                trigger-keys = <C>;
-                bindings = <&kp H>;
-                max-prior-idle-ms = <300>;
-            };
-
-            y_to_ou {
-                trigger-keys = <Y>;
-                bindings = <&kp O &kp U>;
-                max-prior-idle-ms = <300>;
-            };
-
-            r_to_l {
-                trigger-keys = <R>;
-                bindings = <&kp L>;
-                max-prior-idle-ms = <300>;
-            };
-
-            g_to_h {
-                trigger-keys = <G>;
-                bindings = <&kp H>;
-                max-prior-idle-ms = <300>;
-            };
-
-            w_to_y {
-                trigger-keys = <W>;
-                bindings = <&kp Y>;
+            i_to_apos {
+                trigger-keys = <I>;
+                bindings = <&kp SQT>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -154,9 +112,9 @@
                 max-prior-idle-ms = <300>;
             };
 
-            i_to_n {
-                trigger-keys = <I>;
-                bindings = <&kp N>;
+            w_to_y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
                 max-prior-idle-ms = <300>;
             };
 

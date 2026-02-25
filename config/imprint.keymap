@@ -274,11 +274,6 @@
             layers = <0>;
         };
 
-        right_dictate {
-            bindings = <&kp GRAVE>;
-            key-positions = <59 58>;
-        };
-
         left_dictate {
             bindings = <&kp GRAVE>;
             key-positions = <62 68>;
@@ -312,9 +307,15 @@
             timeout-ms = <20>;
         };
 
-        rl {
-            bindings = <&rl>;
-            key-positions = <58 64>;
+        rmb {
+            bindings = <&mkp MB2>;
+            key-positions = <61 67>;
+        };
+
+        right_tab {
+            bindings = <&kp TAB>;
+            key-positions = <32 33>;
+            timeout-ms = <20>;
         };
     };
 
@@ -338,7 +339,7 @@
 &kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                       &kp SEMI   &kp W           &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
 &kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
                                                    &lth          &hml LCTRL DEL  &mkp MB5    &mkp MB1   &hmr RGUI DEL   &rth
-                                                   &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mrb       &hmr RALT BSPC  &hmr RSHFT SPACE
+                                                   &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
             >;
         };
 

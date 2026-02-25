@@ -17,7 +17,7 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-     /* =========================
+        /* =========================
      * Left thumb (default: repeat)
      * ========================= */
 
@@ -111,7 +111,7 @@
             };
         };
 
-    /* =========================
+        /* =========================
      * Right thumb
      * ========================= */
 
@@ -350,7 +350,7 @@
 &kp MINUS  &kp P         &kp V        &kp J        &kp D         &kp Z                 &kp SEMI  &kp W         &kp COMMA         &kp DOT      &kp FSLH      &kp BSLH
 &kp EQUAL  &kp F9        &kp F10      &kp F11      &kp F12                                       &kp DOWN      &kp LEFT          &kp RIGHT    &kp UP        &rgb_ug RGB_TOG
                                                    &lth          &mkp MB4  &mkp MB5    &mkp MB1  &mkp MB3      &rth
-                                                   &hml LSHFT R  &kp BSPC  &kp DEL     &mkp MB2  &bword        &hmr RSHFT SPACE
+                                                   &hml LSHFT R  &kp BSPC  &kp DEL     &mkp MB2  &key_repeat   &hmr RSHFT SPACE
             >;
         };
 

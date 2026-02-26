@@ -498,13 +498,13 @@
 
         base {
             bindings = <
-&kp HOME   &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6       &as N7          &as N8            &as N9     &as N0    &kp PG_UP
-&kp END    &as Q   &as F    &as D    &as K         &as X                       &kp EXCL     &as GRAVE       &as O             &as U      &as SQT   &kp PG_DN
-&as B      &as N   &as S    &as H    &as T         &as M                       &key_repeat  &as C           &as A             &as E      &as I     &kp LS(QMARK)
-&as MINUS  &as P   &as V    &as J    &as G         &as Z                       &as SEMI     &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
-&as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                                &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
-                                     &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1     &hmr RCTRL DEL  &mt RGUI Y
-                                     &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3     &hmr RALT BSPC  &hmr RSHFT SPACE
+&kp HOME   &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
+&kp END    &as Q   &as F    &as D    &as K         &as X                       &kp EXCL   &key_repeat     &as O             &as U      &as SQT   &kp PG_DN
+&as B      &as N   &as S    &as H    &as T         &as M                       &as GRAVE  &as C           &as A             &as E      &as I     &kp LS(QMARK)
+&as MINUS  &as P   &as V    &as J    &as G         &as Z                       &as SEMI   &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
+&as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
+                                     &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &hmr RCTRL DEL  &mt RGUI Y
+                                     &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
             >;
         };
 

@@ -465,7 +465,7 @@
 
         drag {
             bindings = <&mo 1>;
-            key-positions = <61 67>;
+            key-positions = <61 68>;
         };
 
         snipe {
@@ -585,15 +585,15 @@
 &trackball_peripheral_listener {
     scroller {
         layers = <1>;
-        input-processors =
-            <&zip_xy_to_scroll_mapper
-             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+        input-processors = <
+&zip_xy_to_scroll_mapper
+             &zip_scroll_transform INPUT_TRANSFORM_X_INVER
+        >;
     };
 
     sniper {
         layers = <2>;
-        input-processors =
-            <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_xy_scaler 1 5>;
     };
 };
 

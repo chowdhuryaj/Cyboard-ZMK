@@ -28,7 +28,7 @@
 
             /* default output */
 
-            bindings = <&kp T &kp H &kp E>;
+            bindings = <&kp SPACE>;
 
             e_to_x {
                 trigger-keys = <E LS(E)>;

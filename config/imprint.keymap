@@ -144,6 +144,12 @@
                 bindings = <&kp RPAR &kp LEFT>;
                 max-prior-idle-ms = <500>;
             };
+
+            space_to_the {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <500>;
+            };
         };
 
         /* =========================
@@ -576,18 +582,18 @@
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
-
 &trackball_peripheral_listener {
     input-processors = <&zip_xy_scaler 1 1>;
 
     scroller {
         layers = <1>;
-        input-processors =
-        <&zip_y_scaler 1 12>,
-        <&zip_x_scaler 1 16>,
-        <&zip_xy_to_scroll_mapper>,
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-        <&zip_scroll_snap>;
+        input-processors = <
+            &zip_y_scaler 1 12
+            &zip_x_scaler 1 16
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+            &zip_scroll_snap
+        >;
     };
 
     sniper {
@@ -597,10 +603,11 @@
 };
 
 &trackball_central_listener {
-    input-processors =
-        <&zip_y_scaler 1 12>,
-        <&zip_x_scaler 1 16>,
-        <&zip_xy_to_scroll_mapper>,
-        <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-        <&zip_scroll_snap>;
+    input-processors = <
+        &zip_y_scaler 1 12
+        &zip_x_scaler 1 16
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+        &zip_scroll_snap
+    >;
 };

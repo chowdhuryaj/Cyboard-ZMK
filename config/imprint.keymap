@@ -463,11 +463,6 @@
             key-positions = <58 64>;
         };
 
-        drag {
-            bindings = <&mo 1>;
-            key-positions = <61 68>;
-        };
-
         snipe {
             bindings = <&mo 2>;
             key-positions = <62 68>;
@@ -513,7 +508,7 @@
 &as B      &as N   &as S    &as H    &as T         &as M                       &as GRAVE  &as C           &as A             &as E      &as I     &kp LS(QMARK)
 &as MINUS  &as P   &as V    &as J    &as G         &as Z                       &as SEMI   &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
 &as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
-                                     &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &hmr RCTRL DEL  &mt RGUI Y
+                                     &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &lt 1 DEL       &mt RGUI Y
                                      &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
             >;
         };
@@ -583,20 +578,19 @@
 };
 
 &trackball_peripheral_listener {
-    input-processors =
-        <&zip_xy_scaler 1 1>;
+    input-processors = <&zip_xy_scaler 1 1>;
 
     scroller {
         layers = <1>;
-        input-processors =
-            <&zip_xy_to_scroll_mapper
-             &zip_scroll_transform INPUT_TRANSFORM_X_INVERT>;
+        input-processors = <
+&zip_xy_to_scroll_mapper
+             &zip_scroll_transform INPUT_TRANSFORM_X_INVER
+        >;
     };
 
     sniper {
         layers = <2>;
-        input-processors =
-            <&zip_xy_scaler 1 5>;
+        input-processors = <&zip_xy_scaler 1 5>;
     };
 };
 

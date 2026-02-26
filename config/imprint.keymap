@@ -462,6 +462,16 @@
             bindings = <&lth>;
             key-positions = <58 64>;
         };
+
+        drag {
+            bindings = <&mo 1>;
+            key-positions = <61 67>;
+        };
+
+        snipe {
+            bindings = <&mo 2>;
+            key-positions = <62 68>;
+        };
     };
 
     macros {

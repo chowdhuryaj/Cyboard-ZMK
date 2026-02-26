@@ -48,58 +48,64 @@
                 max-prior-idle-ms = <300>;
             };
 
-/* C -> Y (include shifted C) */
-c_to_y {
-    trigger-keys = <C LS(C)>;
-    bindings = <&kp Y>;
-    max-prior-idle-ms = <300>;
-};
+            /* C -> Y (include shifted C) */
 
-/* I -> on (include shifted I) */
-i_to_on {
-    trigger-keys = <I LS(I)>;
-    bindings = <&kp O &kp N>;
-    max-prior-idle-ms = <300>;
-};
+            c_to_y {
+                trigger-keys = <C LS(C)>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* W -> hich (include shifted W) */
-w_to_hich {
-    trigger-keys = <W LS(W)>;
-    bindings = <&kp H &kp I &kp C &kp H>;
-    max-prior-idle-ms = <300>;
-};
+            /* I -> on (include shifted I) */
 
-/* --- BSPC/DEL “escalation” with strict modifier matching --- */
+            i_to_on {
+                trigger-keys = <I LS(I)>;
+                bindings = <&kp O &kp N>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* BSPC -> Ctrl+BSPC */
-bspc_to_bword {
-    trigger-keys = <BSPC>;
-    bindings = <&kp LC(BSPC)>;
-    max-prior-idle-ms = <300>;
-};
+            /* W -> hich (include shifted W) */
 
-/* Ctrl+BSPC -> Gui+BSPC (exactly Ctrl, not Ctrl+Shift/etc.) */
-bword_to_bline {
-    trigger-keys = <LC(BSPC)>;
-    bindings = <&kp LG(BSPC)>;
-    max-prior-idle-ms = <300>;
-    strict-modifiers;
-};
+            w_to_hich {
+                trigger-keys = <W LS(W)>;
+                bindings = <&kp H &kp I &kp C &kp H>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* DEL -> Ctrl+DEL */
-del_to_dword {
-    trigger-keys = <DEL>;
-    bindings = <&kp LC(DEL)>;
-    max-prior-idle-ms = <300>;
-};
+            /* --- BSPC/DEL “escalation” with strict modifier matching --- */
+            /* BSPC -> Ctrl+BSPC */
 
-/* Ctrl+DEL -> Gui+DEL (exactly Ctrl, not Ctrl+Shift/etc.) */
-dword_to_dline {
-    trigger-keys = <LC(DEL)>;
-    bindings = <&kp LG(DEL)>;
-    max-prior-idle-ms = <300>;
-    strict-modifiers;
-};
+            bspc_to_bword {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* Ctrl+BSPC -> Gui+BSPC (exactly Ctrl, not Ctrl+Shift/etc.) */
+
+            bword_to_bline {
+                trigger-keys = <LC(BSPC)>;
+                bindings = <&kp LG(BSPC)>;
+                max-prior-idle-ms = <300>;
+                strict-modifiers;
+            };
+
+            /* DEL -> Ctrl+DEL */
+
+            del_to_dword {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(DEL)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* Ctrl+DEL -> Gui+DEL (exactly Ctrl, not Ctrl+Shift/etc.) */
+
+            dword_to_dline {
+                trigger-keys = <LC(DEL)>;
+                bindings = <&kp LG(DEL)>;
+                max-prior-idle-ms = <300>;
+                strict-modifiers;
+            };
 
             /* punctuation / whitespace */
 
@@ -183,83 +189,90 @@ dword_to_dline {
                 max-prior-idle-ms = <300>;
             };
 
-/* SPACE -> and */
-space_to_and {
-    trigger-keys = <SPACE>;
-    bindings = <&kp A &kp N &kp D>;
-    max-prior-idle-ms = <300>;
-};
+            /* SPACE -> and */
 
-/* B -> efore (include shifted B) */
-b_to_efore {
-    trigger-keys = <B LS(B)>;
-    bindings = <&kp E &kp F &kp O &kp R &kp E>;
-    max-prior-idle-ms = <300>;
-};
+            space_to_and {
+                trigger-keys = <SPACE>;
+                bindings = <&kp A &kp N &kp D>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* J -> ust (include shifted J) */
-j_to_ust {
-    trigger-keys = <J LS(J)>;
-    bindings = <&kp U &kp S &kp T>;
-    max-prior-idle-ms = <300>;
-};
+            /* B -> efore (include shifted B) */
 
-/* M -> ent (include shifted M) */
-m_to_ent {
-    trigger-keys = <M LS(M)>;
-    bindings = <&kp E &kp N &kp T>;
-    max-prior-idle-ms = <300>;
-};
+            b_to_efore {
+                trigger-keys = <B LS(B)>;
+                bindings = <&kp E &kp F &kp O &kp R &kp E>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* T -> ment (include shifted T) */
-t_to_ment {
-    trigger-keys = <T LS(T)>;
-    bindings = <&kp M &kp E &kp N &kp T>;
-    max-prior-idle-ms = <300>;
-};
+            /* J -> ust (include shifted J) */
 
-/* V -> er (include shifted V) */
-v_to_er {
-    trigger-keys = <V LS(V)>;
-    bindings = <&kp E &kp R>;
-    max-prior-idle-ms = <300>;
-};
+            j_to_ust {
+                trigger-keys = <J LS(J)>;
+                bindings = <&kp U &kp S &kp T>;
+                max-prior-idle-ms = <300>;
+            };
 
-/* Y -> OU (include shifted Y) */
-y_to_ou {
-    trigger-keys = <Y LS(Y)>;
-    bindings = <&kp O &kp U>;
-    max-prior-idle-ms = <300>;
-    strict-modifiers;
-};
+            /* M -> ent (include shifted M) */
 
-/* --- BSPC/DEL “escalation” with strict modifier matching --- */
+            m_to_ent {
+                trigger-keys = <M LS(M)>;
+                bindings = <&kp E &kp N &kp T>;
+                max-prior-idle-ms = <300>;
+            };
 
-bspc_to_bword {
-    trigger-keys = <BSPC>;
-    bindings = <&kp LC(BSPC)>;
-    max-prior-idle-ms = <300>;
-};
+            /* T -> ment (include shifted T) */
 
-bword_to_bline {
-    trigger-keys = <LC(BSPC)>;
-    bindings = <&kp LG(BSPC)>;
-    max-prior-idle-ms = <300>;
-    strict-modifiers;
-};
+            t_to_ment {
+                trigger-keys = <T LS(T)>;
+                bindings = <&kp M &kp E &kp N &kp T>;
+                max-prior-idle-ms = <300>;
+            };
 
-del_to_dword {
-    trigger-keys = <DEL>;
-    bindings = <&kp LC(DEL)>;
-    max-prior-idle-ms = <300>;
-};
+            /* V -> er (include shifted V) */
 
-dword_to_dline {
-    trigger-keys = <LC(DEL)>;
-    bindings = <&kp LG(DEL)>;
-    max-prior-idle-ms = <300>;
-    strict-modifiers;
-};
+            v_to_er {
+                trigger-keys = <V LS(V)>;
+                bindings = <&kp E &kp R>;
+                max-prior-idle-ms = <300>;
+            };
+
+            /* Y -> OU (include shifted Y) */
+
+            y_to_ou {
+                trigger-keys = <Y LS(Y)>;
+                bindings = <&kp O &kp U>;
+                max-prior-idle-ms = <300>;
+                strict-modifiers;
+            };
+
+            /* --- BSPC/DEL “escalation” with strict modifier matching --- */
+
+            bspc_to_bword {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            bword_to_bline {
+                trigger-keys = <LC(BSPC)>;
+                bindings = <&kp LG(BSPC)>;
+                max-prior-idle-ms = <300>;
+                strict-modifiers;
+            };
+
+            del_to_dword {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(DEL)>;
+                max-prior-idle-ms = <300>;
+            };
+
+            dword_to_dline {
+                trigger-keys = <LC(DEL)>;
+                bindings = <&kp LG(DEL)>;
+                max-prior-idle-ms = <300>;
+                strict-modifiers;
+            };
 
             dot_to_space_skshift {
                 trigger-keys = <DOT>;
@@ -384,7 +397,7 @@ dword_to_dline {
         compatible = "zmk,combos";
 
         left_enter {
-            bindings = <&kp ENTER>;
+            bindings = <&mt DOWN ENTER>;
             key-positions = <28 27>;
             timeout-ms = <20>;
         };
@@ -405,7 +418,7 @@ dword_to_dline {
 
         left_dictate {
             bindings = <&kp GRAVE>;
-            key-positions = <62 68>;
+            key-positions = <62 61>;
         };
 
         controls {
@@ -448,7 +461,7 @@ dword_to_dline {
         };
 
         num {
-            bindings = <&mo 2>;
+            bindings = <&lt 2 Y>;
             key-positions = <58 64>;
         };
     };

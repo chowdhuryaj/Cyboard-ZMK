@@ -30,11 +30,76 @@
 
             bindings = <&key_repeat>;
 
-            y_to_ou {
-                trigger-keys = <Y>;
-                bindings = <&kp O &kp U>;
+            e_to_x {
+                trigger-keys = <E LS(E)>;
+                bindings = <&kp X>;
                 max-prior-idle-ms = <300>;
             };
+
+            o_to_u {
+                trigger-keys = <O LS(O)>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <300>;
+            };
+
+            u_to_i {
+                trigger-keys = <U LS(U)>;
+                bindings = <&kp I>;
+                max-prior-idle-ms = <300>;
+            };
+
+/* C -> Y (include shifted C) */
+c_to_y {
+    trigger-keys = <C LS(C)>;
+    bindings = <&kp Y>;
+    max-prior-idle-ms = <300>;
+};
+
+/* I -> on (include shifted I) */
+i_to_on {
+    trigger-keys = <I LS(I)>;
+    bindings = <&kp O &kp N>;
+    max-prior-idle-ms = <300>;
+};
+
+/* W -> hich (include shifted W) */
+w_to_hich {
+    trigger-keys = <W LS(W)>;
+    bindings = <&kp H &kp I &kp C &kp H>;
+    max-prior-idle-ms = <300>;
+};
+
+/* --- BSPC/DEL “escalation” with strict modifier matching --- */
+
+/* BSPC -> Ctrl+BSPC */
+bspc_to_bword {
+    trigger-keys = <BSPC>;
+    bindings = <&kp LC(BSPC)>;
+    max-prior-idle-ms = <300>;
+};
+
+/* Ctrl+BSPC -> Gui+BSPC (exactly Ctrl, not Ctrl+Shift/etc.) */
+bword_to_bline {
+    trigger-keys = <LC(BSPC)>;
+    bindings = <&kp LG(BSPC)>;
+    max-prior-idle-ms = <300>;
+    strict-modifiers;
+};
+
+/* DEL -> Ctrl+DEL */
+del_to_dword {
+    trigger-keys = <DEL>;
+    bindings = <&kp LC(DEL)>;
+    max-prior-idle-ms = <300>;
+};
+
+/* Ctrl+DEL -> Gui+DEL (exactly Ctrl, not Ctrl+Shift/etc.) */
+dword_to_dline {
+    trigger-keys = <LC(DEL)>;
+    bindings = <&kp LG(DEL)>;
+    max-prior-idle-ms = <300>;
+    strict-modifiers;
+};
 
             /* punctuation / whitespace */
 
@@ -100,23 +165,101 @@
 
             bindings = <&key_repeat>;
 
-            i_to_apos {
-                trigger-keys = <I>;
-                bindings = <&kp SQT>;
+            w_to_y {
+                trigger-keys = <W LS(W)>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <300>;
+            };
+
+            i_to_ng {
+                trigger-keys = <I LS(I)>;
+                bindings = <&kp N &kp G>;
                 max-prior-idle-ms = <300>;
             };
 
             a_to_o {
-                trigger-keys = <A>;
+                trigger-keys = <A LS(A)>;
                 bindings = <&kp O>;
                 max-prior-idle-ms = <300>;
             };
 
-            w_to_y {
-                trigger-keys = <W>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <300>;
-            };
+/* SPACE -> and */
+space_to_and {
+    trigger-keys = <SPACE>;
+    bindings = <&kp A &kp N &kp D>;
+    max-prior-idle-ms = <300>;
+};
+
+/* B -> efore (include shifted B) */
+b_to_efore {
+    trigger-keys = <B LS(B)>;
+    bindings = <&kp E &kp F &kp O &kp R &kp E>;
+    max-prior-idle-ms = <300>;
+};
+
+/* J -> ust (include shifted J) */
+j_to_ust {
+    trigger-keys = <J LS(J)>;
+    bindings = <&kp U &kp S &kp T>;
+    max-prior-idle-ms = <300>;
+};
+
+/* M -> ent (include shifted M) */
+m_to_ent {
+    trigger-keys = <M LS(M)>;
+    bindings = <&kp E &kp N &kp T>;
+    max-prior-idle-ms = <300>;
+};
+
+/* T -> ment (include shifted T) */
+t_to_ment {
+    trigger-keys = <T LS(T)>;
+    bindings = <&kp M &kp E &kp N &kp T>;
+    max-prior-idle-ms = <300>;
+};
+
+/* V -> er (include shifted V) */
+v_to_er {
+    trigger-keys = <V LS(V)>;
+    bindings = <&kp E &kp R>;
+    max-prior-idle-ms = <300>;
+};
+
+/* Y -> OU (include shifted Y) */
+y_to_ou {
+    trigger-keys = <Y LS(Y)>;
+    bindings = <&kp O &kp U>;
+    max-prior-idle-ms = <300>;
+    strict-modifiers;
+};
+
+/* --- BSPC/DEL “escalation” with strict modifier matching --- */
+
+bspc_to_bword {
+    trigger-keys = <BSPC>;
+    bindings = <&kp LC(BSPC)>;
+    max-prior-idle-ms = <300>;
+};
+
+bword_to_bline {
+    trigger-keys = <LC(BSPC)>;
+    bindings = <&kp LG(BSPC)>;
+    max-prior-idle-ms = <300>;
+    strict-modifiers;
+};
+
+del_to_dword {
+    trigger-keys = <DEL>;
+    bindings = <&kp LC(DEL)>;
+    max-prior-idle-ms = <300>;
+};
+
+dword_to_dline {
+    trigger-keys = <LC(DEL)>;
+    bindings = <&kp LG(DEL)>;
+    max-prior-idle-ms = <300>;
+    strict-modifiers;
+};
 
             dot_to_space_skshift {
                 trigger-keys = <DOT>;
@@ -133,12 +276,6 @@
             ques_to_space_skshift {
                 trigger-keys = <QMARK>;
                 bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <300>;
-            };
-
-            space_to_the {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
                 max-prior-idle-ms = <300>;
             };
 
@@ -351,7 +488,7 @@
         base {
             bindings = <
 &kp HOME   &as N1  &as N2   &as N3   &as N4            &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
-&kp END    &as X   &as F    &as L    &as K             &as Q                       &kp COLON  &as Y           &as O             &as U      &as SQT   &kp PG_DN
+&kp END    &as Q   &as F    &as L    &as K             &as X                       &kp COLON  &as Y           &as O             &as U      &as SQT   &kp PG_DN
 &as B      &as N   &as S    &as H    &as T             &as M                       &as G      &as C           &as A             &as E      &as I     &kp LS(QMARK)
 &as MINUS  &as P   &as V    &as J    &as D             &as Z                       &as SEMI   &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
 &as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                                  &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
@@ -375,8 +512,8 @@
         numpad {
             bindings = <
 &trans     &trans    &trans        &trans   &trans     &trans               &trans  &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N1    &kp N2        &kp N3   &kp N4     &kp N5               &trans  &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N6    &kp N7        &kp N8   &kp N9     &kp DOT              &trans  &trans  &trans  &trans  &trans  &trans
+&kp MINUS  &kp N6    &kp N7        &kp N8   &kp N9     &kp DOT              &trans  &trans  &trans  &trans  &trans  &trans
+&kp N0     &kp N1    &kp N2        &kp N3   &kp N4     &kp N5               &trans  &trans  &trans  &trans  &trans  &trans
 &kp EQUAL  &kp FSLH  &kp LS(STAR)  &kp RET  &kp SPACE  &kp COMMA            &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans    &trans        &trans   &trans                                  &trans  &trans  &trans  &trans  &trans
                                             &trans     &trans     &trans    &trans  &trans  &trans

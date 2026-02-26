@@ -406,7 +406,7 @@
 
         left_dictate {
             bindings = <&kp GRAVE>;
-            key-positions = <62 61>;
+            key-positions = <41 40>;
         };
 
         controls {

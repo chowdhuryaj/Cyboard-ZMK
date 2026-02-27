@@ -473,6 +473,16 @@
             bindings = <&mo 2>;
             key-positions = <62 68>;
         };
+
+        eu {
+            bindings = <&eu>;
+            key-positions = <33 45>;
+        };
+
+        ue {
+            bindings = <&ue>;
+            key-positions = <33 21>;
+        };
     };
 
     macros {
@@ -502,6 +512,20 @@
 
             label = "AS";
         };
+
+        ue: ue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp U &kp E>;
+            label = "UE";
+        };
+
+        eu: eu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp U>;
+            label = "EU";
+        };
     };
 
     keymap {
@@ -510,9 +534,9 @@
         base {
             bindings = <
 &kp HOME   &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
-&kp END    &as Q   &as F    &as D    &as K         &as X                       &kp EXCL   &key_repeat     &as O             &as U      &as SQT   &kp PG_DN
-&as B      &as N   &as S    &as H    &as T         &as M                       &as GRAVE  &as C           &as A             &as E      &as I     &kp LS(QMARK)
-&as MINUS  &as P   &as V    &as J    &as G         &as Z                       &as SEMI   &as W           &as COMMA         &as DOT    &as FSLH  &as BSLH
+&kp END    &kp Q   &kp F    &kp D    &kp K         &kp X                       &kp EXCL   &key_repeat     &kp O             &kp U      &as SQT   &kp PG_DN
+&kp B      &kp N   &kp S    &kp H    &kp T         &kp M                       &as GRAVE  &kp C           &kp A             &kp E      &kp I     &kp LS(QMARK)
+&as MINUS  &kp P   &kp V    &kp J    &kp G         &kp Z                       &as SEMI   &kp W           &as COMMA         &as DOT    &as FSLH  &as BSLH
 &as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
                                      &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &lt 1 DEL       &mt RGUI Y
                                      &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
@@ -582,6 +606,7 @@
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
+
 &trackball_peripheral_listener {
     input-processors = <&zip_xy_scaler 1 1>;
 

@@ -557,13 +557,13 @@
 
         base {
             bindings = <
-&kp HOME   &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6    &as N7          &as N8            &as N9     &as N0    &kp PG_UP
-&kp END    &kp Q   &kp J    &kp F    &kp K         &kp X                       &kp EXCL  &rth            &kp O             &kp U      &as SQT   &kp PG_DN
-&kp B      &kp N   &kp S    &kp H    &kp T         &kp M                       &kp G     &kp C           &kp A             &kp E      &kp I     &kp LS(QMARK)
-&as MINUS  &kp B   &kp V    &kp P    &kp D         &kp Z                       &as SEMI  &kp W           &as COMMA         &as DOT    &as FSLH  &as BSLH
-&as EQUAL  &kp F9  &kp F10  &kp F11  &kp F12                                             &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &rgb_ug RGB_TOG
-                                     &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1  &lt 1 DEL       &mt RGUI Y
-                                     &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3  &hmr RALT BSPC  &hmr RSHFT SPACE
+&kp HOME  &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
+&kp END   &kp Q   &kp J    &kp F    &kp K         &kp EQUAL                   &kp EQUAL  &kp G           &kp O             &kp U      &as SQT   &kp PG_DN
+&kp B     &kp N   &kp S    &kp H    &kp T         &kp M                       &kp MINUS  &kp C           &kp A             &kp E      &kp I     &kp LS(QMARK)
+&kp X     &kp Z   &kp V    &kp P    &kp D         &kp MINUS                   &as SEMI   &kp W           &as COMMA         &as DOT    &as FSLH  &as BSLH
+&kp HOME  &kp F9  &kp F10  &kp F11  &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &kp END
+                                    &hml LGUI L   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &lt 1 DEL       &mt RGUI Y
+                                    &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
             >;
         };
 

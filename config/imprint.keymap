@@ -483,6 +483,16 @@
             bindings = <&ue>;
             key-positions = <33 21>;
         };
+
+        oa {
+            bindings = <&oa>;
+            key-positions = <32 44>;
+        };
+
+        ao {
+            bindings = <&ao>;
+            key-positions = <32 20>;
+        };
     };
 
     macros {
@@ -525,6 +535,20 @@
             #binding-cells = <0>;
             bindings = <&kp E &kp U>;
             label = "EU";
+        };
+
+        oa: oa {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp A>;
+            label = "OA";
+        };
+
+        ao: ao {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp A &kp O>;
+            label = "AO";
         };
     };
 

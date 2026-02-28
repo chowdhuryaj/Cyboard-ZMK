@@ -230,7 +230,7 @@
 
             N_to_ING {
                 trigger-keys = <N LS(N)>;
-                bindings = <&kp I &kp N & G;
+                bindings = <&kp I &kp N &kp G>;
                 max-prior-idle-ms = <500>;
             };
 

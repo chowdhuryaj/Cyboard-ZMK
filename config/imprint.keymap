@@ -67,7 +67,6 @@
             label = "TM";
             #binding-cells = <0>;
             bindings = <&key_repeat>;
-        };
 
             /* NON-ALPHABETICAL */
 
@@ -912,8 +911,8 @@
 
 &trackball_central_listener {
     input-processors = <
-        &zip_y_scaler 1 36
-        &zip_x_scaler 1 72
+        &zip_y_scaler 1 60
+        &zip_x_scaler 1 120
         &zip_xy_to_scroll_mapper
         &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         &zip_scroll_snap

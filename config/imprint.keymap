@@ -66,7 +66,7 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "TM";
             #binding-cells = <0>;
-            bindings = <&kp key_repeat>;
+            bindings = <&key_repeat>;
         };
 
             /* NON-ALPHABETICAL */
@@ -170,7 +170,7 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "TIM";
             #binding-cells = <0>;
-            bindings = <&kp key_repeat>;
+            bindings = <&key_repeat>;
 
             /* NON-ALPHABETICAL */
 

@@ -1047,7 +1047,7 @@
 
         /* =========================
  * BI
- * Default: &kp LC(V)
+ * Default: Repeat key
  * ========================= */
 
         BI: BI {
@@ -1140,42 +1140,6 @@
                 max-prior-idle-ms = <500>;
             };
 
-            B_to_EL {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp L>;
-                max-prior-idle-ms = <500>;
-            };
-
-            C_to_HI {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp H &kp I>;
-                max-prior-idle-ms = <500>;
-            };
-
-            D_to_IN {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp I &kp N>;
-                max-prior-idle-ms = <500>;
-            };
-
-            E_to_CT {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp C &kp T>;
-                max-prior-idle-ms = <500>;
-            };
-
-            F_to_RA {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp R &kp A>;
-                max-prior-idle-ms = <500>;
-            };
-
-            G_to_UA {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp U &kp A>;
-                max-prior-idle-ms = <500>;
-            };
-
             H_to_EA {
                 trigger-keys = <H LS(H)>;
                 bindings = <&kp E &kp A>;
@@ -1200,57 +1164,9 @@
                 max-prior-idle-ms = <500>;
             };
 
-            L_to_ON {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp O &kp N>;
-                max-prior-idle-ms = <500>;
-            };
-
-            M_to_IN {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp I &kp N>;
-                max-prior-idle-ms = <500>;
-            };
-
-            N_to_TO {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp T &kp O>;
-                max-prior-idle-ms = <500>;
-            };
-
-            O_to_VE {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp V &kp E>;
-                max-prior-idle-ms = <500>;
-            };
-
-            P_to_LA {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp L &kp A>;
-                max-prior-idle-ms = <500>;
-            };
-
             Q_to_UR {
                 trigger-keys = <Q LS(Q)>;
                 bindings = <&kp U &kp R>;
-                max-prior-idle-ms = <500>;
-            };
-
-            R_to_AL {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp A &kp L>;
-                max-prior-idle-ms = <500>;
-            };
-
-            S_to_HO {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp H &kp O>;
-                max-prior-idle-ms = <500>;
-            };
-
-            T_to_RA {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp R &kp A>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -1272,53 +1188,12 @@
                 max-prior-idle-ms = <500>;
             };
 
-            X_to_PO {
-                trigger-keys = <X LS(X)>;
-                bindings = <&kp P &kp O>;
-                max-prior-idle-ms = <500>;
-            };
-
             Y_to_AL {
                 trigger-keys = <Y LS(Y)>;
                 bindings = <&kp A &kp L>;
                 max-prior-idle-ms = <500>;
             };
-
-            Z_to_ON {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp O &kp N>;
-                max-prior-idle-ms = <500>;
-            };
         };
-
-        /* =========================
- * BM
- * Default: &mt COMMA SEMI
- * ========================= */
-        /* =========================
- * BR
- * Default: &mt DOT SQT
- * ========================= */
-        /* =========================
- * BP
- * Default: &mt SLASH LS(N1)
- * ========================= */
-        /* =========================
- * BPL
- * Default: &format_dance
- * ========================= */
-        /* =========================
- * MPL
- * Default: &mt LC(T) LC(W)
- * ========================= */
-        /* =========================
- * TPL
- * Default: &mt LBKT RBKT
- * ========================= */
-        /* =========================
- * TP
- * Default: &mt LG(LS(N4)) LC(LS(N4))
- * ========================= */
     };
 
     combos {

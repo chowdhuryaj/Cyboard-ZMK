@@ -1433,8 +1433,8 @@
 &kp B      &kp N   &kp S   &kp H   &kp T         &kp M                   &MIM      &kp C           &kp A             &kp E          &kp I         &format_dance
 &kp Z      &kp P   &kp G   &kp J   &kp D         &kp V                   &BIM      &BI             &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH   &kp F11
 &kp F6     &kp F7  &kp F8  &kp F9  &kp F10                                         &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                   &lt 3 Y       &lt 3 DEL   &mkp MB5    &mkp MB1  &mkp MB2        &lt 2 BSPC
-                                   &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB3  &lt 2 DEL       &hmr RSHFT SPACE
+                                   &lt 3 Y       &lt 4 DEL   &mkp MB5    &mkp MB1  &mkp MB3        &lt 2 BSPC
+                                   &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2  &lt 1 DEL       &hmr RSHFT SPACE
             >;
         };
 

@@ -416,13 +416,8 @@
         };
 
         controls {
-            bindings = <&mo 5>;
+            bindings = <&mo 4>;
             key-positions = <27 32>;
-        };
-
-        gaming {
-            bindings = <&tog 3>;
-            key-positions = <28 31>;
         };
 
         left_tab {
@@ -455,7 +450,7 @@
         };
 
         num {
-            bindings = <&lt 4 Y>;
+            bindings = <&lt 3 Y>;
             key-positions = <59 65>;
         };
 
@@ -587,13 +582,13 @@
 
         base {
             bindings = <
-&kp GRAVE  &as N1  &as N2   &as N3   &as N4        &as N5                      &as N6     &as N7          &as N8            &as N9     &as N0    &kp PG_UP
-&kp Q      &kp X   &kp F    &kp L    &kp K         &kp W                       &kp EQUAL  &kp Y           &kp O             &kp U      &as SQT   &kp PG_DN
-&kp B      &kp N   &kp S    &kp H    &kp T         &kp M                       &kp MINUS  &kp C           &kp A             &kp E      &kp I     &kp LS(QMARK)
-&kp Z      &kp P   &kp G    &kp J    &kp D         &kp V                       &as SEMI   &kp W           &as COMMA         &as DOT    &as FSLH  &as BSLH
-&kp HOME   &kp F9  &kp F10  &kp F11  &kp F12                                              &kp DOWN        &kp LEFT          &kp RIGHT  &kp UP    &kp END
-                                     &hml LGUI Y   &hml LCTRL DEL  &mkp MB5    &mkp MB1   &lt 1 DEL       &mt RGUI Y
-                                     &hml LSHFT R  &hml LALT BSPC  &mkp MB4    &mkp MB3   &hmr RALT BSPC  &hmr RSHFT SPACE
+&as GRAVE  &as N1  &as N2   &as N3   &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
+&kp Q      &kp X   &kp F    &kp L    &kp K         &kp W                   &trans    &trans          &kp O             &kp U          &trans        &trans
+&kp B      &kp N   &kp S    &kp H    &kp T         &kp M                   &trans    &kp C           &kp A             &kp E          &kp I         &trans
+&kp Z      &kp P   &kp G    &kp J    &kp D         &kp V                   &trans    &trans          &trans            &trans         &trans        &mt LC(EQUAL) EQUAL
+&kp F8     &kp F9  &kp F10  &kp F11  &kp F12                                         &mt PG_DN DOWN  &mt LEFT HOME     &mt END RIGHT  &mt PG_UP UP  &mt LC(MINUS) MINUS
+                                     &lt 3 Y       &mkp MB2    &mkp MB5    &mkp MB1  &lt 1 DEL       &key_repeat
+                                     &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB3  &lt 2 BSPC      &hmr RSHFT SPACE
             >;
         };
 
@@ -618,18 +613,6 @@
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        gaming {
-            bindings = <
-&kp MINUS  &kp N1    &kp N2    &kp N3  &kp N4     &kp N5            &kp N6  &kp N7  &kp N8     &kp N9   &kp N0    &kp EQUAL
-&kp ESC    &kp T     &kp Q     &kp W   &kp E      &kp R             &kp Y   &kp U   &kp I      &kp O    &kp P     &kp BSLH
-&kp TAB    &kp G     &kp A     &kp S   &kp D      &kp F             &kp H   &kp J   &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp B     &kp Z     &kp X   &kp C      &kp V             &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-&kp LCTRL  &kp LALT  &kp LGUI  &trans  &trans                               &trans  &trans     &trans   &trans    &trans
-                                       &trans     &trans  &trans    &trans  &trans  &trans
-                                       &kp SPACE  &trans  &trans    &trans  &trans  &kp SPACE
             >;
         };
 

@@ -149,10 +149,6 @@
                 max-prior-idle-ms = <500>;
             };
 
-            /* =========================
- * TIM  (Trig set #1)
- * ========================= */
-            /* REPLACE TIM's ALPHABETICAL block with this */
             /* ALPHABETICAL (trigram tails; includes shifted triggers) */
 
             A_to_ND {

@@ -67,7 +67,7 @@
             label = "TM";
             #binding-cells = <0>;
             bindings = <&kp key_repeat>;
-            };
+        };
 
             /* NON-ALPHABETICAL */
 

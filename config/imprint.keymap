@@ -710,7 +710,7 @@
 
             L_to_EA {
                 trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp :>;
+                bindings = <&kp E &kp A>;
                 max-prior-idle-ms = <500>;
             };
 

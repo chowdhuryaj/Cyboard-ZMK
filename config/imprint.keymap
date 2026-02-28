@@ -200,6 +200,12 @@
                 max-prior-idle-ms = <500>;
             };
 
+            J_to_MAIN {
+                trigger-keys = <J LS(J)>;
+                bindings = <&kp M &kp A &kp I &kp N>;
+                max-prior-idle-ms = <500>;
+            };
+
             K_to_ING {
                 trigger-keys = <K LS(K)>;
                 bindings = <&kp E &kp N &kp G>;
@@ -233,6 +239,12 @@
             T_to_HE {
                 trigger-keys = <T LS(T)>;
                 bindings = <&kp H &kp E>;
+                max-prior-idle-ms = <500>;
+            };
+
+            U_to_I {
+                trigger-keys = <U LS(U)>;
+                bindings = <&kp I>;
                 max-prior-idle-ms = <500>;
             };
 

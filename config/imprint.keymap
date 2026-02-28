@@ -62,2515 +62,652 @@
             bindings = <&kp LC(B)>, <&kp LC(I)>, <&kp LC(U)>;
         };
 
-        /* =========================
+/* =========================
  * TIM
  * Default: &mt LC(Y) LC(Z)
  * ========================= */
 
-        TIM: TIM {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "TIM";
-            #binding-cells = <0>;
-            bindings = <&mt LC(Y) LC(Z)>;
+TIM: TIM {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "TIM";
+    #binding-cells = <0>;
+    bindings = <&mt LC(Y) LC(Z)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (includes shifted triggers) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    B_to_ET { trigger-keys = <B LS(B)>; bindings = <&kp E &kp T>; max-prior-idle-ms = <500>; };
+    C_to_ON { trigger-keys = <C LS(C)>; bindings = <&kp O &kp N>; max-prior-idle-ms = <500>; };
+    D_to_IF { trigger-keys = <D LS(D)>; bindings = <&kp I &kp F>; max-prior-idle-ms = <500>; };
+    E_to_ND { trigger-keys = <E LS(E)>; bindings = <&kp N &kp D>; max-prior-idle-ms = <500>; };
+    F_to_RO { trigger-keys = <F LS(F)>; bindings = <&kp R &kp O>; max-prior-idle-ms = <500>; };
+    G_to_OV { trigger-keys = <G LS(G)>; bindings = <&kp O &kp V>; max-prior-idle-ms = <500>; };
+    H_to_AD { trigger-keys = <H LS(H)>; bindings = <&kp A &kp D>; max-prior-idle-ms = <500>; };
+    I_to_ON { trigger-keys = <I LS(I)>; bindings = <&kp O &kp N>; max-prior-idle-ms = <500>; };
+    J_to_OI { trigger-keys = <J LS(J)>; bindings = <&kp O &kp I>; max-prior-idle-ms = <500>; };
+    K_to_IL { trigger-keys = <K LS(K)>; bindings = <&kp I &kp L>; max-prior-idle-ms = <500>; };
+    L_to_AS { trigger-keys = <L LS(L)>; bindings = <&kp A &kp S>; max-prior-idle-ms = <500>; };
+    M_to_OS { trigger-keys = <M LS(M)>; bindings = <&kp O &kp S>; max-prior-idle-ms = <500>; };
+    N_to_UM { trigger-keys = <N LS(N)>; bindings = <&kp U &kp M>; max-prior-idle-ms = <500>; };
+    O_to_UT { trigger-keys = <O LS(O)>; bindings = <&kp U &kp T>; max-prior-idle-ms = <500>; };
+    P_to_EO { trigger-keys = <P LS(P)>; bindings = <&kp E &kp O>; max-prior-idle-ms = <500>; };
+    Q_to_UA { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp A>; max-prior-idle-ms = <500>; };
+    R_to_EG { trigger-keys = <R LS(R)>; bindings = <&kp E &kp G>; max-prior-idle-ms = <500>; };
+    S_to_YS { trigger-keys = <S LS(S)>; bindings = <&kp Y &kp S>; max-prior-idle-ms = <500>; };
+    T_to_HA { trigger-keys = <T LS(T)>; bindings = <&kp H &kp A>; max-prior-idle-ms = <500>; };
+    U_to_NT { trigger-keys = <U LS(U)>; bindings = <&kp N &kp T>; max-prior-idle-ms = <500>; };
+    V_to_IE { trigger-keys = <V LS(V)>; bindings = <&kp I &kp E>; max-prior-idle-ms = <500>; };
+    W_to_IL { trigger-keys = <W LS(W)>; bindings = <&kp I &kp L>; max-prior-idle-ms = <500>; };
+    X_to_ER { trigger-keys = <X LS(X)>; bindings = <&kp E &kp R>; max-prior-idle-ms = <500>; };
+    Y_to_ET { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp T>; max-prior-idle-ms = <500>; };
+    Z_to_OM { trigger-keys = <Z LS(Z)>; bindings = <&kp O &kp M>; max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (includes shifted triggers) */
-
-            B_to_ET {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp T>;
-            };
-
-            C_to_ON {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp N>;
-            };
-
-            D_to_IF {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp I &kp F>;
-            };
-
-            E_to_ND {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp N &kp D>;
-            };
-
-            F_to_RO {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp R &kp O>;
-            };
-
-            G_to_OV {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp O &kp V>;
-            };
-
-            H_to_AD {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp A &kp D>;
-            };
-
-            I_to_ON {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp O &kp N>;
-            };
-
-            J_to_OI {
-                trigger-keys = <J LS(J)>;
-                bindings = <&kp O &kp I>;
-            };
-
-            K_to_IL {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp I &kp L>;
-            };
-
-            L_to_AS {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp A &kp S>;
-            };
-
-            M_to_OS {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp O &kp S>;
-            };
-
-            N_to_UM {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp U &kp M>;
-            };
-
-            O_to_UT {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp U &kp T>;
-            };
-
-            P_to_EO {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp E &kp O>;
-            };
-
-            Q_to_UA {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp A>;
-            };
-
-            R_to_EG {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp G>;
-            };
-
-            S_to_YS {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp Y &kp S>;
-            };
-
-            T_to_HA {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp A>;
-            };
-
-            U_to_NT {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp T>;
-            };
-
-            V_to_IE {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp I &kp E>;
-            };
-
-            W_to_IL {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp I &kp L>;
-            };
-
-            X_to_ER {
-                trigger-keys = <X LS(X)>;
-                bindings = <&kp E &kp R>;
-            };
-
-            Y_to_ET {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp T>;
-            };
-
-            Z_to_OM {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp O &kp M>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * MIM
  * Default: &kp A
  * ========================= */
 
-        MIM: MIM {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MIM";
-            #binding-cells = <0>;
-            bindings = <&kp A>;
+MIM: MIM {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "MIM";
+    #binding-cells = <0>;
+    bindings = <&kp A>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_ND { trigger-keys = <A LS(A)>; bindings = <&kp N &kp D>; max-prior-idle-ms = <500>; };
+    B_to_UT { trigger-keys = <B LS(B)>; bindings = <&kp U &kp T>; max-prior-idle-ms = <500>; };
+    C_to_OM { trigger-keys = <C LS(C)>; bindings = <&kp O &kp M>; max-prior-idle-ms = <500>; };
+    D_to_EL { trigger-keys = <D LS(D)>; bindings = <&kp E &kp L>; max-prior-idle-ms = <500>; };
+    E_to_NT { trigger-keys = <E LS(E)>; bindings = <&kp N &kp T>; max-prior-idle-ms = <500>; };
+    F_to_OR { trigger-keys = <F LS(F)>; bindings = <&kp O &kp R>; max-prior-idle-ms = <500>; };
+    G_to_ET { trigger-keys = <G LS(G)>; bindings = <&kp E &kp T>; max-prior-idle-ms = <500>; };
+    H_to_ER { trigger-keys = <H LS(H)>; bindings = <&kp E &kp R>; max-prior-idle-ms = <500>; };
+    I_to_NG { trigger-keys = <I LS(I)>; bindings = <&kp N &kp G>; max-prior-idle-ms = <500>; };
+    J_to_US { trigger-keys = <J LS(J)>; bindings = <&kp U &kp S>; max-prior-idle-ms = <500>; };
+    K_to_NO { trigger-keys = <K LS(K)>; bindings = <&kp N &kp O>; max-prior-idle-ms = <500>; };
+    L_to_IK { trigger-keys = <L LS(L)>; bindings = <&kp I &kp K>; max-prior-idle-ms = <500>; };
+    M_to_OR { trigger-keys = <M LS(M)>; bindings = <&kp O &kp R>; max-prior-idle-ms = <500>; };
+    N_to_OT { trigger-keys = <N LS(N)>; bindings = <&kp O &kp T>; max-prior-idle-ms = <500>; };
+    O_to_NE { trigger-keys = <O LS(O)>; bindings = <&kp N &kp E>; max-prior-idle-ms = <500>; };
+    P_to_RO { trigger-keys = <P LS(P)>; bindings = <&kp R &kp O>; max-prior-idle-ms = <500>; };
+    Q_to_UE { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp E>; max-prior-idle-ms = <500>; };
+    R_to_ES { trigger-keys = <R LS(R)>; bindings = <&kp E &kp S>; max-prior-idle-ms = <500>; };
+    S_to_TA { trigger-keys = <S LS(S)>; bindings = <&kp T &kp A>; max-prior-idle-ms = <500>; };
+    T_to_HE { trigger-keys = <T LS(T)>; bindings = <&kp H &kp E>; max-prior-idle-ms = <500>; };
+    U_to_NI { trigger-keys = <U LS(U)>; bindings = <&kp N &kp I>; max-prior-idle-ms = <500>; };
+    V_to_ER { trigger-keys = <V LS(V)>; bindings = <&kp E &kp R>; max-prior-idle-ms = <500>; };
+    W_to_AS { trigger-keys = <W LS(W)>; bindings = <&kp A &kp S>; max-prior-idle-ms = <500>; };
+    X_to_EN { trigger-keys = <X LS(X)>; bindings = <&kp E &kp N>; max-prior-idle-ms = <500>; };
+    Y_to_OU { trigger-keys = <Y LS(Y)>; bindings = <&kp O &kp U>; max-prior-idle-ms = <500>; };
+    Z_to_ER { trigger-keys = <Z LS(Z)>; bindings = <&kp E &kp R>; max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL */
-
-            A_to_ND {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp N &kp D>;
-            };
-
-            B_to_UT {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp U &kp T>;
-            };
-
-            C_to_OM {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp M>;
-            };
-
-            D_to_EL {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp L>;
-            };
-
-            E_to_NT {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp N &kp T>;
-            };
-
-            F_to_OR {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp O &kp R>;
-            };
-
-            G_to_ET {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp E &kp T>;
-            };
-
-            H_to_ER {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp E &kp R>;
-            };
-
-            I_to_NG {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp G>;
-            };
-
-            J_to_US {
-                trigger-keys = <J LS(J)>;
-                bindings = <&kp U &kp S>;
-            };
-
-            K_to_NO {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp N &kp O>;
-            };
-
-            L_to_IK {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp I &kp K>;
-            };
-
-            M_to_OR {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp O &kp R>;
-            };
-
-            N_to_OT {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp O &kp T>;
-            };
-
-            O_to_NE {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp N &kp E>;
-            };
-
-            P_to_RO {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp R &kp O>;
-            };
-
-            Q_to_UE {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp E>;
-            };
-
-            R_to_ES {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp S>;
-            };
-
-            S_to_TA {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp T &kp A>;
-            };
-
-            T_to_HE {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp E>;
-            };
-
-            U_to_NI {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp I>;
-            };
-
-            V_to_ER {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp E &kp R>;
-            };
-
-            W_to_AS {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp A &kp S>;
-            };
-
-            X_to_EN {
-                trigger-keys = <X LS(X)>;
-                bindings = <&kp E &kp N>;
-            };
-
-            Y_to_OU {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp O &kp U>;
-            };
-
-            Z_to_ER {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp E &kp R>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BIM
  * Default: &mt LC(C) LC(X)
  * ========================= */
 
-        BIM: BIM {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BIM";
-            #binding-cells = <0>;
-            bindings = <&mt LC(C) LC(X)>;
+BIM: BIM {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BIM";
+    #binding-cells = <0>;
+    bindings = <&mt LC(C) LC(X)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_RE { trigger-keys = <A LS(A)>; bindings = <&kp R &kp E>; max-prior-idle-ms = <500>; };
+    B_to_EC { trigger-keys = <B LS(B)>; bindings = <&kp E &kp C>; max-prior-idle-ms = <500>; };
+    C_to_AN { trigger-keys = <C LS(C)>; bindings = <&kp A &kp N>; max-prior-idle-ms = <500>; };
+    D_to_EV { trigger-keys = <D LS(D)>; bindings = <&kp E &kp V>; max-prior-idle-ms = <500>; };
+    E_to_VE { trigger-keys = <E LS(E)>; bindings = <&kp V &kp E>; max-prior-idle-ms = <500>; };
+    F_to_IR { trigger-keys = <F LS(F)>; bindings = <&kp I &kp R>; max-prior-idle-ms = <500>; };
+    G_to_IV { trigger-keys = <G LS(G)>; bindings = <&kp I &kp V>; max-prior-idle-ms = <500>; };
+    H_to_AV { trigger-keys = <H LS(H)>; bindings = <&kp A &kp V>; max-prior-idle-ms = <500>; };
+    I_to_NT { trigger-keys = <I LS(I)>; bindings = <&kp N &kp T>; max-prior-idle-ms = <500>; };
+    J_to_OB { trigger-keys = <J LS(J)>; bindings = <&kp O &kp B>; max-prior-idle-ms = <500>; };
+    K_to_IN { trigger-keys = <K LS(K)>; bindings = <&kp I &kp N>; max-prior-idle-ms = <500>; };
+    L_to_IN { trigger-keys = <L LS(L)>; bindings = <&kp I &kp N>; max-prior-idle-ms = <500>; };
+    M_to_AK { trigger-keys = <M LS(M)>; bindings = <&kp A &kp K>; max-prior-idle-ms = <500>; };
+    N_to_EW { trigger-keys = <N LS(N)>; bindings = <&kp E &kp W>; max-prior-idle-ms = <500>; };
+    O_to_TH { trigger-keys = <O LS(O)>; bindings = <&kp T &kp H>; max-prior-idle-ms = <500>; };
+    P_to_ER { trigger-keys = <P LS(P)>; bindings = <&kp E &kp R>; max-prior-idle-ms = <500>; };
+    Q_to_UI { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp I>; max-prior-idle-ms = <500>; };
+    R_to_EP { trigger-keys = <R LS(R)>; bindings = <&kp E &kp P>; max-prior-idle-ms = <500>; };
+    S_to_HO { trigger-keys = <S LS(S)>; bindings = <&kp H &kp O>; max-prior-idle-ms = <500>; };
+    T_to_HI { trigger-keys = <T LS(T)>; bindings = <&kp H &kp I>; max-prior-idle-ms = <500>; };
+    U_to_SE { trigger-keys = <U LS(U)>; bindings = <&kp S &kp E>; max-prior-idle-ms = <500>; };
+    V_to_AL { trigger-keys = <V LS(V)>; bindings = <&kp A &kp L>; max-prior-idle-ms = <500>; };
+    W_to_IT { trigger-keys = <W LS(W)>; bindings = <&kp I &kp T>; max-prior-idle-ms = <500>; };
+    X_to_YL { trigger-keys = <X LS(X)>; bindings = <&kp Y &kp L>; max-prior-idle-ms = <500>; };
+    Y_to_EA { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp A>; max-prior-idle-ms = <500>; };
+    Z_to_ON { trigger-keys = <Z LS(Z)>; bindings = <&kp O &kp N>; max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL */
-
-            A_to_RE {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp R &kp E>;
-            };
-
-            B_to_EC {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp C>;
-            };
-
-            C_to_AN {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp A &kp N>;
-            };
-
-            D_to_EV {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp V>;
-            };
-
-            E_to_VE {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp V &kp E>;
-            };
-
-            F_to_IR {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp I &kp R>;
-            };
-
-            G_to_IV {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp I &kp V>;
-            };
-
-            H_to_AV {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp A &kp V>;
-            };
-
-            I_to_NT {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp T>;
-            };
-
-            J_to_OB {
-                trigger-keys = <J LS(J)>;
-                bindings = <&kp O &kp B>;
-            };
-
-            K_to_IN {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp I &kp N>;
-            };
-
-            L_to_IN {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp I &kp N>;
-            };
-
-            M_to_AK {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp A &kp K>;
-            };
-
-            N_to_EW {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp E &kp W>;
-            };
-
-            O_to_TH {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp T &kp H>;
-            };
-
-            P_to_ER {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp E &kp R>;
-            };
-
-            Q_to_UI {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp I>;
-            };
-
-            R_to_EP {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp P>;
-            };
-
-            S_to_HO {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp H &kp O>;
-            };
-
-            T_to_HI {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp I>;
-            };
-
-            U_to_SE {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp S &kp E>;
-            };
-
-            V_to_AL {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp A &kp L>;
-            };
-
-            W_to_IT {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp I &kp T>;
-            };
-
-            X_to_YL {
-                trigger-keys = <X LS(X)>;
-                bindings = <&kp Y &kp L>;
-            };
-
-            Y_to_EA {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp A>;
-            };
-
-            Z_to_ON {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp O &kp N>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * TI
  * Default: &kp LC(A)
  * ========================= */
 
-        TI: TI {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "TI";
-            #binding-cells = <0>;
-            bindings = <&kp LC(A)>;
+TI: TI {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "TI";
+    #binding-cells = <0>;
+    bindings = <&kp LC(A)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_NT  { trigger-keys = <A LS(A)>; bindings = <&kp N &kp T>;           max-prior-idle-ms = <500>; };
+    B_to_EF  { trigger-keys = <B LS(B)>; bindings = <&kp E &kp F>;           max-prior-idle-ms = <500>; };
+    C_to_ON  { trigger-keys = <C LS(C)>; bindings = <&kp O &kp N>;           max-prior-idle-ms = <500>; };
+    D_to_AY  { trigger-keys = <D LS(D)>; bindings = <&kp A &kp Y>;           max-prior-idle-ms = <500>; };
+    E_to_NT  { trigger-keys = <E LS(E)>; bindings = <&kp N &kp T>;           max-prior-idle-ms = <500>; };
+    F_to_IN  { trigger-keys = <F LS(F)>; bindings = <&kp I &kp N>;           max-prior-idle-ms = <500>; };
+    G_to_RE  { trigger-keys = <G LS(G)>; bindings = <&kp R &kp E>;           max-prior-idle-ms = <500>; };
+    H_to_IM  { trigger-keys = <H LS(H)>; bindings = <&kp I &kp M>;           max-prior-idle-ms = <500>; };
+    I_to_SS  { trigger-keys = <I LS(I)>; bindings = <&kp S &kp S>;           max-prior-idle-ms = <500>; };
+    J_to_UD  { trigger-keys = <J LS(J)>; bindings = <&kp U &kp D>;           max-prior-idle-ms = <500>; };
+    K_to_IT  { trigger-keys = <K LS(K)>; bindings = <&kp I &kp T>;           max-prior-idle-ms = <500>; };
+    L_to_EA  { trigger-keys = <L LS(L)>; bindings = <&kp E &kp A>;           max-prior-idle-ms = <500>; };
+    M_to_AN  { trigger-keys = <M LS(M)>; bindings = <&kp A &kp N>;           max-prior-idle-ms = <500>; };
+    N_to_ION { trigger-keys = <N LS(N)>; bindings = <&kp I &kp O &kp N>;     max-prior-idle-ms = <500>; };
+    O_to_VE  { trigger-keys = <O LS(O)>; bindings = <&kp V &kp E>;           max-prior-idle-ms = <500>; };
+    P_to_LA  { trigger-keys = <P LS(P)>; bindings = <&kp L &kp A>;           max-prior-idle-ms = <500>; };
+    Q_to_UO  { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp O>;           max-prior-idle-ms = <500>; };
+    R_to_OL  { trigger-keys = <R LS(R)>; bindings = <&kp O &kp L>;           max-prior-idle-ms = <500>; };
+    S_to_CH  { trigger-keys = <S LS(S)>; bindings = <&kp C &kp H>;           max-prior-idle-ms = <500>; };
+    T_to_IM  { trigger-keys = <T LS(T)>; bindings = <&kp I &kp M>;           max-prior-idle-ms = <500>; };
+    U_to_SU  { trigger-keys = <U LS(U)>; bindings = <&kp S &kp U>;           max-prior-idle-ms = <500>; };
+    V_to_OT  { trigger-keys = <V LS(V)>; bindings = <&kp O &kp T>;           max-prior-idle-ms = <500>; };
+    W_to_UO  { trigger-keys = <W LS(W)>; bindings = <&kp U &kp O>;           max-prior-idle-ms = <500>; };
+    X_to_AN  { trigger-keys = <X LS(X)>; bindings = <&kp A &kp N>;           max-prior-idle-ms = <500>; };
+    Y_to_ES  { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp S>;           max-prior-idle-ms = <500>; };
+    Z_to_IP  { trigger-keys = <Z LS(Z)>; bindings = <&kp I &kp P>;           max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL */
-
-            A_to_NT {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp N &kp T>;
-            };
-
-            B_to_EF {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp F>;
-            };
-
-            C_to_ON {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp N>;
-            };
-
-            D_to_AY {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp A &kp Y>;
-            };
-
-            E_to_NT {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp N &kp T>;
-            };
-
-            F_to_IN {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp I &kp N>;
-            };
-
-            G_to_RE {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp R &kp E>;
-            };
-
-            H_to_IM {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp I &kp M>;
-            };
-
-            I_to_SS {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp S &kp S>;
-            };
-
-            J_to_UD {
-                trigger-keys = <J LS(J)>;
-                bindings = <&kp U &kp D>;
-            };
-
-            K_to_IT {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp I &kp T>;
-            };
-
-            L_to_EA {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp A>;
-            };
-
-            M_to_AN {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp A &kp N>;
-            };
-
-            N_to_ION {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp I &kp O &kp N>;
-            };
-
-            O_to_VE {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp V &kp E>;
-            };
-
-            P_to_LA {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp L &kp A>;
-            };
-
-            Q_to_UO {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp O>;
-            };
-
-            R_to_OL {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp O &kp L>;
-            };
-
-            S_to_CH {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp C &kp H>;
-            };
-
-            T_to_IM {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp I &kp M>;
-            };
-
-            U_to_SU {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp S &kp U>;
-            };
-
-            V_to_OT {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp O &kp T>;
-            };
-
-            W_to_UO {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp U &kp O>;
-            };
-
-            X_to_AN {
-                trigger-keys = <X LS(X)>;
-                bindings = <&kp A &kp N>;
-            };
-
-            Y_to_ES {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp S>;
-            };
-
-            Z_to_IP {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp I &kp P>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BI
  * Default: &kp LC(V)
  * ========================= */
 
-        BI: BI {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BI";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>;
+BI: BI {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BI";
+    #binding-cells = <0>;
+    bindings = <&kp LC(V)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed: drop first letter from expansion; include shifted triggers) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_BOUT    { trigger-keys = <A LS(A)>; bindings = <&kp B &kp O &kp U &kp T>;                               max-prior-idle-ms = <500>; };
+    B_to_EEN     { trigger-keys = <B LS(B)>; bindings = <&kp E &kp E &kp N>;                                     max-prior-idle-ms = <500>; };
+    C_to_OULD    { trigger-keys = <C LS(C)>; bindings = <&kp O &kp U &kp L &kp D>;                               max-prior-idle-ms = <500>; };
+    D_to_OWN     { trigger-keys = <D LS(D)>; bindings = <&kp O &kp W &kp N>;                                     max-prior-idle-ms = <500>; };
+    E_to_ACH     { trigger-keys = <E LS(E)>; bindings = <&kp A &kp C &kp H>;                                     max-prior-idle-ms = <500>; };
+    F_to_ROM     { trigger-keys = <F LS(F)>; bindings = <&kp R &kp O &kp M>;                                     max-prior-idle-ms = <500>; };
+    G_to_OOD     { trigger-keys = <G LS(G)>; bindings = <&kp O &kp O &kp D>;                                     max-prior-idle-ms = <500>; };
+    H_to_AVE     { trigger-keys = <H LS(H)>; bindings = <&kp A &kp V &kp E>;                                     max-prior-idle-ms = <500>; };
+    I_to_NTO     { trigger-keys = <I LS(I)>; bindings = <&kp N &kp T &kp O>;                                     max-prior-idle-ms = <500>; };
+    J_to_UDGE    { trigger-keys = <J LS(J)>; bindings = <&kp U &kp D &kp G &kp E>;                               max-prior-idle-ms = <500>; };
+    K_to_IND     { trigger-keys = <K LS(K)>; bindings = <&kp I &kp N &kp D>;                                     max-prior-idle-ms = <500>; };
+    L_to_EAVE    { trigger-keys = <L LS(L)>; bindings = <&kp E &kp A &kp V &kp E>;                               max-prior-idle-ms = <500>; };
+    M_to_ORE     { trigger-keys = <M LS(M)>; bindings = <&kp O &kp R &kp E>;                                     max-prior-idle-ms = <500>; };
+    N_to_EED     { trigger-keys = <N LS(N)>; bindings = <&kp E &kp E &kp D>;                                     max-prior-idle-ms = <500>; };
+    O_to_NLY     { trigger-keys = <O LS(O)>; bindings = <&kp N &kp L &kp Y>;                                     max-prior-idle-ms = <500>; };
+    P_to_EOPLE   { trigger-keys = <P LS(P)>; bindings = <&kp E &kp O &kp P &kp L &kp E>;                         max-prior-idle-ms = <500>; };
+    Q_to_UESTION { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp E &kp S &kp T &kp I &kp O &kp N>;             max-prior-idle-ms = <500>; };
+    R_to_IGHT    { trigger-keys = <R LS(R)>; bindings = <&kp I &kp G &kp H &kp T>;                               max-prior-idle-ms = <500>; };
+    S_to_OME     { trigger-keys = <S LS(S)>; bindings = <&kp O &kp M &kp E>;                                     max-prior-idle-ms = <500>; };
+    T_to_HAT     { trigger-keys = <T LS(T)>; bindings = <&kp H &kp A &kp T>;                                     max-prior-idle-ms = <500>; };
+    U_to_NDER    { trigger-keys = <U LS(U)>; bindings = <&kp N &kp D &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    V_to_ERY     { trigger-keys = <V LS(V)>; bindings = <&kp E &kp R &kp Y>;                                     max-prior-idle-ms = <500>; };
+    W_to_ITH     { trigger-keys = <W LS(W)>; bindings = <&kp I &kp T &kp H>;                                     max-prior-idle-ms = <500>; };
+    Y_to_EAR     { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp A &kp R>;                                     max-prior-idle-ms = <500>; };
+    Z_to_ERO     { trigger-keys = <Z LS(Z)>; bindings = <&kp E &kp R &kp O>;                                     max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed: drop first letter from expansion; include shifted triggers) */
-
-            A_to_BOUT {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp B &kp O &kp U &kp T>;
-            };
-
-            B_to_EEN {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp E &kp N>;
-            };
-
-            C_to_OULD {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp U &kp L &kp D>;
-            };
-
-            D_to_OWN {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp O &kp W &kp N>;
-            };
-
-            E_to_ACH {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp A &kp C &kp H>;
-            };
-
-            F_to_ROM {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp R &kp O &kp M>;
-            };
-
-            G_to_OOD {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp O &kp O &kp D>;
-            };
-
-            H_to_AVE {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp A &kp V &kp E>;
-            };
-
-            I_to_NTO {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp T &kp O>;
-            };
-
-            J_to_UDGE {
-                trigger-keys = <J LS(J)>;
-                bindings = <&kp U &kp D &kp G &kp E>;
-            };
-
-            K_to_IND {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp I &kp N &kp D>;
-            };
-
-            L_to_EAVE {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp A &kp V &kp E>;
-            };
-
-            M_to_ORE {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp O &kp R &kp E>;
-            };
-
-            N_to_EED {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp E &kp E &kp D>;
-            };
-
-            O_to_NLY {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp N &kp L &kp Y>;
-            };
-
-            P_to_EOPLE {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp E &kp O &kp P &kp L &kp E>;
-            };
-
-            Q_to_UESTION {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp E &kp S &kp T &kp I &kp O &kp N>;
-            };
-
-            R_to_IGHT {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp I &kp G &kp H &kp T>;
-            };
-
-            S_to_OME {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp O &kp M &kp E>;
-            };
-
-            T_to_HAT {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp A &kp T>;
-            };
-
-            U_to_NDER {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp D &kp E &kp R>;
-            };
-
-            V_to_ERY {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp E &kp R &kp Y>;
-            };
-
-            W_to_ITH {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp I &kp T &kp H>;
-            };
-
-            Y_to_EAR {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp A &kp R>;
-            };
-
-            Z_to_ERO {
-                trigger-keys = <Z LS(Z)>;
-                bindings = <&kp E &kp R &kp O>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BM
  * Default: &mt COMMA SEMI
  * ========================= */
 
-        BM: BM {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BM";
-            #binding-cells = <0>;
-            bindings = <&mt COMMA SEMI>;
+BM: BM {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BM";
+    #binding-cells = <0>;
+    bindings = <&mt COMMA SEMI>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_FTER     { trigger-keys = <A LS(A)>; bindings = <&kp F &kp T &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    B_to_ECAUSE   { trigger-keys = <B LS(B)>; bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;                   max-prior-idle-ms = <500>; };
+    C_to_ENTRAL   { trigger-keys = <C LS(C)>; bindings = <&kp E &kp N &kp T &kp R &kp A &kp L>;                   max-prior-idle-ms = <500>; };
+    D_to_IFFER    { trigger-keys = <D LS(D)>; bindings = <&kp I &kp F &kp F &kp E &kp R>;                         max-prior-idle-ms = <500>; };
+    E_to_VERY     { trigger-keys = <E LS(E)>; bindings = <&kp V &kp E &kp R &kp Y>;                               max-prior-idle-ms = <500>; };
+    F_to_IRST     { trigger-keys = <F LS(F)>; bindings = <&kp I &kp R &kp S &kp T>;                               max-prior-idle-ms = <500>; };
+    G_to_REAT     { trigger-keys = <G LS(G)>; bindings = <&kp R &kp E &kp A &kp T>;                               max-prior-idle-ms = <500>; };
+    H_to_OWEVER   { trigger-keys = <H LS(H)>; bindings = <&kp O &kp W &kp E &kp V &kp E &kp R>;                   max-prior-idle-ms = <500>; };
+    I_to_MPORTANT { trigger-keys = <I LS(I)>; bindings = <&kp M &kp P &kp O &kp R &kp T &kp A &kp N &kp T>;       max-prior-idle-ms = <500>; };
+    K_to_EEPING   { trigger-keys = <K LS(K)>; bindings = <&kp E &kp E &kp P &kp I &kp N &kp G>;                   max-prior-idle-ms = <500>; };
+    L_to_EADER    { trigger-keys = <L LS(L)>; bindings = <&kp E &kp A &kp D &kp E &kp R>;                         max-prior-idle-ms = <500>; };
+    M_to_ENT      { trigger-keys = <M LS(M)>; bindings = <&kp E &kp N &kp T>;                                     max-prior-idle-ms = <500>; };
+    N_to_EVER     { trigger-keys = <N LS(N)>; bindings = <&kp E &kp V &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    O_to_THER     { trigger-keys = <O LS(O)>; bindings = <&kp T &kp H &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    P_to_ROBLEM   { trigger-keys = <P LS(P)>; bindings = <&kp R &kp O &kp B &kp L &kp E &kp M>;                   max-prior-idle-ms = <500>; };
+    Q_to_UALITY   { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp A &kp L &kp I &kp T &kp Y>;                   max-prior-idle-ms = <500>; };
+    R_to_EAL      { trigger-keys = <R LS(R)>; bindings = <&kp E &kp A &kp L>;                                     max-prior-idle-ms = <500>; };
+    S_to_HOULD    { trigger-keys = <S LS(S)>; bindings = <&kp H &kp O &kp U &kp L &kp D>;                         max-prior-idle-ms = <500>; };
+    T_to_HERE     { trigger-keys = <T LS(T)>; bindings = <&kp H &kp E &kp R &kp E>;                               max-prior-idle-ms = <500>; };
+    U_to_NDER     { trigger-keys = <U LS(U)>; bindings = <&kp N &kp D &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    V_to_IEW      { trigger-keys = <V LS(V)>; bindings = <&kp I &kp E &kp W>;                                     max-prior-idle-ms = <500>; };
+    W_to_OULD     { trigger-keys = <W LS(W)>; bindings = <&kp O &kp U &kp L &kp D>;                               max-prior-idle-ms = <500>; };
+    Y_to_OURSELF  { trigger-keys = <Y LS(Y)>; bindings = <&kp O &kp U &kp R &kp S &kp E &kp L &kp F>;             max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_FTER {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp F &kp T &kp E &kp R>;
-            };
-
-            B_to_ECAUSE {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;
-            };
-
-            C_to_ENTRAL {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp E &kp N &kp T &kp R &kp A &kp L>;
-            };
-
-            D_to_IFFER {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp I &kp F &kp F &kp E &kp R>;
-            };
-
-            E_to_VERY {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp V &kp E &kp R &kp Y>;
-            };
-
-            F_to_IRST {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp I &kp R &kp S &kp T>;
-            };
-
-            G_to_REAT {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp R &kp E &kp A &kp T>;
-            };
-
-            H_to_OWEVER {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp O &kp W &kp E &kp V &kp E &kp R>;
-            };
-
-            I_to_MPORTANT {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp M &kp P &kp O &kp R &kp T &kp A &kp N &kp T>;
-            };
-
-            K_to_EEPING {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp E &kp E &kp P &kp I &kp N &kp G>;
-            };
-
-            L_to_EADER {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp A &kp D &kp E &kp R>;
-            };
-
-            M_to_ENT {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp E &kp N &kp T>;
-            };
-
-            N_to_EVER {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp E &kp V &kp E &kp R>;
-            };
-
-            O_to_THER {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp T &kp H &kp E &kp R>;
-            };
-
-            P_to_ROBLEM {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp R &kp O &kp B &kp L &kp E &kp M>;
-            };
-
-            Q_to_UALITY {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp A &kp L &kp I &kp T &kp Y>;
-            };
-
-            R_to_EAL {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp A &kp L>;
-            };
-
-            S_to_HOULD {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp H &kp O &kp U &kp L &kp D>;
-            };
-
-            T_to_HERE {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp E &kp R &kp E>;
-            };
-
-            U_to_NDER {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp D &kp E &kp R>;
-            };
-
-            V_to_IEW {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp I &kp E &kp W>;
-            };
-
-            W_to_OULD {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp O &kp U &kp L &kp D>;
-            };
-
-            Y_to_OURSELF {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp O &kp U &kp R &kp S &kp E &kp L &kp F>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BR
  * Default: &mt DOT SQT
  * ========================= */
 
-        BR: BR {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BR";
-            #binding-cells = <0>;
-            bindings = <&mt DOT SQT>;
+BR: BR {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BR";
+    #binding-cells = <0>;
+    bindings = <&mt DOT SQT>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_NOTHER     { trigger-keys = <A LS(A)>; bindings = <&kp N &kp O &kp T &kp H &kp E &kp R>;                         max-prior-idle-ms = <500>; };
+    B_to_EFORE      { trigger-keys = <B LS(B)>; bindings = <&kp E &kp F &kp O &kp R &kp E>;                               max-prior-idle-ms = <500>; };
+    C_to_HECK       { trigger-keys = <C LS(C)>; bindings = <&kp H &kp E &kp C &kp K>;                                     max-prior-idle-ms = <500>; };
+    D_to_URING      { trigger-keys = <D LS(D)>; bindings = <&kp U &kp R &kp I &kp N &kp G>;                               max-prior-idle-ms = <500>; };
+    E_to_ARLY       { trigger-keys = <E LS(E)>; bindings = <&kp A &kp R &kp L &kp Y>;                                     max-prior-idle-ms = <500>; };
+    F_to_OUND       { trigger-keys = <F LS(F)>; bindings = <&kp O &kp U &kp N &kp D>;                                     max-prior-idle-ms = <500>; };
+    G_to_ROUP       { trigger-keys = <G LS(G)>; bindings = <&kp R &kp O &kp U &kp P>;                                     max-prior-idle-ms = <500>; };
+    H_to_OUSE       { trigger-keys = <H LS(H)>; bindings = <&kp O &kp U &kp S &kp E>;                                     max-prior-idle-ms = <500>; };
+    I_to_NFORMATION { trigger-keys = <I LS(I)>; bindings = <&kp N &kp F &kp O &kp R &kp M &kp A &kp T &kp I &kp O &kp N>; max-prior-idle-ms = <500>; };
+    K_to_NOWLEDGE   { trigger-keys = <K LS(K)>; bindings = <&kp N &kp O &kp W &kp L &kp E &kp D &kp G &kp E>;             max-prior-idle-ms = <500>; };
+    L_to_ONGER      { trigger-keys = <L LS(L)>; bindings = <&kp O &kp N &kp G &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    M_to_ILLION     { trigger-keys = <M LS(M)>; bindings = <&kp I &kp L &kp L &kp I &kp O &kp N>;                         max-prior-idle-ms = <500>; };
+    N_to_UMBER      { trigger-keys = <N LS(N)>; bindings = <&kp U &kp M &kp B &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    O_to_FTEN       { trigger-keys = <O LS(O)>; bindings = <&kp F &kp T &kp E &kp N>;                                     max-prior-idle-ms = <500>; };
+    P_to_ROGRAM     { trigger-keys = <P LS(P)>; bindings = <&kp R &kp O &kp G &kp R &kp A &kp M>;                         max-prior-idle-ms = <500>; };
+    Q_to_UALIFY     { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp A &kp L &kp I &kp F &kp Y>;                         max-prior-idle-ms = <500>; };
+    R_to_EPORT      { trigger-keys = <R LS(R)>; bindings = <&kp E &kp P &kp O &kp R &kp T>;                               max-prior-idle-ms = <500>; };
+    S_to_YSTEM      { trigger-keys = <S LS(S)>; bindings = <&kp Y &kp S &kp T &kp E &kp M>;                               max-prior-idle-ms = <500>; };
+    T_to_HEIR       { trigger-keys = <T LS(T)>; bindings = <&kp H &kp E &kp I &kp R>;                                     max-prior-idle-ms = <500>; };
+    U_to_NTIL       { trigger-keys = <U LS(U)>; bindings = <&kp N &kp T &kp I &kp L>;                                     max-prior-idle-ms = <500>; };
+    V_to_ALUE       { trigger-keys = <V LS(V)>; bindings = <&kp A &kp L &kp U &kp E>;                                     max-prior-idle-ms = <500>; };
+    W_to_HICH       { trigger-keys = <W LS(W)>; bindings = <&kp H &kp I &kp C &kp H>;                                     max-prior-idle-ms = <500>; };
+    Y_to_ESTERDAY   { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp S &kp T &kp E &kp R &kp D &kp A &kp Y>;             max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_NOTHER {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp N &kp O &kp T &kp H &kp E &kp R>;
-            };
-
-            B_to_EFORE {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp F &kp O &kp R &kp E>;
-            };
-
-            C_to_HECK {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp H &kp E &kp C &kp K>;
-            };
-
-            D_to_URING {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp U &kp R &kp I &kp N &kp G>;
-            };
-
-            E_to_ARLY {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp A &kp R &kp L &kp Y>;
-            };
-
-            F_to_OUND {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp O &kp U &kp N &kp D>;
-            };
-
-            G_to_ROUP {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp R &kp O &kp U &kp P>;
-            };
-
-            H_to_OUSE {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp O &kp U &kp S &kp E>;
-            };
-
-            I_to_NFORMATION {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp F &kp O &kp R &kp M &kp A &kp T &kp I &kp O &kp N>;
-            };
-
-            K_to_NOWLEDGE {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp N &kp O &kp W &kp L &kp E &kp D &kp G &kp E>;
-            };
-
-            L_to_ONGER {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp O &kp N &kp G &kp E &kp R>;
-            };
-
-            M_to_ILLION {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp I &kp L &kp L &kp I &kp O &kp N>;
-            };
-
-            N_to_UMBER {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp U &kp M &kp B &kp E &kp R>;
-            };
-
-            O_to_FTEN {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp F &kp T &kp E &kp N>;
-            };
-
-            P_to_ROGRAM {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp R &kp O &kp G &kp R &kp A &kp M>;
-            };
-
-            Q_to_UALIFY {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp A &kp L &kp I &kp F &kp Y>;
-            };
-
-            R_to_EPORT {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp P &kp O &kp R &kp T>;
-            };
-
-            S_to_YSTEM {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp Y &kp S &kp T &kp E &kp M>;
-            };
-
-            T_to_HEIR {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp E &kp I &kp R>;
-            };
-
-            U_to_NTIL {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp T &kp I &kp L>;
-            };
-
-            V_to_ALUE {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp A &kp L &kp U &kp E>;
-            };
-
-            W_to_HICH {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp H &kp I &kp C &kp H>;
-            };
-
-            Y_to_ESTERDAY {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp S &kp T &kp E &kp R &kp D &kp A &kp Y>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BP
  * Default: &mt SLASH LS(N1)
  * ========================= */
 
-        BP: BP {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BP";
-            #binding-cells = <0>;
-            bindings = <&mt SLASH LS(N1)>;
+BP: BP {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BP";
+    #binding-cells = <0>;
+    bindings = <&mt SLASH LS(N1)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_GAIN     { trigger-keys = <A LS(A)>; bindings = <&kp G &kp A &kp I &kp N>;                               max-prior-idle-ms = <500>; };
+    B_to_ETWEEN   { trigger-keys = <B LS(B)>; bindings = <&kp E &kp T &kp W &kp E &kp E &kp N>;                   max-prior-idle-ms = <500>; };
+    C_to_HOWDHURY { trigger-keys = <C LS(C)>; bindings = <&kp H &kp O &kp W &kp D &kp H &kp U &kp R &kp Y>;       max-prior-idle-ms = <500>; };
+    D_to_ECISION  { trigger-keys = <D LS(D)>; bindings = <&kp E &kp C &kp I &kp S &kp I &kp O &kp N>;             max-prior-idle-ms = <500>; };
+    E_to_NOUGH    { trigger-keys = <E LS(E)>; bindings = <&kp N &kp O &kp U &kp G &kp H>;                         max-prior-idle-ms = <500>; };
+    F_to_OLLOW    { trigger-keys = <F LS(F)>; bindings = <&kp O &kp L &kp L &kp O &kp W>;                         max-prior-idle-ms = <500>; };
+    G_to_OVERN    { trigger-keys = <G LS(G)>; bindings = <&kp O &kp V &kp E &kp R &kp N>;                         max-prior-idle-ms = <500>; };
+    H_to_UMAN     { trigger-keys = <H LS(H)>; bindings = <&kp U &kp M &kp A &kp N>;                               max-prior-idle-ms = <500>; };
+    I_to_NTEREST  { trigger-keys = <I LS(I)>; bindings = <&kp N &kp T &kp E &kp R &kp E &kp S &kp T>;             max-prior-idle-ms = <500>; };
+    K_to_EYBOARD  { trigger-keys = <K LS(K)>; bindings = <&kp E &kp Y &kp B &kp O &kp A &kp R &kp D>;             max-prior-idle-ms = <500>; };
+    L_to_ARGE     { trigger-keys = <L LS(L)>; bindings = <&kp A &kp R &kp G &kp E>;                               max-prior-idle-ms = <500>; };
+    M_to_INNESOTA { trigger-keys = <M LS(M)>; bindings = <&kp I &kp N &kp N &kp E &kp S &kp O &kp T &kp A>;       max-prior-idle-ms = <500>; };
+    N_to_ATION    { trigger-keys = <N LS(N)>; bindings = <&kp A &kp T &kp I &kp O &kp N>;                         max-prior-idle-ms = <500>; };
+    O_to_UTSIDE   { trigger-keys = <O LS(O)>; bindings = <&kp U &kp T &kp S &kp I &kp D &kp E>;                   max-prior-idle-ms = <500>; };
+    P_to_OLICY    { trigger-keys = <P LS(P)>; bindings = <&kp O &kp L &kp I &kp C &kp Y>;                         max-prior-idle-ms = <500>; };
+    Q_to_UICK     { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp I &kp C &kp K>;                               max-prior-idle-ms = <500>; };
+    R_to_EASON    { trigger-keys = <R LS(R)>; bindings = <&kp E &kp A &kp S &kp O &kp N>;                         max-prior-idle-ms = <500>; };
+    S_to_TATE     { trigger-keys = <S LS(S)>; bindings = <&kp T &kp A &kp T &kp E>;                               max-prior-idle-ms = <500>; };
+    T_to_HESE     { trigger-keys = <T LS(T)>; bindings = <&kp H &kp E &kp S &kp E>;                               max-prior-idle-ms = <500>; };
+    U_to_NITED    { trigger-keys = <U LS(U)>; bindings = <&kp N &kp I &kp T &kp E &kp D>;                         max-prior-idle-ms = <500>; };
+    V_to_OICE     { trigger-keys = <V LS(V)>; bindings = <&kp O &kp I &kp C &kp E>;                               max-prior-idle-ms = <500>; };
+    W_to_HILE     { trigger-keys = <W LS(W)>; bindings = <&kp H &kp I &kp L &kp E>;                               max-prior-idle-ms = <500>; };
+    Y_to_IELD     { trigger-keys = <Y LS(Y)>; bindings = <&kp I &kp E &kp L &kp D>;                               max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_GAIN {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp G &kp A &kp I &kp N>;
-            };
-
-            B_to_ETWEEN {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp T &kp W &kp E &kp E &kp N>;
-            };
-
-            C_to_HOWDHURY {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp H &kp O &kp W &kp D &kp H &kp U &kp R &kp Y>;
-            };
-
-            D_to_ECISION {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp C &kp I &kp S &kp I &kp O &kp N>;
-            };
-
-            E_to_NOUGH {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp N &kp O &kp U &kp G &kp H>;
-            };
-
-            F_to_OLLOW {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp O &kp L &kp L &kp O &kp W>;
-            };
-
-            G_to_OVERN {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp O &kp V &kp E &kp R &kp N>;
-            };
-
-            H_to_UMAN {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp U &kp M &kp A &kp N>;
-            };
-
-            I_to_NTEREST {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp T &kp E &kp R &kp E &kp S &kp T>;
-            };
-
-            K_to_EYBOARD {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp E &kp Y &kp B &kp O &kp A &kp R &kp D>;
-            };
-
-            L_to_ARGE {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp A &kp R &kp G &kp E>;
-            };
-
-            M_to_INNESOTA {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp I &kp N &kp N &kp E &kp S &kp O &kp T &kp A>;
-            };
-
-            N_to_ATION {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp A &kp T &kp I &kp O &kp N>;
-            };
-
-            O_to_UTSIDE {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp U &kp T &kp S &kp I &kp D &kp E>;
-            };
-
-            P_to_OLICY {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp O &kp L &kp I &kp C &kp Y>;
-            };
-
-            Q_to_UICK {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp I &kp C &kp K>;
-            };
-
-            R_to_EASON {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp A &kp S &kp O &kp N>;
-            };
-
-            S_to_TATE {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp T &kp A &kp T &kp E>;
-            };
-
-            T_to_HESE {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp E &kp S &kp E>;
-            };
-
-            U_to_NITED {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp I &kp T &kp E &kp D>;
-            };
-
-            V_to_OICE {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp O &kp I &kp C &kp E>;
-            };
-
-            W_to_HILE {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp H &kp I &kp L &kp E>;
-            };
-
-            Y_to_IELD {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp I &kp E &kp L &kp D>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * BPL
  * Default: &format_dance
  * ========================= */
 
-        BPL: BPL {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "BPL";
-            #binding-cells = <0>;
-            bindings = <&format_dance>;
+BPL: BPL {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "BPL";
+    #binding-cells = <0>;
+    bindings = <&format_dance>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed; includes shifted triggers) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_ROUND     { trigger-keys = <A LS(A)>; bindings = <&kp R &kp O &kp U &kp N &kp D>;                         max-prior-idle-ms = <500>; };
+    B_to_ETTER     { trigger-keys = <B LS(B)>; bindings = <&kp E &kp T &kp T &kp E &kp R>;                         max-prior-idle-ms = <500>; };
+    C_to_COUNTRY   { trigger-keys = <C LS(C)>; bindings = <&kp O &kp U &kp N &kp T &kp R &kp Y>;                   max-prior-idle-ms = <500>; };
+    D_to_EPARTMENT { trigger-keys = <D LS(D)>; bindings = <&kp E &kp P &kp A &kp R &kp T &kp M &kp E &kp N &kp T>; max-prior-idle-ms = <500>; };
+    E_to_XAMPLE    { trigger-keys = <E LS(E)>; bindings = <&kp X &kp A &kp M &kp P &kp L &kp E>;                   max-prior-idle-ms = <500>; };
+    F_to_AMILY     { trigger-keys = <F LS(F)>; bindings = <&kp A &kp M &kp I &kp L &kp Y>;                         max-prior-idle-ms = <500>; };
+    G_to_ROUP      { trigger-keys = <G LS(G)>; bindings = <&kp R &kp O &kp U &kp P>;                               max-prior-idle-ms = <500>; };
+    H_to_EALTH     { trigger-keys = <H LS(H)>; bindings = <&kp E &kp A &kp L &kp T &kp H>;                         max-prior-idle-ms = <500>; };
+    I_to_NCLUDING  { trigger-keys = <I LS(I)>; bindings = <&kp N &kp C &kp L &kp U &kp D &kp I &kp N &kp G>;       max-prior-idle-ms = <500>; };
+    K_to_EYS       { trigger-keys = <K LS(K)>; bindings = <&kp E &kp Y &kp S>;                                     max-prior-idle-ms = <500>; };
+    L_to_ITTLE     { trigger-keys = <L LS(L)>; bindings = <&kp I &kp T &kp T &kp L &kp E>;                         max-prior-idle-ms = <500>; };
+    M_to_AJOR      { trigger-keys = <M LS(M)>; bindings = <&kp A &kp J &kp O &kp R>;                               max-prior-idle-ms = <500>; };
+    N_to_EEDED     { trigger-keys = <N LS(N)>; bindings = <&kp E &kp E &kp D &kp E &kp D>;                         max-prior-idle-ms = <500>; };
+    O_to_PEN       { trigger-keys = <O LS(O)>; bindings = <&kp P &kp E &kp N>;                                     max-prior-idle-ms = <500>; };
+    P_to_OWER      { trigger-keys = <P LS(P)>; bindings = <&kp O &kp W &kp E &kp R>;                               max-prior-idle-ms = <500>; };
+    Q_to_UOTE      { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp O &kp T &kp E>;                               max-prior-idle-ms = <500>; };
+    R_to_ECENT     { trigger-keys = <R LS(R)>; bindings = <&kp E &kp C &kp E &kp N &kp T>;                         max-prior-idle-ms = <500>; };
+    S_to_CHOOL     { trigger-keys = <S LS(S)>; bindings = <&kp C &kp H &kp O &kp O &kp L>;                         max-prior-idle-ms = <500>; };
+    T_to_HOSE      { trigger-keys = <T LS(T)>; bindings = <&kp H &kp O &kp S &kp E>;                               max-prior-idle-ms = <500>; };
+    U_to_SUALLY    { trigger-keys = <U LS(U)>; bindings = <&kp S &kp U &kp A &kp L &kp L &kp Y>;                   max-prior-idle-ms = <500>; };
+    V_to_ISIT      { trigger-keys = <V LS(V)>; bindings = <&kp I &kp S &kp I &kp T>;                               max-prior-idle-ms = <500>; };
+    W_to_HERE      { trigger-keys = <W LS(W)>; bindings = <&kp H &kp E &kp R &kp E>;                               max-prior-idle-ms = <500>; };
+    Y_to_ELLOW     { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp L &kp L &kp O &kp W>;                         max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed; includes shifted triggers) */
-
-            A_to_ROUND {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp R &kp O &kp U &kp N &kp D>;
-            };
-
-            B_to_ETTER {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp T &kp T &kp E &kp R>;
-            };
-
-            C_to_COUNTRY {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp U &kp N &kp T &kp R &kp Y>;
-            };
-
-            D_to_EPARTMENT {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp P &kp A &kp R &kp T &kp M &kp E &kp N &kp T>;
-            };
-
-            E_to_XAMPLE {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp X &kp A &kp M &kp P &kp L &kp E>;
-            };
-
-            F_to_AMILY {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp A &kp M &kp I &kp L &kp Y>;
-            };
-
-            G_to_ROUP {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp R &kp O &kp U &kp P>;
-            };
-
-            H_to_EALTH {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp E &kp A &kp L &kp T &kp H>;
-            };
-
-            I_to_NCLUDING {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp C &kp L &kp U &kp D &kp I &kp N &kp G>;
-            };
-
-            K_to_EYS {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp E &kp Y &kp S>;
-            };
-
-            L_to_ITTLE {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp I &kp T &kp T &kp L &kp E>;
-            };
-
-            M_to_AJOR {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp A &kp J &kp O &kp R>;
-            };
-
-            N_to_EEDED {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp E &kp E &kp D &kp E &kp D>;
-            };
-
-            O_to_PEN {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp P &kp E &kp N>;
-            };
-
-            P_to_OWER {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp O &kp W &kp E &kp R>;
-            };
-
-            Q_to_UOTE {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp O &kp T &kp E>;
-            };
-
-            R_to_ECENT {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp C &kp E &kp N &kp T>;
-            };
-
-            S_to_CHOOL {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp C &kp H &kp O &kp O &kp L>;
-            };
-
-            T_to_HOSE {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp O &kp S &kp E>;
-            };
-
-            U_to_SUALLY {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp S &kp U &kp A &kp L &kp L &kp Y>;
-            };
-
-            V_to_ISIT {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp I &kp S &kp I &kp T>;
-            };
-
-            W_to_HERE {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp H &kp E &kp R &kp E>;
-            };
-
-            Y_to_ELLOW {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp L &kp L &kp O &kp W>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * MPL
  * Default: &mt LC(T) LC(W)
  * ========================= */
 
-        MPL: MPL {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MPL";
-            #binding-cells = <0>;
-            bindings = <&mt LC(T) LC(W)>;
+MPL: MPL {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "MPL";
+    #binding-cells = <0>;
+    bindings = <&mt LC(T) LC(W)>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_LWAYS      { trigger-keys = <A LS(A)>; bindings = <&kp L &kp W &kp A &kp Y &kp S>;                         max-prior-idle-ms = <500>; };
+    B_to_ELIEVE     { trigger-keys = <B LS(B)>; bindings = <&kp E &kp L &kp I &kp E &kp V &kp E>;                   max-prior-idle-ms = <500>; };
+    C_to_HANGE      { trigger-keys = <C LS(C)>; bindings = <&kp H &kp A &kp N &kp G &kp E>;                         max-prior-idle-ms = <500>; };
+    D_to_ESPITE     { trigger-keys = <D LS(D)>; bindings = <&kp E &kp S &kp P &kp I &kp T &kp E>;                   max-prior-idle-ms = <500>; };
+    E_to_FFECT      { trigger-keys = <E LS(E)>; bindings = <&kp F &kp F &kp E &kp C &kp T>;                         max-prior-idle-ms = <500>; };
+    F_to_UTURE      { trigger-keys = <F LS(F)>; bindings = <&kp U &kp T &kp U &kp R &kp E>;                         max-prior-idle-ms = <500>; };
+    G_to_ENERAL     { trigger-keys = <G LS(G)>; bindings = <&kp E &kp N &kp E &kp R &kp A &kp L>;                   max-prior-idle-ms = <500>; };
+    H_to_ISTORY     { trigger-keys = <H LS(H)>; bindings = <&kp I &kp S &kp T &kp O &kp R &kp Y>;                   max-prior-idle-ms = <500>; };
+    I_to_NCLUDING   { trigger-keys = <I LS(I)>; bindings = <&kp N &kp C &kp L &kp U &kp D &kp I &kp N &kp G>;       max-prior-idle-ms = <500>; };
+    K_to_NEE        { trigger-keys = <K LS(K)>; bindings = <&kp N &kp E &kp E>;                                     max-prior-idle-ms = <500>; };
+    L_to_EVEL       { trigger-keys = <L LS(L)>; bindings = <&kp E &kp V &kp E &kp L>;                               max-prior-idle-ms = <500>; };
+    M_to_INNEAPOLIS { trigger-keys = <M LS(M)>; bindings = <&kp I &kp N &kp N &kp E &kp A &kp P &kp O &kp L &kp I &kp S>; max-prior-idle-ms = <500>; };
+    N_to_EARLY      { trigger-keys = <N LS(N)>; bindings = <&kp E &kp A &kp R &kp L &kp Y>;                         max-prior-idle-ms = <500>; };
+    O_to_TION       { trigger-keys = <O LS(O)>; bindings = <&kp T &kp I &kp O &kp N>;                               max-prior-idle-ms = <500>; };
+    P_to_ERSON      { trigger-keys = <P LS(P)>; bindings = <&kp E &kp R &kp S &kp O &kp N>;                         max-prior-idle-ms = <500>; };
+    Q_to_UARTER     { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp A &kp R &kp T &kp E &kp R>;                   max-prior-idle-ms = <500>; };
+    R_to_ESULT      { trigger-keys = <R LS(R)>; bindings = <&kp E &kp S &kp U &kp L &kp T>;                         max-prior-idle-ms = <500>; };
+    S_to_MALL       { trigger-keys = <S LS(S)>; bindings = <&kp M &kp A &kp L &kp L>;                               max-prior-idle-ms = <500>; };
+    T_to_HROUGH     { trigger-keys = <T LS(T)>; bindings = <&kp H &kp R &kp O &kp U &kp G &kp H>;                   max-prior-idle-ms = <500>; };
+    U_to_NIVERSITY  { trigger-keys = <U LS(U)>; bindings = <&kp N &kp I &kp V &kp E &kp R &kp S &kp I &kp T &kp Y>; max-prior-idle-ms = <500>; };
+    V_to_ARIABLE    { trigger-keys = <V LS(V)>; bindings = <&kp A &kp R &kp I &kp A &kp B &kp L &kp E>;             max-prior-idle-ms = <500>; };
+    W_to_ORK        { trigger-keys = <W LS(W)>; bindings = <&kp O &kp R &kp K>;                                     max-prior-idle-ms = <500>; };
+    Y_to_OUNG       { trigger-keys = <Y LS(Y)>; bindings = <&kp O &kp U &kp N &kp G>;                               max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_LWAYS {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp L &kp W &kp A &kp Y &kp S>;
-            };
-
-            B_to_ELIEVE {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp L &kp I &kp E &kp V &kp E>;
-            };
-
-            C_to_HANGE {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp H &kp A &kp N &kp G &kp E>;
-            };
-
-            D_to_ESPITE {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp S &kp P &kp I &kp T &kp E>;
-            };
-
-            E_to_FFECT {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp F &kp F &kp E &kp C &kp T>;
-            };
-
-            F_to_UTURE {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp U &kp T &kp U &kp R &kp E>;
-            };
-
-            G_to_ENERAL {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp E &kp N &kp E &kp R &kp A &kp L>;
-            };
-
-            H_to_ISTORY {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp I &kp S &kp T &kp O &kp R &kp Y>;
-            };
-
-            I_to_NCLUDING {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp C &kp L &kp U &kp D &kp I &kp N &kp G>;
-            };
-
-            K_to_NEE {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp N &kp E &kp E>;
-            };
-
-            L_to_EVEL {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp V &kp E &kp L>;
-            };
-
-            M_to_INNEAPOLIS {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp I &kp N &kp N &kp E &kp A &kp P &kp O &kp L &kp I &kp S>;
-            };
-
-            N_to_EARLY {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp E &kp A &kp R &kp L &kp Y>;
-            };
-
-            O_to_TION {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp T &kp I &kp O &kp N>;
-            };
-
-            P_to_ERSON {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp E &kp R &kp S &kp O &kp N>;
-            };
-
-            Q_to_UARTER {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp A &kp R &kp T &kp E &kp R>;
-            };
-
-            R_to_ESULT {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp S &kp U &kp L &kp T>;
-            };
-
-            S_to_MALL {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp M &kp A &kp L &kp L>;
-            };
-
-            T_to_HROUGH {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp R &kp O &kp U &kp G &kp H>;
-            };
-
-            U_to_NIVERSITY {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp I &kp V &kp E &kp R &kp S &kp I &kp T &kp Y>;
-            };
-
-            V_to_ARIABLE {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp A &kp R &kp I &kp A &kp B &kp L &kp E>;
-            };
-
-            W_to_ORK {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp O &kp R &kp K>;
-            };
-
-            Y_to_OUNG {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp O &kp U &kp N &kp G>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * TPL
  * Default: &mt LBKT RBKT
  * ========================= */
 
-        TPL: TPL {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "TPL";
-            #binding-cells = <0>;
-            bindings = <&mt LBKT RBKT>;
+TPL: TPL {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "TPL";
+    #binding-cells = <0>;
+    bindings = <&mt LBKT RBKT>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_MONG    { trigger-keys = <A LS(A)>; bindings = <&kp M &kp O &kp N &kp G>;                               max-prior-idle-ms = <500>; };
+    B_to_ECOME   { trigger-keys = <B LS(B)>; bindings = <&kp E &kp C &kp O &kp M &kp E>;                         max-prior-idle-ms = <500>; };
+    C_to_OURSE   { trigger-keys = <C LS(C)>; bindings = <&kp O &kp U &kp R &kp S &kp E>;                         max-prior-idle-ms = <500>; };
+    D_to_EATH    { trigger-keys = <D LS(D)>; bindings = <&kp E &kp A &kp T &kp H>;                               max-prior-idle-ms = <500>; };
+    E_to_ITHER   { trigger-keys = <E LS(E)>; bindings = <&kp I &kp T &kp H &kp E &kp R>;                         max-prior-idle-ms = <500>; };
+    F_to_IELD    { trigger-keys = <F LS(F)>; bindings = <&kp I &kp E &kp L &kp D>;                               max-prior-idle-ms = <500>; };
+    G_to_OING    { trigger-keys = <G LS(G)>; bindings = <&kp O &kp I &kp N &kp G>;                               max-prior-idle-ms = <500>; };
+    H_to_UMAN    { trigger-keys = <H LS(H)>; bindings = <&kp U &kp M &kp A &kp N>;                               max-prior-idle-ms = <500>; };
+    I_to_NFERIOR { trigger-keys = <I LS(I)>; bindings = <&kp N &kp F &kp E &kp R &kp I &kp O &kp R>;             max-prior-idle-ms = <500>; };
+    K_to_ITCHEN  { trigger-keys = <K LS(K)>; bindings = <&kp I &kp T &kp C &kp H &kp E &kp N>;                   max-prior-idle-ms = <500>; };
+    L_to_OCAL    { trigger-keys = <L LS(L)>; bindings = <&kp O &kp C &kp A &kp L>;                               max-prior-idle-ms = <500>; };
+    M_to_IDDLE   { trigger-keys = <M LS(M)>; bindings = <&kp I &kp D &kp D &kp L &kp E>;                         max-prior-idle-ms = <500>; };
+    N_to_ORMAL   { trigger-keys = <N LS(N)>; bindings = <&kp O &kp R &kp M &kp A &kp L>;                         max-prior-idle-ms = <500>; };
+    O_to_PERAT   { trigger-keys = <O LS(O)>; bindings = <&kp P &kp E &kp R &kp A &kp T>;                         max-prior-idle-ms = <500>; };
+    P_to_ERIOD   { trigger-keys = <P LS(P)>; bindings = <&kp E &kp R &kp I &kp O &kp D>;                         max-prior-idle-ms = <500>; };
+    Q_to_UANTIF  { trigger-keys = <Q LS(Q)>; bindings = <&kp U &kp A &kp N &kp T &kp I &kp F>;                   max-prior-idle-ms = <500>; };
+    R_to_ECORD   { trigger-keys = <R LS(R)>; bindings = <&kp E &kp C &kp O &kp R &kp D>;                         max-prior-idle-ms = <500>; };
+    S_to_ERV     { trigger-keys = <S LS(S)>; bindings = <&kp E &kp R &kp V>;                                     max-prior-idle-ms = <500>; };
+    T_to_HOUGH   { trigger-keys = <T LS(T)>; bindings = <&kp H &kp O &kp U &kp G &kp H>;                         max-prior-idle-ms = <500>; };
+    U_to_SEFUL   { trigger-keys = <U LS(U)>; bindings = <&kp S &kp E &kp F &kp U &kp L>;                         max-prior-idle-ms = <500>; };
+    V_to_ERSION  { trigger-keys = <V LS(V)>; bindings = <&kp E &kp R &kp S &kp I &kp O &kp N>;                   max-prior-idle-ms = <500>; };
+    W_to_ITHIN   { trigger-keys = <W LS(W)>; bindings = <&kp I &kp T &kp H &kp I &kp N>;                         max-prior-idle-ms = <500>; };
+    Y_to_EAR     { trigger-keys = <Y LS(Y)>; bindings = <&kp E &kp A &kp R>;                                     max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_MONG {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp M &kp O &kp N &kp G>;
-            };
-
-            B_to_ECOME {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp C &kp O &kp M &kp E>;
-            };
-
-            C_to_OURSE {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp U &kp R &kp S &kp E>;
-            };
-
-            D_to_EATH {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp E &kp A &kp T &kp H>;
-            };
-
-            E_to_ITHER {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp I &kp T &kp H &kp E &kp R>;
-            };
-
-            F_to_IELD {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp I &kp E &kp L &kp D>;
-            };
-
-            G_to_OING {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp O &kp I &kp N &kp G>;
-            };
-
-            H_to_UMAN {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp U &kp M &kp A &kp N>;
-            };
-
-            I_to_NFERIOR {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp F &kp E &kp R &kp I &kp O &kp R>;
-            };
-
-            K_to_ITCHEN {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp I &kp T &kp C &kp H &kp E &kp N>;
-            };
-
-            L_to_OCAL {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp O &kp C &kp A &kp L>;
-            };
-
-            M_to_IDDLE {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp I &kp D &kp D &kp L &kp E>;
-            };
-
-            N_to_ORMAL {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp O &kp R &kp M &kp A &kp L>;
-            };
-
-            O_to_PERAT {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp P &kp E &kp R &kp A &kp T>;
-            };
-
-            P_to_ERIOD {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp E &kp R &kp I &kp O &kp D>;
-            };
-
-            Q_to_UANTIF {
-                trigger-keys = <Q LS(Q)>;
-                bindings = <&kp U &kp A &kp N &kp T &kp I &kp F>;
-            };
-
-            R_to_ECORD {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp C &kp O &kp R &kp D>;
-            };
-
-            S_to_ERV {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp E &kp R &kp V>;
-            };
-
-            T_to_HOUGH {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp H &kp O &kp U &kp G &kp H>;
-            };
-
-            U_to_SEFUL {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp S &kp E &kp F &kp U &kp L>;
-            };
-
-            V_to_ERSION {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp E &kp R &kp S &kp I &kp O &kp N>;
-            };
-
-            W_to_ITHIN {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp I &kp T &kp H &kp I &kp N>;
-            };
-
-            Y_to_EAR {
-                trigger-keys = <Y LS(Y)>;
-                bindings = <&kp E &kp A &kp R>;
-            };
-        };
-
-        /* =========================
+/* =========================
  * TP
  * Default: &mt LG(LS(N4)) LC(LS(N4))
  * ========================= */
 
-        TP: TP {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "TP";
-            #binding-cells = <0>;
-            bindings = <&mt LG(LS(N4)) LC(LS(N4))>;
+TP: TP {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "TP";
+    #binding-cells = <0>;
+    bindings = <&mt LG(LS(N4)) LC(LS(N4))>;
 
-            /* NON-ALPHABETICAL */
+    /* NON-ALPHABETICAL */
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword { trigger-keys = <BSPC>;       bindings = <&kp LC(BSPC)>;            max-prior-idle-ms = <500>; };
+    bword_to_bline{ trigger-keys = <LC(BSPC)>;   bindings = <&kp LG(BSPC)>;            max-prior-idle-ms = <500>; strict-modifiers; };
+    del_to_dword  { trigger-keys = <DEL>;        bindings = <&kp LC(DEL)>;             max-prior-idle-ms = <500>; };
+    dword_to_dline{ trigger-keys = <LC(DEL)>;    bindings = <&kp LG(DEL)>;             max-prior-idle-ms = <500>; strict-modifiers; };
+    dot_to_space_skshift { trigger-keys = <DOT>;   bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    excl_to_space_skshift{ trigger-keys = <EXCL>;  bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    ques_to_space_skshift{ trigger-keys = <QMARK>; bindings = <&kp SPACE &sk LSHFT>;   max-prior-idle-ms = <500>; };
+    semi_to_space { trigger-keys = <SEMI>;      bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    colon_to_space{ trigger-keys = <COLON>;     bindings = <&kp SPACE>;                max-prior-idle-ms = <500>; };
+    apos_to_s     { trigger-keys = <SQT>;       bindings = <&kp S>;                    max-prior-idle-ms = <500>; };
+    dqt_to_comma_left { trigger-keys = <DQT>;   bindings = <&kp COMMA &kp LEFT>;       max-prior-idle-ms = <500>; };
+    lpar_to_rpar_left { trigger-keys = <LPAR>;  bindings = <&kp RPAR &kp LEFT>;        max-prior-idle-ms = <500>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* ALPHABETICAL (fixed) */
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    A_to_BOVE    { trigger-keys = <A LS(A)>; bindings = <&kp B &kp O &kp V &kp E>;                         max-prior-idle-ms = <500>; };
+    B_to_EHIND   { trigger-keys = <B LS(B)>; bindings = <&kp E &kp H &kp I &kp N &kp D>;                   max-prior-idle-ms = <500>; };
+    C_to_ONTROL  { trigger-keys = <C LS(C)>; bindings = <&kp O &kp N &kp T &kp R &kp O &kp L>;             max-prior-idle-ms = <500>; };
+    D_to_IED     { trigger-keys = <D LS(D)>; bindings = <&kp I &kp E &kp D>;                               max-prior-idle-ms = <500>; };
+    E_to_XTRA    { trigger-keys = <E LS(E)>; bindings = <&kp X &kp T &kp R &kp A>;                         max-prior-idle-ms = <500>; };
+    F_to_AMILY   { trigger-keys = <F LS(F)>; bindings = <&kp A &kp M &kp I &kp L &kp Y>;                   max-prior-idle-ms = <500>; };
+    G_to_IVEN    { trigger-keys = <G LS(G)>; bindings = <&kp I &kp V &kp E &kp N>;                         max-prior-idle-ms = <500>; };
+    H_to_AVING   { trigger-keys = <H LS(H)>; bindings = <&kp A &kp V &kp I &kp N &kp G>;                   max-prior-idle-ms = <500>; };
+    I_to_NTERNAL { trigger-keys = <I LS(I)>; bindings = <&kp N &kp T &kp E &kp R &kp N &kp A &kp L>;       max-prior-idle-ms = <500>; };
+    L_to_ESION   { trigger-keys = <L LS(L)>; bindings = <&kp E &kp S &kp I &kp O &kp N>;                   max-prior-idle-ms = <500>; };
+    M_to_EDIAL   { trigger-keys = <M LS(M)>; bindings = <&kp E &kp D &kp I &kp A &kp L>;                   max-prior-idle-ms = <500>; };
+    N_to_ORTH    { trigger-keys = <N LS(N)>; bindings = <&kp O &kp R &kp T &kp H>;                         max-prior-idle-ms = <500>; };
+    O_to_FFIC    { trigger-keys = <O LS(O)>; bindings = <&kp F &kp F &kp I &kp C>;                         max-prior-idle-ms = <500>; };
+    P_to_LACE    { trigger-keys = <P LS(P)>; bindings = <&kp L &kp A &kp C &kp E>;                         max-prior-idle-ms = <500>; };
+    R_to_ECENT   { trigger-keys = <R LS(R)>; bindings = <&kp E &kp C &kp E &kp N &kp T>;                   max-prior-idle-ms = <500>; };
+    S_to_ECOND   { trigger-keys = <S LS(S)>; bindings = <&kp E &kp C &kp O &kp N &kp D>;                   max-prior-idle-ms = <500>; };
+    T_to_ODAY    { trigger-keys = <T LS(T)>; bindings = <&kp O &kp D &kp A &kp Y>;                         max-prior-idle-ms = <500>; };
+    U_to_NABLE   { trigger-keys = <U LS(U)>; bindings = <&kp N &kp A &kp B &kp L &kp E>;                   max-prior-idle-ms = <500>; };
+    V_to_OLUME   { trigger-keys = <V LS(V)>; bindings = <&kp O &kp L &kp U &kp M &kp E>;                   max-prior-idle-ms = <500>; };
+    W_to_ITHOUT  { trigger-keys = <W LS(W)>; bindings = <&kp I &kp T &kp H &kp O &kp U &kp T>;             max-prior-idle-ms = <500>; };
+};
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
-
-            /* ALPHABETICAL (fixed) */
-
-            A_to_BOVE {
-                trigger-keys = <A LS(A)>;
-                bindings = <&kp B &kp O &kp V &kp E>;
-            };
-
-            B_to_EHIND {
-                trigger-keys = <B LS(B)>;
-                bindings = <&kp E &kp H &kp I &kp N &kp D>;
-            };
-
-            C_to_ONTROL {
-                trigger-keys = <C LS(C)>;
-                bindings = <&kp O &kp N &kp T &kp R &kp O &kp L>;
-            };
-
-            D_to_IED {
-                trigger-keys = <D LS(D)>;
-                bindings = <&kp I &kp E &kp D>;
-            };
-
-            E_to_XTRA {
-                trigger-keys = <E LS(E)>;
-                bindings = <&kp X &kp T &kp R &kp A>;
-            };
-
-            F_to_AMILY {
-                trigger-keys = <F LS(F)>;
-                bindings = <&kp A &kp M &kp I &kp L &kp Y>;
-            };
-
-            G_to_IVEN {
-                trigger-keys = <G LS(G)>;
-                bindings = <&kp I &kp V &kp E &kp N>;
-            };
-
-            H_to_AVING {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp A &kp V &kp I &kp N &kp G>;
-            };
-
-            I_to_NTERNAL {
-                trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp T &kp E &kp R &kp N &kp A &kp L>;
-            };
-
-            L_to_ESION {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp E &kp S &kp I &kp O &kp N>;
-            };
-
-            M_to_EDIAL {
-                trigger-keys = <M LS(M)>;
-                bindings = <&kp E &kp D &kp I &kp A &kp L>;
-            };
-
-            N_to_ORTH {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp O &kp R &kp T &kp H>;
-            };
-
-            O_to_FFIC {
-                trigger-keys = <O LS(O)>;
-                bindings = <&kp F &kp F &kp I &kp C>;
-            };
-
-            P_to_LACE {
-                trigger-keys = <P LS(P)>;
-                bindings = <&kp L &kp A &kp C &kp E>;
-            };
-
-            R_to_ECENT {
-                trigger-keys = <R LS(R)>;
-                bindings = <&kp E &kp C &kp E &kp N &kp T>;
-            };
-
-            S_to_ECOND {
-                trigger-keys = <S LS(S)>;
-                bindings = <&kp E &kp C &kp O &kp N &kp D>;
-            };
-
-            T_to_ODAY {
-                trigger-keys = <T LS(T)>;
-                bindings = <&kp O &kp D &kp A &kp Y>;
-            };
-
-            U_to_NABLE {
-                trigger-keys = <U LS(U)>;
-                bindings = <&kp N &kp A &kp B &kp L &kp E>;
-            };
-
-            V_to_OLUME {
-                trigger-keys = <V LS(V)>;
-                bindings = <&kp O &kp L &kp U &kp M &kp E>;
-            };
-
-            W_to_ITHOUT {
-                trigger-keys = <W LS(W)>;
-                bindings = <&kp I &kp T &kp H &kp O &kp U &kp T>;
-            };
-        };
     };
 
     combos {

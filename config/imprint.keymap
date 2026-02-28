@@ -527,34 +527,6 @@
 
             label = "AS";
         };
-
-        ue: ue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp U &kp E>;
-            label = "UE";
-        };
-
-        eu: eu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp E &kp U>;
-            label = "EU";
-        };
-
-        oa: oa {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp O &kp A>;
-            label = "OA";
-        };
-
-        ao: ao {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp O>;
-            label = "AO";
-        };
     };
 
     keymap {

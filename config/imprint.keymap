@@ -354,6 +354,13 @@
             tapping-term-ms = <190>;
             flavor = "tap-preferred";
         };
+
+        format_dance: format_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FORMAT_DANCE";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B)>, <&kp LC(I)>, <&kp LC(U)>;
+        };
     };
 
     combos {

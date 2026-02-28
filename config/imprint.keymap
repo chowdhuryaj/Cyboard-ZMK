@@ -228,9 +228,9 @@
                 max-prior-idle-ms = <500>;
             };
 
-            N_to_DE {
+            N_to_ING {
                 trigger-keys = <N LS(N)>;
-                bindings = <&kp D &kp E>;
+                bindings = <&kp I &kp N & G;
                 max-prior-idle-ms = <500>;
             };
 
@@ -708,9 +708,9 @@
                 max-prior-idle-ms = <500>;
             };
 
-            L_to_AR {
+            L_to_EA {
                 trigger-keys = <L LS(L)>;
-                bindings = <&kp A &kp R>;
+                bindings = <&kp E &kp :>;
                 max-prior-idle-ms = <500>;
             };
 

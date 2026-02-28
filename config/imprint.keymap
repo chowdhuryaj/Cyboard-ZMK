@@ -345,37 +345,6 @@
             flavor = "tap-preferred";
         };
 
-        mrb: mrb {
-            compatible = "zmk,behavior-tap-dance";
-            label = "MRB";
-            #binding-cells = <0>;
-            bindings = <&mkp MB3>, <&mkp MB2>;
-        };
-
-        lth_hold: lth_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LTH_HOLD";
-            bindings = <&kp>, <&lth>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            require-prior-idle-ms = <165>;
-            quick-tap-ms = <150>;
-        };
-
-        rth_hold: rth_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "RTH_HOLD";
-            bindings = <&kp>, <&rth>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            require-prior-idle-ms = <165>;
-            quick-tap-ms = <150>;
-        };
-
         as_ht: as_ht {
             compatible = "zmk,behavior-hold-tap";
             label = "AS_HT";
@@ -389,12 +358,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        left_enter {
-            bindings = <&mt DOWN ENTER>;
-            key-positions = <28 27>;
-            timeout-ms = <20>;
-        };
 
         screenshot {
             bindings = <&kp LG(LS(N4))>;
@@ -412,7 +375,7 @@
 
         left_dictate {
             bindings = <&kp GRAVE>;
-            key-positions = <41 40>;
+            key-positions = <28 29>;
         };
 
         controls {
@@ -438,35 +401,10 @@
             timeout-ms = <20>;
         };
 
-        rmb {
-            bindings = <&mkp MB2>;
-            key-positions = <61 67>;
-        };
-
         right_tab {
             bindings = <&kp TAB>;
             key-positions = <32 33>;
             timeout-ms = <20>;
-        };
-
-        num {
-            bindings = <&lt 3 Y>;
-            key-positions = <59 65>;
-        };
-
-        rthumb_repeat {
-            bindings = <&key_repeat>;
-            key-positions = <63 69>;
-        };
-
-        lthumb_magic {
-            bindings = <&lth>;
-            key-positions = <58 64>;
-        };
-
-        snipe {
-            bindings = <&mo 2>;
-            key-positions = <62 68>;
         };
 
         lctrl {
@@ -497,6 +435,11 @@
         rgui {
             bindings = <&sk LCMD>;
             key-positions = <19 31>;
+        };
+
+        left_enter {
+            bindings = <&kp RET>;
+            key-positions = <28 27>;
         };
     };
 

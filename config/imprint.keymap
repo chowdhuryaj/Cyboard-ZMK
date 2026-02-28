@@ -343,7 +343,7 @@
             /* NON-ALPHABETICAL */
             space_to_the {
                 trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E)>;
+                bindings = <&kp T &kp H &kp E>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -554,7 +554,7 @@
 
             space_to_and {
                 trigger-keys = <SPACE>;
-                bindings = <&kp A &kp N &kp D)>;
+                bindings = <&kp A &kp N &kp D>;
                 max-prior-idle-ms = <500>;
             };
 

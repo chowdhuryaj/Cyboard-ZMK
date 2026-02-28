@@ -477,13 +477,13 @@
 
         base {
             bindings = <
-&as GRAVE  &as N1  &as N2   &as N3   &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
-&kp Q      &kp X   &kp F    &kp L    &kp K         &kp W                   &trans    &trans          &kp O             &kp U          &trans        &trans
-&kp B      &kp N   &kp S    &kp H    &kp T         &kp M                   &trans    &kp C           &kp A             &kp E          &kp I         &trans
-&kp Z      &kp P   &kp G    &kp J    &kp D         &kp V                   &trans    &trans          &trans            &trans         &trans        &mt LC(EQUAL) EQUAL
-&kp F8     &kp F9  &kp F10  &kp F11  &kp F12                                         &mt PG_DN DOWN  &mt LEFT HOME     &mt END RIGHT  &mt PG_UP UP  &mt LC(MINUS) MINUS
-                                     &lt 3 Y       &mkp MB2    &mkp MB5    &mkp MB1  &lt 1 DEL       &key_repeat
-                                     &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB3  &lt 2 BSPC      &hmr RSHFT SPACE
+&as GRAVE  &as N1  &as N2  &as N3   &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
+&kp Q      &kp X   &kp F   &kp L    &kp K         &kp W                   &trans    &trans          &kp O             &kp U          &trans        &trans
+&kp B      &kp N   &kp S   &kp H    &kp T         &kp M                   &trans    &kp C           &kp A             &kp E          &kp I         &trans
+&kp Z      &kp P   &kp G   &kp J    &kp D         &kp V                   &trans    &trans          &trans            &trans         &trans        &trans
+&kp F7     &kp F8  &kp F9  &kp F11  &kp F12                                         &mt PG_DN DOWN  &mt LEFT HOME     &mt END RIGHT  &mt PG_UP UP  &caps_word
+                                    &lt 3 Y       &mkp MB2    &mkp MB5    &mkp MB1  &lt 1 DEL       &key_repeat
+                                    &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB3  &lt 2 BSPC      &hmr RSHFT SPACE
             >;
         };
 

@@ -137,7 +137,6 @@ TIM: TIM {
     };
 
     /* ALPHABETICAL (includes shifted triggers) */
-    N_to_Y  { trigger-keys = <N LS(N)>; bindings = <&kp Y>; };
     B_to_ET { trigger-keys = <B LS(B)>; bindings = <&kp E &kp T>; };
     C_to_ON { trigger-keys = <C LS(C)>; bindings = <&kp O &kp N>; };
     D_to_IF { trigger-keys = <D LS(D)>; bindings = <&kp I &kp F>; };

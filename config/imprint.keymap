@@ -422,6 +422,17 @@
                 max-prior-idle-ms = <500>;
             };
         };
+
+        layer_kr: layer_kr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_KR";
+            bindings = <&mo>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <150>;
+        };
     };
 
     combos {
@@ -532,12 +543,12 @@
         base {
             bindings = <
 &as GRAVE        &as N1  &as N2  &as N3  &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
-&mt LC(Y) LC(Z)  &kp X   &kp F   &kp L   &kp K         &kp W                   &kp P     &kp G           &kp O             &kp U          &kp EQUAL     &kp MINUS
-&kp LC(T)        &kp N   &kp S   &kp H   &kp T         &kp M                   &MIM      &kp C           &kp A             &kp E          &kp I         &format_dance
-&kp LC(W)        &kp P   &kp G   &kp J   &kp D         &kp V                   &BIM      &kp W           &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH   &kp F11
+&mt LC(Y) LC(Z)  &kp B   &kp F   &kp M   &kp K         &kp Q                   &kp P     &kp G           &kp O             &kp U          &kp EQUAL     &kp MINUS
+&kp LC(T)        &kp N   &kp S   &kp H   &kp T         &kp P                   &MIM      &kp C           &kp A             &kp E          &kp I         &format_dance
+&kp LC(W)        &kp X   &kp V   &kp J   &kp D         &kp Z                   &BIM      &kp W           &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH   &kp F11
 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10                                         &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                         &lt 3 Y       &lt 4 DEL   &mkp MB5    &mkp MB1  &mkp MB3        &lt 2 BSPC
-                                         &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2  &lt 1 DEL       &hmr RSHFT SPACE
+                                         &lt 3 L       &lt 4 DEL   &mkp MB5    &mkp MB1  &mkp MB3        &lt 2 Y
+                                         &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2  &layer_kr 1 0   &hmr RSHFT SPACE
             >;
         };
 

@@ -366,20 +366,6 @@
     combos {
         compatible = "zmk,combos";
 
-        screenshot {
-            bindings = <&kp LG(LS(N4))>;
-            key-positions = <25 24>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
-        screenshot_prev {
-            bindings = <&kp LS(LC(N4))>;
-            key-positions = <25 36>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
         left_dictate {
             bindings = <&kp GRAVE>;
             key-positions = <28 29>;

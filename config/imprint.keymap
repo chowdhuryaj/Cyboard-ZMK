@@ -152,7 +152,6 @@
                 max-prior-idle-ms = <500>;
             };
 
-
             G_to_ING {
                 trigger-keys = <G LS(G)>;
                 bindings = <&kp I &kp N &kp G>;
@@ -218,7 +217,6 @@
                 bindings = <&kp N &kp G>;
                 max-prior-idle-ms = <500>;
             };
-
         };
 
         TIM: TIM {
@@ -824,7 +822,7 @@
         base {
             bindings = <
 &as GRAVE        &as N1  &as N2  &as N3  &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
-&mt LC(Y) LC(Z)  &kp X   &kp F   &TM     &kp K         &kp Q                   &TIM      &kp G           &kp O             &kp U          &kp EQUAL     &kp MINUS
+&mt LC(Y) LC(Z)  &kp X   &kp F   &kp G   &kp K         &kp Q                   &TIM      &key_repeat     &kp O             &kp U          &kp EQUAL     &kp MINUS
 &kp B            &kp N   &kp S   &kp H   &kp T         &kp M                   &MIM      &kp C           &kp A             &kp E          &kp I         &format_dance
 &kp LC(W)        &kp P   &kp V   &kp J   &kp D         &kp Z                   &BIM      &kp W           &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH   &kp F11
 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10                                         &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12

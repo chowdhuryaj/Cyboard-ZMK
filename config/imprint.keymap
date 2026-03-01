@@ -390,7 +390,7 @@
         rad: rad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &tog 5>;
+            bindings = <&rgb_ug RGB_TOG &tog 0>;
             label = "RAD";
         };
     };
@@ -455,18 +455,6 @@
 &tog 0      &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD                                    &trans           &trans           &trans           &trans           &trans
                                                                &trans           &trans          &trans    &trans  &trans           &trans
                                                                &trans           &trans          &trans    &trans  &trans           &trans
-            >;
-        };
-
-        radiology {
-            bindings = <
-&as F1  &as COMMA  &as DOT  &as FSLH  &as SEMI   &as APOS                &trans  &trans  &trans  &trans  &trans  &trans
-&as N0  &as N6     &as N7   &as N8    &as N9     &as BSPC                &trans  &trans  &trans  &trans  &trans  &trans
-&kp C   &as N1     &as N2   &as N3    &as N4     &as N5                  &trans  &trans  &trans  &trans  &trans  &trans
-&as Q   &as W      &as E    &as R     &as T      &as Y                   &trans  &trans  &trans  &trans  &trans  &trans
-&as U   &as I      &as O    &as P     &as A                                      &trans  &trans  &trans  &trans  &trans
-                                      &as PG_UP  &as SPACE  &as GRAVE    &trans  &trans  &trans
-                                      &as PG_DN  &as F13    &as F14      &trans  &trans  &trans
             >;
         };
     };

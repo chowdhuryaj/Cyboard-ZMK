@@ -152,6 +152,7 @@
                 bindings = <&kp I>;
                 max-prior-idle-ms = <500>;
             };
+        };
 
         repeat_right: repeat {
             compatible = "zmk,behavior-adaptive-key";

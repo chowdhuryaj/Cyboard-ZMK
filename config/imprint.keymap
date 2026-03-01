@@ -66,7 +66,7 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "TM";
             #binding-cells = <0>;
-            bindings = <&key_repeat>;
+            bindings = <&kp SPACE>;
 
             /* NON-ALPHABETICAL */
 
@@ -152,6 +152,43 @@
                 max-prior-idle-ms = <500>;
             };
 
+
+            G_to_ING {
+                trigger-keys = <G LS(G)>;
+                bindings = <&kp I &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            F_to_ING {
+                trigger-keys = <F LS(F)>;
+                bindings = <&kp I &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            H_to_ING {
+                trigger-keys = <H LS(H)>;
+                bindings = <&kp I &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            I_to_NG {
+                trigger-keys = <I LS(I)>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            K_to_ING {
+                trigger-keys = <K LS(K)>;
+                bindings = <&kp E &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            N_to_ING {
+                trigger-keys = <N LS(N)>;
+                bindings = <&kp I &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
             L_to_R {
                 trigger-keys = <L LS(L)>;
                 bindings = <&kp R>;
@@ -163,13 +200,32 @@
                 bindings = <&kp L>;
                 max-prior-idle-ms = <500>;
             };
+
+            A_to_NG {
+                trigger-keys = <A LS(A)>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
+            E_to_RA {
+                trigger-keys = <E LS(E)>;
+                bindings = <&kp R &kp A>;
+                max-prior-idle-ms = <500>;
+            };
+
+            O_to_NG {
+                trigger-keys = <O LS(O)>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
         };
 
         TIM: TIM {
             compatible = "zmk,behavior-adaptive-key";
             label = "TIM";
             #binding-cells = <0>;
-            bindings = <&key_repeat>;
+            bindings = <&kp LS(TAB)>;
 
             /* NON-ALPHABETICAL */
 
@@ -267,39 +323,15 @@
                 max-prior-idle-ms = <500>;
             };
 
-            H_to_ING {
-                trigger-keys = <H LS(H)>;
-                bindings = <&kp I &kp N &kp G>;
-                max-prior-idle-ms = <500>;
-            };
-
-            I_to_NG {
+            I_to_RE {
                 trigger-keys = <I LS(I)>;
-                bindings = <&kp N &kp G>;
+                bindings = <&kp N &kp E>;
                 max-prior-idle-ms = <500>;
             };
 
             J_to_MAIN {
                 trigger-keys = <J LS(J)>;
                 bindings = <&kp M &kp A &kp I &kp N>;
-                max-prior-idle-ms = <500>;
-            };
-
-            K_to_ING {
-                trigger-keys = <K LS(K)>;
-                bindings = <&kp E &kp N &kp G>;
-                max-prior-idle-ms = <500>;
-            };
-
-            L_to_IN {
-                trigger-keys = <L LS(L)>;
-                bindings = <&kp I &kp N>;
-                max-prior-idle-ms = <500>;
-            };
-
-            N_to_ING {
-                trigger-keys = <N LS(N)>;
-                bindings = <&kp I &kp N &kp G>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -332,13 +364,19 @@
                 bindings = <&kp H &kp A &kp T>;
                 max-prior-idle-ms = <500>;
             };
+
+            O_to_I {
+                trigger-keys = <G LS(G)>;
+                bindings = <&kp I &kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
         };
 
         MIM: MIM {
             compatible = "zmk,behavior-adaptive-key";
             label = "MIM";
             #binding-cells = <0>;
-            bindings = <&kp P>;
+            bindings = <&key_repeat>;
 
             /* NON-ALPHABETICAL */
 

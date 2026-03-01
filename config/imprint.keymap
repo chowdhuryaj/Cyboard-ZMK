@@ -148,58 +148,6 @@
                 max-prior-idle-ms = <500>;
             };
         };
-
-        ing: ing {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "ing";
-            #binding-cells = <0>;
-            bindings = <&kp I &kp N &kp G>;
-
-            space_to_and {
-                trigger-keys = <SPACE>;
-                bindings = <&kp A &kp N &kp D>;
-                max-prior-idle-ms = <500>;
-            };
-        };
-
-        and: and {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "AND";
-            #binding-cells = <0>;
-            bindings = <&kp A &kp N &kp D>;
-
-            space_to_for {
-                trigger-keys = <SPACE>;
-                bindings = <&kp F &kp O &kp R>;
-                max-prior-idle-ms = <500>;
-            };
-        };
-
-        the: the {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "THE";
-            #binding-cells = <0>;
-            bindings = <&kp T &kp H &kp E>;
-
-            space_to_not {
-                trigger-keys = <SPACE>;
-                bindings = <&kp N &kp O &kp T>;
-                max-prior-idle-ms = <500>;
-            };
-        };
-
-        ion: ion {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "ION";
-            #binding-cells = <0>;
-            bindings = <&kp I &kp O &kp N>;
-
-            space_to_but {
-                trigger-keys = <SPACE>;
-                bindings = <&kp B &kp U &kp T>;
-                max-prior-idle-ms = <500>;
-            };
-        };
     };
 
     combos {

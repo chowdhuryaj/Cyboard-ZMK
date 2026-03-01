@@ -55,9 +55,9 @@
             flavor = "tap-preferred";
         };
 
-        repeat_left: repeat {
+        repeat_left: repeat_left {
             compatible = "zmk,behavior-adaptive-key";
-            label = "REPEAT";
+            label = "REPEAT_LEFT";
             #binding-cells = <0>;
             bindings = <&key_repeat>;
 
@@ -154,9 +154,9 @@
             };
         };
 
-        repeat_right: repeat {
+        repeat_right: repeat_right {
             compatible = "zmk,behavior-adaptive-key";
-            label = "REPEAT";
+            label = "REPEAT_RIGHT";
             #binding-cells = <0>;
             bindings = <&key_repeat>;
 

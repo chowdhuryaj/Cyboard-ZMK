@@ -258,9 +258,9 @@
         base {
             bindings = <
 &kp LG(Q)        &as N1  &as N2  &as N3  &as N4        &as N5                  &as N6     &as N7          &as N8            &as N9         &as N0        &as BSLH
-&mt LC(Y) LC(Z)  &kp X   &kp G   &kp F   &kp K         &kp Q                   &kp EQUAL  &repeat         &kp O             &kp U          &kp SQT       &kp PSCRN
+&mt LC(Y) LC(Z)  &kp X   &kp V   &kp F   &kp K         &kp Q                   &kp EQUAL  &repeat         &kp O             &kp U          &kp SQT       &kp PSCRN
 &kp B            &kp N   &kp S   &kp H   &kp T         &kp M                   &kp MINUS  &kp C           &kp A             &kp E          &kp I         &format_dance
-&mt LC(V) LC(C)  &kp P   &kp V   &kp J   &kp D         &kp Z                   &kp GRAVE  &kp W           &kp COMMA         &kp DOT        &kp FSLH      &kp F11
+&mt LC(V) LC(C)  &kp P   &kp G   &kp J   &kp D         &kp Z                   &kp GRAVE  &kp W           &kp COMMA         &kp DOT        &kp FSLH      &kp F11
 &kp F6           &kp F7  &kp F8  &kp F9  &kp F10                                          &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
                                          &lt 3 L       &lt 4 DEL   &mkp MB5    &mkp MB1   &mkp MB3        &lt 2 Y
                                          &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2   &lt 1 BSPC      &hmr RSHFT SPACE

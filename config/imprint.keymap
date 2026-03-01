@@ -279,7 +279,7 @@
             bindings = <
 &kp LG(Q)        &as N1  &as N2  &as N3  &as N4        &as N5                &as N6     &as N7           &as N8         &as N9         &as N0        &mt BSLH F9
 &mt LC(Y) LC(Z)  &kp X   &kp F   &kp P   &kp K         &kp Q                 &as EQUAL  &as MINUS        &kp O          &kp U          &as APOS      &mt LBKT F10
-&repeat          &kp N   &kp S   &kp H   &kp T         &kp M                 &as GRAVE  &kp C            &kp A          &kp E          &kp I         &mt RBKT F11
+&layer_bdel 4 0  &kp N   &kp S   &kp H   &kp T         &kp M                 &as GRAVE  &kp C            &kp A          &kp E          &kp I         &mt RBKT F11
 &mt LC(V) LC(C)  &kp B   &kp V   &kp J   &kp D         &kp Z                 &as SEMI   &kp W            &as COMMA      &as DOT        &as FSLH      &kp F12
 &kp F4           &kp F5  &kp F6  &kp F7  &kp F8                                         &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP  &kp F13
                                          &lt 3 L       &mkp MB2  &mkp MB5    &mkp MB1   &layer_bdel 1 0  &lt 2 Y
@@ -325,13 +325,13 @@
 
         control {
             bindings = <
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans  &trans           &trans           &trans           &trans           &trans
-&sys_reset   &trans        &trans        &trans        &trans        &studio_unlock            &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
-&bootloader  &kp C_PP      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans                    &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
-&trans       &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_NEXT    &trans                    &trans  &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
-&tog 0       &trans        &trans        &trans        &none                                           &trans           &trans           &trans           &trans           &trans
-                                                       &trans        &trans          &trans    &trans  &trans           &trans
-                                                       &trans        &trans          &trans    &trans  &trans           &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4              &trans  &trans           &trans           &trans           &trans           &trans
+&sys_reset  &trans        &trans        &trans        &trans        &studio_unlock            &trans  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
+&none       &kp C_PP      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &trans                    &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &bootloader
+&none       &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_NEXT    &trans                    &trans  &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
+&tog 0      &trans        &trans        &trans        &none                                           &trans           &trans           &trans           &trans           &trans
+                                                      &trans        &trans          &trans    &trans  &trans           &trans
+                                                      &trans        &trans          &trans    &trans  &trans           &trans
             >;
         };
     };

@@ -70,7 +70,7 @@
 
             space_to_the {
                 trigger-keys = <SPACE>;
-                bindings = <&kp T & H &kp E>;
+                bindings = <&kp T &kp H &kp E>;
                 max-prior-idle-ms = <500>;
             };
 

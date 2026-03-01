@@ -200,7 +200,6 @@
                 max-prior-idle-ms = <500>;
             };
         };
-
     };
 
     combos {
@@ -310,13 +309,13 @@
 
         base {
             bindings = <
-&as GRAVE        &as N1  &as N2  &as N3  &as N4        &as N5                  &as N6    &as N7          &as N8            &as N9         &as N0        &as BSLH
-&mt LC(Y) LC(Z)  &kp P   &kp G   &kp F   &kp K         &kp Q                   &ing      &kp Y           &kp O             &kp U          &kp EQUAL     &kp MINUS
-&kp B            &kp N   &kp S   &kp H   &kp T         &kp M                   &the      &kp C           &kp A             &kp E          &kp I         &and
-&mt LC(C) LC(V)  &kp X   &kp V   &kp J   &kp D         &kp Z                   &ion      &kp W           &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH   &kp F11
-&kp F6           &kp F7  &kp F8  &kp F9  &kp F10                                         &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                         &lt 3 L       &lt 4 DEL   &mkp MB5    &mkp MB1  &mkp MB3        &lt 2 BSPC
-                                         &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2  &repeat         &hmr RSHFT SPACE
+&as GRAVE        &as N1  &as N2  &as N3  &as N4        &as N5                  &as N6           &as N7          &as N8            &as N9         &as N0           &as BSLH
+&mt LC(Y) LC(Z)  &kp X   &kp G   &kp F   &kp K         &kp Q                   &kp EQUAL        &repeat         &kp O             &kp U          &kp LS(LC(TAB))  &kp LC(TAB)
+&kp B            &kp N   &kp S   &kp H   &kp T         &kp M                   &kp MINUS        &kp C           &kp A             &kp E          &kp I            &format_dance
+&mt LC(V) LC(C)  &kp P   &kp V   &kp J   &kp D         &kp Z                   &kp PRINTSCREEN  &kp W           &mt SQT COMMA     &mt SEMI DOT   &mt N1 FSLH      &kp F11
+&kp F6           &kp F7  &kp F8  &kp F9  &kp F10                                                &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP     &kp F12
+                                         &lt 3 L       &lt 4 DEL   &mkp MB5    &mkp MB1         &mkp MB3        &lt 2 Y
+                                         &hml LSHFT R  &lt 2 BSPC  &mkp MB4    &mkp MB2         &lt 1 BSPC      &hmr RSHFT SPACE
             >;
         };
 

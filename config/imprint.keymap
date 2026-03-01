@@ -354,7 +354,7 @@
         };
 
         radiology {
-            bindings = <&tog 5>;
+            bindings = <&rad>;
             key-positions = <25 26 27 28 58 64>;
         };
     };

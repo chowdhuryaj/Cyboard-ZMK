@@ -55,13 +55,6 @@
             flavor = "tap-preferred";
         };
 
-        format_dance: format_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "FORMAT_DANCE";
-            #binding-cells = <0>;
-            bindings = <&kp LC(B)>, <&kp LC(I)>, <&kp LC(U)>;
-        };
-
         repeat: repeat {
             compatible = "zmk,behavior-adaptive-key";
             label = "REPEAT";
@@ -290,7 +283,7 @@
 &mt LC(V) LC(C)  &kp B   &kp V   &kp J   &kp D         &kp Z                 &as SEMI   &kp W            &as COMMA      &as DOT        &as FSLH      &kp F12
 &kp F4           &kp F5  &kp F6  &kp F7  &kp F8                                         &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP  &kp F13
                                          &lt 3 L       &mkp MB2  &mkp MB5    &mkp MB1   &layer_bdel 1 0  &lt 2 Y
-                                         &hml LSHFT R  &repeat   &mkp MB4    &mkp MB3   &lt 4 LC(BSPC)   &hmr RSHFT G
+                                         &hml LSHFT R  &repeat   &mkp MB4    &mkp MB3   &repeat          &hmr RSHFT G
             >;
         };
 
@@ -326,7 +319,7 @@
 &kp EQUAL     &kp FSLH      &kp LS(STAR)  &kp RET   &kp SPACE     &kp COMMA               &trans  &trans  &trans  &trans  &trans  &trans
 &kp LS(LT)    &kp LS(GT)    &trans        &trans    &trans                                        &trans  &trans  &trans  &trans  &trans
                                                     &trans        &trans        &trans    &trans  &trans  &trans
-                                                    &trans        &trans        &trans    &trans  &trans  &trans
+                                                    &mo 4         &trans        &trans    &trans  &trans  &trans
             >;
         };
 

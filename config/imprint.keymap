@@ -386,6 +386,13 @@
 
             label = "AS";
         };
+
+        rad: rad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_TOG &tog 5>;
+            label = "RAD";
+        };
     };
 
     keymap {

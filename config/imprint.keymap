@@ -285,9 +285,9 @@
         base {
             bindings = <
 &kp LG(Q)        &as N1  &as N2  &as N3  &as N4        &as N5                       &as N6     &as N7           &as N8         &as N9         &as N0        &mt BSLH F9
-&mt LC(Y) LC(Z)  &kp B   &kp F   &kp P   &kp K         &kp Q                        &as EQUAL  &as MINUS        &kp O          &kp U          &as APOS      &mt LBKT F10
+&mt LC(Y) LC(Z)  &kp X   &kp F   &kp P   &kp K         &kp Q                        &as EQUAL  &as MINUS        &kp O          &kp U          &as APOS      &mt LBKT F10
 &repeat          &kp N   &kp S   &kp H   &kp T         &kp M                        &as GRAVE  &kp C            &kp A          &kp E          &kp I         &mt RBKT F11
-&mt LC(V) LC(C)  &kp X   &kp V   &kp J   &kp D         &kp Z                        &as SEMI   &kp W            &as COMMA      &as DOT        &as FSLH      &kp F12
+&mt LC(V) LC(C)  &kp B   &kp V   &kp J   &kp D         &kp Z                        &as SEMI   &kp W            &as COMMA      &as DOT        &as FSLH      &kp F12
 &kp F4           &kp F5  &kp F6  &kp F7  &kp F8                                                &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP  &kp F13
                                          &lt 3 L       &layer_bdel 2 0  &mkp MB5    &mkp MB1   &layer_bdel 1 0  &lt 2 Y
                                          &hml LSHFT R  &lt 4 SPACE      &mkp MB4    &mkp MB3   &lt 4 SPACE      &hmr RSHFT G
@@ -320,13 +320,13 @@
 
         numpad {
             bindings = <
-&trans     &trans    &trans        &trans   &trans     &trans               &trans  &trans  &trans  &trans  &trans  &trans
-&kp MINUS  &kp N6    &kp N7        &kp N8   &kp N9     &kp DOT              &trans  &trans  &trans  &trans  &trans  &trans
-&kp N0     &kp N1    &kp N2        &kp N3   &kp N4     &kp N5               &trans  &trans  &trans  &trans  &trans  &trans
-&kp EQUAL  &kp FSLH  &kp LS(STAR)  &kp RET  &kp SPACE  &kp COMMA            &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans    &trans        &trans   &trans                                  &trans  &trans  &trans  &trans  &trans
-                                            &trans     &trans     &trans    &trans  &trans  &trans
-                                            &trans     &trans     &trans    &trans  &trans  &trans
+&kp LS(LPAR)  &kp LS(RPAR)  &kp LBKT      &kp RBKT  &kp LS(LBRC)  &kp LS(RBRC)            &trans  &trans  &trans  &trans  &trans  &trans
+&kp MINUS     &kp N6        &kp N7        &kp N8    &kp N9        &kp DOT                 &trans  &trans  &trans  &trans  &trans  &trans
+&kp N0        &kp N1        &kp N2        &kp N3    &kp N4        &kp N5                  &trans  &trans  &trans  &trans  &trans  &trans
+&kp EQUAL     &kp FSLH      &kp LS(STAR)  &kp RET   &kp SPACE     &kp COMMA               &trans  &trans  &trans  &trans  &trans  &trans
+&kp LS(LT)    &kp LS(GT)    &trans        &trans    &trans                                        &trans  &trans  &trans  &trans  &trans
+                                                    &trans        &trans        &trans    &trans  &trans  &trans
+                                                    &trans        &trans        &trans    &trans  &trans  &trans
             >;
         };
 

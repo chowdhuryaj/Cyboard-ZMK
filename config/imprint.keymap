@@ -55,7 +55,7 @@
             flavor = "tap-preferred";
         };
 
-        repeat: repeat {
+        repeat_left: repeat {
             compatible = "zmk,behavior-adaptive-key";
             label = "REPEAT";
             #binding-cells = <0>;
@@ -138,6 +138,116 @@
             lpar_to_rpar_left {
                 trigger-keys = <LPAR>;
                 bindings = <&kp RPAR &kp LEFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            q_to_u {
+                trigger-keys = <Q>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <500>;
+            };
+
+            u_to_i {
+                trigger-keys = <U>;
+                bindings = <&kp I>;
+                max-prior-idle-ms = <500>;
+            };
+
+        repeat_right: repeat {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "REPEAT";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
+
+            space_to_and {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+                max-prior-idle-ms = <500>;
+            };
+
+            bspc_to_bword {
+                trigger-keys = <BSPC>;
+                bindings = <&kp LC(BSPC)>;
+                max-prior-idle-ms = <500>;
+            };
+
+            bword_to_bline {
+                trigger-keys = <LC(BSPC)>;
+                bindings = <&kp LG(BSPC)>;
+                max-prior-idle-ms = <500>;
+                strict-modifiers;
+            };
+
+            del_to_dword {
+                trigger-keys = <DEL>;
+                bindings = <&kp LC(DEL)>;
+                max-prior-idle-ms = <500>;
+            };
+
+            dword_to_dline {
+                trigger-keys = <LC(DEL)>;
+                bindings = <&kp LG(DEL)>;
+                max-prior-idle-ms = <500>;
+                strict-modifiers;
+            };
+
+            dot_to_space_skshift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            excl_to_space_skshift {
+                trigger-keys = <EXCL>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            ques_to_space_skshift {
+                trigger-keys = <QMARK>;
+                bindings = <&kp SPACE &sk LSHFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            semi_to_space {
+                trigger-keys = <SEMI>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <500>;
+            };
+
+            colon_to_space {
+                trigger-keys = <COLON>;
+                bindings = <&kp SPACE>;
+                max-prior-idle-ms = <500>;
+            };
+
+            apos_to_s {
+                trigger-keys = <SQT>;
+                bindings = <&kp S>;
+                max-prior-idle-ms = <500>;
+            };
+
+            dqt_to_comma_left {
+                trigger-keys = <DQT>;
+                bindings = <&kp COMMA &kp LEFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            lpar_to_rpar_left {
+                trigger-keys = <LPAR>;
+                bindings = <&kp RPAR &kp LEFT>;
+                max-prior-idle-ms = <500>;
+            };
+
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+                max-prior-idle-ms = <500>;
+            };
+
+            u_to_e {
+                trigger-keys = <U>;
+                bindings = <&kp E>;
                 max-prior-idle-ms = <500>;
             };
         };
@@ -278,7 +388,7 @@
         base {
             bindings = <
 &kp LG(Q)        &as N1  &as N2  &as N3     &as N4        &as N5                &as N6     &as N7           &as N8         &as N9         &as N0        &mt BSLH F9
-&mt LC(Y) LC(Z)  &kp X   &kp F   &kp P      &repeat       &kp Q                 &as EQUAL  &repeat          &kp O          &kp U          &as APOS      &mt LBKT F10
+&mt LC(Y) LC(Z)  &kp X   &kp F   &kp P      &repeat_left  &kp Q                 &as EQUAL  &repeat_right    &kp O          &kp U          &as APOS      &mt LBKT F10
 &layer_bdel 4 0  &kp N   &kp S   &kp H      &kp T         &kp M                 &as GRAVE  &kp C            &kp A          &kp E          &kp I         &mt RBKT F11
 &mt LC(V) LC(C)  &kp B   &kp V   &kp SPACE  &kp D         &kp Z                 &as SEMI   &kp W            &as COMMA      &as DOT        &as FSLH      &kp F12
 &kp F4           &kp F5  &kp F6  &kp F7     &kp F8                                         &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP  &kp F13

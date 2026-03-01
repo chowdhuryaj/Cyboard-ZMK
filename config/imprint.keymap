@@ -153,16 +153,6 @@
     combos {
         compatible = "zmk,combos";
 
-        left_dictate {
-            bindings = <&kp GRAVE>;
-            key-positions = <28 29>;
-        };
-
-        controls {
-            bindings = <&mo 4>;
-            key-positions = <27 32>;
-        };
-
         left_tab {
             bindings = <&kp TAB>;
             key-positions = <27 26>;
@@ -205,21 +195,25 @@
         rctrl {
             bindings = <&sk LCTRL>;
             key-positions = <20 32>;
+            timeout-ms = <25>;
         };
 
         ralt {
             bindings = <&sk LALT>;
             key-positions = <21 33>;
+            timeout-ms = <25>;
         };
 
         rgui {
             bindings = <&sk LCMD>;
             key-positions = <19 31>;
+            timeout-ms = <25>;
         };
 
         left_enter {
             bindings = <&kp RET>;
             key-positions = <28 27>;
+            timeout-ms = <20>;
         };
     };
 

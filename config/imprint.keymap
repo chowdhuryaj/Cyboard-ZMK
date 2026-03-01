@@ -223,7 +223,7 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "TIM";
             #binding-cells = <0>;
-            bindings = <&kp LS(TAB)>;
+            bindings = <&none>;
 
             /* NON-ALPHABETICAL */
 
@@ -374,7 +374,7 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "MIM";
             #binding-cells = <0>;
-            bindings = <&key_repeat>;
+            bindings = <&none>;
 
             /* NON-ALPHABETICAL */
 

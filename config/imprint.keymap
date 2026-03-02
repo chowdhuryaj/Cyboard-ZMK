@@ -55,203 +55,210 @@
             flavor = "tap-preferred";
         };
 
-        repeat_left: repeat_left {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "REPEAT_LEFT";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
+dir_left: dir_left {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "DIR_LEFT";
+    #binding-cells = <0>;
 
-            space_to_the {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-                max-prior-idle-ms = <500>;
-            };
+    /* default output */
+    bindings = <&kp SPACE>;
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    /* key repeat set (per your spec) */
+    c_to_repeat { trigger-keys = <C>; bindings = <&key_repeat>; };
+    k_to_repeat { trigger-keys = <K>; bindings = <&key_repeat>; };
+    w_to_repeat { trigger-keys = <W>; bindings = <&key_repeat>; };
+    t_to_repeat { trigger-keys = <T>; bindings = <&key_repeat>; };
+    r_to_repeat { trigger-keys = <R>; bindings = <&key_repeat>; };
+    v_to_repeat { trigger-keys = <V>; bindings = <&key_repeat>; };
+    s_to_repeat { trigger-keys = <S>; bindings = <&key_repeat>; };
+    d_to_repeat { trigger-keys = <D>; bindings = <&key_repeat>; };
+    m_to_repeat { trigger-keys = <M>; bindings = <&key_repeat>; };
+    x_to_repeat { trigger-keys = <X>; bindings = <&key_repeat>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* existing rules (max-prior-idle-ms untouched) */
+    space_to_the {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+        max-prior-idle-ms = <500>;
+    };
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword {
+        trigger-keys = <BSPC>;
+        bindings = <&kp LC(BSPC)>;
+        max-prior-idle-ms = <500>;
+    };
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    bword_to_bline {
+        trigger-keys = <LC(BSPC)>;
+        bindings = <&kp LG(BSPC)>;
+        max-prior-idle-ms = <500>;
+        strict-modifiers;
+    };
 
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    del_to_dword {
+        trigger-keys = <DEL>;
+        bindings = <&kp LC(DEL)>;
+        max-prior-idle-ms = <500>;
+    };
 
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    dword_to_dline {
+        trigger-keys = <LC(DEL)>;
+        bindings = <&kp LG(DEL)>;
+        max-prior-idle-ms = <500>;
+        strict-modifiers;
+    };
 
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    dot_to_space_skshift {
+        trigger-keys = <DOT>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
+    excl_to_space_skshift {
+        trigger-keys = <EXCL>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
+    ques_to_space_skshift {
+        trigger-keys = <QMARK>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
+    semi_to_space {
+        trigger-keys = <SEMI>;
+        bindings = <&kp SPACE>;
+        max-prior-idle-ms = <500>;
+    };
 
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
+    colon_to_space {
+        trigger-keys = <COLON>;
+        bindings = <&kp SPACE>;
+        max-prior-idle-ms = <500>;
+    };
 
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
+    apos_to_s {
+        trigger-keys = <SQT>;
+        bindings = <&kp S>;
+        max-prior-idle-ms = <500>;
+    };
 
-            q_to_u {
-                trigger-keys = <Q>;
-                bindings = <&kp U>;
-                max-prior-idle-ms = <500>;
-            };
+    dqt_to_comma_left {
+        trigger-keys = <DQT>;
+        bindings = <&kp COMMA &kp LEFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            u_to_i {
-                trigger-keys = <U>;
-                bindings = <&kp I>;
-                max-prior-idle-ms = <500>;
-            };
-        };
+    lpar_to_rpar_left {
+        trigger-keys = <LPAR>;
+        bindings = <&kp RPAR &kp LEFT>;
+        max-prior-idle-ms = <500>;
+    };
+};
 
-        repeat_right: repeat_right {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "REPEAT_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
+dir_right: dir_right {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "DIR_RIGHT";
+    #binding-cells = <0>;
 
-            space_to_and {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-                max-prior-idle-ms = <500>;
-            };
+    /* default output */
+    bindings = <&kp SPACE>;
 
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <500>;
-            };
+    /* key repeat set (per your spec) */
+    b_to_repeat { trigger-keys = <B>; bindings = <&key_repeat>; };
+    f_to_repeat { trigger-keys = <F>; bindings = <&key_repeat>; };
+    g_to_repeat { trigger-keys = <G>; bindings = <&key_repeat>; };
+    j_to_repeat { trigger-keys = <J>; bindings = <&key_repeat>; };
+    l_to_repeat { trigger-keys = <L>; bindings = <&key_repeat>; };
+    n_to_repeat { trigger-keys = <N>; bindings = <&key_repeat>; };
+    e_to_repeat { trigger-keys = <E>; bindings = <&key_repeat>; };
+    q_to_repeat { trigger-keys = <Q>; bindings = <&key_repeat>; };
+    h_to_repeat { trigger-keys = <H>; bindings = <&key_repeat>; };
+    p_to_repeat { trigger-keys = <P>; bindings = <&key_repeat>; };
+    s_to_repeat { trigger-keys = <S>; bindings = <&key_repeat>; };
 
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    /* existing rules (max-prior-idle-ms untouched) */
+    space_to_and {
+        trigger-keys = <SPACE>;
+        bindings = <&kp T &kp H &kp E>;
+        max-prior-idle-ms = <500>;
+    };
 
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <500>;
-            };
+    bspc_to_bword {
+        trigger-keys = <BSPC>;
+        bindings = <&kp LC(BSPC)>;
+        max-prior-idle-ms = <500>;
+    };
 
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                max-prior-idle-ms = <500>;
-                strict-modifiers;
-            };
+    bword_to_bline {
+        trigger-keys = <LC(BSPC)>;
+        bindings = <&kp LG(BSPC)>;
+        max-prior-idle-ms = <500>;
+        strict-modifiers;
+    };
 
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    del_to_dword {
+        trigger-keys = <DEL>;
+        bindings = <&kp LC(DEL)>;
+        max-prior-idle-ms = <500>;
+    };
 
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    dword_to_dline {
+        trigger-keys = <LC(DEL)>;
+        bindings = <&kp LG(DEL)>;
+        max-prior-idle-ms = <500>;
+        strict-modifiers;
+    };
 
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-                max-prior-idle-ms = <500>;
-            };
+    dot_to_space_skshift {
+        trigger-keys = <DOT>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
+    excl_to_space_skshift {
+        trigger-keys = <EXCL>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-                max-prior-idle-ms = <500>;
-            };
+    ques_to_space_skshift {
+        trigger-keys = <QMARK>;
+        bindings = <&kp SPACE &sk LSHFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-                max-prior-idle-ms = <500>;
-            };
+    semi_to_space {
+        trigger-keys = <SEMI>;
+        bindings = <&kp SPACE>;
+        max-prior-idle-ms = <500>;
+    };
 
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
+    colon_to_space {
+        trigger-keys = <COLON>;
+        bindings = <&kp SPACE>;
+        max-prior-idle-ms = <500>;
+    };
 
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-                max-prior-idle-ms = <500>;
-            };
+    apos_to_s {
+        trigger-keys = <SQT>;
+        bindings = <&kp S>;
+        max-prior-idle-ms = <500>;
+    };
 
-            a_to_o {
-                trigger-keys = <A>;
-                bindings = <&kp O>;
-                max-prior-idle-ms = <500>;
-            };
+    dqt_to_comma_left {
+        trigger-keys = <DQT>;
+        bindings = <&kp COMMA &kp LEFT>;
+        max-prior-idle-ms = <500>;
+    };
 
-            u_to_e {
-                trigger-keys = <U>;
-                bindings = <&kp E>;
-                max-prior-idle-ms = <500>;
-            };
-        };
+    lpar_to_rpar_left {
+        trigger-keys = <LPAR>;
+        bindings = <&kp RPAR &kp LEFT>;
+        max-prior-idle-ms = <500>;
+    };
+};
 
         bdel: bdel {
             compatible = "zmk,behavior-mod-morph";

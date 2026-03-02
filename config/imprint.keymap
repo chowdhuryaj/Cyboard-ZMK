@@ -368,6 +368,30 @@
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
         };
+
+        layer_magic_left: layer_magic_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MAGIC_LEFT";
+            bindings = <&mo>, <&dir_left>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            require-prior-idle-ms = <165>;
+            quick-tap-ms = <150>;
+        };
+
+        layer_magic_right: layer_magic_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MAGIC_RIGHT";
+            bindings = <&mo>, <&dir_right>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+            require-prior-idle-ms = <165>;
+            quick-tap-ms = <150>;
+        };
     };
 
     combos {
@@ -435,23 +459,6 @@
             key-positions = <28 27>;
             timeout-ms = <20>;
         };
-
-        left_space {
-            bindings = <&kp COMMA>;
-            key-positions = <58 64>;
-            timeout-ms = <20>;
-        };
-
-        right_space {
-            bindings = <&kp DOT>;
-            key-positions = <63 69>;
-            timeout-ms = <20>;
-        };
-
-        radiology {
-            bindings = <&rad>;
-            key-positions = <25 26 27 28 58 64>;
-        };
     };
 
     macros {
@@ -481,13 +488,6 @@
 
             label = "AS";
         };
-
-        rad: rad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_TOG &tog 0>;
-            label = "RAD";
-        };
     };
 
     keymap {
@@ -495,13 +495,13 @@
 
         base {
             bindings = <
-&kp LG(Q)        &as N1     &as N2    &as N3  &as N4        &as N5                       &as N6    &as N7           &as N8         &as N9         &as N0        &kp F9
-&mt LC(Y) LC(Z)  &as COMMA  &kp C     &kp K   &kp W         &kp Y                        &kp Y     &kp B            &kp F          &kp G          &kp COMMA     &kp F10
-&kp GRAVE        &dir_left  &kp E     &kp T   &kp R         &kp V                        &kp J     &kp L            &kp N          &kp E          &dir_right    &kp BSLH
-&mt LC(V) LC(C)  &kp DOT    &kp S     &kp D   &kp M         &kp X                        &kp Q     &kp H            &kp P          &kp S          &kp DOT       &kp F11
-&as SEMI         &as APOS   &as FSLH  &kp F7  &kp F8                                               &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                              &lt 3 U       &mkp MB2         &mkp MB5    &mkp MB1  &lt 1 J          &lt 2 A
-                                              &hml LSHFT I  &layer_bdel 2 0  &mkp MB4    &mkp MB3  &layer_bdel 4 0  &hmr RSHFT O
+&kp HOME  &as N1    &as N2     &as N3  &as N4                 &as N5                        &as N6     &as N7           &as N8                  &as N9         &as N0        &kp PG_UP
+&kp END   &kp P     &kp F      &kp L   &kp K                  &kp Q                         &kp EQUAL  &kp Y            &kp O                   &kp U          &kp SQT       &kp PG_DN
+&kp B     &kp N     &kp S      &kp H   &kp T                  &kp J                         &kp G      &kp C            &kp A                   &kp E          &kp I         &kp SEMI
+&kp BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                         &kp MINUS  &kp W            &kp COMMA               &kp DOT        &kp FSLH      &kp F11
+&kp LBKT  &kp RBKT  &kp GRAVE  &kp F7  &kp F8                                                          &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
+                                       &layer_magic_left 3 0  &hml LCTRL SPACE  &mkp MB5    &mkp MB1   &mkp MB2         &layer_magic_right 4 0
+                                       &hml LSHFT R           &layer_bdel 2 0   &mkp MB4    &mkp MB3   &layer_bdel 1 0  &hmr RSHFT SPACE
             >;
         };
 

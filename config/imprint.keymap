@@ -401,9 +401,9 @@
         base {
             bindings = <
 &kp LG(Q)        &as N1        &as N2    &as N3  &as N4        &as N5                       &as N6    &as N7           &as N8         &as N9         &as N0         &kp F9
-&mt LC(Y) LC(Z)  &as COMMA     &kp C     &kp K   &kp W         &kp Y                        &kp Y     &kp B            &kp F          &kp G          &as DOT        &kp F10
+&mt LC(Y) LC(Z)  &as COMMA     &kp C     &kp K   &kp W         &kp Y                        &kp Y     &kp B            &kp F          &kp G          &kp COMMA      &kp F10
 &kp GRAVE        &repeat_left  &kp E     &kp T   &kp R         &kp V                        &kp J     &kp L            &kp N          &kp E          &repeat_right  &kp BSLH
-&mt LC(V) LC(C)  &as SPACE     &kp S     &kp D   &kp M         &kp X                        &kp Q     &kp H            &kp P          &kp S          &as SPACE      &kp F11
+&mt LC(V) LC(C)  &kp DOT       &kp S     &kp D   &kp M         &kp X                        &kp Q     &kp H            &kp P          &kp S          &kp DOT        &kp F11
 &as SEMI         &as APOS      &as FSLH  &kp F7  &kp F8                                               &mt PG_DN DOWN   &mt HOME LEFT  &mt END RIGHT  &mt PG_UP UP   &kp F12
                                                  &lt 3 U       &mkp MB2         &mkp MB5    &mkp MB1  &lt 1 J          &lt 2 A
                                                  &hml LSHFT I  &layer_bdel 2 0  &mkp MB4    &mkp MB3  &layer_bdel 4 0  &hmr RSHFT O

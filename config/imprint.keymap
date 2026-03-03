@@ -55,68 +55,35 @@
             flavor = "tap-preferred";
         };
 
-        dir_left: dir_left {
+        magic_left: magic_left {
             compatible = "zmk,behavior-adaptive-key";
-            label = "DIR_LEFT";
+            label = "magic_LEFT";
             #binding-cells = <0>;
+            bindings = <&key_repeat>;
 
-            /* default output */
-
-            bindings = <&kp SPACE>;
-
-            /* key repeat set (per your spec) */
-
-            c_to_repeat {
-                trigger-keys = <C>;
-                bindings = <&key_repeat>;
-            };
-
-            k_to_repeat {
-                trigger-keys = <K>;
-                bindings = <&key_repeat>;
-            };
-
-            w_to_repeat {
-                trigger-keys = <W>;
-                bindings = <&key_repeat>;
-            };
-
-            t_to_repeat {
-                trigger-keys = <T>;
-                bindings = <&key_repeat>;
-            };
-
-            r_to_repeat {
-                trigger-keys = <R>;
-                bindings = <&key_repeat>;
-            };
-
-            v_to_repeat {
-                trigger-keys = <V>;
-                bindings = <&key_repeat>;
-            };
-
-            s_to_repeat {
-                trigger-keys = <S>;
-                bindings = <&key_repeat>;
-            };
-
-            d_to_repeat {
-                trigger-keys = <D>;
-                bindings = <&key_repeat>;
-            };
-
-            m_to_repeat {
-                trigger-keys = <M>;
-                bindings = <&key_repeat>;
-            };
-
-            x_to_repeat {
+            X_to_P {
                 trigger-keys = <X>;
-                bindings = <&key_repeat>;
+                bindings = <&kp P>;
+                max-prior-idle-ms = <500>;
             };
 
-            /* existing rules (max-prior-idle-ms untouched) */
+            L_to_M {
+                trigger-keys = <L>;
+                bindings = <&kp L>;
+                max-prior-idle-ms = <500>;
+            };
+
+            H_to_L {
+                trigger-keys = <H>;
+                bindings = <&kp L>;
+                max-prior-idle-ms = <500>;
+            };
+
+            S_to_F {
+                trigger-keys = <S>;
+                bindings = <&kp F>;
+                max-prior-idle-ms = <500>;
+            };
 
             space_to_the {
                 trigger-keys = <SPACE>;
@@ -199,73 +166,38 @@
             };
         };
 
-        dir_right: dir_right {
+        magic_right: magic_right {
             compatible = "zmk,behavior-adaptive-key";
-            label = "DIR_RIGHT";
+            label = "MAGIC_RIGHT";
             #binding-cells = <0>;
 
             /* default output */
 
-            bindings = <&kp SPACE>;
+            bindings = <&key_repeat>;
 
-            /* key repeat set (per your spec) */
-
-            b_to_repeat {
-                trigger-keys = <B>;
-                bindings = <&key_repeat>;
-            };
-
-            f_to_repeat {
-                trigger-keys = <F>;
-                bindings = <&key_repeat>;
-            };
-
-            g_to_repeat {
-                trigger-keys = <G>;
-                bindings = <&key_repeat>;
-            };
-
-            j_to_repeat {
-                trigger-keys = <J>;
-                bindings = <&key_repeat>;
-            };
-
-            l_to_repeat {
-                trigger-keys = <L>;
-                bindings = <&key_repeat>;
-            };
-
-            n_to_repeat {
-                trigger-keys = <N>;
-                bindings = <&key_repeat>;
-            };
-
-            e_to_repeat {
+            E_to_U {
                 trigger-keys = <E>;
-                bindings = <&key_repeat>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <500>;
             };
 
-            q_to_repeat {
-                trigger-keys = <Q>;
-                bindings = <&key_repeat>;
+            A_to_O {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+                max-prior-idle-ms = <500>;
             };
 
-            h_to_repeat {
-                trigger-keys = <H>;
-                bindings = <&key_repeat>;
+            C_to_Y {
+                trigger-keys = <C>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
             };
 
-            p_to_repeat {
-                trigger-keys = <P>;
-                bindings = <&key_repeat>;
+            W_to_Y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
             };
-
-            s_to_repeat {
-                trigger-keys = <S>;
-                bindings = <&key_repeat>;
-            };
-
-            /* existing rules (max-prior-idle-ms untouched) */
 
             space_to_and {
                 trigger-keys = <SPACE>;
@@ -372,7 +304,7 @@
         layer_magic_left: layer_magic_left {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_MAGIC_LEFT";
-            bindings = <&mo>, <&dir_left>;
+            bindings = <&mo>, <&magic_left>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -384,7 +316,7 @@
         layer_magic_right: layer_magic_right {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_MAGIC_RIGHT";
-            bindings = <&mo>, <&dir_right>;
+            bindings = <&mo>, <&magic_right>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -496,10 +428,10 @@
         base {
             bindings = <
 &kp HOME  &as N1    &as N2     &as N3  &as N4                 &as N5                        &as N6     &as N7           &as N8                  &as N9         &as N0        &kp PG_UP
-&kp END   &kp P     &kp F      &kp L   &kp K                  &kp Q                         &kp EQUAL  &kp Y            &kp O                   &kp U          &kp SQT       &kp PG_DN
-&kp B     &kp N     &kp S      &kp H   &kp T                  &kp J                         &kp G      &kp C            &kp A                   &kp E          &kp I         &kp SEMI
-&kp BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                         &kp MINUS  &kp W            &kp COMMA               &kp DOT        &kp FSLH      &kp F11
-&kp LBKT  &kp RBKT  &kp GRAVE  &kp F7  &kp F8                                                          &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
+&kp END   &kp P     &kp F      &kp L   &kp K                  &kp Q                         &as EQUAL  &kp Y            &kp O                   &kp U          &kp SQT       &kp PG_DN
+&kp B     &kp N     &kp S      &kp H   &kp T                  &kp J                         &kp G      &kp C            &kp A                   &kp E          &kp I         &as SEMI
+&sd BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                         &as MINUS  &kp W            &as COMMA               &as DOT        &as FSLH      &kp F11
+&sd LBKT  &sd RBKT  &as GRAVE  &kp F7  &kp F8                                                          &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
                                        &layer_magic_left 3 0  &hml LCTRL SPACE  &mkp MB5    &mkp MB1   &mkp MB2         &layer_magic_right 4 0
                                        &hml LSHFT R           &layer_bdel 2 0   &mkp MB4    &mkp MB3   &layer_bdel 1 0  &hmr RSHFT SPACE
             >;

@@ -430,8 +430,8 @@
 &kp HOME  &as N1    &as N2     &as N3  &as N4                 &as N5                        &as N6     &as N7           &as N8                  &as N9         &as N0        &kp PG_UP
 &kp END   &kp P     &kp F      &kp L   &kp K                  &kp Q                         &as EQUAL  &kp Y            &kp O                   &kp U          &kp SQT       &kp PG_DN
 &kp B     &kp N     &kp S      &kp H   &kp T                  &kp J                         &kp G      &kp C            &kp A                   &kp E          &kp I         &as SEMI
-&sd BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                         &as MINUS  &kp W            &as COMMA               &as DOT        &as FSLH      &kp F11
-&sd LBKT  &sd RBKT  &as GRAVE  &kp F7  &kp F8                                                          &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
+&as BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                         &as MINUS  &kp W            &as COMMA               &as DOT        &as FSLH      &kp F11
+&as LBKT  &as RBKT  &as GRAVE  &kp F7  &kp F8                                                          &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
                                        &layer_magic_left 3 0  &hml LCTRL SPACE  &mkp MB5    &mkp MB1   &mkp MB2         &layer_magic_right 4 0
                                        &hml LSHFT R           &layer_bdel 2 0   &mkp MB4    &mkp MB3   &layer_bdel 1 0  &hmr RSHFT SPACE
             >;

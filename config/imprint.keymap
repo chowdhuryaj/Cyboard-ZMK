@@ -426,7 +426,7 @@
         <&zip_x_scaler 0 1>,
 
         /* Set vertical sensitivity independently (bigger divisor = slower) */
-        <&zip_y_scaler 1 10>,
+        <&zip_y_scaler 1 16,
 
         /* Convert XY to scroll wheel events (now: X=0 => no horizontal scroll) */
         <&zip_xy_to_scroll_mapper>,

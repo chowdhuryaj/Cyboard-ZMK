@@ -422,10 +422,15 @@
 
 &trackball_central_listener {
     input-processors =
-        <&zip_xy_scaler 1 6>,
-        // make this trackball output scrolling events by default instead of cursor movement,,,
+        /* Disable horizontal by zeroing REL_X before XY->scroll mapping */
+        <&zip_x_scaler 0 1>,
+
+        /* Set vertical sensitivity independently (bigger divisor = slower) */
+        <&zip_y_scaler 1 10>,
+
+        /* Convert XY to scroll wheel events (now: X=0 => no horizontal scroll) */
         <&zip_xy_to_scroll_mapper>,
-        <&zip_scroll_x_scaler 0 1>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,
+
+        /* Natural / inverted vertical scroll */
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };

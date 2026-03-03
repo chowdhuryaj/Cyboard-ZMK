@@ -383,9 +383,9 @@
         base {
             bindings = <
 &kp HOME  &as N1    &as N2                    &as N3    &as N4        &as N5                                       &as N6     &as N7          &as N8            &as N9         &as N0        &kp PG_UP
-&kp END   &kp P     &kp F                     &kp L     &kp K         &kp Q                                        &as EQUAL  &kp Y           &kp O             &kp U          &kp SQT       &kp PG_DN
-&kp B     &kp N     &kp S                     &kp H     &kp T         &kp J                                        &kp G      &kp C           &kp A             &kp E          &kp I         &as SEMI
-&as BSLH  &kp X     &kp V                     &kp M     &kp D         &kp Z                                        &as MINUS  &kp W           &as COMMA         &as DOT        &as FSLH      &kp F11
+&kp END   &kp P     &kp F                     &kp L     &kp K         &kp Q                                        &as EQUAL  &kp G           &kp O             &kp U          &kp SQT       &kp PG_DN
+&kp B     &kp N     &kp S                     &kp H     &kp T         &kp M                                        &kp Y      &kp C           &kp A             &kp E          &kp I         &as SEMI
+&as BSLH  &kp X     &kp V                     &kp J     &kp D         &kp Z                                        &as MINUS  &kp W           &as COMMA         &as DOT        &as FSLH      &kp F11
 &mkp MB4  &mkp MB5  &hml LS(LA(LCTRL)) GRAVE  &lt 1 F7  &lt 2 F8                                                              &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
                                                         &magic_left   &hml LCTRL DEL  &hml LS(LA(LC(LGUI))) TAB    &mkp MB1   &mkp MB2        &magic_right
                                                         &hml LSHFT R  &hml LGUI BSPC  &hml LALT LS(TAB)            &mkp MB3   &hmr RGUI BSPC  &hmr RSHFT SPACE

@@ -368,6 +368,12 @@
             key-positions = <28 27>;
             timeout-ms = <20>;
         };
+
+        right_esc {
+            bindings = <&kp ESC>;
+            key-positions = <34 33>;
+            timeout-ms = <20>;
+        };
     };
 
     macros {

@@ -279,51 +279,6 @@
                 max-prior-idle-ms = <500>;
             };
         };
-
-        bdel: bdel {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BDEL";
-            bindings = <&kp BSPC>, <&kp DEL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
-
-        layer_bdel: layer_bdel {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_BDEL";
-            bindings = <&mo>, <&bdel>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-        };
-
-        layer_magic_left: layer_magic_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_MAGIC_LEFT";
-            bindings = <&mo>, <&magic_left>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            require-prior-idle-ms = <165>;
-            quick-tap-ms = <150>;
-        };
-
-        layer_magic_right: layer_magic_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_MAGIC_RIGHT";
-            bindings = <&mo>, <&magic_right>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            require-prior-idle-ms = <165>;
-            quick-tap-ms = <150>;
-        };
     };
 
     combos {
@@ -427,13 +382,13 @@
 
         base {
             bindings = <
-&kp HOME  &as N1    &as N2     &as N3  &as N4                 &as N5                           &as N6     &as N7           &as N8                  &as N9         &as N0        &kp PG_UP
-&kp END   &kp P     &kp F      &kp L   &kp K                  &kp Q                            &as EQUAL  &kp Y            &kp O                   &kp U          &kp SQT       &kp PG_DN
-&kp B     &kp N     &kp S      &kp H   &kp T                  &kp J                            &kp G      &kp C            &kp A                   &kp E          &kp I         &as SEMI
-&as BSLH  &kp X     &kp V      &kp M   &kp D                  &kp Z                            &as MINUS  &kp W            &as COMMA               &as DOT        &as FSLH      &kp F11
-&as LBKT  &as RBKT  &as GRAVE  &kp F7  &kp F8                                                             &mt PG_DN DOWN   &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                       &layer_magic_left 1 0  &mkp MB4        &mkp MB5         &mkp MB1   &mkp MB2         &layer_magic_right 2 0
-                                       &hml LSHFT R           &hml LGUI BSPC  &hml LALT DEL    &mkp MB3   &hmr RGUI ENTER  &hmr RSHFT SPACE
+&kp HOME  &as N1    &as N2                    &as N3    &as N4        &as N5                                       &as N6     &as N7          &as N8            &as N9         &as N0        &kp PG_UP
+&kp END   &kp P     &kp F                     &kp L     &kp K         &kp Q                                        &as EQUAL  &kp Y           &kp O             &kp U          &kp SQT       &kp PG_DN
+&kp B     &kp N     &kp S                     &kp H     &kp T         &kp J                                        &kp G      &kp C           &kp A             &kp E          &kp I         &as SEMI
+&as BSLH  &kp X     &kp V                     &kp M     &kp D         &kp Z                                        &as MINUS  &kp W           &as COMMA         &as DOT        &as FSLH      &kp F11
+&mkp MB4  &mkp MB5  &hml LS(LA(LCTRL)) GRAVE  &lt 1 F7  &lt 2 F8                                                              &mt PG_DN DOWN  &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
+                                                        &magic_left   &hml LCTRL DEL  &hml LS(LA(LC(LGUI))) TAB    &mkp MB1   &mkp MB2        &magic_right
+                                                        &hml LSHFT R  &hml LGUI BSPC  &hml LALT LS(TAB)            &mkp MB3   &hmr RGUI BSPC  &hmr RSHFT SPACE
             >;
         };
 
@@ -468,9 +423,9 @@
 &trackball_central_listener {
     input-processors =
         <&zip_xy_scaler 1 6>,
-        // make this trackball output scrolling events by default instead of cursor movement,,
+        // make this trackball output scrolling events by default instead of cursor movement,,,
         <&zip_xy_to_scroll_mapper>,
         <&zip_scroll_x_scaler 0 1>,
-        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,
+        // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,,,
         <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
 };

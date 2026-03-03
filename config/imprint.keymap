@@ -422,15 +422,7 @@
 
 &trackball_central_listener {
     input-processors =
-        /* Disable horizontal by zeroing REL_X before XY->scroll mapping */
         <&zip_x_scaler 0 1>,
-
-        /* Set vertical sensitivity independently (bigger divisor = slower) */
-        <&zip_y_scaler 1 16,
-
-        /* Convert XY to scroll wheel events (now: X=0 => no horizontal scroll) */
-        <&zip_xy_to_scroll_mapper>,
-
-        /* Natural / inverted vertical scroll */
-        <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+        <&zip_y_scaler 1 16>,
+        <&zip_xy_to_scroll_mapper>;
 };

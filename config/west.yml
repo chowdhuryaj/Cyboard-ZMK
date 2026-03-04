@@ -8,7 +8,12 @@ manifest:
       url-base: https://github.com/urob
 
   projects:
-
+  
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+      
     - name: zmk-keyboards
       remote: Cyboard-DigitalTailor
       revision: main

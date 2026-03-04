@@ -7,11 +7,6 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
     - name: darknao
-      url-base: https://github.com/darknao
-    - name: kot149
-      url-base: https://github.com/kot149
-    - name: ambrosia
-      url-base: https://github.com/ambrosia
 
   projects:
 
@@ -20,40 +15,11 @@ manifest:
       revision: main
       import: config/west.yml
 
-    - name: zmk
-      remote: darknao
-      revision: zmk-perkey_ug
-      import: app/west.yml
-
-    - name: zmk-scroll-snap
-      remote: kot149
-      revision: v1
-
     # urob modules
     - name: zmk-adaptive-key
       remote: urob
       revision: main
       path: modules/zmk/adaptive-key
-
-    - name: zmk-auto-layer
-      remote: urob
-      revision: main
-      path: modules/zmk/auto-layer
-
-    - name: zmk-leader-key
-      remote: urob
-      revision: main
-      path: modules/zmk/leader-key
-
-    - name: zmk-tri-state
-      remote: urob
-      revision: main
-      path: modules/zmk/tri-state
-
-    - name: zmk-behavior-magic-keys
-      remote: ambrosia
-      revision: single-instance
-      path: modules/zmk/zmk-behavior-magic-keys
 
   self:
     path: config

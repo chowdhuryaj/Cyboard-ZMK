@@ -18,7 +18,7 @@
 #
 ---
 include:
-  - board: assimilator-bt/zmk
+  - board: assimilator-bt
     shield: imprint_left
-  - board: assimilator-bt/zmk
+  - board: assimilator-bt
     shield: imprint_right

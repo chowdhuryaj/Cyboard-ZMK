@@ -392,7 +392,7 @@
 
         del_word {
             bindings = <&kp LC(DEL)>;
-            key-positions = <28 27>;
+            key-positions = <25 26 27>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
@@ -433,6 +433,13 @@
         log_hmail {
             bindings = <&hcmc_email>;
             key-positions = <63 20 19>;
+        };
+
+        paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <28 27>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
     };
 

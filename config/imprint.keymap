@@ -84,6 +84,12 @@
                 max-prior-idle-ms = <500>;
             };
 
+            I_to_NG {
+                trigger-keys = <I>;
+                bindings = <&kp N &kp G>;
+                max-prior-idle-ms = <500>;
+            };
+
             N_to_G {
                 trigger-keys = <N>;
                 bindings = <&kp G>;
@@ -201,6 +207,12 @@
             W_to_Y {
                 trigger-keys = <W>;
                 bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+            I_to_ON {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp N>;
                 max-prior-idle-ms = <500>;
             };
 

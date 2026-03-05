@@ -96,6 +96,12 @@
                 max-prior-idle-ms = <500>;
             };
 
+            Q_to_U {
+                trigger-keys = <Q>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <500>;
+            };
+
             space_to_the {
                 trigger-keys = <SPACE>;
                 bindings = <&kp T &kp H &kp E>;

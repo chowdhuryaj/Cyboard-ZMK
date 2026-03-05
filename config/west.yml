@@ -15,6 +15,7 @@ manifest:
 
     - name: zmk-keyboards
       remote: chowdhuryaj
+      repo-path: Cyboard-ZMK-keyboards
       revision: main
       import: config/west.yml
 

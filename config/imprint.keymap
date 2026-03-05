@@ -323,77 +323,70 @@
     combos {
         compatible = "zmk,combos";
 
-        left_tab {
-            bindings = <&kp TAB>;
+        copy_cut {
+            bindings = <&mt LC(X) LC(C)>;
             key-positions = <27 26>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
 
-        left_esc {
-            bindings = <&kp ESC>;
+        bspc_word {
+            bindings = <&kp LC(BSPC)>;
             key-positions = <25 26>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
 
-        right_enter {
-            bindings = <&kp ENTER>;
+        sel_prev_word {
+            bindings = <&kp LS(LC(LEFT))>;
             key-positions = <31 32>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
 
-        right_tab {
-            bindings = <&kp TAB>;
+        sel_next_word {
+            bindings = <&kp LS(LC(RIGHT))>;
             key-positions = <32 33>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
 
-        lctrl {
-            bindings = <&sk LCTRL>;
+        left_a {
+            bindings = <&kp A>;
             key-positions = <15 27>;
         };
 
-        lalt {
-            bindings = <&sk LALT>;
+        left_e {
+            bindings = <&kp E>;
             key-positions = <26 14>;
         };
 
-        lgui {
-            bindings = <&sk LCMD>;
+        left_y {
+            bindings = <&kp Y>;
             key-positions = <16 28>;
         };
 
-        rctrl {
-            bindings = <&sk LCTRL>;
-            key-positions = <20 32>;
+        left_i {
+            bindings = <&kp I>;
+            key-positions = <13 25>;
             timeout-ms = <25>;
         };
 
-        ralt {
-            bindings = <&sk LALT>;
-            key-positions = <21 33>;
+        left_o {
+            bindings = <&kp O>;
+            key-positions = <28 40>;
             timeout-ms = <25>;
         };
 
-        rgui {
-            bindings = <&sk LCMD>;
-            key-positions = <19 31>;
+        left_u {
+            bindings = <&kp U>;
+            key-positions = <27 39>;
             timeout-ms = <25>;
         };
 
-        left_enter {
-            bindings = <&kp RET>;
+        del_word {
+            bindings = <&kp LC(DEL)>;
             key-positions = <28 27>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-        };
-
-        right_esc {
-            bindings = <&kp ESC>;
-            key-positions = <34 33>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
@@ -414,6 +407,26 @@
             bindings = <&kp LS(F8)>;
             key-positions = <60 66>;
             timeout-ms = <20>;
+        };
+
+        log_fv {
+            bindings = <&fv>;
+            key-positions = <63 18>;
+        };
+
+        log_u {
+            bindings = <&umn>;
+            key-positions = <63 19>;
+        };
+
+        log_h {
+            bindings = <&hcmc>;
+            key-positions = <63 20>;
+        };
+
+        log_hmail {
+            bindings = <&hcmc_email>;
+            key-positions = <63 20 19>;
         };
     };
 
@@ -471,6 +484,20 @@
             #binding-cells = <0>;
             bindings = <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
             label = "UMN";
+        };
+
+        dbl_click: dbl_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &mkp MB1>;
+            label = "DBL_CLICK";
+        };
+
+        triple_click: triple_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &mkp MB1 &mkp MB1>;
+            label = "TRIPLE_CLICK";
         };
     };
 

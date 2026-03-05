@@ -315,24 +315,28 @@
             bindings = <&kp TAB>;
             key-positions = <27 26>;
             timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
 
         left_esc {
             bindings = <&kp ESC>;
             key-positions = <25 26>;
             timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
 
         right_enter {
             bindings = <&kp ENTER>;
             key-positions = <31 32>;
             timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
 
         right_tab {
             bindings = <&kp TAB>;
             key-positions = <32 33>;
             timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
 
         lctrl {
@@ -372,11 +376,31 @@
             bindings = <&kp RET>;
             key-positions = <28 27>;
             timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
         };
 
         right_esc {
             bindings = <&kp ESC>;
             key-positions = <34 33>;
+            timeout-ms = <20>;
+            require-prior-idle-ms = <150>;
+        };
+
+        dictate {
+            bindings = <&kp GRAVE>;
+            key-positions = <29 28>;
+            timeout-ms = <20>;
+        };
+
+        prev_field {
+            bindings = <&kp LS(F7)>;
+            key-positions = <59 65>;
+            timeout-ms = <20>;
+        };
+
+        next_field {
+            bindings = <&kp LS(F8)>;
+            key-positions = <60 66>;
             timeout-ms = <20>;
         };
     };
@@ -443,13 +467,13 @@
 
         base {
             bindings = <
-&kp HOME  &as N1    &as N2                    &as N3    &as N4        &as N5                                        &as N6     &as N7            &as N8            &as N9         &as N0        &kp PG_UP
-&kp END   &kp X     &kp F                     &kp K     &magic_left   &kp Q                                         &as EQUAL  &magic_right      &kp O             &kp U          &kp SQT       &kp PG_DN
-&kp B     &kp N     &kp S                     &kp H     &kp T         &kp M                                         &kp G      &kp C             &kp A             &kp E          &kp I         &as SEMI
-&as BSLH  &kp P     &kp V                     &kp J     &kp D         &kp Z                                         &as MINUS  &kp W             &as COMMA         &as DOT        &as FSLH      &kp F11
-&mkp MB4  &mkp MB5  &hml LS(LA(LCTRL)) GRAVE  &lt 1 F7  &lt 2 F8                                                               &mt PG_DN DOWN    &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                                        &hml LGUI L   &hml LALT DEL    &hml LS(LA(LC(LGUI))) TAB    &mkp MB1   &mkp MB2          &hmr RGUI Y
-                                                        &hml LSHFT R  &hml LCTRL BSPC  &hml LALT LS(TAB)            &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
+&kp HOME  &as N1    &as N2    &as N3    &as N4        &as N5                            &as N6     &as N7            &as N8            &as N9         &as N0        &kp PG_UP
+&kp END   &kp X     &kp F     &kp K     &magic_left   &kp Q                             &as EQUAL  &magic_right      &kp O             &kp U          &kp SQT       &kp PG_DN
+&kp B     &kp N     &kp S     &kp H     &kp T         &kp M                             &kp G      &kp C             &kp A             &kp E          &kp I         &as SEMI
+&as BSLH  &kp P     &kp V     &kp J     &kp D         &kp Z                             &as MINUS  &kp W             &as COMMA         &as DOT        &as FSLH      &kp F11
+&mkp MB4  &mkp MB5  &mkp MB2  &lt 1 F7  &lt 2 F8                                                   &mt PG_DN DOWN    &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
+                                        &hml LGUI L   &hml LALT DEL    &lt 1 TAB        &mkp MB1   &hmr RALT ESC     &hmr RGUI Y
+                                        &hml LSHFT R  &hml LCTRL BSPC  &lt 2 LS(TAB)    &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
             >;
         };
 

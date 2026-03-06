@@ -392,13 +392,6 @@
             require-prior-idle-ms = <150>;
         };
 
-        enter {
-            bindings = <&kp ENTER>;
-            key-positions = <16 28 16 28>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <140>;
-        };
-
         btab {
             bindings = <&kp LS(TAB)>;
             key-positions = <26 14>;
@@ -479,6 +472,11 @@
             key-positions = <29 17>;
             timeout-ms = <30>;
             require-prior-idle-ms = <140>;
+        };
+
+        ent {
+            bindings = <&mt LC(SPACE) ENTER>;
+            key-positions = <16 28>;
         };
     };
 

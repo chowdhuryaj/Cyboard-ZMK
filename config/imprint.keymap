@@ -342,13 +342,6 @@
             require-prior-idle-ms = <150>;
         };
 
-        bspc_word {
-            bindings = <&kp LC(BSPC)>;
-            key-positions = <25 26>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-        };
-
         sel_prev_word {
             bindings = <&kp LS(LC(LEFT))>;
             key-positions = <31 32>;
@@ -363,36 +356,24 @@
             require-prior-idle-ms = <150>;
         };
 
-        left_a {
-            bindings = <&kp A>;
-            key-positions = <15 27>;
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 28 16 28>;
         };
 
-        left_e {
-            bindings = <&kp E>;
+        btab {
+            bindings = <&kp LS(TAB)>;
             key-positions = <26 14>;
         };
 
-        left_y {
-            bindings = <&kp Y>;
-            key-positions = <16 28>;
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <27 15>;
         };
 
-        left_i {
-            bindings = <&kp I>;
+        esc {
+            bindings = <&kp ESC>;
             key-positions = <13 25>;
-            timeout-ms = <25>;
-        };
-
-        left_o {
-            bindings = <&kp O>;
-            key-positions = <28 40>;
-            timeout-ms = <25>;
-        };
-
-        left_u {
-            bindings = <&kp U>;
-            key-positions = <27 39>;
             timeout-ms = <25>;
         };
 
@@ -411,13 +392,13 @@
 
         prev_field {
             bindings = <&kp LS(F7)>;
-            key-positions = <59 65>;
+            key-positions = <39 51>;
             timeout-ms = <20>;
         };
 
         next_field {
             bindings = <&kp LS(F8)>;
-            key-positions = <60 66>;
+            key-positions = <52 40>;
             timeout-ms = <20>;
         };
 
@@ -450,7 +431,7 @@
 
         undo_redo {
             bindings = <&mt LC(Y) LC(Z)>;
-            key-positions = <27 26 28>;
+            key-positions = <26 25>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
@@ -537,8 +518,8 @@
 &as B     &as N     &as S     &as H     &as T                 &as M                             &as G      &as C             &as A                   &as E          &as I         &as SEMI
 &as BSLH  &as P     &as V     &as J     &as D                 &as Z                             &as MINUS  &as W             &as COMMA               &as DOT        &as FSLH      &kp F11
 &mkp MB4  &mkp MB5  &mkp MB2  &lt 1 F7  &lt 2 F8                                                           &mt PG_DN DOWN    &mt HOME LEFT           &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                        &mt_magc_left LGUI 0  &hml LALT DEL    &lt 1 TAB        &mkp MB1   &hmr RALT ESC     &mt_magic_right RGUI 0
-                                        &hml LSHFT R          &hml LCTRL BSPC  &lt 2 LS(TAB)    &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
+                                        &mt_magc_left LGUI 0  &hml LALT DEL    &dbl_click       &mkp MB1   &hmr RALT ESC     &mt_magic_right RGUI 0
+                                        &hml LSHFT R          &hml LCTRL BSPC  &triple_click    &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
             >;
         };
 

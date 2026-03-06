@@ -66,9 +66,9 @@
                 max-prior-idle-ms = <500>;
             };
 
-            L_to_M {
+            L_to_Y {
                 trigger-keys = <L>;
-                bindings = <&kp L>;
+                bindings = <&kp Y>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -90,9 +90,40 @@
                 max-prior-idle-ms = <500>;
             };
 
-            N_to_G {
+            N_to_Y {
                 trigger-keys = <N>;
-                bindings = <&kp G>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+
+            D_to_Y {
+                trigger-keys = <D>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+            F_to_Y {
+                trigger-keys = <F>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+            K_to_Y {
+                trigger-keys = <K>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+            T_to_Y {
+                trigger-keys = <T>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+            V_to_Y {
+                trigger-keys = <V>;
+                bindings = <&kp Y>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -212,6 +243,13 @@
 
             C_to_Y {
                 trigger-keys = <C>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <500>;
+            };
+
+
+            G_to_Y {
+                trigger-keys = <G>;
                 bindings = <&kp Y>;
                 max-prior-idle-ms = <500>;
             };

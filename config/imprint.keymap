@@ -102,6 +102,12 @@
                 max-prior-idle-ms = <500>;
             };
 
+            B_ecause {
+                trigger-keys = <B>;
+                bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;
+                max-prior-idle-ms = <500>;
+            };
+
             space_to_the {
                 trigger-keys = <SPACE>;
                 bindings = <&kp T &kp H &kp E>;

@@ -557,7 +557,7 @@
         base {
             bindings = <
 &kp HOME  &as N1    &as N2    &as N3    &as N4        &as N5                            &as N6     &as N7            &as N8            &as N9         &as N0        &kp PG_UP
-&kp END   &as X     &as F     &kp K     &magic_right  &kp Q                             &as EQUAL  &magic_right      &as O             &as U          &as SQT       &kp PG_DN
+&kp END   &as X     &as F     &kp K     &magic_left   &kp Q                             &as EQUAL  &magic_right      &as O             &as U          &as SQT       &kp PG_DN
 &as B     &as N     &as S     &as H     &as T         &as M                             &as G      &as C             &as A             &as E          &as I         &as SEMI
 &as BSLH  &as P     &as V     &as J     &as D         &as Z                             &as MINUS  &as W             &as COMMA         &as DOT        &as FSLH      &kp F11
 &mkp MB4  &mkp MB5  &mkp MB2  &lt 1 F7  &lt 2 F8                                                   &mt PG_DN DOWN    &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
@@ -596,7 +596,7 @@
 
 &trackball_central_listener {
     input-processors =
-        <&zip_x_scaler 0 1>, 
+        <&zip_x_scaler 0 1>,
         <&zip_y_scaler 1 12>,
         <&zip_xy_to_scroll_mapper>;
 };

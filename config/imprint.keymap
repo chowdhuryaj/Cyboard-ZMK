@@ -561,7 +561,7 @@
 &as B     &as N     &as S     &as H     &as T         &as M                             &as G      &as C             &as A             &as E          &as I         &as SEMI
 &as BSLH  &as P     &as V     &as J     &as D         &as Z                             &as MINUS  &as W             &as COMMA         &as DOT        &as FSLH      &kp F11
 &mkp MB4  &mkp MB5  &mkp MB2  &lt 1 F7  &lt 2 F8                                                   &mt PG_DN DOWN    &mt HOME LEFT     &mt END RIGHT  &mt PG_UP UP  &kp F12
-                                        &hml LGUI L   &hml LALT DEL    &dbl_click       &mkp MB1   &hmr RALT ESC     &hmr RGUI Y
+                                        &hml LGUI L   &hml LALT DEL    &dbl_click       &mkp MB1   &mkp MB2          &hmr RGUI Y
                                         &hml LSHFT R  &hml LCTRL BSPC  &triple_click    &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
             >;
         };

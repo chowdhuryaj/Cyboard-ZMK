@@ -606,10 +606,9 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-trackball_peripheral_listener {
-    input-processors =
-        <&zip_temp_layer 1 200>,
-        <excluded-positions = <68>;
+&trackball_peripheral_listener {
+    input-processors = <&zip_temp_layer 1 200>;
+    excluded-positions = <68>;
 };
 
 &trackball_central_listener {

@@ -66,14 +66,14 @@
                 max-prior-idle-ms = <500>;
             };
 
-            L_to_Y {
+            L_to_R {
                 trigger-keys = <L>;
-                bindings = <&kp Y>;
+                bindings = <&kp R>;
                 max-prior-idle-ms = <500>;
             };
 
-            H_to_L {
-                trigger-keys = <H>;
+            R_to_L {
+                trigger-keys = <R>;
                 bindings = <&kp L>;
                 max-prior-idle-ms = <500>;
             };
@@ -90,39 +90,15 @@
                 max-prior-idle-ms = <500>;
             };
 
-            N_to_Y {
+            N_to_G {
                 trigger-keys = <N>;
-                bindings = <&kp Y>;
+                bindings = <&kp G>;
                 max-prior-idle-ms = <500>;
             };
 
-            D_to_Y {
-                trigger-keys = <D>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <500>;
-            };
-
-            F_to_Y {
-                trigger-keys = <F>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <500>;
-            };
-
-            K_to_Y {
+            K_to_H {
                 trigger-keys = <K>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <500>;
-            };
-
-            T_to_Y {
-                trigger-keys = <T>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <500>;
-            };
-
-            V_to_Y {
-                trigger-keys = <V>;
-                bindings = <&kp Y>;
+                bindings = <&kp H>;
                 max-prior-idle-ms = <500>;
             };
 
@@ -597,6 +573,6 @@
 &trackball_central_listener {
     input-processors =
         <&zip_x_scaler 0 1>,
-        <&zip_y_scaler 1 12>,
+        <&zip_y_scaler 1 16>,
         <&zip_xy_to_scroll_mapper>;
 };

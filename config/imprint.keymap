@@ -588,7 +588,7 @@
 &none  &as P   &as V   &as J   &as D         &as Z                         &as MINUS  &as W         &as COMMA         &as DOT  &as FSLH  &none
 &none  &none   &none   &none   &none                                                  &none         &none             &none    &none     &none
                                &hml LGUI L   &hml LALT DEL    &mdbl 1 0    &mkp MB1   &mkp MB2      &hmr RGUI Y
-                               &hml LSHFT R  &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mtog 1 1     &hmr RSHFT SPACE
+                               &hml LSHFT R  &hml LCTRL BSPC  &mtpl 5 0    &mkp MB3   &mtog 1 1     &hmr RSHFT SPACE
             >;
         };
 
@@ -601,6 +601,42 @@
 &trans  &trans  &trans         &trans          &trans                                   &trans    &trans    &trans     &trans  &trans
                                                &trans         &trans  &trans    &trans  &trans    &trans
                                                &trans         &trans  &trans    &trans  &trans    &trans
+            >;
+        };
+
+        snipe {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        swipe {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        drag {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 

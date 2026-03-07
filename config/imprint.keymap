@@ -1,11 +1,11 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <scroll-snap.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
-#include <scroll-snap.dtsi>
 
 &mt {
     tapping-term-ms = <180>;
@@ -583,11 +583,11 @@
 
         base {
             bindings = <
-&none  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6     &as N7        &as N8            &as N9   &as N0    &none
-&none  &kp X   &kp F   &kp K   &magic_left   &lt 4 Q                         &as EQUAL  &magic_right  &kp O             &kp U    &as SQT   &none
-&kp B  &kp N   &kp S   &kp H   &kp T         &lt 3 M                         &lt 4 G    &kp C         &kp A             &kp E    &kp I     &as SEMI
-&none  &kp P   &kp V   &kp J   &kp D         &lt 2 Z                         &as MINUS  &kp W         &as COMMA         &as DOT  &as FSLH  &none
-&none  &none   &none   &none   &none                                                    &none         &none             &none    &none     &none
+&none  &as N1  &as N2  &as N3  &as N4        &as N5                        &as N6     &as N7        &as N8            &as N9   &as N0    &none
+&none  &kp X   &kp F   &kp K   &magic_left   &lt 4 Q                       &as EQUAL  &magic_right  &kp O             &kp U    &as SQT   &none
+&kp B  &kp N   &kp S   &kp H   &kp T         &lt 3 M                       &lt 4 G    &kp C         &kp A             &kp E    &kp I     &as SEMI
+&none  &kp P   &kp V   &kp J   &kp D         &lt 2 Z                       &as MINUS  &kp W         &as COMMA         &as DOT  &as FSLH  &none
+&none  &none   &none   &none   &none                                                  &none         &none             &none    &none     &none
                                &hml LGUI L   &hml LALT DEL    &mdbl 1 0    &mkp MB1   &mkp MB2      &hmr RGUI Y
                                &hml LSHFT R  &hml LCTRL BSPC  &mtpl 5 0    &mkp MB3   &mtog 1 1     &hmr RSHFT SPACE
             >;
@@ -595,13 +595,13 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans         &trans          &trans         &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans         &mt PG_UP UP    &trans         &trans            &trans  &trans    &kp UP    &trans     &trans  &trans
-&trans  &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans         &trans          &trans         &trans            &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans         &trans          &trans                                   &trans    &trans    &trans     &trans  &trans
-                                               &trans         &trans  &trans    &trans  &trans    &trans
-                                               &trans         &trans  &trans    &trans  &trans    &trans
+&trans  &kp F1  &kp F2         &kp F3          &kp F4         &kp F5            &trans   &trans       &trans    &trans     &trans  &trans
+&trans  &trans  &kp ESC        &mt PG_UP UP    &kp ENTER      &kp F7            &kp F11  &kp LS(TAB)  &kp UP    &kp TAB    &trans  &trans
+&trans  &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &kp F8            &kp F12  &kp LEFT     &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &kp N1  &kp N2         &kp N3          &kp N4         &kp N5            &kp N6   &kp N7       &kp N8    &kp N9     &kp N0  &trans
+&trans  &trans  &trans         &trans          &trans                                    &trans       &trans    &trans     &trans  &trans
+                                               &trans         &trans  &trans    &trans   &trans       &trans
+                                               &trans         &trans  &trans    &trans   &trans       &trans
             >;
         };
 
@@ -658,30 +658,25 @@
 };
 
 &trackball_peripheral_listener {
-    input-processors =
-        <&zip_temp_layer 1 120>;
+    input-processors = <&zip_temp_layer 1 120>;
 
     scroll {
         layers = <4>;
-        input-processors = 
-        <&zip_x_scaler 1 16>,
-        <&zip_y_scaler 1 12>,
-        <&zip_xy_to_scroll_mapper>,
-        <&zip_scroll_snap>;
+        input-processors =
+            <&zip_x_scaler 1 16>,
+            <&zip_y_scaler 1 12>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_snap>;
     };
 
     snipe {
         layers = <2>;
-        input-processors = 
-        <&zip_x_scaler 1 4>,
-        <&zip_y_scaler 1 4>;
+        input-processors = <&zip_x_scaler 1 4>, <&zip_y_scaler 1 4>;
     };
 
     swipe {
         layers = <3>;
-        input-processors = 
-        <&zip_x_scaler 2 1>,
-        <&zip_y_scaler 2 1>;
+        input-processors = <&zip_x_scaler 2 1>, <&zip_y_scaler 2 1>;
     };
 };
 

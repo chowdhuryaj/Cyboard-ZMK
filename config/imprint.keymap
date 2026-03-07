@@ -455,7 +455,7 @@
         };
 
         ent {
-            bindings = <&mt LC(SPACE) ENTER>;
+            bindings = <&kp ENTER>;
             key-positions = <16 28>;
         };
 
@@ -482,6 +482,27 @@
         quit {
             bindings = <&kp LG(Q)>;
             key-positions = <17 29>;
+        };
+
+        rbtab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <21 33>;
+        };
+
+        rtab {
+            bindings = <&kp TAB>;
+            key-positions = <20 32>;
+        };
+
+        resc {
+            bindings = <&kp ESC>;
+            key-positions = <22 34>;
+            timeout-ms = <25>;
+        };
+
+        rent {
+            bindings = <&kp ENTER>;
+            key-positions = <19 31>;
         };
     };
 

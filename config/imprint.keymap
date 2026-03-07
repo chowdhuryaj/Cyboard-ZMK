@@ -454,6 +454,16 @@
             bindings = <&mt LC(SPACE) ENTER>;
             key-positions = <16 28>;
         };
+
+        close {
+            bindings = <&kp LC(W)>;
+            key-positions = <28 40>;
+        };
+
+        ntab {
+            bindings = <&kp LC(T)>;
+            key-positions = <27 39>;
+        };
     };
 
     macros {

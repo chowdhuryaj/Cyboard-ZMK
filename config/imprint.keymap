@@ -321,26 +321,37 @@
             };
         };
 
-        mt_magc_left: mt_magc_left {
+        mtog: mtog {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_MAGC_LEFT";
-            bindings = <&kp>, <&magic_left>;
+            label = "MTOG";
+            bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
+            quick-tap-ms = <0>;
+            hold-while-undecided;
         };
 
-        mt_magic_right: mt_magic_right {
+        mdbl: mdbl {
             compatible = "zmk,behavior-hold-tap";
-            label = "MT_MAGIC_RIGHT";
-            bindings = <&kp>, <&magic_right>;
+            label = "MDBL";
+            bindings = <&mo>, <&dbl_click>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
+            quick-tap-ms = <0>;
+            hold-while-undecided;
+        };
+
+        mtpl: mtpl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTPL";
+            bindings = <&mo>, <&triple_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            hold-while-undecided;
         };
     };
 
@@ -464,6 +475,21 @@
             bindings = <&kp LC(T)>;
             key-positions = <27 39>;
         };
+
+        mb4 {
+            bindings = <&mkp MB4>;
+            key-positions = <60 61>;
+        };
+
+        mb5 {
+            bindings = <&mkp MB5>;
+            key-positions = <66 67>;
+        };
+
+        quit {
+            bindings = <&kp LG(Q)>;
+            key-positions = <17 29>;
+        };
     };
 
     macros {
@@ -542,25 +568,25 @@
 
         base {
             bindings = <
-&none  &as N1    &as N2    &as N3    &as N4        &as N5                            &as N6     &as N7            &as N8            &as N9         &as N0        &none
-&none  &as X     &as F     &kp K     &magic_left   &kp Q                             &as EQUAL  &magic_right      &as O             &as U          &as SQT       &none
-&as B  &as N     &as S     &as H     &as T         &as M                             &as G      &as C             &as A             &as E          &as I         &as SEMI
-&none  &as P     &as V     &as J     &as D         &as Z                             &as MINUS  &as W             &as COMMA         &as DOT        &as FSLH      &none
-&none  &none     &none     &none     &none                                                      &none             &none             &none          &none         &none            
-                                        &hml LGUI L   &hml LALT DEL    &dbl_click       &mkp MB1   &mkp MB2          &hmr RGUI Y
-                                        &hml LSHFT R  &hml LCTRL BSPC  &triple_click    &mkp MB3   &hmr RCTRL ENTER  &hmr RSHFT SPACE
+&none  &as N1  &as N2  &as N3  &as N4        &as N5                        &as N6     &as N7        &as N8            &as N9   &as N0    &none
+&none  &as X   &as F   &kp K   &magic_left   &kp Q                         &as EQUAL  &magic_right  &as O             &as U    &as SQT   &none
+&as B  &as N   &as S   &as H   &as T         &as M                         &as G      &as C         &as A             &as E    &as I     &as SEMI
+&none  &as P   &as V   &as J   &as D         &as Z                         &as MINUS  &as W         &as COMMA         &as DOT  &as FSLH  &none
+&none  &none   &none   &none   &none                                                  &none         &none             &none    &none     &none
+                               &hml LGUI L   &hml LALT DEL    &mdbl 1 0    &mkp MB1   &mkp MB2      &hmr RGUI Y
+                               &hml LSHFT R  &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mtog 1 1     &hmr RSHFT SPACE
             >;
         };
 
-        numpad {
+        mouse {
             bindings = <
-&kp LS(LPAR)  &kp LS(RPAR)  &kp LBKT      &kp RBKT  &kp LS(LBRC)  &kp LS(RBRC)            &trans  &trans  &trans  &trans  &trans  &trans
-&kp MINUS     &kp N6        &kp N7        &kp N8    &kp N9        &kp DOT                 &trans  &trans  &trans  &trans  &trans  &trans
-&kp N0        &kp N1        &kp N2        &kp N3    &kp N4        &kp N5                  &trans  &trans  &trans  &trans  &trans  &trans
-&kp EQUAL     &kp FSLH      &kp LS(STAR)  &kp RET   &kp SPACE     &kp COMMA               &trans  &trans  &trans  &trans  &trans  &trans
-&kp LS(LT)    &kp LS(GT)    &trans        &trans    &trans                                        &trans  &trans  &trans  &trans  &trans
-                                                    &trans        &trans        &trans    &trans  &trans  &trans
-                                                    &mo 2         &trans        &trans    &trans  &trans  &trans
+&trans  &trans  &trans         &trans          &trans         &trans            &trans  &trans    &trans    &trans     &trans  &trans
+&trans  &trans  &trans         &mt PG_UP UP    &trans         &trans            &trans  &trans    &kp UP    &trans     &trans  &trans
+&trans  &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &trans            &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans         &trans          &trans         &trans            &trans  &trans    &trans    &trans     &trans  &trans
+&trans  &trans  &trans         &trans          &trans                                   &trans    &trans    &trans     &trans  &trans
+                                               &trans         &trans  &trans    &trans  &trans    &trans
+                                               &trans         &trans  &trans    &trans  &trans    &trans
             >;
         };
 
@@ -580,10 +606,7 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-trackball_peripheral_listener {
-    input-processors =
-        <&zip_temp_layer 1 200>;
- };
+trackball_peripheral_listener { input-processors = <&zip_temp_layer 1 200>; };
 
 &trackball_central_listener {
     input-processors =

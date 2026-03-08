@@ -683,7 +683,7 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-&trackball_peripheral_listener {
+&trackball_central_listener {
     input-processors = <&zip_temp_layer 1 120>;
 
     scroll {
@@ -706,7 +706,7 @@
     };
 };
 
-&trackball_central_listener {
+&trackball_peripheral_listener {
     input-processors =
         <&zip_x_scaler 1 16>,
         <&zip_y_scaler 1 8>,

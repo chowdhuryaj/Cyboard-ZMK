@@ -609,11 +609,11 @@
 
         base {
             bindings = <
-&kp F13  &as N1  &as N2  &as N3  &as N4                 &as N5                        &as N6     &as N7         &as N8                  &as N9   &as N0    &kp F11
-&kp F14  &kp X   &kp F   &kp L   &kp K                  &lt 4 Q                       &as EQUAL  &kp Y          &kp O                   &kp U    &as SQT   &kp F12
+&as F13  &as N1  &as N2  &as N3  &as N4                 &as N5                        &as N6     &as N7         &as N8                  &as N9   &as N0    &as F11
+&as F14  &kp X   &kp F   &kp L   &kp K                  &lt 4 Q                       &as EQUAL  &kp Y          &kp O                   &kp U    &as SQT   &as F12
 &kp B    &kp N   &kp S   &kp H   &kp T                  &lt 3 M                       &lt 4 G    &kp C          &kp A                   &kp E    &kp I     &as SEMI
 &kp F15  &kp P   &kp V   &kp J   &kp D                  &lt 2 Z                       &as MINUS  &kp W          &as COMMA               &as DOT  &as FSLH  &mtog 4 4
-&kp F1   &kp F2  &kp F3  &kp F4  &kp F5                                                          &kp F6         &kp F7                  &kp F8   &kp F9    &kp F10
+&as F1   &as F2  &as F3  &as F4  &as F5                                                          &as F6         &as F7                  &as F8   &as F9    &as F10
                                  &magic_th_left LGUI 0  &mdbl 1 0        &mtpl 5 0    &mkp MB1   &mkp MB2       &magic_th_right RGUI 0
                                  &hml LSHFT R           &hml LCTRL BSPC  &mkp MB2     &mkp MB3   &hmr RALT DEL  &hmr RSHFT SPACE
             >;

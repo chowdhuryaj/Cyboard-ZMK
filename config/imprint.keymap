@@ -684,7 +684,7 @@
 };
 
 &trackball_central_listener {
-    input-processors = <&zip_temp_layer 1 120>;
+    input-processors = <&zip_temp_layer 1 350>;
 
     scroll {
         layers = <4>;

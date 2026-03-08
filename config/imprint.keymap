@@ -623,7 +623,7 @@
             bindings = <
 &trans  &trans  &trans         &trans          &trans         &trans                   &trans         &trans         &trans    &trans     &trans  &trans
 &trans  &trans  &kp F7         &mt PG_UP UP    &kp F8         &kp F11                  &kp F11        &kp F7         &kp UP    &kp F8     &trans  &trans
-&trans  &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &kp F12                  &kp F12        &kp LEFT       &kp DOWN  &kp RIGHT  &trans  &trans
+&to 0   &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &kp F12                  &kp F12        &kp LEFT       &kp DOWN  &kp RIGHT  &trans  &trans
 &trans  &trans  &trans         &trans          &kp LC(MINUS)  &kp LC(EQUAL)            &kp LC(EQUAL)  &kp LC(MINUS)  &trans    &trans     &trans  &trans
 &trans  &trans  &trans         &trans          &trans                                                 &trans         &trans    &trans     &trans  &trans
                                                &trans         &trans         &trans    &trans         &trans         &trans

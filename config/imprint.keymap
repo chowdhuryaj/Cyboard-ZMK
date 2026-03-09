@@ -89,87 +89,104 @@
             hold-while-undecided;
         };
 
-/* =========================
+        /* =========================
  * Adaptive Space behavior
  * Default output: SPACE
  * max-prior-idle-ms = 1000 for every rule
  * ========================= */
 
-adapt_space: adapt_space {
-    compatible = "zmk,behavior-adaptive-key";
-    label = "ADAPT_SPACE";
-    #binding-cells = <0>;
+        adapt_space: adapt_space {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "ADAPT_SPACE";
+            #binding-cells = <0>;
 
-    /* default output */
-    bindings = <&kp SPACE>;
+            /* default output */
 
-    n_to_g {
-        trigger-keys = <N>;
-        bindings = <&kp G>;
-        max-prior-idle-ms = <1000>;
-    };
+            bindings = <&kp SPACE>;
 
-    c_to_y {
-        trigger-keys = <C>;
-        bindings = <&kp Y>;
-        max-prior-idle-ms = <1000>;
-    };
+            n_to_g {
+                trigger-keys = <N>;
+                bindings = <&kp G>;
+                max-prior-idle-ms = <1000>;
+            };
 
-    e_to_u {
-        trigger-keys = <E>;
-        bindings = <&kp U>;
-        max-prior-idle-ms = <1000>;
-    };
+            c_to_y {
+                trigger-keys = <C>;
+                bindings = <&kp Y>;
+                max-prior-idle-ms = <1000>;
+            };
 
-    a_to_o {
-        trigger-keys = <A>;
-        bindings = <&kp O>;
-        max-prior-idle-ms = <1000>;
-    };
+            e_to_u {
+                trigger-keys = <E>;
+                bindings = <&kp U>;
+                max-prior-idle-ms = <1000>;
+            };
 
-    y_to_ou {
-        trigger-keys = <Y>;
-        bindings = <&kp O>, <&kp U>;
-        max-prior-idle-ms = <1000>;
-    };
+            a_to_o {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+                max-prior-idle-ms = <1000>;
+            };
 
-    s_to_f {
-        trigger-keys = <S>;
-        bindings = <&kp F>;
-        max-prior-idle-ms = <1000>;
-    };
+            y_to_ou {
+                trigger-keys = <Y>;
+                bindings = <&kp O>, <&kp U>;
 
-    comma_to_space_sticky_shift {
-        trigger-keys = <COMMA>;
-        bindings = <&kp SPACE>, <&sk LSHIFT>;
-        max-prior-idle-ms = <1000>;
-    };
+                max-prior-idle-ms = <1000>;
+            };
 
-    period_to_space_sticky_shift {
-        trigger-keys = <DOT>;
-        bindings = <&kp SPACE>, <&sk LSHIFT>;
-        max-prior-idle-ms = <1000>;
-    };
+            s_to_f {
+                trigger-keys = <S>;
+                bindings = <&kp F>;
+                max-prior-idle-ms = <1000>;
+            };
 
-    slash_to_space_sticky_shift {
-        trigger-keys = <SLASH>;
-        bindings = <&kp SPACE>, <&sk LSHIFT>;
-        max-prior-idle-ms = <1000>;
-    };
+            comma_to_space_sticky_shift {
+                trigger-keys = <COMMA>;
+                bindings = <&kp SPACE>, <&sk LSHIFT>;
 
-    question_to_space_sticky_shift {
-        trigger-keys = <LS(SLASH)>;
-        bindings = <&kp SPACE>, <&sk LSHIFT>;
-        max-prior-idle-ms = <1000>;
-    };
+                max-prior-idle-ms = <1000>;
+            };
 
-    exclamation_to_space_sticky_shift {
-        trigger-keys = <LS(N1)>;
-        bindings = <&kp SPACE>, <&sk LSHIFT>;
-        max-prior-idle-ms = <1000>;
-    };
-};
+            period_to_space_sticky_shift {
+                trigger-keys = <DOT>;
+                bindings = <&kp SPACE>, <&sk LSHIFT>;
 
+                max-prior-idle-ms = <1000>;
+            };
+
+            slash_to_space_sticky_shift {
+                trigger-keys = <SLASH>;
+                bindings = <&kp SPACE>, <&sk LSHIFT>;
+
+                max-prior-idle-ms = <1000>;
+            };
+
+            question_to_space_sticky_shift {
+                trigger-keys = <LS(SLASH)>;
+                bindings = <&kp SPACE>, <&sk LSHIFT>;
+
+                max-prior-idle-ms = <1000>;
+            };
+
+            exclamation_to_space_sticky_shift {
+                trigger-keys = <LS(N1)>;
+                bindings = <&kp SPACE>, <&sk LSHIFT>;
+
+                max-prior-idle-ms = <1000>;
+            };
+        };
+
+        hmadapt: hmadapt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMADAPT";
+            bindings = <&kp>, <&adapt_space>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -387,13 +404,13 @@ adapt_space: adapt_space {
 
         base {
             bindings = <
-&as F1  &as N1  &as N2  &as N3  &as N4         &as N5                        &as N6     &as N7    &as N8            &as N9   &as N0    &kp LBKT
-&as F2  &kp X   &kp F   &kp L   &kp K          &kp Q                         &as EQUAL  &kp G     &kp O             &kp U    &as SQT   &kp RBKT
-&kp B   &kp N   &kp S   &kp H   &kp T          &kp M                         &kp Y      &kp C     &kp A             &kp E    &kp I     &as SEMI
-&as F3  &kp P   &kp V   &kp J   &kp D          &kp Z                         &as MINUS  &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
-&as F4  &as F5  &as F6  &as F7  &as F8                                                  &as F9    &as F10           &as F11  &as F12   &as F13
-                                &hmrep LALT 0  &lt 1 DEL        &mdbl 3 0    &mkp MB1   &mkp MB5  &hmrep LGUI 0
-                                &hml LSHFT R   &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
+&as F1  &as N1  &as N2  &as N3  &as N4           &as N5                        &as N6     &as N7    &as N8            &as N9   &as N0    &kp LBKT
+&as F2  &kp X   &kp F   &kp L   &kp K            &kp Q                         &as EQUAL  &kp G     &kp O             &kp U    &as SQT   &kp RBKT
+&kp B   &kp N   &kp S   &kp H   &kp T            &kp M                         &kp Y      &kp C     &kp A             &kp E    &kp I     &as SEMI
+&as F3  &kp P   &kp V   &kp J   &kp D            &kp Z                         &as MINUS  &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
+&as F4  &as F5  &as F6  &as F7  &as F8                                                    &as F9    &as F10           &as F11  &as F12   &as F13
+                                &hmadapt LALT 0  &lt 1 DEL        &mdbl 3 0    &mkp MB1   &mkp MB5  &hmrep LGUI 0
+                                &hml LSHFT R     &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
             >;
         };
 

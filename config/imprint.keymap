@@ -683,8 +683,8 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-&trackball_central_listener {
-    input-processors = <&zip_temp_layer 1 350>;
+&trackball_periheral_listener {
+    input-processors =  <&zip_x_scaler 2 1>, <&zip_y_scaler 2 1>, <&zip_temp_layer 1 350>;
 
     scroll {
         layers = <4>;
@@ -702,11 +702,11 @@
 
     swipe {
         layers = <3>;
-        input-processors = <&zip_x_scaler 2 1>, <&zip_y_scaler 2 1>;
+        input-processors = <&zip_x_scaler 4 1>, <&zip_y_scaler 4 1>;
     };
 };
 
-&trackball_peripheral_listener {
+&trackball_central_listener {
     input-processors =
         <&zip_x_scaler 1 16>,
         <&zip_y_scaler 1 8>,

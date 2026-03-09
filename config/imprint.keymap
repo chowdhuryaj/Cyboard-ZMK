@@ -531,6 +531,11 @@
             bindings = <&kp ENTER>;
             key-positions = <19 31>;
         };
+
+        swipe {
+            bindings = <&mo 3>;
+            key-positions = <61 67>;
+        };
     };
 
     macros {
@@ -684,7 +689,10 @@
 };
 
 &trackball_periheral_listener {
-    input-processors =  <&zip_x_scaler 2 1>, <&zip_y_scaler 2 1>, <&zip_temp_layer 1 350>;
+    input-processors =
+        <&zip_x_scaler 2 1>,
+        <&zip_y_scaler 2 1>,
+        <&zip_temp_layer 1 350>;
 
     scroll {
         layers = <4>;

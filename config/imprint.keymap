@@ -45,6 +45,19 @@
             flavor = "tap-preferred";
         };
 
+        hmrep: hmrep {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMREP";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            flavor = "tap-preferred";
+            hold-while-undecided;
+        };
+
         as_ht: as_ht {
             compatible = "zmk,behavior-hold-tap";
             label = "AS_HT";
@@ -53,240 +66,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
             flavor = "tap-preferred";
-        };
-
-        magic_left: magic_left {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "magic_LEFT";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
-
-            X_to_P {
-                trigger-keys = <X>;
-                bindings = <&kp P>;
-            };
-
-            L_to_R {
-                trigger-keys = <L>;
-                bindings = <&kp R>;
-            };
-
-            R_to_L {
-                trigger-keys = <R>;
-                bindings = <&kp L>;
-            };
-
-            S_to_F {
-                trigger-keys = <S>;
-                bindings = <&kp F>;
-            };
-
-            I_to_NG {
-                trigger-keys = <I>;
-                bindings = <&kp N &kp G>;
-            };
-
-            N_to_G {
-                trigger-keys = <N>;
-                bindings = <&kp G>;
-            };
-
-            K_to_H {
-                trigger-keys = <K>;
-                bindings = <&kp H>;
-            };
-
-            Q_to_U {
-                trigger-keys = <Q>;
-                bindings = <&kp U>;
-            };
-
-            B_ecause {
-                trigger-keys = <B>;
-                bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;
-            };
-
-            space_to_the {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-            };
-
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-            };
-
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                strict-modifiers;
-            };
-
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-            };
-
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-            };
-        };
-
-        magic_right: magic_right {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MAGIC_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
-
-            E_to_U {
-                trigger-keys = <E>;
-                bindings = <&kp U>;
-            };
-
-            A_to_O {
-                trigger-keys = <A>;
-                bindings = <&kp O>;
-            };
-
-            C_to_Y {
-                trigger-keys = <C>;
-                bindings = <&kp Y>;
-            };
-
-            G_to_Y {
-                trigger-keys = <G>;
-                bindings = <&kp Y>;
-            };
-
-            W_to_Y {
-                trigger-keys = <W>;
-                bindings = <&kp Y>;
-            };
-
-            I_to_ON {
-                trigger-keys = <I>;
-                bindings = <&kp O &kp N>;
-            };
-
-            space_to_and {
-                trigger-keys = <SPACE>;
-                bindings = <&kp T &kp H &kp E>;
-            };
-
-            bspc_to_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-            };
-
-            bword_to_bline {
-                trigger-keys = <LC(BSPC)>;
-                bindings = <&kp LG(BSPC)>;
-                strict-modifiers;
-            };
-
-            del_to_dword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-            };
-
-            dword_to_dline {
-                trigger-keys = <LC(DEL)>;
-                bindings = <&kp LG(DEL)>;
-                strict-modifiers;
-            };
-
-            dot_to_space_skshift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            excl_to_space_skshift {
-                trigger-keys = <EXCL>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            ques_to_space_skshift {
-                trigger-keys = <QMARK>;
-                bindings = <&kp SPACE &sk LSHFT>;
-            };
-
-            semi_to_space {
-                trigger-keys = <SEMI>;
-                bindings = <&kp SPACE>;
-            };
-
-            colon_to_space {
-                trigger-keys = <COLON>;
-                bindings = <&kp SPACE>;
-            };
-
-            apos_to_s {
-                trigger-keys = <SQT>;
-                bindings = <&kp S>;
-            };
-
-            dqt_to_comma_left {
-                trigger-keys = <DQT>;
-                bindings = <&kp COMMA &kp LEFT>;
-            };
-
-            lpar_to_rpar_left {
-                trigger-keys = <LPAR>;
-                bindings = <&kp RPAR &kp LEFT>;
-            };
-        };
-
-        mtog: mtog {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MTOG";
-            bindings = <&mo>, <&tog>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            hold-while-undecided;
         };
 
         mdbl: mdbl {
@@ -310,33 +89,6 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
         };
-
-        magic_th_left: magic_th_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_TH_LEFT";
-            bindings = <&kp>, <&magic_left>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            hold-while-undecided;
-        };
-
-        magic_th_right: magic_th_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_TH_RIGHT";
-            bindings = <&kp>, <&magic_right>;
-
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            hold-while-undecided;
-        };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -558,13 +310,13 @@
 
         base {
             bindings = <
-&as F13  &as N1  &as N2  &as N3  &as N4                 &as N5                        &as N6     &as N7    &as N8                  &as N9   &as N0    &as F11
-&as F14  &kp X   &kp F   &kp L   &kp K                  &kp Q                         &as EQUAL  &kp Y     &kp O                   &kp U    &as SQT   &as F12
-&kp B    &kp N   &kp S   &kp H   &kp T                  &kp M                         &kp G      &kp C     &kp A                   &kp E    &kp I     &as SEMI
-&as F15  &kp P   &kp V   &kp J   &kp D                  &kp Z                         &as MINUS  &kp W     &as COMMA               &as DOT  &as FSLH  &lt 5 BSLH
-&as F1   &as F2  &as F3  &as F4  &as F5                                                          &as F6    &as F7                  &as F8   &as F9    &as F10
-                                 &magic_th_left LALT 0  &lt 1 DEL        &mdbl 4 0    &mkp MB1   &mkp MB5  &magic_th_right LGUI 0
-                                 &hml LSHFT R           &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
+&as F1  &as N1  &as N2  &as N3  &as N4  &as N5                        &as N6     &as N7    &as N8     &as N9   &as N0    &as F15
+&as F2  &kp X   &kp F   &kp L   &kp K   &kp Q                         &as EQUAL  &kp Y     &kp O      &kp U    &as SQT   &as F14
+&kp B   &kp N   &kp S   &kp H   &kp T   &kp M                         &kp G      &kp C     &kp A      &kp E    &kp I     &as SEMI
+&as F3  &kp P   &kp V   &kp J   &kp D   &kp Z                         &as MINUS  &kp W     &as COMMA  &as DOT  &as FSLH  &lt 5 BSLH
+&as F4  &as F5  &as F6  &as F7  &as F8                                           &as F9     &as F10  &as F11   &as F12   &as F13
+                                &hmrep LALT 0  &lt 1 DEL        &mdbl 4 0    &mkp MB1   &mkp MB5  &magic_th_right LGUI 0
+                                &hml LSHFT R   &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
             >;
         };
 

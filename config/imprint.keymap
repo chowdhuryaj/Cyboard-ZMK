@@ -89,6 +89,7 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
         };
+    };
 
     combos {
         compatible = "zmk,combos";

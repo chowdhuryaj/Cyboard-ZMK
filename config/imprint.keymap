@@ -362,23 +362,9 @@
         <&zip_y_scaler 2 3>,
         <&zip_temp_layer 1 350>;
 
-    scroll {
-        layers = <4>;
-        input-processors =
-            <&zip_x_scaler 1 16>,
-            <&zip_y_scaler 1 12>,
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_snap>;
-    };
-
     snipe {
         layers = <2>;
         input-processors = <&zip_x_scaler 1 4>, <&zip_y_scaler 1 4>;
-    };
-
-    swipe {
-        layers = <3>;
-        input-processors = <&zip_x_scaler 4 1>, <&zip_y_scaler 4 1>;
     };
 };
 

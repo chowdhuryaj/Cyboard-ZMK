@@ -384,18 +384,6 @@
             timeout-ms = <20>;
         };
 
-        prev_field {
-            bindings = <&kp F7>;
-            key-positions = <28 40>;
-            timeout-ms = <20>;
-        };
-
-        next_field {
-            bindings = <&kp F8>;
-            key-positions = <41 29>;
-            timeout-ms = <20>;
-        };
-
         log_fv {
             bindings = <&fv>;
             key-positions = <63 18>;
@@ -488,8 +476,8 @@
             key-positions = <19 31>;
         };
 
-        swipe {
-            bindings = <&mo 3>;
+        drag {
+            bindings = <&mo 4>;
             key-positions = <61 67>;
         };
     };

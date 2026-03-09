@@ -55,7 +55,6 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <165>;
             flavor = "tap-preferred";
-            hold-while-undecided;
         };
 
         as_ht: as_ht {

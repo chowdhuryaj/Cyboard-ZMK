@@ -88,6 +88,88 @@
             quick-tap-ms = <0>;
             hold-while-undecided;
         };
+
+/* =========================
+ * Adaptive Space behavior
+ * Default output: SPACE
+ * max-prior-idle-ms = 1000 for every rule
+ * ========================= */
+
+adapt_space: adapt_space {
+    compatible = "zmk,behavior-adaptive-key";
+    label = "ADAPT_SPACE";
+    #binding-cells = <0>;
+
+    /* default output */
+    bindings = <&kp SPACE>;
+
+    n_to_g {
+        trigger-keys = <N>;
+        bindings = <&kp G>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    c_to_y {
+        trigger-keys = <C>;
+        bindings = <&kp Y>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    e_to_u {
+        trigger-keys = <E>;
+        bindings = <&kp U>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    a_to_o {
+        trigger-keys = <A>;
+        bindings = <&kp O>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    y_to_ou {
+        trigger-keys = <Y>;
+        bindings = <&kp O>, <&kp U>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    s_to_f {
+        trigger-keys = <S>;
+        bindings = <&kp F>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    comma_to_space_sticky_shift {
+        trigger-keys = <COMMA>;
+        bindings = <&kp SPACE>, <&sk LSHIFT>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    period_to_space_sticky_shift {
+        trigger-keys = <DOT>;
+        bindings = <&kp SPACE>, <&sk LSHIFT>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    slash_to_space_sticky_shift {
+        trigger-keys = <SLASH>;
+        bindings = <&kp SPACE>, <&sk LSHIFT>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    question_to_space_sticky_shift {
+        trigger-keys = <LS(SLASH)>;
+        bindings = <&kp SPACE>, <&sk LSHIFT>;
+        max-prior-idle-ms = <1000>;
+    };
+
+    exclamation_to_space_sticky_shift {
+        trigger-keys = <LS(N1)>;
+        bindings = <&kp SPACE>, <&sk LSHIFT>;
+        max-prior-idle-ms = <1000>;
+    };
+};
+
     };
 
     combos {

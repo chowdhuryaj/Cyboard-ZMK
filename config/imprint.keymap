@@ -688,7 +688,7 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-&trackball_periheral_listener {
+&trackball_peripheral_listener {
     input-processors =
         <&zip_x_scaler 2 1>,
         <&zip_y_scaler 2 1>,

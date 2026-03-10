@@ -172,17 +172,6 @@
                 max-prior-idle-ms = <1000>;
             };
         };
-
-        hmadapt: hmadapt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMADAPT";
-            bindings = <&kp>, <&adapt_space>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-        };
     };
 
     combos {

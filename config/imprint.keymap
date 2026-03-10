@@ -372,8 +372,8 @@
 
         base {
             bindings = <
-&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6           &as N7       &as N8            &as N9   &as N0    &kp LBKT
-&as F2  &kp B   &kp F   &kp N   &kp G         &kp K                           &kp PG_UP        &key_repeat  &kp O             &kp U    &as SQT   &kp RBKT
+&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6           &as N7       &as N8            &as N9   &as N0    &mt RBKT LBKT
+&as F2  &kp B   &kp F   &kp N   &kp G         &kp K                           &kp PG_UP        &key_repeat  &kp O             &kp U    &as SQT   &kp F16
 &kp F3  &as C   &kp S   &kp H   &kp T         &kp M                           &mt MINUS EQUAL  &as W        &kp A             &kp E    &kp I     &kp F15
 &kp F4  &kp P   &kp V   &kp J   &as D         &kp Z                           &kp PG_DN        &as BSLH     &as COMMA         &as DOT  &as FSLH  &kp F14
 &kp F5  &kp F6  &kp F7  &kp F8  &kp F9                                                         &kp F10      &kp F11           &kp F12  &kp F13   &kp F13

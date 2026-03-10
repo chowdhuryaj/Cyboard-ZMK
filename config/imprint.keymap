@@ -45,18 +45,6 @@
             flavor = "tap-preferred";
         };
 
-        hmrep: hmrep {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMREP";
-            bindings = <&kp>, <&key_repeat>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            flavor = "tap-preferred";
-        };
-
         as_ht: as_ht {
             compatible = "zmk,behavior-hold-tap";
             label = "AS_HT";
@@ -172,18 +160,6 @@
                 max-prior-idle-ms = <1000>;
             };
         };
-
-        hmagic: hmagic {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HMAGIC";
-            bindings = <&kp>, <&magic>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <165>;
-            flavor = "tap-preferred";
-        };
     };
 
     combos {
@@ -192,20 +168,6 @@
         copy_cut {
             bindings = <&mt LC(X) LC(C)>;
             key-positions = <27 26>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-        };
-
-        sel_prev_word {
-            bindings = <&kp LS(LC(LEFT))>;
-            key-positions = <31 32>;
-            timeout-ms = <20>;
-            require-prior-idle-ms = <150>;
-        };
-
-        sel_next_word {
-            bindings = <&kp LS(LC(RIGHT))>;
-            key-positions = <32 33>;
             timeout-ms = <20>;
             require-prior-idle-ms = <150>;
         };
@@ -235,21 +197,29 @@
         log_fv {
             bindings = <&fv>;
             key-positions = <63 18>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <150>;
         };
 
         log_u {
             bindings = <&umn>;
             key-positions = <63 19>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <150>;
         };
 
         log_h {
             bindings = <&hcmc>;
             key-positions = <63 20>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <150>;
         };
 
         log_hmail {
             bindings = <&hcmc_email>;
             key-positions = <63 20 19>;
+            timeout-ms = <25>;
+            require-prior-idle-ms = <150>;
         };
 
         paste {
@@ -276,36 +246,37 @@
         ent {
             bindings = <&kp ENTER>;
             key-positions = <16 28>;
+            timeout-ms = <25>;
         };
 
         close {
             bindings = <&kp LC(W)>;
             key-positions = <28 40>;
+            timeout-ms = <25>;
         };
 
         ntab {
             bindings = <&kp LC(T)>;
             key-positions = <27 39>;
-        };
-
-        mb2 {
-            bindings = <&mkp MB2>;
-            key-positions = <61 67>;
+            timeout-ms = <25>;
         };
 
         quit {
             bindings = <&kp LG(Q)>;
             key-positions = <17 29>;
+            timeout-ms = <25>;
         };
 
         rbtab {
             bindings = <&kp LS(TAB)>;
             key-positions = <21 33>;
+            timeout-ms = <25>;
         };
 
         rtab {
             bindings = <&kp TAB>;
             key-positions = <20 32>;
+            timeout-ms = <25>;
         };
 
         resc {
@@ -317,6 +288,19 @@
         rent {
             bindings = <&kp ENTER>;
             key-positions = <19 31>;
+            timeout-ms = <25>;
+        };
+
+        magic {
+            bindings = <&magic>;
+            key-positions = <64 58>;
+            timeout-ms = <25>;
+        };
+
+        repeat {
+            bindings = <&key_repeat>;
+            key-positions = <63 69>;
+            timeout-ms = <25>;
         };
     };
 
@@ -382,13 +366,13 @@
 
         base {
             bindings = <
-&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                        &as N6     &as N7    &as N8            &as N9   &as N0    &kp LBKT
-&as F2  &kp X   &kp F   &kp D   &kp K         &kp Q                         &as EQUAL  &kp Y     &kp O             &kp U    &as SQT   &kp RBKT
-&kp B   &kp N   &kp S   &kp H   &kp T         &kp M                         &as GRAVE  &kp C     &kp A             &kp E    &kp I     &as SEMI
-&as F3  &kp P   &kp V   &kp J   &kp G         &kp Z                         &as MINUS  &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
-&as F4  &as F5  &as F6  &as F7  &as F8                                                 &as F9    &as F10           &as F11  &as F12   &as F13
-                                &hml LGUI L   &hmagic LALT 0   &mkp MB2     &mkp MB1   &mkp MB5  &hmrep LGUI 0
-                                &hml LSHFT R  &hml LCTRL BSPC  &lt 2 DEL    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
+&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6     &as N7    &as N8            &as N9   &as N0    &kp LBKT
+&as F2  &kp X   &kp F   &kp D   &kp K         &kp Q                           &as EQUAL  &kp Y     &kp O             &kp U    &as SQT   &kp RBKT
+&kp B   &kp N   &kp S   &kp H   &kp T         &kp M                           &as GRAVE  &kp C     &kp A             &kp E    &kp I     &as SEMI
+&as F3  &kp P   &kp V   &kp J   &kp G         &kp Z                           &as MINUS  &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
+&as F4  &as F5  &as F6  &as F7  &as F8                                                   &as F9    &as F10           &as F11  &as F12   &as F13
+                                &hml LGUI L   &hml LALT DEL    &mkp MB2       &mkp MB1   &mkp MB5  &hmr LGUI Y
+                                &hml LSHFT R  &hml LCTRL BSPC  &lt 2 GRAVE    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
             >;
         };
 

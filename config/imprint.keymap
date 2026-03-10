@@ -67,40 +67,24 @@
             flavor = "tap-preferred";
         };
 
-        mdbl: mdbl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MDBL";
-            bindings = <&mo>, <&dbl_click>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            hold-while-undecided;
-        };
-
-        mtpl: mtpl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MTPL";
-            bindings = <&mo>, <&triple_click>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            hold-while-undecided;
-        };
-
-        adapt_space: adapt_space {
+        magic: magic {
             compatible = "zmk,behavior-adaptive-key";
-            label = "ADAPT_SPACE";
+            label = "AMAGIC";
             #binding-cells = <0>;
 
             /* default output */
 
-            bindings = <&kp SPACE>;
+            bindings = <&key_repeat>;
 
-            n_to_g {
+            n_to_p {
                 trigger-keys = <N>;
-                bindings = <&kp G>;
+                bindings = <&kp P>;
+                max-prior-idle-ms = <1000>;
+            };
+
+            x_to_p {
+                trigger-keys = <X>;
+                bindings = <&kp P>;
                 max-prior-idle-ms = <1000>;
             };
 
@@ -135,9 +119,9 @@
                 max-prior-idle-ms = <1000>;
             };
 
-            e_to_u {
-                trigger-keys = <E>;
-                bindings = <&kp U>;
+            w_to_y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
                 max-prior-idle-ms = <1000>;
             };
 

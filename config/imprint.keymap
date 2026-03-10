@@ -404,7 +404,7 @@
 &kp B   &kp N   &kp S   &kp H   &kp T         &kp M                         &hmadapt RCTRL 0  &kp C     &kp A             &kp E    &kp I     &as SEMI
 &as F3  &kp P   &kp V   &kp J   &kp G         &kp Z                         &as MINUS         &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
 &as F4  &as F5  &as F6  &as F7  &as F8                                                        &as F9    &as F10           &as F11  &as F12   &as F13
-                                &hml LALT L   &lt 1 DEL        &mdbl 3 0    &mkp MB1          &mkp MB5  &hmrep LGUI 0
+                                &hml LALT L   &lt 1 DEL        &mkp MB@     &mkp MB1          &mkp MB5  &hmrep LGUI 0
                                 &hml LSHFT R  &hml LCTRL BSPC  &mtpl 2 0    &mkp MB3          &mkp MB4  &hmr RSHFT SPACE
             >;
         };
@@ -418,18 +418,6 @@
 &trans  &trans  &trans         &trans          &trans                                                 &trans         &trans    &trans     &trans  &trans
                                                &trans         &trans         &trans    &trans         &trans         &trans
                                                &trans         &trans         &trans    &trans         &trans         &trans
-            >;
-        };
-
-        snipe {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -451,14 +439,9 @@
 
 &trackball_peripheral_listener {
     input-processors =
-        <&zip_x_scaler 2 3>,
-        <&zip_y_scaler 2 3>,
+        <&zip_x_scaler 1 1>,
+        <&zip_y_scaler 1 1>,
         <&zip_temp_layer 1 350>;
-
-    snipe {
-        layers = <2>;
-        input-processors = <&zip_x_scaler 1 4>, <&zip_y_scaler 1 4>;
-    };
 };
 
 &trackball_central_listener {

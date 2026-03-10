@@ -296,12 +296,6 @@
             key-positions = <64 58>;
             timeout-ms = <25>;
         };
-
-        repeat {
-            bindings = <&key_repeat>;
-            key-positions = <63 69>;
-            timeout-ms = <25>;
-        };
     };
 
     macros {
@@ -366,13 +360,13 @@
 
         base {
             bindings = <
-&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6     &as N7    &as N8            &as N9   &as N0    &kp LBKT
-&as F2  &kp X   &kp F   &kp D   &kp K         &kp Q                           &as EQUAL  &kp Y     &kp O             &kp U    &as SQT   &kp RBKT
-&kp B   &kp N   &kp S   &kp H   &kp T         &kp M                           &as GRAVE  &kp C     &kp A             &kp E    &kp I     &as SEMI
-&as F3  &kp P   &kp V   &kp J   &kp G         &kp Z                           &as MINUS  &kp W     &as COMMA         &as DOT  &as FSLH  &as BSLH
-&as F4  &as F5  &as F6  &as F7  &as F8                                                   &as F9    &as F10           &as F11  &as F12   &as F13
-                                &hml LGUI L   &hml LALT DEL    &mkp MB2       &mkp MB1   &mkp MB5  &hmr LGUI Y
-                                &hml LSHFT R  &hml LCTRL BSPC  &lt 2 GRAVE    &mkp MB3   &mkp MB4  &hmr RSHFT SPACE
+&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6           &as N7       &as N8            &as N9   &as N0    &kp LBKT
+&as F2  &kp B   &kp F   &kp N   &kp G         &kp K                           &kp PG_UP        &key_repeat  &kp O             &kp U    &as SQT   &kp RBKT
+&kp F3  &as C   &kp S   &kp H   &kp T         &kp M                           &mt MINUS EQUAL  &as W        &kp A             &kp E    &kp I     &kp X
+&kp F4  &kp P   &kp V   &kp J   &as D         &kp Z                           &kp PG_DN        &kp Q        &as COMMA         &as DOT  &as FSLH  &as BSLH
+&kp F5  &kp F6  &kp F7  &kp F8  &kp F9                                                         &kp F10      &kp F11           &kp F12  &kp F13   &kp F13
+                                &hml LGUI L   &hml LALT DEL    &mkp MB2       &mkp MB1         &mkp MB5     &hmr LGUI Y
+                                &hml LSHFT R  &hml LCTRL BSPC  &lt 2 GRAVE    &mkp MB3         &mkp MB4     &hmr RSHFT SPACE
             >;
         };
 

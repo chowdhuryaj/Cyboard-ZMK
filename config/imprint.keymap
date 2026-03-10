@@ -291,14 +291,9 @@
             key-positions = <27 39>;
         };
 
-        mb4 {
-            bindings = <&mkp MB4>;
-            key-positions = <60 61>;
-        };
-
-        mb5 {
-            bindings = <&mkp MB5>;
-            key-positions = <66 67>;
+        mb2 {
+            bindings = <&mkp MB2>;
+            key-positions = <61 67>;
         };
 
         quit {

@@ -366,25 +366,25 @@
 
         base {
             bindings = <
-&as F1  &as N1  &as N2  &as N3  &as N4        &as N5                          &as N6           &as N7    &as N8            &as N9   &as N0    &mt RBKT LBKT
-&as F2  &kp B   &kp F   &kp N   &kp G         &kp K                           &mt PG_UP PG_DN  &kp W     &kp O             &kp U    &as SQT   &kp F16
-&kp F3  &as C   &kp S   &kp H   &kp T         &kp M                           &key_repeat      &kp I     &kp A             &kp E    &magic    &kp F15
-&kp F4  &kp P   &kp V   &kp J   &as D         &kp Z                           &mt EQUAL MINUS  &as SEMI  &as COMMA         &as DOT  &as FSLH  &kp F14
-&kp F5  &kp F6  &kp F7  &kp F8  &kp F9                                                         &kp F10   &kp F11           &kp F12  &kp F13   &kp F13
-                                &hml LGUI L   &hml LALT DEL    &mkp MB2       &mkp MB1         &mkp MB5  &hmr LGUI Y
-                                &hml LSHFT R  &hml LCTRL BSPC  &lt 2 GRAVE    &mkp MB3         &mkp MB4  &hmr RSHFT SPACE
+&as F1        &as N1   &as N2   &as N3  &as N4        &as N5                          &as N6           &as N7                  &as N8            &as N9     &as N0    &mt RBKT LBKT
+&as F2        &kp B    &kp F    &kp N   &kp G         &kp K                           &mt PG_UP PG_DN  &kp W                   &kp O             &kp U      &as SQT   &kp F16
+&mt END HOME  &as C    &kp S    &kp H   &kp T         &kp M                           &key_repeat      &kp I                   &kp A             &kp E      &magic    &kp F15
+&kp F4        &kp P    &kp V    &kp J   &as D         &kp Z                           &mt EQUAL MINUS  &as SEMI                &as COMMA         &as DOT    &as FSLH  &kp F14
+&kp F10       &kp F11  &kp F12  &kp F7  &kp F8                                                         &kp DOWN                &kp LEFT          &kp RIGHT  &kp UP    &kp F13
+                                        &hml LGUI L   &hml LALT DEL    &lt 1 BSLH     &mkp MB1         &hmr RALT LC(TAB)       &hmr LGUI Y
+                                        &hml LSHFT R  &hml LCTRL BSPC  &lt 2 GRAVE    &mkp MB3         &hmr RCTRL LS(LC(TAB))  &hmr RSHFT SPACE
             >;
         };
 
         mouse {
             bindings = <
-&trans  &trans  &trans         &trans          &trans         &trans                   &trans         &trans         &trans    &trans     &trans  &trans
-&trans  &trans  &kp F7         &mt PG_UP UP    &kp F8         &kp F11                  &kp F11        &kp F7         &kp UP    &kp F8     &trans  &trans
-&to 0   &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &kp F12                  &kp F12        &kp LEFT       &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans         &trans          &kp LC(MINUS)  &kp LC(EQUAL)            &kp LC(EQUAL)  &kp LC(MINUS)  &trans    &trans     &trans  &trans
-&trans  &trans  &trans         &trans          &trans                                                 &trans         &trans    &trans     &trans  &trans
-                                               &trans         &trans         &trans    &trans         &trans         &trans
-                                               &trans         &trans         &trans    &trans         &trans         &trans
+&trans  &trans  &trans         &trans          &trans         &trans                     &trans         &trans         &trans    &trans     &trans  &trans
+&trans  &trans  &trans         &mt PG_UP UP    &kp F8         &kp F11                    &kp F11        &kp F7         &kp UP    &kp F8     &trans  &trans
+&to 0   &trans  &mt HOME LEFT  &mt PG_DN DOWN  &mt END RIGHT  &kp F12                    &kp F12        &kp LEFT       &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans         &trans          &kp LC(MINUS)  &kp LC(EQUAL)              &kp LC(EQUAL)  &kp LC(MINUS)  &trans    &trans     &trans  &trans
+&trans  &trans  &trans         &trans          &trans                                                   &trans         &trans    &trans     &trans  &trans
+                                               &trans         &mkp MB4       &mkp MB5    &mkp MB1       &mkp MB2       &trans
+                                               &trans         &trans         &trans      &mkp MB3       &trans         &trans
             >;
         };
 

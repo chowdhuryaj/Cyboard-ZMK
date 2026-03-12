@@ -382,13 +382,13 @@
 
         base {
             bindings = <
-&as N0     &as N1        &as N2       &as N3       &as N4        &as N5                                &as N6     &as N7        &as N8       &as N9       &as LBKT      &as RBKT
-&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                                 &as DOT    &kp Y         &kp O        &kp U        &as SQT       &kp EQUAL
-&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &magic     &hml RSHFT C  &hmr RGUI A  &hmr RALT E  &hmr RCTRL I  &as SEMI
-&kp PG_DN  &kp P         &kp V        &kp J        &as D         &kp Z                                 &as COMMA  &kp W         &kp FSLH     &kp UP       &as BSLH      &kp MINUS
-&kp F10    &kp F11       &kp F12      &kp F7       &kp F8                                                         &kp LC(LEFT)  &kp LEFT     &kp DOWN     &kp RIGHT     &kp LC(RIGHT)
-                                                   &lt 4 L       &mt LC(DEL) DEL    &mkp MB2           &mkp MB1   &mkp MB5      &key_repeat
-                                                   &lt 1 R       &mt LC(BSPC) BSPC  &rgb_ug RGB_TOG    &mkp MB3   &mkp MB4      &kp SPACE
+&as N0     &as N1        &as N2       &as N3       &as N4        &as N5                                &as N6     &as N7        &as N8            &as N9       &as LBKT      &as RBKT
+&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                                 &as DOT    &kp Y         &kp O             &kp U        &as SQT       &kp EQUAL
+&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &magic     &hml RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &as SEMI
+&kp PG_DN  &kp P         &kp V        &kp J        &as D         &kp Z                                 &as COMMA  &kp W         &kp UP            &kp FSLH     &as BSLH      &kp MINUS
+&kp F10    &kp F11       &kp F12      &kp F7       &kp F8                                                         &kp LEFT      &kp DOWN          &kp RIGHT    &kp TAB       &kp F13
+                                                   &lt 6 L       &mt LC(DEL) DEL    &mkp MB2           &mkp MB1   &mkp MB5      &key_repeat
+                                                   &hml LGUI R   &mt LC(BSPC) BSPC  &rgb_ug RGB_TOG    &mkp MB3   &mkp MB4      &hmr LSHFT SPACE
             >;
         };
 
@@ -396,7 +396,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mo 3               &mo 3     &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mo 6               &mo 6     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &mo 2               &mo 2     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                                &trans    &trans  &trans  &trans  &trans
                                 &trans  &trans  &mkp MB2    &mkp MB1  &mkp MB5  &trans
@@ -416,7 +416,31 @@
             >;
         };
 
+        slow2 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
         fast {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        fast2 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans

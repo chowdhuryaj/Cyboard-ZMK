@@ -386,7 +386,7 @@
 &kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                                 &as DOT    &kp Y         &kp O        &kp U        &as SQT       &kp EQUAL
 &kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &magic     &hml RSHFT C  &hmr RGUI A  &hmr RALT E  &hmr RCTRL I  &as SEMI
 &kp PG_DN  &kp P         &kp V        &kp J        &as D         &kp Z                                 &as COMMA  &kp W         &kp FSLH     &kp UP       &as BSLH      &kp MINUS
-&kp F10    &kp F11       &kp F12      &kp F7       &kp F8                                                         &as F9        &kp LEFT     &kp DOWN     &kp RIGHT     &kp F13
+&kp F10    &kp F11       &kp F12      &kp F7       &kp F8                                                         &kp LC(LEFT)  &kp LEFT     &kp DOWN     &kp RIGHT     &kp LC(RIGHT)
                                                    &lt 4 L       &mt LC(DEL) DEL    &mkp MB2           &mkp MB1   &mkp MB5      &key_repeat
                                                    &lt 1 R       &mt LC(BSPC) BSPC  &rgb_ug RGB_TOG    &mkp MB3   &mkp MB4      &kp SPACE
             >;

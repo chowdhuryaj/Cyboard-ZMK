@@ -396,7 +396,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mo 6               &mo 6     &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &mo 4               &mo 4     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &mo 2               &mo 2     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                                &trans    &trans  &trans  &trans  &trans
                                 &trans  &trans  &mkp MB2    &mkp MB1  &mkp MB5  &trans
@@ -409,7 +409,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &mo 3  &trans             &trans  &mo 3   &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
@@ -432,7 +432,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &mo 5   &trans            &trans  &mo 5  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
@@ -471,6 +471,7 @@
 &trackball_peripheral_listener {
     input-processors = <
         &zip_temp_layer 1 1000
+        &zip_xy_scaler 2 1
     >;
 
     slow {
@@ -480,10 +481,24 @@
         >;
     };
 
-    fast {
+    slow2 {
         layers = <3>;
         input-processors = <
-            &zip_xy_scaler 2 1
+            &zip_xy_scaler 1 4
+        >;
+    };
+
+    fast {
+        layers = <4>;
+        input-processors = <
+            &zip_xy_scaler 4 1
+        >;
+    };
+
+    fast2 {
+        layers = <5>;
+        input-processors = <
+            &zip_xy_scaler 6 1
         >;
     };
 };
@@ -499,14 +514,44 @@
     slow {
         layers = <2>;
         input-processors = <
-            &zip_scroll_scaler 1 2
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_snap
+        &zip_scroll_scaler 1 2
+        >;
+    };
+
+    slow2 {
+        layers = <3>;
+        input-processors = <
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_snap
+        &zip_scroll_scaler 1 4
         >;
     };
 
     fast {
-        layers = <3>;
+        layers = <4>;
         input-processors = <
-            &zip_scroll_scaler 2 1
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_snap
+        &zip_scroll_scaler 2 1
+        >;
+    };
+
+    fast2 {
+        layers = <5>;
+        input-processors = <
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_snap
+        &zip_scroll_scaler 4 1
         >;
     };
 };

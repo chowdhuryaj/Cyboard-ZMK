@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/rgb.h>
 
 &mt {
-    tapping-term-ms = <180>;
     quick-tap-ms = <150>;
     flavor = "tap-preferred";
 };
@@ -91,7 +90,6 @@
             y_to_w {
                 trigger-keys = <Y>;
                 bindings = <&kp W>;
-
                 max-prior-idle-ms = <1000>;
             };
 
@@ -329,28 +327,52 @@
         fv: fv {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            bindings =
+                <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G>,
+                <&macro_wait_time 250>,
+                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
+                <&macro_wait_time 250>,
+                <&kp RET>;
+
             label = "FV";
         };
 
         hcmc: hcmc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            bindings =
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9>,
+                <&macro_wait_time 250>,
+                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
+                <&macro_wait_time 250>,
+                <&kp RET>;
+
             label = "HCMC";
         };
 
         hcmc_email: hcmc_email {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            bindings =
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G>,
+                <&macro_wait_time 250>,
+                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
+                <&macro_wait_time 250>,
+                <&kp RET>;
+
             label = "HCMC_EMAIL";
         };
 
         umn: umn {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
+            bindings =
+                <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U>,
+                <&macro_wait_time 250>,
+                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
+                <&macro_wait_time 250>,
+                <&kp RET>;
+
             label = "UMN";
         };
     };
@@ -378,7 +400,7 @@
 &trans  &trans  &trans  &trans  &trans  &mo 2               &mo 2     &trans    &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                                &trans    &trans  &trans  &trans  &trans
                                 &trans  &trans  &mkp MB2    &mkp MB1  &mkp MB5  &trans
-                                &trans  &trans  &to 0      &mkp MB3  &mkp MB4  &trans
+                                &trans  &trans  &to 0       &mkp MB3  &mkp MB4  &trans
             >;
         };
 

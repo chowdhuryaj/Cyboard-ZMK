@@ -20,7 +20,6 @@
           compatible = "zmk,behavior-auto-layer";
             #binding-cells = <0>;
             layers = <1>;
-            timeout-ms = <1000>;
             continue-list = <LEFT DOWN UP RIGHT>;
             ignore-numbers;
             ignore-modifiers;

@@ -16,6 +16,28 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+        sk_mo: sticky_key_momentary {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&sk>;
+        };
+
+        plstr: plus_star {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp PLUS>, <&kp STAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mnslh: minus_slash {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS>, <&kp FSLH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -524,6 +546,5 @@
         &zip_scroll_snap
         &zip_scroll_scaler 2 1
         >;
-    };
     };
 };

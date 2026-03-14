@@ -450,8 +450,23 @@
         compatible = "zmk,layer-listeners";
 
         mouse_rgb_listener {
-            layers = <1 2 3 4>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_OFF>;
+            layers = <1 2 3>;
+            bindings = <&rgb_mouse &rgb_ug RGB_OFF>;
+        };
+
+        drag_rgb_listener {
+            layers = <4>;
+            bindings = <&rgb_drag &rgb_ug RGB_OFF>;
+        };
+
+        num_rgb_listener {
+            layers = <5>;
+            bindings = <&rgb_num &rgb_ug RGB_OFF>;
+        };
+
+        control_rgb_listener {
+            layers = <6>;
+            bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };
 

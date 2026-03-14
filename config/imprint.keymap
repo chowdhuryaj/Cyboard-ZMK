@@ -482,13 +482,13 @@
 
         base {
             bindings = <
-&kp HOME   &as N1    &as N2    &as N3    &as N4    &as N5                   &as N6    &as N7          &as N8            &as N9         &as N0     &kp END
-&kp PG_UP  &kp X     &kp F     &kp G     &kp K     &kp Q                    &as LBKT  &kp Y           &kp O             &kp U          &as SQT    &as RBKT
-&kp B      &kp N     &kp S     &kp H     &kp T     &kp M                    &magic    &kp C           &kp A             &kp E          &kp I      &kp EQUAL
-&kp PG_DN  &kp P     &kp V     &kp J     &kp D     &kp Z                    &as SEMI  &kp W           &as COMMA         &as DOT        &as FSLH   &as MINUS
-&mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                     &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
-                                         &lt 5 L   &key_repeat  &mkp MB2    &mkp MB1  &key_repeat     &magic
-                                         &lt 4 R   &kp BSPC     &kp DEL     &kp DEL   &kp BSPC        &hmr LSHFT SPACE
+&kp HOME   &as N1    &as N2    &as N3    &as N4       &as N5                   &as N6    &as N7          &as N8            &as N9         &as N0     &kp END
+&kp PG_UP  &kp X     &kp F     &kp L     &kp K        &kp Q                    &as LBKT  &kp Y           &kp O             &kp U          &as SQT    &as RBKT
+&kp B      &kp N     &kp S     &kp H     &kp T        &kp M                    &kp G     &kp C           &kp A             &kp E          &kp I      &kp EQUAL
+&kp PG_DN  &kp P     &kp V     &kp J     &kp D        &kp Z                    &as SEMI  &kp W           &as COMMA         &as DOT        &as FSLH   &as MINUS
+&mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                        &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
+                                         &lt 5 R      &key_repeat  &mkp MB2    &mkp MB1  &key_repeat     &magic
+                                         &lt 4 SPACE  &kp BSPC     &kp DEL     &kp DEL   &kp BSPC        &hmr LSHFT SPACE
             >;
         };
 

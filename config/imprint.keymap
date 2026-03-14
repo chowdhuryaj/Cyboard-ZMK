@@ -483,13 +483,13 @@
 
         base {
             bindings = <
-&kp HOME   &as N1    &as N2    &as N3    &as N4    &as N5                    &as N6       &as N7          &as N8            &as N9         &as N0     &kp END
-&kp PG_UP  &kp X     &kp F     &kp G     &kp K     &kp Q                     &as LBKT     &kp Y           &kp O             &kp U          &as SQT    &as RBKT
-&kp B      &kp N     &kp S     &kp H     &kp T     &kp M                     &key_repeat  &kp C           &kp A             &kp E          &kp I      &kp EQUAL
-&kp PG_DN  &kp P     &kp V     &kp J     &kp D     &kp Z                     &as SEMI     &kp W           &as COMMA         &as DOT        &as FSLH   &as MINUS
-&mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                         &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
-                                         &lt 5 L   &kp DEL   &caps_word      &kp ENTER    &kp TAB         &magic
-                                         &lt 4 R   &kp BSPC  &out OUT_TOG    &kp ESC      &kp LS(TAB)     &hmr LSHFT SPACE
+&kp HOME   &as N1        &as N2       &as N3       &as N4        &as N5                    &as N6       &as N7          &as N8            &as N9         &as N0     &kp END
+&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                     &as LBKT     &kp Y           &kp O             &kp U          &as SQT    &as RBKT
+&kp B      &kp N         &kp S        &kp H        &kp T         &kp M                     &key_repeat  &kp C           &kp A             &kp E          &kp I      &kp EQUAL
+&kp PG_DN  &hml LCTRL P  &hml LALT V  &hml LGUI J  &hml LSHFT D  &kp Z                     &as SEMI     &kp W           &as COMMA         &as DOT        &as FSLH   &as MINUS
+&mkp MB5   &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                             &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
+                                                   &lt 5 L       &kp DEL   &caps_word      &kp ENTER    &kp TAB         &magic
+                                                   &lt 4 R       &kp BSPC  &out OUT_TOG    &kp ESC      &kp LS(TAB)     &hmr LSHFT SPACE
             >;
         };
 

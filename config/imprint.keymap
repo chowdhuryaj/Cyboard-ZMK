@@ -16,13 +16,11 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        automouse_layer: automouse_layer {
-            compatible = "zmk,behavior-auto-layer";
+        automouse: automouse {
+          compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
-            layer = <1>;          // target layer
-            timeout-ms = <1000>;  // 1000 ms temp-layer
-
-            // All non-transparent keys in layer 1
+            layer = <1>;
+            timeout-ms = <1000>;
             continue-list = <LEFT DOWN UP RIGHT>;
             ignore-numbers;
             ignore-modifiers;

@@ -403,25 +403,25 @@
 
         base {
             bindings = <
-&as N0     &as N1        &as N2       &as N3       &as N4        &as N5                                &as N6    &as N7        &as N8            &as N9       &as LBKT      &as RBKT
-&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                                 &as DOT   &kp Y         &kp O             &kp U        &as SQT       &as EQUAL
-&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &kp W     &hml RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &as SEMI
-&kp PG_DN  &kp P         &kp V        &kp J        &as D         &kp Z                                 &as FSLH  &magic        &kp UP            &as COMMA    &as DOT       &as MINUS
-&kp F10    &kp F11       &kp F12      &kp F7       &kp F8                                                        &kp LEFT      &kp DOWN          &kp RIGHT    &kp TAB       &kp F13
-                                                   &lt 6 L       &mt LC(DEL) DEL    &mkp MB2           &mkp MB1  &mkp MB5      &key_repeat
-                                                   &hml LSHFT R  &mt LC(BSPC) BSPC  &rgb_ug RGB_TOG    &mkp MB3  &mkp MB4      &hmr LSHFT SPACE
+&as N0     &as N1        &as N2       &as N3       &as N4        &as N5                                &as N6       &as N7        &as N8            &as N9       &as LBKT      &as RBKT
+&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                                 &as SEMI     &magic        &kp O             &kp U        &as SQT       &as EQUAL
+&kp B      &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                                 &key_repeat  &hml RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &key_repeat
+&kp PG_DN  &kp P         &kp V        &kp J        &as D         &kp Z                                 &as FSLH     &kp W         &kp UP            &as COMMA    &as DOT       &as MINUS
+&mkp MB5   &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                                         &kp LEFT      &kp DOWN          &kp RIGHT    &kp TAB       &kp F13
+                                                   &lt 6 L       &mt LC(DEL) DEL    &mkp MB2           &mkp MB1     &mkp MB5      &hmr LCTRL Y
+                                                   &hml LSHFT R  &mt LC(BSPC) BSPC  &rgb_ug RGB_TOG    &mkp MB3     &mkp MB4      &hmr LSHFT SPACE
             >;
         };
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mo 4               &mo 4     &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &mo 2               &mo 2     &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                                &trans    &trans  &trans  &trans  &trans
-                                &trans  &trans  &mkp MB2    &mkp MB1  &mkp MB5  &trans
-                                &trans  &trans  &to 0       &mkp MB3  &mkp MB4  &trans
+&trans  &trans    &trans    &trans     &trans  &trans              &trans        &trans     &trans     &trans     &trans   &trans
+&kp F1  &kp F2    &kp F3    &kp F4     &kp F5  &kp F6              &kp F7        &kp F8     &kp F9     &kp F10    &kp F11  &kp F12
+&trans  &trans    &kp UP    &trans     &trans  &mo 4               &kp LS(STAR)  &kp N1     &kp N2     &kp N3     &kp N4   &kp N5
+&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &mo 2               &kp FSLH      &kp N6     &kp N7     &kp N8     &kp N9   &kp N0
+&trans  &trans    &trans    &trans     &trans                                    &kp MINUS  &kp EQUAL  &kp COMMA  &kp DOT  &kp BSPC
+                                       &trans  &trans  &mkp MB2    &mkp MB1      &mkp MB5   &trans
+                                       &trans  &trans  &to 0       &mkp MB3      &mkp MB4   &trans
             >;
         };
 

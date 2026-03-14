@@ -495,13 +495,13 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &mo 2   &trans    &trans  &trans  &trans
-                                &mo 4   &mo 3   &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                &trans    &trans  &trans  &trans  &trans
+                                &trans  &mo 2   &mkp MB5    &mkp MB1  &mkp MB2  &trans
+                                &mo 4   &mo 3   &mkp MB4    &mkp MB3  &trans    &trans
             >;
         };
 

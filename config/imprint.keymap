@@ -18,8 +18,8 @@
     behaviors {
         automouse: automouse {
           compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <1>;
-            layer = <1>;
+            #binding-cells = <0>;
+            layers = <1>;
             timeout-ms = <1000>;
             continue-list = <LEFT DOWN UP RIGHT>;
             ignore-numbers;

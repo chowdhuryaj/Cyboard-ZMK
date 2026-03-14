@@ -536,8 +536,8 @@
         funumnav {
             bindings = <
 &kp F1     &kp F2     &kp F3    &kp F4        &kp F5     &kp F6            &kp F7  &kp F8  &kp F9    &kp F10   &kp F11    &kp F12
-&trans     &trans     &trans    &kp UP        &trans     &trans            &trans  &trans  &trans    &kp UP    &trans     &trans
-&trans     &trans     &kp LEFT  &kp DOWN      &kp RIGHT  &trans            &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans     &trans     &trans    &kp UP        &trans     &trans            &trans  &trans  &kp UP    &trans    &trans     &trans
+&trans     &trans     &kp LEFT  &kp DOWN      &kp RIGHT  &trans            &trans  &LEFT   &kp DOW   &kp RIGHT  &trans     &trans
 &kp N0     &kp N1     &kp N2    &kp N3        &kp N4     &kp N5            &kp N6  &kp N7  &kp N8    &kp N9    &kp N0     &trans
 &kp EQUAL  &kp MINUS  &kp FSLH  &kp LS(STAR)  &kp RET                              &trans  &trans    &trans    &trans     &trans
                                               &trans     &trans  &trans    &trans  &trans  &trans
@@ -587,6 +587,7 @@
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>
         &zip_scroll_snap
         >;
     };

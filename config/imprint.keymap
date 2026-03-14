@@ -25,22 +25,6 @@
             bindings = <&mo>, <&sk>;
         };
 
-        plstr: plus_star {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp PLUS>, <&kp STAR>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mnslh: minus_slash {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS>, <&kp FSLH>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";

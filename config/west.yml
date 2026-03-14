@@ -30,7 +30,7 @@ manifest:
 
     - name: zmk-auto-layer
       remote: urob
-      revision: main
+      revision: zero-param
 
     - name: zmk-scroll-snap
       remote: kot149

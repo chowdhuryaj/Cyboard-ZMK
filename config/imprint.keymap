@@ -594,7 +594,7 @@
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_Y_INVER
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >;
 
         &zip_scroll_snap

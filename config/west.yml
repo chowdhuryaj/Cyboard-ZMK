@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/urob
     - name: kot149
       url-base: https://github.com/kot149
+    - name: ssbb
+      url-base: https://github.com/ssbb
 
   projects:
     - name: zmk
@@ -28,6 +30,10 @@ manifest:
 
     - name: zmk-scroll-snap
       remote: kot149
+      revision: v1
+
+    - name: zmk-listeners
+      remote: ssbb
       revision: v1
 
   self:

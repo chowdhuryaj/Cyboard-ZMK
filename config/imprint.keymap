@@ -435,7 +435,7 @@
 
         mouse_rgb_listener {
             layers = <1 2 3>;
-            bindings = <&rgb_on &rgb_off>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_OFF>;
         };
     };
 

@@ -16,6 +16,25 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+        automouse_layer: automouse_layer {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            layer = <1>;          // target layer
+            timeout-ms = <1000>;  // 1000 ms temp-layer
+
+            // All non-transparent keys in layer 1
+            continue-list = <
+                KP_F13 KP_F14 KP_F15 KP_F16 KP_F17 KP_F18 KP_F19 KP_F20 KP_F21 KP_F22 KP_F23 KP_F24
+                KP_F1  KP_F2  KP_F3  KP_F4  KP_F5  KP_F6  KP_F7  KP_F8  KP_F9  KP_F10 KP_F11 KP_F12
+                KP_UP  KP_LEFT KP_DOWN KP_RIGHT KP_LS(STAR) KP_FSLH
+                MB1 MB2 MB3 MB4 MB5
+                MO_2 MO_3
+            >;
+            ignore-numbers;
+            ignore-modifiers;
+        };
+    };
+
         sk_mo: sticky_key_momentary {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

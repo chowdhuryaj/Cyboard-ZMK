@@ -347,6 +347,30 @@
             timeout-ms = <25>;
             layers = <0>;
         };
+
+        f7 {
+            bindings = <&kp F7>;
+            key-positions = <64 58>;
+            timeout-ms = <25>;
+        };
+
+        f8 {
+            bindings = <&kp F8>;
+            key-positions = <65 59>;
+            timeout-ms = <25>;
+        };
+
+        f11 {
+            bindings = <&kp F11>;
+            key-positions = <39 51>;
+            timeout-ms = <25>;
+        };
+
+        f12 {
+            bindings = <&kp F12>;
+            key-positions = <40 52>;
+            timeout-ms = <25>;
+        };
     };
 
     macros {

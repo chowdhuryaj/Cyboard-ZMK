@@ -380,13 +380,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G>,
-                <&macro_wait_time 250>,
-                <&kp TAB>,
                 <&macro_wait_time 25>,
-                <&kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
-                <&macro_wait_time 250>,
-                <&kp RET>,
+                <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>,
                 <&macro_press>;
 
             label = "FV";
@@ -396,13 +391,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9>,
-                <&macro_wait_time 250>,
-                <&kp TAB>,
                 <&macro_wait_time 25>,
-                <&kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
-                <&macro_wait_time 250>,
-                <&kp RET>;
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
 
             label = "HCMC";
         };
@@ -411,11 +401,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G>,
                 <&macro_wait_time 250>,
-                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
-                <&macro_wait_time 250>,
-                <&kp RET>;
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
 
             label = "HCMC_EMAIL";
         };
@@ -424,13 +411,38 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U>,
                 <&macro_wait_time 250>,
-                <&kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR>,
-                <&macro_wait_time 250>,
-                <&kp RET>;
+                <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>;
 
             label = "UMN";
+        };
+
+        rgb_mouse: rgb_mouse {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(51,100,60)>;
+            label = "RGB_MOUSE";
+        };
+
+        rgb_num: rgb_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(116,100,60)>;
+            label = "RGB_NUM";
+        };
+
+        rgb_cont: rgb_cont {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(219,100,60)>;
+            label = "RGB_CONT";
+        };
+
+        rgb_drag: rgb_drag {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(282,100,60)>;
+            label = "RGB_DRAG";
         };
     };
 
@@ -448,10 +460,10 @@
 
         base {
             bindings = <
-&kp HOME   &as N1    &as N2    &as N3    &as N4    &as N5                     &as N6    &as N7          &as N8            &as N9    &as N0     &kp END
-&kp PG_UP  &kp X     &kp F     &kp G     &kp K     &kp Q                      &as LBKT  &magic          &kp O             &kp U     &as SQT    &as RBKT
-&kp B      &kp N     &kp S     &kp H     &kp T     &kp M                      &kp Y     &kp C           &kp A             &kp E     &kp I      &kp EQUAL
-&kp PG_DN  &kp P     &kp V     &kp J     &kp D     &kp Z                      &as SEMI  &kp W           &as COMMA         &as DOT   &as FSLH   &as MINUS
+&kp HOME   &as N1    &as N2    &as N3    &as N4    &as N5                     &as N6    &as N7          &as N8            &as N9         &as N0     &kp END
+&kp PG_UP  &kp X     &kp F     &kp G     &kp K     &kp Q                      &as LBKT  &magic          &kp O             &kp U          &as SQT    &as RBKT
+&kp B      &kp N     &kp S     &kp H     &kp T     &kp M                      &kp Y     &kp C           &kp A             &kp E          &kp I      &kp EQUAL
+&kp PG_DN  &kp P     &kp V     &kp J     &kp D     &kp Z                      &as SEMI  &kp W           &as COMMA         &as DOT        &as FSLH   &as MINUS
 &mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                       &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
                                          &lt 5 L   &dell   &mkp MB2           &mkp MB1  &mkp MB5        &key_repeat
                                          &lt 4 R   &bsp    &rgb_ug RGB_TOG    &mkp MB3  &mkp MB4        &hmr LSHFT SPACE

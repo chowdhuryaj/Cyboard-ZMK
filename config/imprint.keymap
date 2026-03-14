@@ -66,49 +66,26 @@
             n_to_p {
                 trigger-keys = <N>;
                 bindings = <&kp P>;
-                max-prior-idle-ms = <1000>;
             };
 
             x_to_p {
                 trigger-keys = <X>;
                 bindings = <&kp P>;
-                max-prior-idle-ms = <1000>;
-            };
-
-            c_to_y {
-                trigger-keys = <C>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <1000>;
             };
 
             a_to_o {
                 trigger-keys = <A>;
                 bindings = <&kp O>;
-                max-prior-idle-ms = <1000>;
-            };
-
-            y_to_w {
-                trigger-keys = <Y>;
-                bindings = <&kp W>;
-                max-prior-idle-ms = <1000>;
             };
 
             s_to_f {
                 trigger-keys = <S>;
                 bindings = <&kp F>;
-                max-prior-idle-ms = <1000>;
             };
 
             e_to_u {
                 trigger-keys = <E>;
                 bindings = <&kp U>;
-                max-prior-idle-ms = <1000>;
-            };
-
-            w_to_y {
-                trigger-keys = <W>;
-                bindings = <&kp Y>;
-                max-prior-idle-ms = <1000>;
             };
 
             g_to_h {
@@ -176,7 +153,7 @@
             require-prior-idle-ms = <150>;
         };
 
-        btab {
+        lbtab {
             bindings = <&kp LS(TAB)>;
             key-positions = <26 14>;
         };
@@ -186,7 +163,7 @@
             key-positions = <27 15>;
         };
 
-        esc {
+        lesc {
             bindings = <&kp ESC>;
             key-positions = <13 25>;
             timeout-ms = <25>;
@@ -463,7 +440,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &mo 0   &trans            &trans  &mo 0   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans   &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
@@ -474,7 +451,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &mo 0   &trans            &trans  &mo 0   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans   &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
@@ -501,7 +478,7 @@
 &trackball_peripheral_listener {
     input-processors = <
         &zip_temp_layer 1 1000
-        &zip_xy_scaler 2 1
+        &zip_xy_scaler 2 3
     >;
 
     slow {
@@ -511,24 +488,10 @@
         >;
     };
 
-    slow2 {
-        layers = <3>;
-        input-processors = <
-            &zip_xy_scaler 1 4
-        >;
-    };
-
     fast {
         layers = <4>;
         input-processors = <
-            &zip_xy_scaler 4 1
-        >;
-    };
-
-    fast2 {
-        layers = <5>;
-        input-processors = <
-            &zip_xy_scaler 6 1
+            &zip_xy_scaler 8 1
         >;
     };
 };
@@ -552,19 +515,8 @@
         >;
     };
 
-    slow2 {
-        layers = <3>;
-        input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_snap
-        &zip_scroll_scaler 1 4
-        >;
-    };
-
     fast {
-        layers = <4>;
+        layers = <3>;
         input-processors = <
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
@@ -573,15 +525,5 @@
         &zip_scroll_scaler 2 1
         >;
     };
-
-    fast2 {
-        layers = <5>;
-        input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_snap
-        &zip_scroll_scaler 4 1
-        >;
     };
 };

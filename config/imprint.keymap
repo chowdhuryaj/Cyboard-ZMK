@@ -16,14 +16,6 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        automouse: automouse {
-            compatible = "zmk,behavior-auto-layer";
-            #binding-cells = <0>;
-            layers = <1>;
-            continue-list = <LEFT DOWN UP RIGHT>;
-            ignore-numbers;
-            ignore-modifiers;
-        };
 
         sk_mo: sticky_key_momentary {
             compatible = "zmk,behavior-hold-tap";
@@ -519,7 +511,7 @@
 
 &trackball_peripheral_listener {
     input-processors = <
-        &zip_temp_layer 1 1000
+        &zip_temp_layer 1 2000
         &zip_xy_scaler 2 3
     >;
 

@@ -27,7 +27,6 @@
             ignore-numbers;
             ignore-modifiers;
         };
-    };
 
         sk_mo: sticky_key_momentary {
             compatible = "zmk,behavior-hold-tap";

@@ -438,7 +438,7 @@
         compatible = "zmk,layer-listeners";
 
         mouse_rgb_listener {
-            layers = <1 2 3>;
+            layers = <1 2 3 4>;
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_OFF>;
         };
     };
@@ -452,7 +452,7 @@
 &kp PG_UP  &kp X     &kp F     &kp G     &kp K     &kp Q                      &as LBKT  &magic          &kp O             &kp U     &as SQT    &as RBKT
 &kp B      &kp N     &kp S     &kp H     &kp T     &kp M                      &kp Y     &kp C           &kp A             &kp E     &kp I      &kp EQUAL
 &kp PG_DN  &kp P     &kp V     &kp J     &kp D     &kp Z                      &as SEMI  &kp W           &as COMMA         &as DOT   &as FSLH   &as MINUS
-&mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                       &sk_mo 5 LSHFT  &sk_mo 6 LGUI     &sk LALT  &sk LCTRL  &kp F13
+&mkp MB5   &mkp MB4  &mkp MB2  &mkp MB3  &mkp MB1                                       &sk_mo 4 LSHFT  &sk_mo 5 LGUI     &sk_mo 6 LALT  &sk LCTRL  &kp F13
                                          &lt 5 L   &dell   &mkp MB2           &mkp MB1  &mkp MB5        &key_repeat
                                          &lt 4 R   &bsp    &rgb_ug RGB_TOG    &mkp MB3  &mkp MB4        &hmr LSHFT SPACE
             >;
@@ -536,7 +536,7 @@
 
 &trackball_peripheral_listener {
     input-processors = <
-        &zip_temp_layer 1 2000
+        &zip_temp_layer 1 500
         &zip_xy_scaler 2 3
     >;
 
@@ -548,9 +548,19 @@
     };
 
     fast {
-        layers = <4>;
+        layers = <3>;
         input-processors = <
             &zip_xy_scaler 8 1
+        >;
+    };
+
+    drag {
+        layers = <4>;
+        input-processors = <
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_snap
         >;
     };
 };

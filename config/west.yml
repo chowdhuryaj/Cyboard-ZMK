@@ -28,10 +28,6 @@ manifest:
       revision: main
       path: modules/zmk/adaptive-key
 
-    - name: zmk-auto-layer
-      remote: urob
-      revision: zero-param
-
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1

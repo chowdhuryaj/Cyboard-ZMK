@@ -67,7 +67,6 @@
             compatible = "zmk,behavior-adaptive-key";
             label = "MAGIC";
             #binding-cells = <0>;
-
             bindings = <&key_repeat>;
 
             n_to_x {
@@ -120,7 +119,7 @@
                 bindings = <&kp F>;
             };
 
-            t_to_ment{
+            t_to_ment {
                 trigger-keys = <T>;
                 bindings = <&kp M &kp E &kp N &kp T>;
             };
@@ -349,28 +348,28 @@
 
         lbspc {
             bindings = <&kp BSPC>;
-            key-positions = <28 27 26>;
+            key-positions = <28 39>;
             timeout-ms = <25>;
             layers = <0>;
         };
 
         ldel {
             bindings = <&kp DEL>;
-            key-positions = <40 39 38>;
+            key-positions = <40 27>;
             timeout-ms = <25>;
             layers = <0>;
         };
 
         rbspc {
             bindings = <&kp BSPC>;
-            key-positions = <32 31 33>;
+            key-positions = <31 44>;
             timeout-ms = <25>;
             layers = <0>;
         };
 
         rdel {
             bindings = <&kp DEL>;
-            key-positions = <43 44 45>;
+            key-positions = <43 32>;
             timeout-ms = <25>;
             layers = <0>;
         };
@@ -645,7 +644,6 @@
         layers = <3>;
         input-processors = <
             &zip_xy_scaler 8 1
-
         >;
     };
 

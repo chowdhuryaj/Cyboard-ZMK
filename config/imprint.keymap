@@ -68,13 +68,11 @@
             label = "MAGIC";
             #binding-cells = <0>;
 
-            /* default output */
-
             bindings = <&key_repeat>;
 
-            n_to_p {
+            n_to_x {
                 trigger-keys = <N>;
-                bindings = <&kp P>;
+                bindings = <&kp X>;
             };
 
             x_to_p {
@@ -92,15 +90,14 @@
                 bindings = <&kp F>;
             };
 
+            t_to_ment{
+                trigger-keys = <Tt>;
+                bindings = <&kp M &kp E &kp N &kp T>;
+            };
+
             e_to_u {
                 trigger-keys = <E>;
                 bindings = <&kp U>;
-            };
-
-            g_to_h {
-                trigger-keys = <G>;
-                bindings = <&kp H>;
-                max-prior-idle-ms = <1000>;
             };
 
             bspc_bword {
@@ -618,6 +615,7 @@
         layers = <3>;
         input-processors = <
             &zip_xy_scaler 8 1
+
         >;
     };
 
@@ -638,6 +636,7 @@
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         &zip_scroll_snap
     >;
 
@@ -647,6 +646,7 @@
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         &zip_scroll_snap
         &zip_scroll_scaler 1 2
         >;
@@ -658,6 +658,7 @@
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         &zip_scroll_snap
         &zip_scroll_scaler 2 1
         >;

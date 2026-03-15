@@ -91,7 +91,7 @@
             };
 
             t_to_ment{
-                trigger-keys = <Tt>;
+                trigger-keys = <T>;
                 bindings = <&kp M &kp E &kp N &kp T>;
             };
 

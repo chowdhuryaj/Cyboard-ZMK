@@ -85,6 +85,36 @@
                 bindings = <&kp O>;
             };
 
+            y_to_ou {
+                trigger-keys = <Y>;
+                bindings = <&kp O &kp U>;
+            };
+
+            c_to_y {
+                trigger-keys = <C>;
+                bindings = <&kp Y>;
+            };
+
+            w_to_y {
+                trigger-keys = <W>;
+                bindings = <&kp Y>;
+            };
+
+            i_to_apos {
+                trigger-keys = <I>;
+                bindings = <&kp APOS>;
+            };
+
+            n_to_ion {
+                trigger-keys = <N>;
+                bindings = <&kp I &kp O &kp N>;
+            };
+
+            m_to_ent {
+                trigger-keys = <M>;
+                bindings = <&kp E &kp N &kp T>;
+            };
+
             s_to_f {
                 trigger-keys = <S>;
                 bindings = <&kp F>;

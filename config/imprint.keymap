@@ -249,6 +249,18 @@
             key-positions = <34 46>;
             timeout-ms = <25>;
         };
+
+        rep {
+            bindings = <&key_repeat>;
+            key-positions = <63 69>;
+            timeout-ms = <25>;
+        };
+
+        lep {
+            bindings = <&key_repeat>;
+            key-positions = <58 64>;
+            timeout-ms = <25>;
+        };
     };
 
     macros {
@@ -378,7 +390,7 @@
 &none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp X    &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
 &none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                  &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
                                                &hml LGUI L   &kp F7  &kp F8     &kp F11  &kp EQUAL     &hml RGUI W
-                                               &hml LSHFT R  &bdel   &kp DEL    &kp F12  &kp MINUS     &hmr RSHFT SPACE
+                                               &hml LSHFT R  &bdel   &kp F13    &kp F12  &kp MINUS     &hmr RSHFT SPACE
             >;
         };
 

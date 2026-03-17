@@ -529,13 +529,13 @@
 
         base {
             bindings = <
-&none  &as N1        &as N2       &as N3       &as N4        &as N5                 &as N6       &as N7        &as N8            &as N9       &as N0        &none
-&none  &kp B         &kp F        &kp G        &kp K         &kp Q                  &kp X        &kp Y         &kp O             &kp U        &sk LSHFT     &none
-&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                  &magic       &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp V        &kp J        &kp D         &kp Z                  &kp W        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
-&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                          &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
-                                               &lt 2 L       &lt 3 HOME  &kp END    &lt 1 EQUAL  &kp PG_UP     &key_repeat
-                                               &lt 1 R       &kp BSPC    &kp DEL    &lt 2 MINUS  &kp PG_DN     &hmr LSHFT SPACE
+&none  &none         &as N2       &as N3       &as N4        &as N5                &as N6       &as N7        &as N8            &as N9       &none         &none
+&none  &as N1        &kp F        &kp G        &kp K         &kp Q                 &key_repeat  &kp W         &kp O             &kp U        &as N0        &none
+&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                 &magic       &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
+&none  &kp B         &kp V        &kp J        &kp D         &kp Z                 &none        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
+&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                         &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
+                                               &lt 2 L       &lt 3 X   &mkp MB3    &mkp MB1     &kp P         &kp Y
+                                               &lt 1 R       &kp BSPC  &kp DEL     &lt 2 MINUS  &lt 1 EQUAL   &hmr LSHFT SPACE
             >;
         };
 

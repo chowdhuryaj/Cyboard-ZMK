@@ -357,13 +357,6 @@
             label = "RGB_CONT";
         };
 
-        rgb_drag: rgb_drag {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(282,100,60)>;
-            label = "RGB_DRAG";
-        };
-
         qu: qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -376,12 +369,12 @@
         compatible = "zmk,layer-listeners";
 
         drag_rgb_listener {
-            layers = <2>;
+            layers = <1>;
             bindings = <&rgb_drag &rgb_ug RGB_OFF>;
         };
 
         control_rgb_listener {
-            layers = <3>;
+            layers = <2>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };
@@ -433,24 +426,6 @@
     input-processors = <
         &zip_xy_scaler 2 3
     >;
-
-    slow {
-        layers = <1>;
-        input-processors = <
-            &zip_xy_scaler 1 2
-        >;
-    };
-
-    drag {
-        layers = <2>;
-        input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-        &zip_scroll_snap
-        >;
-    };
 };
 
 &trackball_central_listener {
@@ -461,25 +436,4 @@
         &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
         &zip_scroll_snap
     >;
-
-    slow {
-        layers = <1>;
-        input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-        &zip_scroll_snap
-        &zip_scroll_scaler 1 2
-        >;
-    };
-
-    drag {
-        layers = <2>;
-        input-processors = <
-        &zip_xy_scaler 2 3
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-        >;
-    };
 };

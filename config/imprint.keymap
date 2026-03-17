@@ -415,7 +415,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 25>,
-                <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>,
+                <&kp A &kp J &kp M &kp N8 &kp N5 &kp N1 &kp N1 &kp N1 &kp AT &kp F &kp A &kp I &kp R &kp V &kp I &kp E &kp W &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0>,
+                <&macro_wait_time 250>,
+                <&kp DLLR &kp DLLR &kp RET>,
                 <&macro_release>;
 
             label = "FV";
@@ -426,7 +428,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 25>,
-                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>,
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0>,
+                <&macro_wait_time 250>,
+                <&kp DLLR &kp DLLR &kp RET>,
                 <&macro_release>;
 
             label = "HCMC";
@@ -437,7 +441,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 25>,
-                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>,
+                <&kp LS(H) &kp N9 &kp N2 &kp N9 &kp N9 &kp N9 &kp AT &kp H &kp C &kp M &kp E &kp D &kp DOT &kp O &kp R &kp G &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0>,
+                <&macro_wait_time 250>,
+                <&kp DLLR &kp DLLR &kp RET>,
                 <&macro_release>;
 
             label = "HCMC_EMAIL";
@@ -448,7 +454,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_wait_time 25>,
-                <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0 &kp DLLR &kp DLLR &kp RET>,
+                <&kp C &kp H &kp O &kp W &kp D &kp N1 &kp N9 &kp N8 &kp AT &kp U &kp M &kp N &kp DOT &kp E &kp D &kp U &kp TAB &kp LS(B) &kp N3 &kp N &kp T &kp N0 &kp N &kp EXCL &kp LS(W) &kp N3 &kp S &kp T &kp N4 &kp N2 &kp N0>,
+                <&macro_wait_time 250>,
+                <&kp DLLR &kp DLLR &kp RET>,
                 <&macro_release>;
 
             label = "UMN";
@@ -457,15 +465,15 @@
         rgb_mouse: rgb_mouse {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(35,97,42)>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(17,97,42)>;
             label = "RGB_MOUSE";
         };
 
-        rgb_num: rgb_num {
+        rgb_nav: rgb_nav {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(116,100,60)>;
-            label = "RGB_NUM";
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(296,100,60)>;
+            label = "RGB_NAV";
         };
 
         rgb_cont: rgb_cont {
@@ -487,6 +495,13 @@
             #binding-cells = <0>;
             bindings = <&kp Q &kp U>;
             label = "QU";
+        };
+
+        rgb_num: rgb_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(100,100,60)>;
+            label = "RGB_NUM";
         };
     };
 
@@ -519,13 +534,13 @@
 
         base {
             bindings = <
-&none  &as N1        &as N2       &as N3       &as N4        &as N5                      &as N6          &as N7         &as N8            &as N9       &as N0        &none
-&none  &kp B         &kp F        &kp G        &kp K         &kp Q                       &as X           &kp W          &kp O             &kp U        &as SQT       &none
-&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                       &kp Y           &hmr RSHFT C   &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp V        &kp J        &kp D         &kp Z                       &as SEMI        &kp UP         &kp LEFT          &kp RIGHT    &kp DOWN      &none
-&none  &none         &none        &none        &none                                                     &none          &none             &none        &none         &none
-                                               &lt 7 L       &lt 2 LS(TAB)  &lt 3 TAB    &sk_mo 4 LCTRL  &magic         &key_repeat
-                                               &lt 5 R       &kp BSPC       &kp DEL      &sk_mo 2 LALT   &sk_mo 3 LGUI  &hmr LSHFT SPACE
+&none  &as N1        &as N2       &as N3       &as N4        &as N5                              &as N6          &as N7         &as N8            &as N9       &as N0        &none
+&none  &kp B         &kp F        &kp G        &kp K         &kp Q                               &as X           &kp W          &kp O             &kp U        &as SQT       &none
+&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                               &kp Y           &hmr RSHFT C   &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
+&none  &kp P         &kp V        &kp J        &kp D         &kp Z                               &as SEMI        &kp UP         &kp LEFT          &kp RIGHT    &kp DOWN      &none
+&none  &none         &none        &none        &none                                                             &none          &none             &none        &none         &none
+                                               &lt 7 L       &lt 2 LS(LC(TAB))  &lt 3 LC(TAB)    &sk_mo 4 LCTRL  &magic         &key_repeat
+                                               &lt 5 R       &kp BSPC           &kp DEL          &sk_mo 2 LALT   &sk_mo 3 LGUI  &hmr LSHFT SPACE
             >;
         };
 

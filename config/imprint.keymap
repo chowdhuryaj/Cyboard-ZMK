@@ -403,31 +403,31 @@
         };
 
         dot {
-            bindings = <&as DOT>;
+            bindings = <&kp DOT>;
             key-positions = <30 31>;
             timeout-ms = <25>;
         };
 
         comma {
-            bindings = <&as COMMA>;
+            bindings = <&kp COMMA>;
             key-positions = <42 43>;
             timeout-ms = <25>;
         };
 
         semi {
-            bindings = <&as SEMI>;
+            bindings = <&kp SEMI>;
             key-positions = <19 18>;
             timeout-ms = <25>;
         };
 
         quote {
-            bindings = <&as SQT>;
+            bindings = <&kp SQT>;
             key-positions = <7 19>;
             timeout-ms = <25>;
         };
 
         question {
-            bindings = <&as FSLH>;
+            bindings = <&kp FSLH>;
             key-positions = <31 43>;
             timeout-ms = <25>;
         };

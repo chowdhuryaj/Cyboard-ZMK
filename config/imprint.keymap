@@ -24,14 +24,6 @@
             bindings = <&mo>, <&sk>;
         };
 
-        num_word: num_word {
-          compatible = "zmk,behavior-auto-layer";
-          #binding-cells = <6>;
-          continue-list = <>;
-          ignore-numbers;
-          ignore-modifiers;
-        };
-
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";

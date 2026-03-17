@@ -357,6 +357,13 @@
             label = "RGB_CONT";
         };
 
+        rgb_num: rgb_num {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(219,100,60)>;
+            label = "RGB_NUM";
+        };
+
         qu: qu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -368,9 +375,9 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        drag_rgb_listener {
+        num_rgb_listener {
             layers = <1>;
-            bindings = <&rgb_drag &rgb_ug RGB_OFF>;
+            bindings = <&rgb_num &rgb_ug RGB_OFF>;
         };
 
         control_rgb_listener {

@@ -252,26 +252,21 @@
 
         rep {
             bindings = <&key_repeat>;
-            key-positions = <63 69>;
-            timeout-ms = <25>;
-        };
-
-        lep {
-            bindings = <&key_repeat>;
-            key-positions = <58 64>;
-            timeout-ms = <25>;
+            key-positions = <63 62>;
+            timeout-ms = <100>;
+            layers = <0>;
         };
 
         sfb_u {
             bindings = <&kp U>;
-            key-positions = <63 62>;
-            timeout-ms = <25>;
+            key-positions = <63 69>;
+            timeout-ms = <100>;
         };
 
         sfb_o {
             bindings = <&kp O>;
-            key-positions = <58 59>;
-            timeout-ms = <25>;
+            key-positions = <58 64>;
+            timeout-ms = <100>;
         };
     };
 

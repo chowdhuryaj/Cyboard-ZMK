@@ -17,7 +17,7 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        &num_word {
+        num_word {
           continue-list = <BSPC DEL DOT COMMA>;
         };
 

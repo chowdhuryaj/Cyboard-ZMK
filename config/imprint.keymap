@@ -628,6 +628,8 @@
         layers = <2>;
         input-processors = <
         &zip_xy_scaler 2 3
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         >;
     };
 };

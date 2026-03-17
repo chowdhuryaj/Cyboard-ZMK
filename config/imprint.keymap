@@ -278,7 +278,7 @@
 
         quit {
             bindings = <&kp LG(Q)>;
-            key-positions = <40 52>;
+            key-positions = <25 37>;
             timeout-ms = <25>;
         };
 
@@ -327,55 +327,27 @@
             layers = <0>;
         };
 
-        lbspc {
-            bindings = <&kp BSPC>;
-            key-positions = <28 39>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
-        ldel {
-            bindings = <&kp DEL>;
-            key-positions = <40 27>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
-        rbspc {
-            bindings = <&kp BSPC>;
-            key-positions = <31 44>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
-        rdel {
-            bindings = <&kp DEL>;
-            key-positions = <43 32>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
         f7 {
             bindings = <&kp F7>;
-            key-positions = <64 58>;
+            key-positions = <64 27>;
             timeout-ms = <25>;
         };
 
         f8 {
             bindings = <&kp F8>;
-            key-positions = <65 59>;
+            key-positions = <28 64>;
             timeout-ms = <25>;
         };
 
         f11 {
             bindings = <&kp F11>;
-            key-positions = <39 51>;
+            key-positions = <39 58>;
             timeout-ms = <25>;
         };
 
         f12 {
             bindings = <&kp F12>;
-            key-positions = <40 52>;
+            key-positions = <40 58>;
             timeout-ms = <25>;
         };
 
@@ -399,7 +371,7 @@
 
         quote {
             bindings = <&kp SQT>;
-            key-positions = <44 32>;
+            key-positions = <32 44>;
             timeout-ms = <25>;
         };
 

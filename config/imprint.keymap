@@ -16,14 +16,6 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        sk_mo: sticky_key_momentary {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&sk>;
-        };
-
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -62,118 +54,14 @@
             flavor = "tap-preferred";
         };
 
-        magic: magic {
-            compatible = "zmk,behavior-adaptive-key";
-            label = "MAGIC";
+        bdel: bdel {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BDEL";
+            bindings = <&kp BSPC>, <&kp DEL>;
+
             #binding-cells = <0>;
-            bindings = <&key_repeat>;
-
-            n_to_x {
-                trigger-keys = <N>;
-                bindings = <&kp X>;
-            };
-
-            x_to_p {
-                trigger-keys = <X>;
-                bindings = <&kp P>;
-            };
-
-            a_to_o {
-                trigger-keys = <A>;
-                bindings = <&kp O>;
-            };
-
-            y_to_ou {
-                trigger-keys = <Y>;
-                bindings = <&kp O &kp U>;
-            };
-
-            c_to_y {
-                trigger-keys = <C>;
-                bindings = <&kp Y>;
-            };
-
-            w_to_y {
-                trigger-keys = <W>;
-                bindings = <&kp Y>;
-            };
-
-            i_to_apos {
-                trigger-keys = <I>;
-                bindings = <&kp APOS>;
-            };
-
-            n_to_ion {
-                trigger-keys = <N>;
-                bindings = <&kp I &kp O &kp N>;
-            };
-
-            m_to_ent {
-                trigger-keys = <M>;
-                bindings = <&kp E &kp N &kp T>;
-            };
-
-            s_to_f {
-                trigger-keys = <S>;
-                bindings = <&kp F>;
-            };
-
-            t_to_ment {
-                trigger-keys = <T>;
-                bindings = <&kp M &kp E &kp N &kp T>;
-            };
-
-            e_to_u {
-                trigger-keys = <E>;
-                bindings = <&kp U>;
-            };
-
-            bspc_bword {
-                trigger-keys = <BSPC>;
-                bindings = <&kp LC(BSPC)>;
-                max-prior-idle-ms = <1000>;
-            };
-
-            del_bword {
-                trigger-keys = <DEL>;
-                bindings = <&kp LC(DEL)>;
-                max-prior-idle-ms = <1000>;
-            };
-
-            comma_to_space_sticky_shift {
-                trigger-keys = <COMMA>;
-                bindings = <&kp SPACE>, <&sk LSHIFT>;
-
-                max-prior-idle-ms = <1000>;
-            };
-
-            period_to_space_sticky_shift {
-                trigger-keys = <DOT>;
-                bindings = <&kp SPACE>, <&sk LSHIFT>;
-
-                max-prior-idle-ms = <1000>;
-            };
-
-            slash_to_space_sticky_shift {
-                trigger-keys = <SLASH>;
-                bindings = <&kp SPACE>, <&sk LSHIFT>;
-
-                max-prior-idle-ms = <1000>;
-            };
-
-            question_to_space_sticky_shift {
-                trigger-keys = <LS(SLASH)>;
-                bindings = <&kp SPACE>, <&sk LSHIFT>;
-
-                max-prior-idle-ms = <1000>;
-            };
-
-            exclamation_to_space_sticky_shift {
-                trigger-keys = <LS(N1)>;
-                bindings = <&kp SPACE>, <&sk LSHIFT>;
-
-                max-prior-idle-ms = <1000>;
-            };
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
         };
     };
 
@@ -205,7 +93,7 @@
 
         dictate {
             bindings = <&kp GRAVE>;
-            key-positions = <29 28>;
+            key-positions = <52 51>;
             timeout-ms = <20>;
         };
 
@@ -313,42 +201,11 @@
             layers = <0>;
         };
 
-        x {
-            bindings = <&kp X>;
-            key-positions = <38 39>;
+        excl {
+            bindings = <&kp EXCL>;
+            key-positions = <18 19>;
             timeout-ms = <25>;
             layers = <0>;
-        };
-
-        z {
-            bindings = <&kp Z>;
-            key-positions = <38 37>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
-        f7 {
-            bindings = <&kp F7>;
-            key-positions = <64 27>;
-            timeout-ms = <25>;
-        };
-
-        f8 {
-            bindings = <&kp F8>;
-            key-positions = <28 64>;
-            timeout-ms = <25>;
-        };
-
-        f11 {
-            bindings = <&kp F11>;
-            key-positions = <39 58>;
-            timeout-ms = <25>;
-        };
-
-        f12 {
-            bindings = <&kp F12>;
-            key-positions = <40 58>;
-            timeout-ms = <25>;
         };
 
         dot {
@@ -365,7 +222,7 @@
 
         semi {
             bindings = <&kp SEMI>;
-            key-positions = <19 18>;
+            key-positions = <42 30>;
             timeout-ms = <25>;
         };
 
@@ -383,28 +240,14 @@
 
         lbkt {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <9 21>;
+            key-positions = <33 45>;
             timeout-ms = <25>;
         };
 
         rbkt {
             bindings = <&kp RBKT>;
-            key-positions = <22 10>;
+            key-positions = <34 46>;
             timeout-ms = <25>;
-        };
-
-        ltog_swap {
-            bindings = <&tog 2>;
-            key-positions = <29 41 58>;
-            timeout-ms = <35>;
-            require-prior-idle-ms = <150>;
-        };
-
-        rtog_swap {
-            bindings = <&tog 2>;
-            key-positions = <30 42 63>;
-            timeout-ms = <35>;
-            require-prior-idle-ms = <150>;
         };
     };
 
@@ -529,34 +372,22 @@
 
         base {
             bindings = <
-&none  &none         &as N2       &as N3       &as N4        &as N5                &as N6       &as N7        &as N8            &as N9       &none         &none
-&none  &as N1        &kp F        &kp B        &kp K         &kp Q                 &key_repeat  &kp W         &kp O             &kp U        &as N0        &none
-&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                 &kp G        &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp V        &kp J        &kp D         &kp Z                 &kp X        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
-&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                         &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
-                                               &lt 2 L       &mkp MB2  &mkp MB3    &mkp MB1     &magic        &kp Y
-                                               &lt 1 R       &kp BSPC  &kp DEL     &lt 2 MINUS  &lt 1 EQUAL   &hmr LSHFT SPACE
+&none  &none         &none        &none        &none         &none              &none    &none         &none             &none        &none         &none
+&none  &sl 1         &kp F        &kp B        &kp K         &kp Q              &sl 2    &kp Y         &kp O             &kp U        &sl 1         &none
+&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &kp G    &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
+&none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp X    &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
+&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                  &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
+                                               &hml LGUI L   &kp F7  &kp F8     &kp F11  &kp EQUAL     &hml RGUI W
+                                               &hml LSHFT R  &bdel   &kp DEL    &kp F12  &kp MINUS     &hmr RSHFT SPACE
             >;
         };
 
-        slow {
+        funav {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        drag {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N7  &kp N8  &kp N9  &trans            &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
+&trans  &trans  &kp N4  &kp N5  &kp N6  &trans            &trans  &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans  &kp N0  &kp N1  &kp N2  &kp N3  &trans            &trans  &kp N1  &kp N2  &kp N3  &kp N0  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans

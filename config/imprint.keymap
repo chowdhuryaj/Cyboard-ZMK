@@ -552,13 +552,13 @@
 
         base {
             bindings = <
-&kp HOME   &as N1        &as N2       &as N3       &as N4        &as N5                &as N6          &as N7         &as N8            &as N9         &as N0           &kp END
-&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                 &as LBKT        &kp Y          &kp O             &kp U          &as SQT          &as RBKT
-&kp B      &kp N         &kp S        &kp H        &kp T         &kp M                 &magic          &kp C          &kp A             &kp E          &kp I            &kp EQUAL
-&kp PG_DN  &hml LCTRL P  &hml LALT V  &hml LGUI J  &hml LSHFT D  &kp Z                 &as SEMI        &hmr LSHFT W   &hmr LGUI SPACE   &hmr RALT DOT  &hmr RCTRL FSLH  &as MINUS
-&mkp MB5   &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                            &sl 4          &sl 5             &sl 6          &sk F13          &kp F14
-                                                   &lt 5 L       &lt 2 F7  &lt 3 F8    &sk_mo 4 LCTRL  &magic         &key_repeat
-                                                   &lt 4 R       &kp F11   &kp F12     &sk_mo 2 LALT   &sk_mo 3 LGUI  &hmr LSHFT SPACE
+&kp HOME   &as N1        &as N2       &as N3       &as N4        &as N5                      &as N6          &as N7         &as N8            &as N9         &as N0           &kp END
+&kp PG_UP  &kp X         &kp F        &kp G        &kp K         &kp Q                       &as LBKT        &kp Y          &kp O             &kp U          &as SQT          &as RBKT
+&kp B      &kp N         &kp S        &kp H        &kp T         &kp M                       &magic          &kp C          &kp A             &kp E          &kp I            &kp EQUAL
+&kp PG_DN  &hml LCTRL P  &hml LALT V  &hml LGUI J  &hml LSHFT D  &kp Z                       &as SEMI        &hmr LSHFT W   &hmr LGUI SPACE   &hmr RALT DOT  &hmr RCTRL FSLH  &as MINUS
+&mkp MB5   &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                                  &sl 4          &sl 5             &sl 6          &sk F13          &kp F14
+                                                   &lt 5 L       &lt 2 LS(TAB)  &lt 3 TAB    &sk_mo 4 LCTRL  &magic         &key_repeat
+                                                   &lt 4 R       &kp BSPC       &kp DEL      &sk_mo 2 LALT   &sk_mo 3 LGUI  &hmr LSHFT SPACE
             >;
         };
 

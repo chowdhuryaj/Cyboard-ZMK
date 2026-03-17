@@ -24,6 +24,14 @@
             bindings = <&mo>, <&sk>;
         };
 
+        num_word: num_word {
+          compatible = "zmk,behavior-auto-layer";
+          #binding-cells = <6>;
+          continue-list = <>;
+          ignore-numbers;
+          ignore-modifiers;
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -518,15 +526,21 @@
             bindings = <&rgb_drag &rgb_ug RGB_OFF>;
         };
 
-        num_rgb_listener {
+        nav_rgb_listener {
             layers = <5>;
+            bindings = <&rgb_nav &rgb_ug RGB_OFF>;
+        };
+
+        autonum_rgb_listener {
+            layers = <6>;
             bindings = <&rgb_num &rgb_ug RGB_OFF>;
         };
 
         control_rgb_listener {
-            layers = <6>;
+            layers = <7>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
+
     };
 
     keymap {
@@ -608,8 +622,8 @@
             bindings = <
 &trans  &as N1  &as N2  &as N3  &as N4  &as N5            &as N6  &as N7  &as N8  &as N9  &as N0  &trans
 &trans  &as N6  &as N7  &as N8  &as N9  &as N0            &as N1  &as N2  &as N3  &as N4  &as N5  &trans
-&trans  &as N1  &as N2  &as N3  &as N4  &as N5            &as N6  &as N7  &as N8  &as N9  &as N0  &trans
-&trans  &as N6  &as N7  &as N8  &as N9  &as N0            &as N1  &as N2  &as N3  &as N4  &as N5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans

@@ -557,7 +557,7 @@
 
         base {
             bindings = <
-&none  &as_num N1        &as N2       &as_num_num N3       &as_num N4        &as_num N5                   &as_num N6       &as_num N7        &as_num N8            &as_num N9       &as_num N0        &none
+&none  &as_num N1    &as_num N2   &as_num N3   &as_num N4    &as_num N5               &as_num N6   &as_num N7    &as_num N8        &as_num N9   &as_num N0    &none
 &none  &kp B         &kp F        &kp G        &kp K         &kp Q                    &kp W        &kp Y         &kp O             &kp U        &kp X         &none
 &none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &magic       &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
 &none  &kp P         &kp V        &kp J        &kp D         &kp Z                    &none        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none

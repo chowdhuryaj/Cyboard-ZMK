@@ -29,19 +29,6 @@
             bindings = <&mo>, <&sk>;
         };
 
-        as_num: as_num {
-          compatible = "zmk,behavior-macro-one-param";
-          #binding-cells = <1>;
-
-          bindings =
-            <&macro_press>,
-            <&num_word>,
-            <&as &macro_param_1to1>,
-            <&macro_pause_for_release>,
-            <&macro_release>,
-            <&as &macro_param_1to1>;
-        };
-
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -426,6 +413,20 @@
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
 
             label = "AS";
+        };
+
+        as_num: as_num {
+          compatible = "zmk,behavior-macro-one-param";
+          #binding-cells = <1>;
+
+          bindings =
+            <&macro_press>,
+            <&macro_param_1to1 &num_word>,
+            <&macro_param_1to2 &as MACRO_PLACEHOLDER>,
+            <&macro_pause_for_release>,
+            <&macro_release>,
+            <&macro_param_1to1 &num_word>,
+            <&macro_param_1to2 &as MACRO_PLACEHOLDER>;
         };
 
         fv: fv {

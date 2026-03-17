@@ -380,6 +380,18 @@
             key-positions = <31 43>;
             timeout-ms = <25>;
         };
+
+        lbkt {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <9 21>;
+            timeout-ms = <25>;
+        };
+
+        rbkt {
+            bindings = <&kp RBKT>;
+            key-positions = <22 10>;
+            timeout-ms = <25>;
+        };
     };
 
     macros {
@@ -462,20 +474,6 @@
             label = "UMN";
         };
 
-        rgb_mouse: rgb_mouse {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(17,97,42)>;
-            label = "RGB_MOUSE";
-        };
-
-        rgb_nav: rgb_nav {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(296,100,60)>;
-            label = "RGB_NAV";
-        };
-
         rgb_cont: rgb_cont {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -501,23 +499,13 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        mouse_rgb_listener {
-            layers = <1 2 3>;
-            bindings = <&rgb_mouse &rgb_ug RGB_OFF>;
-        };
-
         drag_rgb_listener {
-            layers = <4>;
+            layers = <3>;
             bindings = <&rgb_drag &rgb_ug RGB_OFF>;
         };
 
-        nav_rgb_listener {
-            layers = <5>;
-            bindings = <&rgb_nav &rgb_ug RGB_OFF>;
-        };
-
         control_rgb_listener {
-            layers = <6>;
+            layers = <4>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };
@@ -527,25 +515,13 @@
 
         base {
             bindings = <
-&none  &as N1    &as N2   &as N3   &as N4    &as N5               &as N6   &as N7    &as N8        &as N9   &as N0    &none
-&none  &kp B         &kp F        &kp G        &kp K         &kp Q                    &kp W        &kp Y         &kp O             &kp U        &kp X         &none
+&none  &as N1        &as N2       &as N3       &as N4        &as N5                   &as N6       &as N7        &as N8            &as N9       &as N0        &none
+&none  &kp B         &kp F        &kp G        &kp K         &kp Q                    &kp X        &kp Y         &kp O             &kp U        &sk LSHFT     &none
 &none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &magic       &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp V        &kp J        &kp D         &kp Z                    &none        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
-&none  &none         &none        &none        &none                                               &none         &none             &none        &none         &none
-                                               &lt 7 L       &lt 2 HOME  &lt 3 END    &lt 4 EQUAL  &lt 5 PG_UP   &key_repeat
-                                               &lt 5 R       &kp BSPC    &kp DEL      &lt 2 MINUS  &lt 3 PG_DN   &hmr LSHFT SPACE
-            >;
-        };
-
-        mouse {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                              &trans    &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &mkp MB1  &mkp MB2  &mkp MB4
-                                &trans  &trans  &trans    &mkp MB3  &trans    &mkp MB5
+&none  &kp P         &kp V        &kp J        &kp D         &kp Z                    &kp W        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
+&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                            &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
+                                               &lt 4 L       &lt 1 HOME  &lt 2 END    &lt 3 EQUAL  &kp PG_UP     &key_repeat
+                                               &lt 3 R       &kp BSPC    &kp DEL      &lt 1 MINUS  &lt 2 PG_DN   &hmr LSHFT SPACE
             >;
         };
 
@@ -585,18 +561,6 @@
             >;
         };
 
-        nav {
-            bindings = <
-&none  &trans    &trans     &trans    &trans     &trans             &trans    &trans     &trans    &trans     &trans   &none
-&none  &kp ESC   &kp PG_UP  &kp UP    &kp PG_DN  &kp RET            &kp RET   &kp PG_DN  &kp UP    &kp PG_UP  &kp ESC  &none
-&none  &kp HOME  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END            &kp HOME  &kp LEFT   &kp DOWN  &kp RIGHT  &kp END  &none
-&none  &trans    &trans     &trans    &trans     &trans             &trans    &trans     &trans    &trans     &trans   &none
-&none  &none     &none      &none     &none                                   &none      &none     &none      &none    &none
-                                      &trans     &trans   &trans    &trans    &trans     &trans
-                                      &trans     &trans   &trans    &trans    &trans     &trans
-            >;
-        };
-
         control {
             bindings = <
 &none  &trans           &trans           &trans           &trans           &trans                        &trans          &trans           &trans           &trans           &trans           &trans
@@ -615,7 +579,6 @@
 
 &trackball_peripheral_listener {
     input-processors = <
-        &zip_temp_layer 1 500
         &zip_xy_scaler 2 3
     >;
 

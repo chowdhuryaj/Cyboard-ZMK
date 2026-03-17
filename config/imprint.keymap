@@ -13,14 +13,14 @@
     flavor = "tap-preferred";
 };
 
+&num_word {
+  continue-list = <BSPC DEL DOT COMMA>;
+};
+
 / {
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-        num_word {
-          continue-list = <BSPC DEL DOT COMMA>;
-        };
-
         sk_mo: sticky_key_momentary {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;

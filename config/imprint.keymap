@@ -500,12 +500,12 @@
         compatible = "zmk,layer-listeners";
 
         drag_rgb_listener {
-            layers = <3>;
+            layers = <2>;
             bindings = <&rgb_drag &rgb_ug RGB_OFF>;
         };
 
         control_rgb_listener {
-            layers = <4>;
+            layers = <3>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };
@@ -520,24 +520,12 @@
 &none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &magic       &hmr RSHFT C  &hmr RALT A       &hmr RALT E  &hmr RCTRL I  &none
 &none  &kp P         &kp V        &kp J        &kp D         &kp Z                    &kp W        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
 &none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                            &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
-                                               &lt 4 L       &lt 1 HOME  &lt 2 END    &lt 3 EQUAL  &kp PG_UP     &key_repeat
-                                               &lt 3 R       &kp BSPC    &kp DEL      &lt 1 MINUS  &lt 2 PG_DN   &hmr LSHFT SPACE
+                                               &lt 2 L       &lt 3 HOME &kp END   &lt 1 EQUAL &kp PG_UP  &key_repeat
+                                               &lt 1 R       &kp BSPC  &kp DEL    &lt 2 MINUS  &kp PG_DN   &hmr LSHFT SPACE
             >;
         };
 
         slow {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-        };
-
-        fast {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
@@ -583,21 +571,14 @@
     >;
 
     slow {
-        layers = <2>;
+        layers = <1>;
         input-processors = <
             &zip_xy_scaler 1 2
         >;
     };
 
-    fast {
-        layers = <3>;
-        input-processors = <
-            &zip_xy_scaler 8 1
-        >;
-    };
-
     drag {
-        layers = <4>;
+        layers = <2>;
         input-processors = <
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
@@ -618,7 +599,7 @@
     >;
 
     slow {
-        layers = <2>;
+        layers = <1>;
         input-processors = <
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
@@ -629,15 +610,11 @@
         >;
     };
 
-    fast {
-        layers = <3>;
+    drag {
+        layers = <2>;
         input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-        &zip_scroll_snap
-        &zip_scroll_scaler 2 1
+        &zip_xy_scaler 2 3
+        &zip_scroll_transform INPUT_TRANSFORM_XY_INVERT
         >;
     };
 };

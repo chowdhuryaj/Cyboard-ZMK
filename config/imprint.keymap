@@ -404,7 +404,7 @@
 
         quote {
             bindings = <&kp SQT>;
-            key-positions = <7 19>;
+            key-positions = <44 32>;
             timeout-ms = <25>;
         };
 

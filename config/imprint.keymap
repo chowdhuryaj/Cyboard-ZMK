@@ -261,6 +261,11 @@
             key-positions = <58 64>;
             timeout-ms = <100>;
         };
+
+        scontrol {
+            bindings = <&sl 2>;
+            key-positions = <58 63>;
+        };
     };
 
     macros {

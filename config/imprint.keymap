@@ -400,37 +400,37 @@
 
         base {
             bindings = <
-&none  &none         &none        &none        &none         &none              &none    &none         &none             &none        &none         &none
-&none  &kp X         &kp F        &kp B        &kp K         &kp V              &kp Q    &kp Y         &kp O             &kp U        &sl 1         &none
-&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &kp T         &kp M              &kp W    &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp G        &kp J        &kp D         &kp Z              &trans   &kp HOME      &kp UP            &kp END      &kp PG_UP     &none
-&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                  &kp LEFT      &kp DOWN          &kp RIGHT    &kp PG_DN     &none
-                                               &hml LGUI L   &kp F7  &kp F8     &kp F11  &kp EQUAL     &key_repeat
-                                               &hml LSHFT R  &bdel   &kp F13    &kp F12  &kp MINUS     &hmr RSHFT SPACE
+&none  &none         &as N2       &as N3       &as N4        &as N5             &as N6    &as N7        &as N8            &as N9       &none         &none
+&none  &as N1        &kp F        &kp B        &kp K         &kp Q              &kp X     &kp Y         &kp O             &kp U        &as N0        &none
+&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &kp G     &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &none
+&none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp HOME  &kp W         &kp UP            &kp END      &kp PG_UP     &none
+&none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                   &kp LEFT      &kp DOWN          &kp RIGHT    &kp PG_DN     &none
+                                               &hml LGUI L   &kp F7  &kp F8     &kp F11   &kp EQUAL     &key_repeat
+                                               &hml LSHFT R  &bdel   &kp F13    &kp F12   &kp MINUS     &hmr RSHFT SPACE
             >;
         };
 
-        funav {
+        fun {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans             &trans   &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &as N7  &as N8  &as N9  &kp F13            &kp F14  &as N7  &as N8  &as N9  &trans  &trans
-&trans  &trans  &as N4  &as N5  &as N6  &kp F11            &kp F12  &as N4  &as N5  &as N6  &trans  &trans
-&trans  &as N0  &as N1  &as N2  &as N3  &kp F9             &kp F10  &as N1  &as N2  &as N3  &as N0  &trans
-&trans  &kp F1  &kp F2  &kp F3  &kp F4                              &kp F5  &kp F6  &kp F7  &kp F8  &trans
-                                &trans  &trans   &trans    &trans   &trans  &trans
-                                &trans  &trans   &trans    &trans   &trans  &trans
+&trans  &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans   &trans   &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5             &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15            &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &trans
+&trans  &trans   &trans   &trans   &trans                               &trans   &trans   &trans   &trans   &trans
+                                   &trans   &trans   &trans    &trans   &trans   &trans
+                                   &trans   &trans   &trans    &trans   &trans   &trans
             >;
         };
 
         control {
             bindings = <
-&none  &trans           &trans           &trans           &trans           &trans                        &trans          &trans           &trans           &trans           &trans           &trans
-&none  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
-&none  &kp C_PP         &kp C_MUTE       &kp C_VOL_DN     &kp C_VOL_UP     &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
-&none  &kp C_BRI_DN     &kp C_BRI_UP     &kp C_PREV       &kp C_NEXT       &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
-&none  &trans           &trans           &trans           &trans                                                         &trans           &trans           &trans           &trans           &trans
-                                                          &bt BT_CLR       &bt BT_SEL 0  &bt BT_SEL 1    &bootloader     &sys_reset       &trans
-                                                          &bt BT_CLR_ALL   &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans           &tog 0
+&trans  &trans        &trans        &trans        &trans          &trans                        &trans          &trans           &trans           &trans           &trans           &trans
+&trans  &trans        &trans        &trans        &trans          &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
+&trans  &kp C_PP      &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP    &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
+&trans  &kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV    &kp C_NEXT      &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
+&trans  &trans        &trans        &trans        &trans                                                        &trans           &trans           &trans           &trans           &trans
+                                                  &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1    &bootloader     &sys_reset       &trans
+                                                  &bt BT_CLR_ALL  &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans           &tog 0
             >;
         };
     };

@@ -392,7 +392,7 @@
 &none  &none         &none        &none        &none         &none              &none        &none         &none             &none        &none         &none
 &none  &sl 1         &kp F        &kp B        &kp K         &kp Q              &key_repeat  &kp W         &kp O             &kp U        &sl 1         &none
 &none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &kp G        &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &none
-&none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp X        &kp UP        &kp LEFT          &kp RIGHT    &kp DOWN      &none
+&none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp X        &kp DOWN      &kp LEFT          &kp RIGHT    &kp UP        &none
 &none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                      &mkp MB1      &mkp MB3          &mkp MB2     &mkp MB5      &none
                                                &hml LGUI L   &kp F7  &kp F8     &kp F11      &kp EQUAL     &hml RGUI Y
                                                &hml LSHFT R  &bdel   &kp F13    &kp F12      &kp MINUS     &hmr RSHFT SPACE

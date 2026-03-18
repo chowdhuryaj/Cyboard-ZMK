@@ -271,6 +271,12 @@
             bindings = <&sl 1>;
             key-positions = <59 65>;
         };
+
+        rep {
+            bindings = <&key_repeat>;
+            key-positions = <62 69>;
+            timeout-ms = <50>;
+        };
     };
 
     macros {

@@ -99,6 +99,12 @@
                 bindings = <&kp I>;
             };
 
+            rti_y {
+                trigger-keys = <Y>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp O &kp U>;
+            };
+
             rti_sentence {
                 trigger-keys = <DOT QMARK EXCL>;
                 max-prior-idle-ms = <500>;
@@ -118,16 +124,23 @@
             };
         };
 
-        ak_rtim: ak_rtim {
+        ak_rmi: ak_rtim {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
-            bindings = <&kp H>;
+            bindings = <&key_repeat>;
 
-            rtim_t {
+            rmi_t {
                 trigger-keys = <T>;
                 max-prior-idle-ms = <500>;
                 bindings = <&kp I &kp O &kp N>;
             };
+
+            rmi_h {
+                trigger-keys = <W C A E I O U Y>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp H>;
+            };
+
         };
 
         hmr: hmr {
@@ -490,7 +503,7 @@
             bindings = <
 &none  &none         &as N2       &as N3       &as N4        &as N5             &as N6    &as N7        &as N8            &as N9       &none         &none
 &none  &as N1        &kp F        &kp G        &kp K         &kp Q              &kp B     &ak_rti       &kp O             &kp U        &as N0        &none
-&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &ak_rtim  &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &none
+&none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &ak_rmi   &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &none
 &none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp X     &kp W         &kp UP            &kp END      &mkp MB4      &none
 &none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                   &kp LEFT      &kp DOWN          &kp RIGHT    &mkp MB5      &none
                                                &hml LGUI L   &kp F7  &kp F8     &kp F11   &kp EQUAL     &kp Y

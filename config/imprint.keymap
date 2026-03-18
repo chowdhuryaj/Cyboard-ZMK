@@ -371,7 +371,7 @@
 
         scontrol {
             bindings = <&sl 2>;
-            key-positions = <58 59>;
+            key-positions = <60 66>;
         };
 
         snum {

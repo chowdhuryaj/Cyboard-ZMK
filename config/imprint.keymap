@@ -16,6 +16,37 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
+        ak_rti: ak_rti {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
+
+            rti_a { trigger-keys = <A>; max-prior-idle-ms = <500>; bindings = <&kp O>; };
+            rti_b { trigger-keys = <B>; max-prior-idle-ms = <500>; bindings = <&kp E &kp C &kp A &kp U>; };
+            rti_e { trigger-keys = <E>; max-prior-idle-ms = <500>; bindings = <&kp U>; };
+            rti_g { trigger-keys = <G>; max-prior-idle-ms = <500>; bindings = <&kp H>; };
+            rti_h { trigger-keys = <H>; max-prior-idle-ms = <500>; bindings = <&kp I &kp C &kp H>; };
+            rti_i { trigger-keys = <I>; max-prior-idle-ms = <500>; bindings = <&kp N &kp G>; };
+            rti_j { trigger-keys = <J>; max-prior-idle-ms = <500>; bindings = <&kp U &kp S &kp T>; };
+            rti_k { trigger-keys = <K>; max-prior-idle-ms = <500>; bindings = <&kp I &kp N &kp G>; };
+            rti_m { trigger-keys = <M>; max-prior-idle-ms = <500>; bindings = <&kp E &kp N &kp T>; };
+            rti_n { trigger-keys = <N>; max-prior-idle-ms = <500>; bindings = <&kp I &kp O &kp N>; };
+            rti_q { trigger-keys = <Q>; max-prior-idle-ms = <500>; bindings = <&kp U>; };
+            rti_t { trigger-keys = <G>; max-prior-idle-ms = <500>; bindings = <&kp I &kp O &kp N>; };
+            rti_u { trigger-keys = <U>; max-prior-idle-ms = <500>; bindings = <&kp I>; };
+            rti_sentence { trigger-keys = <DOT QMARK EXCL>; max-prior-idle-ms = <500>; bindings = <&kp SPACE &sk LSHFT>; };
+            rti_bspc { trigger-keys = <BSPC>; max-prior-idle-ms = <500>; bindings = <&kp LC(BSPC)>; };
+            rti_del { trigger-keys = <DEL>; max-prior-idle-ms = <500>; bindings = <&kp LC(DEL)>; };
+        };
+
+        ak_rtim: ak_rtim {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+            bindings = <&kp H>;
+
+            rtim_t { trigger-keys = <T>; max-prior-idle-ms = <500>; bindings = <&kp I &kp O &kp N>; };
+        };
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -194,13 +225,6 @@
             timeout-ms = <25>;
         };
 
-        qu {
-            bindings = <&qu>;
-            key-positions = <19 20>;
-            timeout-ms = <25>;
-            layers = <0>;
-        };
-
         excl {
             bindings = <&kp EXCL>;
             key-positions = <18 19>;
@@ -372,13 +396,6 @@
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(341,100,60)>;
             label = "RGB_NUM";
         };
-
-        qu: qu {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q &kp U>;
-            label = "QU";
-        };
     };
 
     layer_listeners {
@@ -401,7 +418,7 @@
         base {
             bindings = <
 &none  &none         &as N2       &as N3       &as N4        &as N5             &as N6       &as N7        &as N8            &as N9       &none         &none
-&none  &as N1        &kp F        &kp G        &kp K         &kp Q              &key_repeat  &key_repeat   &kp O             &kp U        &as N0        &none
+&none  &as N1        &kp F        &kp G        &kp K         &kp Q              &ak_rtim     &ak_rti       &kp O             &kp U        &as N0        &none
 &kp B  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M              &kp G        &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I  &kp X
 &none  &kp P         &kp V        &kp J        &kp D         &kp Z              &kp HOME     &kp W         &kp UP            &kp END      &mkp MB4      &none
 &none  &mkp MB4      &mkp MB2     &mkp MB3     &mkp MB1                                      &kp LEFT      &kp DOWN          &kp RIGHT    &mkp MB5      &none

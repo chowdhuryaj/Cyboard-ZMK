@@ -264,7 +264,12 @@
 
         scontrol {
             bindings = <&sl 2>;
-            key-positions = <58 63>;
+            key-positions = <58 59>;
+        };
+
+        snum {
+            bindings = <&sl 1>;
+            key-positions = <59 65>;
         };
     };
 
@@ -358,7 +363,7 @@
         rgb_num: rgb_num {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(219,100,60)>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(341,100,60)>;
             label = "RGB_NUM";
         };
 

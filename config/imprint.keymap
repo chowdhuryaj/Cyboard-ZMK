@@ -528,7 +528,7 @@
 &none  &kp B         &kp F        &kp G        &kp K         &none                    &none            &ak_rti       &kp O             &kp U        &ak_rmi        &none
 &none  &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &mt EQUAL MINUS  &hmr RSHFT C  &hmr RGUI A       &hmr RALT E  &hmr RCTRL I   &none
 &none  &kp P         &kp V        &kp J        &kp D         &none                    &none            &kp W         &kp UP            &kp HOME     &kp END        &none
-&none  &kp F7        &kp F8       &kp F9       &kp F10                                                 &kp LEFT      &kp DOWN          &kp RIGHT    &kp LG(SPACE)  &none
+&none  &kp F7        &kp F8       &kp F11      &kp F12                                                 &kp LEFT      &kp DOWN          &kp RIGHT    &kp LG(SPACE)  &none
                                                &hml LGUI L   &hml LALT X  &mkp MB5    &mkp MB1         &mkp MB2      &hmr LCTRL Y
                                                &hml LCTRL R  &bdel        &mkp MB4    &mkp MB3         &kp GRAVE     &hmr RSHFT SPACE
             >;

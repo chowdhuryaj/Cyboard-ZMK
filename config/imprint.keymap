@@ -13,6 +13,8 @@
     flavor = "tap-preferred";
 };
 
+&sl { lazy; };
+
 / {
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
@@ -122,24 +124,6 @@
                 trigger-keys = <DEL>;
                 max-prior-idle-ms = <500>;
                 bindings = <&kp LC(DEL)>;
-            };
-        };
-
-        ak_rmi: ak_rtim {
-            compatible = "zmk,behavior-adaptive-key";
-            #binding-cells = <0>;
-            bindings = <&key_repeat>;
-
-            rmi_t {
-                trigger-keys = <T>;
-                max-prior-idle-ms = <500>;
-                bindings = <&kp I &kp O &kp N>;
-            };
-
-            rmi_h {
-                trigger-keys = <W C A E I O U Y>;
-                max-prior-idle-ms = <500>;
-                bindings = <&kp H>;
             };
         };
 

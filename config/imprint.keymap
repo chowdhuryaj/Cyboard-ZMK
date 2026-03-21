@@ -417,13 +417,8 @@
     layer_listeners {
         compatible = "zmk,layer-listeners";
 
-        num_rgb_listener {
-            layers = <1>;
-            bindings = <&rgb_num &rgb_ug RGB_OFF>;
-        };
-
         control_rgb_listener {
-            layers = <2>;
+            layers = <1>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };

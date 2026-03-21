@@ -415,10 +415,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&rgb_ug RGB_ON>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(167,62,40)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(167,62,40)>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -432,10 +429,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&rgb_ug RGB_ON>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(37,94,43)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(37,94,43)>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -449,10 +443,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&rgb_ug RGB_ON>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(269,87,47)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(269,87,47)>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
@@ -466,10 +457,7 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&macro_press>,
-                <&rgb_ug RGB_ON>,
-                <&macro_tap>,
-                <&rgb_ug RGB_COLOR_HSB(147,100,50)>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(147,100,50)>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,

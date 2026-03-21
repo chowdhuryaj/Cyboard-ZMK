@@ -4,7 +4,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
@@ -353,16 +352,6 @@
             key-positions = <34 46>;
             timeout-ms = <25>;
         };
-
-        scontrol {
-            bindings = <&sl 2>;
-            key-positions = <59 65>;
-        };
-
-        snum {
-            bindings = <&sl 1>;
-            key-positions = <64 58>;
-        };
     };
 
     macros {
@@ -479,25 +468,13 @@
 
         base {
             bindings = <
-&kp F7    &as N1        &as N2       &as N3       &as N4        &as N5                  &as N6           &as N7           &as N8            &as N9        &as N0        &none
-&kp F8    &kp B         &kp F        &kp G        &kp K         &as Q                   &kp F17          &ak_rti          &kp O             &kp U         &none         &none
-&kp F11   &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                   &mt EQUAL MINUS  &hmr RSHFT C     &hmr RGUI A       &hmr RALT E   &hmr RCTRL I  &none
-&kp F12   &kp P         &kp V        &kp J        &kp D         &as Z                   &kp F18          &kp W            &kp UP            &mt HOME END  &kp PG_UP     &none
-&mkp MB4  &mkp MB5      &mkp MB2     &mkp MB3     &mkp MB1                                               &kp LEFT         &kp DOWN          &kp RIGHT     &kp PG_DN     &none
-                                                  &lt 1 L       &kp X   &mkp MB2        &mkp MB1         &key_repeat      &hmr LCTRL Y
-                                                  &lt 2 R       &bdel   &out OUT_TOG    &mkp MB3         &hmr RGUI GRAVE  &hmr RSHFT SPACE
-            >;
-        };
-
-        fun {
-            bindings = <
-&trans  &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans   &trans   &trans
-&trans  &trans   &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans   &trans   &trans
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5             &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15            &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &trans
-&trans  &trans   &trans   &trans   &trans                               &trans   &trans   &trans   &trans   &trans
-                                   &trans   &trans   &trans    &trans   &trans   &trans
-                                   &trans   &trans   &trans    &trans   &trans   &trans
+&kp F9    &as N1        &as N2       &as N3       &as N4        &as N5                   &as N6           &as N7           &as N8            &as N9        &as N0        &none
+&kp Q     &kp X         &kp F        &kp G        &kp K         &kp F7                   &kp F11          &ak_rti          &kp O             &kp U         &none         &none
+&kp B     &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &mt EQUAL MINUS  &hmr RSHFT C     &hmr RGUI A       &hmr RALT E   &hmr RCTRL I  &none
+&kp Z     &kp P         &kp V        &kp J        &kp D         &kp F8                   &kp F12          &kp W            &kp UP            &mt HOME END  &kp PG_UP     &none
+&mkp MB4  &mkp MB5      &mkp MB2     &mkp MB3     &mkp MB1                                                &kp LEFT         &kp DOWN          &kp RIGHT     &kp PG_DN     &none
+                                                  &hmr LALT L   &hml LCTRL X  &kp F16    &mkp MB1         &key_repeat      &hmr LCTRL Y
+                                                  &lt 1 R       &bdel         &kp F17    &mkp MB3         &hmr RGUI GRAVE  &hmr RSHFT SPACE
             >;
         };
 

@@ -601,13 +601,13 @@
 
         base {
             bindings = <
-&kp F1    &as N1                 &as N2               &as N3               &as N4                 &as N5                        &as N6           &as N7                 &as N8                 &as N9               &as N0                 &kp F2
-&kp Q     &kp X                  &kp F                &kp G                &kp K                  &kp F7                        &kp F11          &ak_rti                &kp O                  &kp U                &kp F9                 &kp F3
-&kp B     &hml_ctrl lctrl_rgb N  &hml_alt lalt_rgb S  &hml_gui lgui_rgb H  &hml_shft lshft_rgb T  &kp M                         &mt EQUAL MINUS  &hmr_shft rshft_rgb C  &hmr_gui rgui_rgb A    &hmr_alt ralt_rgb E  &hmr_ctrl rctrl_rgb I  &kp F4
-&kp Z     &kp P                  &kp V                &kp J                &kp D                  &kp F8                        &kp F12          &kp W                  &kp UP                 &mt HOME END         &kp PG_UP              &kp F5
-&mkp MB4  &mkp MB5               &mkp MB2             &mkp MB3             &mkp MB1                                                              &kp LEFT               &kp DOWN               &kp RIGHT            &kp PG_DN              &kp F6
-                                                                           &hml_alt 0 L           &hml_ctrl LCTRL X  &kp F16    &mkp MB1         &key_repeat            &hmr_ctrl LCTRL Y
-                                                                           &lt 1 R                &bdel              &kp F17    &mkp MB3         &hmr_ctrl RGUI GRAVE   &hmr_ctrl RSHFT SPACE
+&kp F1    &as N1                 &as N2               &as N3               &as N4                 &as N5             &as N6           &as N7                 &as N8               &as N9               &as N0                 &kp F2
+&kp Q     &kp X                  &kp F                &kp G                &kp K                  &kp F7             &kp F11          &ak_rti                &kp O                &kp U                &kp F9                 &kp F3
+&kp B     &hml_ctrl lctrl_rgb N  &hml_alt lalt_rgb S  &hml_gui lgui_rgb H  &hml_shft lshft_rgb T  &kp M              &mt EQUAL MINUS  &hmr_shft rshft_rgb C  &hmr_gui rgui_rgb A  &hmr_alt ralt_rgb E  &hmr_ctrl rctrl_rgb I  &kp F4
+&kp Z     &kp P                  &kp V                &kp J                &kp D                  &kp F8             &kp F12          &kp W                  &kp UP               &mt HOME END         &kp PG_UP              &kp F5
+&mkp MB4  &mkp MB5               &mkp MB2             &mkp MB3             &mkp MB1                                                   &kp LEFT               &kp DOWN             &kp RIGHT            &kp PG_DN              &kp F6
+                                                                           &kp L                  &kp X   &kp F16    &mkp MB1         &key_repeat            &kp Y
+                                                                           &lt 1 R                &bdel   &kp F17    &mkp MB3         &kp GRAVE              &hml_shft 0 SPACE
             >;
         };
 

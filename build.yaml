@@ -18,13 +18,7 @@
 #
 ---
 include:
-  - board: nice_nano
-    shield: CyDongle
-  - board: nice_nano
-    shield: settings_reset
   - board: assimilator-bt
     shield: imprint_left
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: assimilator-bt
     shield: imprint_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n

@@ -126,10 +126,10 @@
             };
         };
 
-        hmr: hmr {
+        hmr_ctrl: hmr_ctrl {
             compatible = "zmk,behavior-hold-tap";
-            label = "HMR";
-            bindings = <&kp>, <&kp>;
+            label = "HMR_CTRL";
+            bindings = <&lctrl_rgb>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -140,10 +140,10 @@
             flavor = "tap-preferred";
         };
 
-        hml: hml {
+        hml_ctrl: hml_ctrl {
             compatible = "zmk,behavior-hold-tap";
-            label = "HML";
-            bindings = <&kp>, <&kp>;
+            label = "HML_CTRL";
+            bindings = <&lctrl_rgb>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -172,6 +172,104 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_LGUI|MOD_RALT|MOD_RGUI)>;
+        };
+
+        hml_alt: hml_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML_ALT";
+            bindings = <&lalt_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57 61 62 63 67 68 69>;
+            flavor = "tap-preferred";
+        };
+
+        hml_gui: hml_gui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML_GUI";
+            bindings = <&lgui_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57 61 62 63 67 68 69>;
+            flavor = "tap-preferred";
+        };
+
+        hml_shft: hml_shft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML_SHFT";
+            bindings = <&lshift_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <165>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47 53 54 55 56 57 61 62 63 67 68 69>;
+            flavor = "tap-preferred";
+        };
+
+        hmr_alt: hmr_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_ALT";
+            bindings = <&lalt_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+
+        hmr_gui: hmr_gui {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_GUI";
+            bindings = <&lgui_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+
+        hmr_shft: hmr_shft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR_SHFT";
+            bindings = <&lshift_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            label = "NEW_BEHAVIOR";
+            bindings = <&lgui_rgb>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+            hold-trigger-on-release;
+            flavor = "tap-preferred";
         };
     };
 
@@ -382,85 +480,61 @@
             label = "AS";
         };
 
-lctrl_rgb: lctrl_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp LCTRL>,
-        <&macro_release &kp LCTRL>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
+        lctrl_rgb: lctrl_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(167,62,40)>,
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_release>,
+                <&kp LCTRL>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-lalt_rgb: lalt_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp LALT>,
-        <&macro_release &kp LALT>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
+        lalt_rgb: lalt_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(37,94,43)>,
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_release>,
+                <&kp LALT>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-lgui_rgb: lgui_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp LGUI>,
-        <&macro_release &kp LGUI>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
+        lgui_rgb: lgui_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(269,87,47)>,
+                <&macro_press>,
+                <&kp LGUI>,
+                <&macro_release>,
+                <&kp LGUI>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-lshift_rgb: lshift_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp LSHFT>,
-        <&macro_release &kp LSHFT>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
-
-rctrl_rgb: rctrl_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp RCTRL>,
-        <&macro_release &kp RCTRL>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
-
-ralt_rgb: ralt_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp RALT>,
-        <&macro_release &kp RALT>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
-
-rgui_rgb: rgui_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp RGUI>,
-        <&macro_release &kp RGUI>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
-
-rshift_rgb: rshift_rgb {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &rgb_ug RGB_ON>,
-        <&macro_press &kp RSHFT>,
-        <&macro_release &kp LRSHFT>,
-        <&macro_release &rgb_ug RGB_OFF>;
-};
+        lshift_rgb: lshift_rgb {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(147,100,50)>,
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
         fv: fv {
             compatible = "zmk,behavior-macro";
@@ -520,13 +594,6 @@ rshift_rgb: rshift_rgb {
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(219,100,60)>;
             label = "RGB_CONT";
         };
-
-        rgb_num: rgb_num {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(341,100,60)>;
-            label = "RGB_NUM";
-        };
     };
 
     layer_listeners {
@@ -548,13 +615,13 @@ rshift_rgb: rshift_rgb {
 
         base {
             bindings = <
-&kp F1    &as N1        &as N2       &as N3       &as N4        &as N5                   &as N6           &as N7           &as N8            &as N9        &as N0        &kp F2
-&kp Q     &kp X         &kp F        &kp G        &kp K         &kp F7                   &kp F11          &ak_rti          &kp O             &kp U         &kp F9        &kp F3
-&kp B     &hml lctrl_rgb N  &hml lalt_rgb S  &hml lgui_rgb H  &hml lshft_rgb T  &kp M                    &mt EQUAL MINUS  &hmr rshft_rgb C     &hmr rgui_rgb A       &hmr ralt_rgb E   &hmr rctrl_rgb I  &kp F4
-&kp Z     &kp P         &kp V        &kp J        &kp D         &kp F8                   &kp F12          &kp W            &kp UP            &mt HOME END  &kp PG_UP     &kp F5
-&mkp MB4  &mkp MB5      &mkp MB2     &mkp MB3     &mkp MB1                                                &kp LEFT         &kp DOWN          &kp RIGHT     &kp PG_DN     &kp F6
-                                                  &hmr LALT L   &hml LCTRL X  &kp F16    &mkp MB1         &key_repeat      &hmr LCTRL Y
-                                                  &lt 1 R       &bdel         &kp F17    &mkp MB3         &hmr RGUI GRAVE  &hmr RSHFT SPACE
+&kp F1    &as N1                 &as N2               &as N3               &as N4                 &as N5                        &as N6           &as N7                 &as N8                 &as N9               &as N0                 &kp F2
+&kp Q     &kp X                  &kp F                &kp G                &kp K                  &kp F7                        &kp F11          &ak_rti                &kp O                  &kp U                &kp F9                 &kp F3
+&kp B     &hml_ctrl lctrl_rgb N  &hml_alt lalt_rgb S  &hml_gui lgui_rgb H  &hml_shft lshft_rgb T  &kp M                         &mt EQUAL MINUS  &hmr_shft rshft_rgb C  &hmr_gui rgui_rgb A    &hmr_alt ralt_rgb E  &hmr_ctrl rctrl_rgb I  &kp F4
+&kp Z     &kp P                  &kp V                &kp J                &kp D                  &kp F8                        &kp F12          &kp W                  &kp UP                 &mt HOME END         &kp PG_UP              &kp F5
+&mkp MB4  &mkp MB5               &mkp MB2             &mkp MB3             &mkp MB1                                                              &kp LEFT               &kp DOWN               &kp RIGHT            &kp PG_DN              &kp F6
+                                                                           &hml_alt 0 L           &hml_ctrl LCTRL X  &kp F16    &mkp MB1         &key_repeat            &hmr_ctrl LCTRL Y
+                                                                           &lt 1 R                &bdel              &kp F17    &mkp MB3         &hmr_ctrl RGUI GRAVE   &hmr_ctrl RSHFT SPACE
             >;
         };
 

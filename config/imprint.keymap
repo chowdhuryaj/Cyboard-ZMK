@@ -536,13 +536,13 @@ shft_rgb: shft_rgb {
 
         base {
             bindings = <
-&kp F1    &as N1    &as N2    &as N3    &as N4    &as N5                         &as N6           &as N7       &as N8     &as N9        &as N0     &kp F2
-&kp Q     &kp X     &kp F     &kp G     &kp K     &kp F7                         &kp F11          &ak_rti      &kp O      &kp U         &kp F9     &kp F3
-&kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T     &mt EQUAL MINUS  &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I      &kp F4
-&kp Z     &kp P     &kp V     &kp J     &kp D     &kp F8                         &kp F12          &kp W        &kp UP     &mt HOME END  &kp PG_UP  &kp F5
-&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                  &kp LEFT     &kp DOWN   &kp RIGHT     &kp PG_DN  &kp F6
-                                        &kp L     &kp X   &kp F16                &mkp MB1         &key_repeat  &kp Y
-                                        &lt 1 R   &bdel   &kp F17                &mkp MB3         &kp GRAVE    &kp SPACE
+&kp F1    &as N1    &as N2    &as N3    &as N4    &as N5                             &as N6           &as N7       &as N8     &as N9        &as N0     &kp F2
+&kp Q     &kp X     &kp F     &kp G     &kp K     &kp F7                             &kp F11          &ak_rti      &kp O      &kp U         &kp F9     &kp F3
+&kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T &kp M   &mt EQUAL MINUS  &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I      &kp F4
+&kp Z     &kp P     &kp V     &kp J     &kp D     &kp F8                             &kp F12          &kp W        &kp UP     &mt HOME END  &kp PG_UP  &kp F5
+&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                      &kp LEFT     &kp DOWN   &kp RIGHT     &kp PG_DN  &kp F6
+                                        &kp L     &kp X   &kp F16                    &mkp MB1         &key_repeat  &kp Y
+                                        &lt 1 R   &bdel   &kp F17                    &mkp MB3         &kp GRAVE    &kp SPACE
             >;
         };
 

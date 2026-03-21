@@ -382,6 +382,86 @@
             label = "AS";
         };
 
+lctrl_rgb: lctrl_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp LCTRL>,
+        <&macro_release &kp LCTRL>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+lalt_rgb: lalt_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp LALT>,
+        <&macro_release &kp LALT>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+lgui_rgb: lgui_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp LGUI>,
+        <&macro_release &kp LGUI>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+lshift_rgb: lshift_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp LSHFT>,
+        <&macro_release &kp LSHFT>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+rctrl_rgb: rctrl_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp RCTRL>,
+        <&macro_release &kp RCTRL>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+ralt_rgb: ralt_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp RALT>,
+        <&macro_release &kp RALT>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+rgui_rgb: rgui_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp RGUI>,
+        <&macro_release &kp RGUI>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
+rshift_rgb: rshift_rgb {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings =
+        <&macro_press &rgb_ug RGB_ON>,
+        <&macro_press &kp RSHFT>,
+        <&macro_release &kp LRSHFT>,
+        <&macro_release &rgb_ug RGB_OFF>;
+};
+
         fv: fv {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -470,7 +550,7 @@
             bindings = <
 &kp F1    &as N1        &as N2       &as N3       &as N4        &as N5                   &as N6           &as N7           &as N8            &as N9        &as N0        &kp F2
 &kp Q     &kp X         &kp F        &kp G        &kp K         &kp F7                   &kp F11          &ak_rti          &kp O             &kp U         &kp F9        &kp F3
-&kp B     &hml LCTRL N  &hml LALT S  &hml LGUI H  &hml LSHFT T  &kp M                    &mt EQUAL MINUS  &hmr RSHFT C     &hmr RGUI A       &hmr RALT E   &hmr RCTRL I  &kp F4
+&kp B     &hml lctrl_rgb N  &hml lalt_rgb S  &hml lgui_rgb H  &hml lshft_rgb T  &kp M                    &mt EQUAL MINUS  &hmr rshft_rgb C     &hmr rgui_rgb A       &hmr ralt_rgb E   &hmr rctrl_rgb I  &kp F4
 &kp Z     &kp P         &kp V        &kp J        &kp D         &kp F8                   &kp F12          &kp W            &kp UP            &mt HOME END  &kp PG_UP     &kp F5
 &mkp MB4  &mkp MB5      &mkp MB2     &mkp MB3     &mkp MB1                                                &kp LEFT         &kp DOWN          &kp RIGHT     &kp PG_DN     &kp F6
                                                   &hmr LALT L   &hml LCTRL X  &kp F16    &mkp MB1         &key_repeat      &hmr LCTRL Y

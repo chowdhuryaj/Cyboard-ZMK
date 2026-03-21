@@ -18,53 +18,53 @@
     chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
 
     behaviors {
-hm_ctrl: hm_ctrl {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&ctrl_rgb>, <&kp>;
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-on-release;
-    flavor = "tap-preferred";
-    hold-trigger-key-positions = <LEFT_HAND_KEYS>;  /* set appropriately */
-};
+        hm_ctrl: hm_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&ctrl_rgb>, <&kp>;
 
-hm_alt: hm_alt {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&alt_rgb>, <&kp>;
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-on-release;
-    flavor = "tap-preferred";
-    hold-trigger-key-positions = <LEFT_HAND_KEYS>;
-};
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <LEFT_HAND_KEYS>;  /* set appropriately */
+        };
 
-hm_gui: hm_gui {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&gui_rgb>, <&kp>;
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-on-release;
-    flavor = "tap-preferred";
-    hold-trigger-key-positions = <LEFT_HAND_KEYS>;
-};
+        hm_alt: hm_alt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&alt_rgb>, <&kp>;
 
-hm_shft: hm_shft {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    bindings = <&shft_rgb>, <&kp>;
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-on-release;
-    flavor = "tap-preferred";
-    hold-trigger-key-positions = <LEFT_HAND_KEYS>;
-};
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <LEFT_HAND_KEYS>;
+        };
+
+        hm_gui: hm_gui {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&gui_rgb>, <&kp>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <LEFT_HAND_KEYS>;
+        };
+
+        hm_shft: hm_shft {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&shft_rgb>, <&kp>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <LEFT_HAND_KEYS>;
+        };
 
         ak_rti: ak_rti {
             compatible = "zmk,behavior-adaptive-key";
@@ -415,65 +415,65 @@ hm_shft: hm_shft {
             label = "FV";
         };
 
-ctrl_rgb: ctrl_rgb {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    bindings =
-        <&macro_press>,
-        <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(167,62,40)>,
-        <&macro_press>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_pause_for_release>,
-        <&macro_release>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_release>,
-        <&rgb_ug RGB_OFF>;
-};
+        ctrl_rgb: ctrl_rgb {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(167,62,40)>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-alt_rgb: alt_rgb {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    bindings =
-        <&macro_press>,
-        <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(37,94,43)>,
-        <&macro_press>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_pause_for_release>,
-        <&macro_release>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_release>,
-        <&rgb_ug RGB_OFF>;
-};
+        alt_rgb: alt_rgb {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(37,94,43)>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-gui_rgb: gui_rgb {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    bindings =
-        <&macro_press>,
-        <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(269,87,47)>,
-        <&macro_press>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_pause_for_release>,
-        <&macro_release>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_release>,
-        <&rgb_ug RGB_OFF>;
-};
+        gui_rgb: gui_rgb {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(269,87,47)>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
-shft_rgb: shft_rgb {
-    compatible = "zmk,behavior-macro-one-param";
-    #binding-cells = <1>;
-    bindings =
-        <&macro_press>,
-        <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(147,100,50)>,
-        <&macro_press>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_pause_for_release>,
-        <&macro_release>,
-        <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-        <&macro_release>,
-        <&rgb_ug RGB_OFF>;
-};
+        shft_rgb: shft_rgb {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(147,100,50)>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&rgb_ug RGB_OFF>;
+        };
 
         hcmc: hcmc {
             compatible = "zmk,behavior-macro";
@@ -536,13 +536,13 @@ shft_rgb: shft_rgb {
 
         base {
             bindings = <
-&kp F1    &as N1    &as N2    &as N3    &as N4    &as N5                             &as N6           &as N7       &as N8     &as N9        &as N0     &kp F2
-&kp Q     &kp X     &kp F     &kp G     &kp K     &kp F7                             &kp F11          &ak_rti      &kp O      &kp U         &kp F9     &kp F3
-&kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T &kp M   &mt EQUAL MINUS  &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I      &kp F4
-&kp Z     &kp P     &kp V     &kp J     &kp D     &kp F8                             &kp F12          &kp W        &kp UP     &mt HOME END  &kp PG_UP  &kp F5
-&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                      &kp LEFT     &kp DOWN   &kp RIGHT     &kp PG_DN  &kp F6
-                                        &kp L     &kp X   &kp F16                    &mkp MB1         &key_repeat  &kp Y
-                                        &lt 1 R   &bdel   &kp F17                    &mkp MB3         &kp GRAVE    &kp SPACE
+&kp F1    &as N1            &as N2          &as N3          &as N4            &as N5             &as N6           &as N7            &as N8          &as N9          &as N0            &kp F2
+&kp Q     &kp X             &kp F           &kp G           &kp K             &kp F7             &kp F11          &ak_rti           &kp O           &kp U           &kp F9            &kp F3
+&kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T  &kp M              &mt EQUAL MINUS  &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I  &kp F4
+&kp Z     &kp P             &kp V           &kp J           &kp D             &kp F8             &kp F12          &kp W             &kp UP          &mt HOME END    &kp PG_UP         &kp F5
+&mkp MB4  &mkp MB5          &mkp MB2        &mkp MB3        &mkp MB1                                              &kp LEFT          &kp DOWN        &kp RIGHT       &kp PG_DN         &kp F6
+                                                            &kp L             &kp X   &kp F16    &mkp MB1         &key_repeat       &kp Y
+                                                            &lt 1 R           &bdel   &kp F17    &mkp MB3         &kp GRAVE         &kp SPACE
             >;
         };
 

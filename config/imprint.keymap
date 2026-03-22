@@ -523,7 +523,7 @@
 &kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T  &kp M             &trans    &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I  &as FSLH
 &tog 3    &kp P             &kp V           &kp J           &kp D             &trans            &trans    &kp W             &kp UP          &mt HOME END    &mt PG_UP PG_DN   &as LS(STAR)
 &mkp MB4  &mkp MB5          &mkp MB2        &mkp MB3        &mkp MB1                                      &kp LEFT          &kp DOWN        &kp RIGHT       &kp F7            &kp F8
-                                                            &kp L             &kp X   &trans    &mkp MB1  &key_repeat       &kp Y
+                                                            &kp L             &kp X   &tog 3    &mkp MB1  &key_repeat       &kp Y
                                                             &lt 1 R           &bdel   &sl 0     &mkp MB3  &kp Z             &kp SPACE
             >;
         };
@@ -534,7 +534,7 @@
 &trans  &kp C_VOL_UP  &kp HOME  &kp UP        &kp END     &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
 &trans  &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT   &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
 &trans  &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF    &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
-&trans  &trans        &trans    &trans        &trans                                                    &trans           &trans           &trans           &trans           &trans
+&none   &trans        &trans    &trans        &trans                                                    &trans           &trans           &trans           &trans           &trans
                                               &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bootloader     &sys_reset       &trans
                                               &trans      &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans           &tog 0
             >;
@@ -546,8 +546,8 @@
 &trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp F13            &trans   &umn     &hcmc    &hcmc_email  &fv       &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp F14            &kp F16  &kp F17  &kp F18  &kp F19      &kp F20   &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp F15            &kp F21  &kp F22  &kp F23  &kp F24      &kp BSLH  &trans
-&trans  &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans    &trans
-                                  &trans   &trans   &trans    &trans   &trans   &trans
+&none   &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans    &trans
+                                  &trans   &trans   &none     &trans   &trans   &trans
                                   &trans   &trans   &trans    &trans   &trans   &trans
             >;
         };
@@ -558,7 +558,7 @@
 &trans  &kp Q   &kp C   &kp K   &kp W   &trans            &trans  &kp B        &kp F      &kp G   &trans  &trans
 &trans  &kp X   &kp E   &kp T   &kp R   &kp V             &kp J   &kp L        &kp N      &kp E   &trans  &trans
 &trans  &kp Z   &kp S   &kp D   &kp M   &trans            &trans  &kp H        &kp P      &kp S   &trans  &trans
-&trans  &trans  &trans  &trans  &trans                            &trans       &trans     &trans  &trans  &trans
+&tog 3  &trans  &trans  &trans  &trans                            &trans       &trans     &trans  &trans  &trans
                                 &kp O   &kp I   &trans    &trans  &key_repeat  &kp Y
                                 &kp A   &kp U   &trans    &trans  &trans       &kp SPACE
             >;

@@ -490,6 +490,13 @@
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(219,100,60)>;
             label = "RGB_CONT";
         };
+
+        rgb_fn: rgb_fn {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(87,76,50)>;
+            label = "RGB_fn";
+        };
     };
 
     layer_listeners {
@@ -497,6 +504,11 @@
 
         control_rgb_listener {
             layers = <1>;
+            bindings = <&rgb_cont &rgb_ug RGB_OFF>;
+        };
+
+        fn_rgb_listener {
+            layers = <2>;
             bindings = <&rgb_cont &rgb_ug RGB_OFF>;
         };
     };
@@ -528,10 +540,10 @@
             >;
         };
 
-        layer_2 {
+        fn {
             bindings = <
 &trans  &trans  &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans       &trans    &trans
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp F13            &fv      &umn     &hcmc    &hcmc_email  &fv       &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp F13            &trans   &umn     &hcmc    &hcmc_email  &fv       &trans
 &trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp F14            &kp F16  &kp F17  &kp F18  &kp F19      &kp F20   &trans
 &trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp F15            &kp F21  &kp F22  &kp F23  &kp F24      &kp BSLH  &trans
 &trans  &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans    &trans
@@ -546,7 +558,7 @@
 
 &trackball_peripheral_listener {
     input-processors = <
-        &zip_xy_scaler 2 3
+        &zip_xy_scaler 1 1
     >;
 };
 

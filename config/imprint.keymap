@@ -602,7 +602,7 @@
             bindings = <
 &trans    &as N1    &as N2    &as N3    &as N4              &as N5                                       &as N6    &as N7              &as N8                   &as N9        &as N0           &as GRAVE
 &trans    &none     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti             &kp O                    &kp U         &kp Q            &as BSLH
-&kp B     &kp N     &kp S     &kp H     &kp T               &kp M                                        &bdel     &kp C               &kp A                    &kp E         &kp I            &as FSLH
+&trans    &kp N     &kp S     &kp H     &kp T               &kp M                                        &kp P     &kp C               &kp A                    &kp E         &kp I            &as FSLH
 &none     &kp P     &kp V     &kp J     &kp D               &kp MINUS                                    &kp F12   &kp W               &kp UP                   &mt HOME END  &mt PG_UP PG_DN  &as LS(STAR)
 &mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                   &kp LEFT            &kp DOWN                 &kp RIGHT     &kp F7           &kp F8
                                         &hm_l_gui LGUI L    &hm_l_alt LALT X    &hm_r_shift LSHFT F19    &mkp MB1  &th_r_rep RALT 0    &hm_r_gui RGUI Y
@@ -624,11 +624,11 @@
 
         fn {
             bindings = <
-&trans  &trans  &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans       &trans    &trans
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp F13            &trans   &umn     &hcmc    &hcmc_email  &fv       &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp F14            &kp F16  &kp F17  &kp F18  &kp F19      &kp F20   &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp F15            &kp F21  &kp F22  &kp F23  &kp F24      &kp BSLH  &trans
-&none   &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans    &trans
+&trans  &trans  &trans   &trans   &trans   &trans             &trans   &trans   &trans   &trans       &trans   &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp F13            &trans   &umn     &hcmc    &hcmc_email  &fv      &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp F14            &kp F16  &kp F17  &kp F18  &kp F19      &kp F20  &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp F15            &kp F21  &kp F22  &kp F23  &kp F24      &none    &trans
+&none   &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans   &trans
                                   &trans   &trans   &none     &trans   &trans   &trans
                                   &trans   &trans   &trans    &trans   &trans   &trans
             >;

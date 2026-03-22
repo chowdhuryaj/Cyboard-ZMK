@@ -579,6 +579,13 @@
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(50,100,39)>;
             label = "RGB_fn";
         };
+
+        qu: qu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q &kp U>;
+            label = "QU";
+        };
     };
 
     layer_listeners {
@@ -601,9 +608,9 @@
         base {
             bindings = <
 &trans    &as N1    &as N2    &as N3    &as N4              &as N5                                       &as N6    &as N7              &as N8                   &as N9        &as N0           &as GRAVE
-&trans    &kp Z     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti             &kp O                    &kp U         &kp Q            &as BSLH
+&trans    &kp X     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti             &kp O                    &kp U         &kp Q            &as BSLH
 &trans    &kp N     &kp S     &kp H     &kp T               &kp M                                        &kp P     &kp C               &kp A                    &kp E         &kp I            &as FSLH
-&none     &kp P     &kp V     &kp J     &kp D               &kp MINUS                                    &kp F12   &kp W               &kp UP                   &mt HOME END  &mt PG_UP PG_DN  &as LS(STAR)
+&none     &kp Z     &kp V     &kp J     &kp D               &kp MINUS                                    &kp F12   &kp W               &kp UP                   &mt HOME END  &mt PG_UP PG_DN  &as LS(STAR)
 &mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                   &kp LEFT            &kp DOWN                 &kp RIGHT     &kp F7           &kp F8
                                         &hm_l_gui LGUI L    &hm_l_alt LALT X    &hm_r_shift LSHFT F19    &mkp MB1  &th_r_rep RALT 0    &hm_r_gui RGUI Y
                                         &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0  &kp F20                  &mkp MB3  &hm_r_ctrl RCTRL B  &hm_r_shift RSHFT SPACE

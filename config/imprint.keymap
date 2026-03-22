@@ -524,7 +524,7 @@
 &trans    &kp P             &kp V           &kp J           &kp D             &trans            &trans    &kp W             &kp UP          &mt HOME END    &mt PG_UP PG_DN   &as LS(STAR)
 &mkp MB4  &mkp MB5          &mkp MB2        &mkp MB3        &mkp MB1                                      &kp LEFT          &kp DOWN        &kp RIGHT       &kp F7            &kp F8
                                                             &kp L             &kp X   &trans    &mkp MB1  &key_repeat       &kp Y
-                                                            &lt 1 R           &bdel   &sl 2     &mkp MB3  &kp Z             &kp SPACE
+                                                            &lt 1 R           &bdel   &sl 0     &mkp MB3  &kp Z             &kp SPACE
             >;
         };
 
@@ -549,6 +549,18 @@
 &trans  &trans  &trans   &trans   &trans                               &trans   &trans   &trans       &trans    &trans
                                   &trans   &trans   &trans    &trans   &trans   &trans
                                   &trans   &trans   &trans    &trans   &trans   &trans
+            >;
+        };
+
+        d5ish {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans       &trans     &trans  &trans  &trans
+&trans  &kp Q   &kp C   &kp K   &kp W   &trans            &trans  &kp B        &kp F      &kp G   &trans  &trans
+&trans  &kp X   &kp E   &kp T   &kp R   &kp V             &kp J   &kp L        &kp N      &kp E   &trans  &trans
+&trans  &kp Z   &kp S   &kp D   &kp M   &trans            &trans  &kp H        &kp P      &kp S   &trans  &trans
+&trans  &trans  &trans  &trans  &trans                            &trans       &trans     &trans  &trans  &trans
+                                &kp O   &kp I   &trans    &trans  &key_repeat  &kp Y
+                                &kp A   &kp U   &trans    &trans  &trans       &kp SPACE
             >;
         };
     };

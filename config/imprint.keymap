@@ -406,12 +406,12 @@
         };
 
         control {
-            bindings = <&rgb_cont>;
+            bindings = <&mo 1>;
             key-positions = <58 64>;
         };
 
         fn {
-            bindings = <&rgb_fn>;
+            bindings = <&mo 2>;
             key-positions = <59 65>;
         };
     };

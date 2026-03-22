@@ -140,6 +140,12 @@
                 bindings = <&kp I>;
             };
 
+            rti_o {
+                trigger-keys = <O>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp N>;
+            };
+
             rti_y {
                 trigger-keys = <Y>;
                 max-prior-idle-ms = <500>;

@@ -561,13 +561,13 @@
 
         d5ish {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans       &trans     &trans  &trans  &trans
-&trans  &kp Q   &kp C   &kp K   &kp W   &trans            &trans  &kp B        &kp F      &kp G   &trans  &trans
-&trans  &kp X   &kp E   &kp T   &kp R   &kp V             &kp J   &kp L        &kp N      &kp E   &trans  &trans
-&trans  &kp Z   &kp S   &kp D   &kp M   &trans            &trans  &kp H        &kp P      &kp S   &trans  &trans
-&tog 3  &trans  &trans  &trans  &trans                            &trans       &trans     &trans  &trans  &trans
-                                &kp O   &kp I   &trans    &trans  &key_repeat  &kp Y
-                                &kp A   &kp U   &trans    &trans  &trans       &kp SPACE
+&trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans     &trans  &trans  &trans  &trans
+&trans  &kp Q   &kp C   &kp K   &kp W   &trans                 &trans  &kp B      &kp F   &kp G   &trans  &trans
+&trans  &kp X   &kp E   &kp T   &kp R   &kp V                  &kp J   &kp L      &kp N   &kp E   &trans  &trans
+&trans  &kp Z   &kp S   &kp D   &kp M   &trans                 &trans  &kp H      &kp P   &kp S   &trans  &trans
+&tog 3  &trans  &trans  &trans  &trans                                 &trans     &trans  &trans  &trans  &trans
+                                &kp O   &key_repeat  &trans    &trans  &kp Y      &kp I
+                                &kp A   &kp BSPC     &trans    &trans  &kp SPACE  &kp U
             >;
         };
     };

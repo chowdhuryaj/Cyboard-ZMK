@@ -521,7 +521,7 @@
 &trans    &as N1            &as N2          &as N3          &as N4            &as N5            &as N6    &as N7            &as N8          &as N9          &as N0            &as EQUAL
 &trans    &trans            &kp F           &kp G           &kp K             &trans            &trans    &ak_rti           &kp O           &kp U           &kp Q             &as MINUS
 &kp B     &hm_ctrl LCTRL N  &hm_alt LALT S  &hm_gui LGUI H  &hm_shft LSHFT T  &kp M             &trans    &hm_shft RSHFT C  &hm_gui RGUI A  &hm_alt RALT E  &hm_ctrl RCTRL I  &as FSLH
-&trans    &kp P             &kp V           &kp J           &kp D             &trans            &trans    &kp W             &kp UP          &mt HOME END    &mt PG_UP PG_DN   &as LS(STAR)
+&tog 3    &kp P             &kp V           &kp J           &kp D             &trans            &trans    &kp W             &kp UP          &mt HOME END    &mt PG_UP PG_DN   &as LS(STAR)
 &mkp MB4  &mkp MB5          &mkp MB2        &mkp MB3        &mkp MB1                                      &kp LEFT          &kp DOWN        &kp RIGHT       &kp F7            &kp F8
                                                             &kp L             &kp X   &trans    &mkp MB1  &key_repeat       &kp Y
                                                             &lt 1 R           &bdel   &sl 0     &mkp MB3  &kp Z             &kp SPACE

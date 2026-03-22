@@ -601,7 +601,7 @@
         base {
             bindings = <
 &trans    &as N1    &as N2    &as N3    &as N4              &as N5                                       &as N6    &as N7              &as N8                   &as N9        &as N0           &as GRAVE
-&trans    &none     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti             &kp O                    &kp U         &kp Q            &as BSLH
+&trans    &kp Z     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti             &kp O                    &kp U         &kp Q            &as BSLH
 &trans    &kp N     &kp S     &kp H     &kp T               &kp M                                        &kp P     &kp C               &kp A                    &kp E         &kp I            &as FSLH
 &none     &kp P     &kp V     &kp J     &kp D               &kp MINUS                                    &kp F12   &kp W               &kp UP                   &mt HOME END  &mt PG_UP PG_DN  &as LS(STAR)
 &mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                   &kp LEFT            &kp DOWN                 &kp RIGHT     &kp F7           &kp F8

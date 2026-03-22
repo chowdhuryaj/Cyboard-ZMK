@@ -497,13 +497,6 @@
             bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(87,76,50)>;
             label = "RGB_fn";
         };
-
-        d5ish: d5ish {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(360,74,43) &tog 0>;
-            label = "D5ISH";
-        };
     };
 
     layer_listeners {
@@ -516,7 +509,7 @@
 
         fn_rgb_listener {
             layers = <2>;
-            bindings = <&rgb_cont &rgb_ug RGB_OFF>;
+            bindings = <&rgb_fn &rgb_ug RGB_OFF>;
         };
     };
 

@@ -71,7 +71,7 @@
             rti_b {
                 trigger-keys = <B>;
                 max-prior-idle-ms = <500>;
-                bindings = <&kp N>;
+                bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;
             };
 
             rti_e {
@@ -83,7 +83,7 @@
             rti_g {
                 trigger-keys = <G>;
                 max-prior-idle-ms = <500>;
-                bindings = <&kp H>;
+                bindings = <&kp I &kp N &kp G>;
             };
 
             rti_h {
@@ -110,6 +110,12 @@
                 bindings = <&kp I &kp N &kp G>;
             };
 
+            rti_l {
+                trigger-keys = <L>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp O &kp N &kp G>;
+            };
+
             rti_m {
                 trigger-keys = <M>;
                 max-prior-idle-ms = <500>;
@@ -120,6 +126,18 @@
                 trigger-keys = <N>;
                 max-prior-idle-ms = <500>;
                 bindings = <&kp I &kp O &kp N>;
+            };
+
+            rti_o {
+                trigger-keys = <O>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp U &kp L &kp D>;
+            };
+
+            rti_p {
+                trigger-keys = <P>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp E &kp O &kp P &kp L &kp E>;
             };
 
             rti_q {
@@ -140,16 +158,22 @@
                 bindings = <&kp I>;
             };
 
-            rti_o {
-                trigger-keys = <O>;
+            rti_v {
+                trigger-keys = <V>;
                 max-prior-idle-ms = <500>;
-                bindings = <&kp N>;
+                bindings = <&kp S>;
             };
 
             rti_y {
                 trigger-keys = <Y>;
                 max-prior-idle-ms = <500>;
                 bindings = <&kp O &kp U>;
+            };
+
+            rti_space {
+                trigger-keys = <SPACE>;
+                max-prior-idle-ms = <500>;
+                bindings = <&kp T &kp H &kp E>;
             };
 
             rti_sentence {

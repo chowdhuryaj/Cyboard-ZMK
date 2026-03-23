@@ -305,6 +305,20 @@
             quick-tap-ms = <150>;
             flavor = "tap-preferred";
         };
+
+        hm_r_alt: hm_r_alt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&alt_rgb>, <&kp>;
+
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            label = "HM_R_ALT";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
+        };
     };
 
     combos {
@@ -653,13 +667,13 @@
 
         base {
             bindings = <
-&trans    &as N1    &as N2    &as N3    &as N4              &as N5                                       &as N6    &as N7                  &as N8                   &as N9     &as N0    &as GRAVE
-&trans    &kp X     &kp F     &kp G     &kp K               &kp EQUAL                                    &kp F11   &ak_rti                 &kp O                    &kp U      &qu       &as BSLH
-&trans    &kp N     &kp S     &kp H     &kp T               &kp M                                        &kp P     &kp C                   &kp A                    &kp E      &kp I     &as FSLH
-&none     &kp B     &kp V     &kp J     &kp D               &kp MINUS                                    &kp F12   &kp W                   &kp UP                   &kp F7     &kp F8    &as LS(STAR)
-&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                   &kp LEFT                &kp DOWN                 &kp RIGHT  &kp HOME  &kp END
-                                        &hm_l_gui LGUI L    &hm_l_alt LALT Z    &hm_r_shift LSHFT F19    &mkp MB1  &th_r_rep RALT 0        &hm_r_gui RGUI Y
-                                        &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0  &kp F20                  &mkp MB3  &hm_r_ctrl RCTRL GRAVE  &hm_r_shift RSHFT SPACE
+&trans    &as N1    &as N2    &as N3    &as N4              &as N5                                         &as N6    &as N7              &as N8                   &as N9     &as N0    &as GRAVE
+&trans    &kp X     &kp F     &kp G     &kp K               &kp EQUAL                                      &kp F11   &ak_rti             &kp O                    &kp U      &qu       &as BSLH
+&trans    &kp N     &kp S     &kp H     &kp T               &kp M                                          &kp P     &kp C               &kp A                    &kp E      &kp I     &as FSLH
+&none     &kp B     &kp V     &kp J     &kp D               &kp MINUS                                      &kp F12   &kp W               &kp UP                   &kp F7     &kp F8    &as LS(STAR)
+&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                     &kp LEFT            &kp DOWN                 &kp RIGHT  &kp HOME  &kp END
+                                        &hm_l_gui LGUI L    &hm_l_alt LALT GRAVE  &hm_r_shift LSHFT F19    &mkp MB1  &hm_r_gui RALT P    &hm_r_gui RGUI Y
+                                        &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0    &kp F20                  &mkp MB3  &hm_r_ctrl RCTRL Z  &hm_r_shift RSHFT SPACE
             >;
         };
 

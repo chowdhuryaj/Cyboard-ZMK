@@ -283,6 +283,28 @@
             label = "HM_R_SHIFT";
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 48 49 50 51 52 58 59 60 64 65 66>;
         };
+
+        lt_rep: lt_rep {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_REP";
+            bindings = <&mo>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
+
+        lt_lthumb_magic: lt_lthumb_magic {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_LTHUMB_MAGIC";
+            bindings = <&mo>, <&ak_rti>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -429,16 +451,16 @@
             timeout-ms = <25>;
         };
 
-        control {
-            bindings = <&lt 1 Z>;
+        lt_rep {
+            bindings = <&lt_rep 2 0>;
             key-positions = <58 64>;
-            timeout-ms = <40>;
+            timeout-ms = <35>;
         };
 
-        fn {
-            bindings = <&lt 2 Q>;
-            key-positions = <59 65>;
-            timeout-ms = <40>;
+        lt_magic_left {
+            bindings = <&lt_lthumb_magic 1 0>;
+            key-positions = <58 64>;
+            timeout-ms = <35>;
         };
     };
 

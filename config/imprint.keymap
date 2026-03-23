@@ -473,7 +473,7 @@
 
         lt_magic_left {
             bindings = <&lt_lthumb_magic 1 0>;
-            key-positions = <58 64>;
+            key-positions = <65 59>;
             timeout-ms = <35>;
         };
     };

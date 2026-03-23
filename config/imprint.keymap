@@ -619,13 +619,13 @@
 
         control {
             bindings = <
-&trans  &trans        &trans    &trans        &trans      &trans                        &trans          &trans           &trans           &trans           &trans           &trans
-&trans  &kp C_VOL_UP  &kp HOME  &kp UP        &kp END     &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
-&trans  &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT   &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
-&trans  &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF    &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
-&none   &trans        &trans    &trans        &trans                                                    &trans           &trans           &trans           &trans           &trans
-                                              &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1    &bootloader     &sys_reset       &trans
-                                              &trans      &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans           &tog 0
+&trans  &trans        &trans    &trans        &trans     &trans                        &trans          &trans           &trans           &trans           &trans           &trans
+&trans  &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
+&trans  &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
+&trans  &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
+&none   &trans        &trans    &trans        &trans                                                   &trans           &trans           &trans           &trans           &trans
+                                              &trans     &bt BT_SEL 0  &bt BT_SEL 1    &bootloader     &sys_reset       &bt BT_CLR
+                                              &trans     &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans           &tog 0
             >;
         };
 

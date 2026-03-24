@@ -661,10 +661,10 @@
 
         base {
             bindings = <
-&sk RALT   &as N1    &as N2    &as N3    &as N4              &as N5                           &as N6     &as N7                &as N8                   &as N9         &as N0            &as GRAVE
-&sk RGUI   &kp X     &kp F     &kp G     &kp K               &qu                              &as EQUAL  &ak_rti               &kp O                    &kp U          &ak_rti           &as BSLH
-&sk LSHFT  &kp N     &kp S     &kp H     &kp T               &kp M                            &as P      &kp C                 &kp A                    &kp E          &kp I             &as FSLH
-&sk RCTRL  &kp B     &kp V     &kp J     &kp D               &kp Z                            &as MINUS  &kp W                 &mt HOME UP              &ak_rti        &ak_rti           &as LS(STAR)
+&sk RALT   &as N1    &as N2    &as N3    &as N4              &as N5                           &as N6     &as N7                &as N8                   &as N9         &as N0            &rgb_ug RGB_TOG
+&sk RGUI   &kp X     &kp F     &kp G     &kp K               &qu                              &as EQUAL  &ak_rti               &kp O                    &kp U          &ak_rti           &rgb_ug RGB_EFF
+&sk LSHFT  &kp N     &kp S     &kp H     &kp T               &kp M                            &as P      &kp C                 &kp A                    &kp E          &kp I             &rgb_ug RGB_BRI
+&sk RCTRL  &kp B     &kp V     &kp J     &kp D               &kp Z                            &as MINUS  &kp W                 &mt HOME UP              &ak_rti        &ak_rti           &rgb_ug RGB_BRD
 &mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                        &mt LC(LEFT) LEFT     &mt END DOWN             &kp LC(RIGHT)  &kp LS(LC(LEFT))  &kp LS(LC(RIGHT))
                                          &hm_l_gui LGUI L    &hm_l_alt LALT GRAVE  &kp F19    &kp F7     &th_r_rep RALT 0      &hm_r_gui RGUI Y
                                          &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0    &kp F20    &kp F8     &lt_lthumb_magic 2 0  &hm_r_shift RSHFT SPACE
@@ -674,8 +674,8 @@
         control {
             bindings = <
 &bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &trans           &trans           &trans           &trans           &trans
-&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &trans                        &trans          &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans
-&trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &trans                        &trans          &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans
+&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &trans                        &trans          &rgb_ug RGB_HUI  &kp LS(TAB)      &kp UP           &kp TAB          &trans
+&trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &trans                        &trans          &kp RET          &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
 &trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
 &trans       &trans        &trans    &trans        &trans                                                   &trans           &trans           &trans           &trans           &trans
                                                    &trans     &bt BT_SEL 0  &bt BT_SEL 1    &trans          &sys_reset       &bt BT_CLR

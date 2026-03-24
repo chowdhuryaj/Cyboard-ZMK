@@ -466,14 +466,8 @@
         };
 
         lt_rep {
-            bindings = <&lt_rep 2 0>;
+            bindings = <&lt_rep 1 0>;
             key-positions = <58 64>;
-            timeout-ms = <35>;
-        };
-
-        lt_magic_left {
-            bindings = <&lt_lthumb_magic 1 0>;
-            key-positions = <65 59>;
             timeout-ms = <35>;
         };
     };
@@ -667,13 +661,13 @@
 
         base {
             bindings = <
-&trans    &as N1    &as N2    &as N3    &as N4              &as N5                                         &as N6    &as N7              &as N8                   &as N9     &as N0    &as GRAVE
-&trans    &kp X     &kp F     &kp G     &kp K               &kp EQUAL                                      &kp F10   &ak_rti             &kp O                    &kp U      &qu       &as BSLH
-&trans    &kp N     &kp S     &kp H     &kp T               &kp M                                          &kp F11   &kp C               &kp A                    &kp E      &kp I     &as FSLH
-&none     &kp B     &kp V     &kp J     &kp D               &kp MINUS                                      &kp F12   &kp W               &kp UP                   &kp F7     &kp F8    &as LS(STAR)
-&mkp MB4  &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                                     &kp LEFT            &kp DOWN                 &kp RIGHT  &kp HOME  &kp END
-                                        &hm_l_gui LGUI L    &hm_l_alt LALT GRAVE  &hm_r_shift LSHFT F19    &mkp MB1  &hm_r_gui RALT P    &hm_r_gui RGUI Y
-                                        &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0    &kp F20                  &mkp MB3  &hm_r_ctrl RCTRL Z  &hm_r_shift RSHFT SPACE
+&sk RALT   &as N1    &as N2    &as N3    &as N4              &as N5                           &as N6     &as N7                &as N8                   &as N9         &as N0            &as GRAVE
+&sk RGUI   &kp X     &kp F     &kp G     &kp K               &qu                              &as EQUAL  &ak_rti               &kp O                    &kp U          &ak_rti           &as BSLH
+&sk LSHFT  &kp N     &kp S     &kp H     &kp T               &kp M                            &as P      &kp C                 &kp A                    &kp E          &kp I             &as FSLH
+&sk RCTRL  &kp B     &kp V     &kp J     &kp D               &kp Z                            &as MINUS  &kp W                 &mt HOME UP              &ak_rti        &ak_rti           &as LS(STAR)
+&mkp MB4   &mkp MB5  &mkp MB2  &mkp MB3  &mkp MB1                                                        &mt LC(LEFT) LEFT     &mt END DOWN             &kp LC(RIGHT)  &kp LS(LC(LEFT))  &kp LS(LC(RIGHT))
+                                         &hm_l_gui LGUI L    &hm_l_alt LALT GRAVE  &kp F19    &kp F7     &th_r_rep RALT 0      &hm_r_gui RGUI Y
+                                         &hm_l_shft LSHFT R  &th_l_bdel LCTRL 0    &kp F20    &kp F8     &lt_lthumb_magic 2 0  &hm_r_shift RSHFT SPACE
             >;
         };
 

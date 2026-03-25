@@ -599,7 +599,7 @@
         base {
             bindings = <
 &tog 1    &as N1    &as N2     &as N3    &as N4              &as N5                            &as N6  &as N7                &as N8                   &as N9    &as N0     &tog 2
-&qu       &trans    &ak_rti    &kp O     &kp U               &as EQUAL                         &trans  &kp M                 &kp G                    &kp B     &kp F      &trans
+&trans    &qu       &ak_rti    &kp O     &kp U               &as EQUAL                         &trans  &kp M                 &kp G                    &kp B     &kp F      &trans
 &kp W     &kp C     &kp I      &kp A     &kp E               &as MINUS                         &kp K   &kp H                 &kp T                    &kp N     &kp S      &kp X
 &kp Z     &kp F19   &kp GRAVE  &kp F20   &kp F7              &kp F8                            &trans  &kp D                 &kp J                    &kp P     &kp V      &trans
 &mkp MB4  &mkp MB5  &mkp MB2   &mkp MB3  &mkp MB1                                                      &mt HOME DOWN_ARROW   &mt END UP               &kp LEFT  &kp RIGHT  &trans

@@ -446,14 +446,14 @@
             timeout-ms = <35>;
         };
 
-        slmo_control {
-            bindings = <&sl_mo 1 1>;
+        m4 {
+            bindings = <&mkp MB4>;
             key-positions = <58 64>;
             timeout-ms = <35>;
         };
 
-        slmo_fn {
-            bindings = <&sl_mo 2 2>;
+        m5 {
+            bindings = <&mkp MB5>;
             key-positions = <59 65>;
             timeout-ms = <35>;
         };
@@ -598,7 +598,7 @@
 
         base {
             bindings = <
-&trans  &as N1   &as N2    &as N3    &as N4              &as N5                          &as N6    &as N7                &as N8                   &as N9    &as N0     &tog 2
+&trans  &as N1   &as N2    &as N3    &as N4              &as N5                          &as N6    &as N7                &as N8                   &as N9    &as N0     &trans
 &trans  &kp W    &kp G     &kp O     &kp U               &as EQUAL                       &trans    &kp M                 &kp G                    &kp B     &kp F      &trans
 &trans  &kp C    &kp I     &kp A     &kp E               &as MINUS                       &kp K     &kp H                 &kp T                    &kp N     &kp S      &trans
 &trans  &kp F19  &kp F7    &kp F8    &kp F7              &kp GRAVE                       &trans    &kp D                 &kp V                    &kp P     &kp J      &trans

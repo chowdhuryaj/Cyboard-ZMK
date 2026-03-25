@@ -616,13 +616,13 @@
 
         base {
             bindings = <
-&trans  &as N1   &as N2   &as N3   &as N4              &as N5                             &as N6    &as N7                &as N8               &as N9                   &as N0               &trans
-&trans  &qu      &kp Y    &kp O    &kp U               &as EQUAL                          &trans    &kp G                 &kp K                &kp F                    &kp B                &trans
-&trans  &kp W    &kp I    &kp A    &kp E               &as MINUS                          &trans    &kp C                 &kp D                &kp S                    &kp N                &trans
-&trans  &kp F19  &kp F7   &kp F8   &ak_rti             &kp GRAVE                          &trans    &kp J                 &kp M                &kp V                    &kp P                &trans
-&trans  &kp F20  &kp F11  &kp F12  &mkp MB1                                                         &mt HOME DOWN_ARROW   &mt END UP           &mt LC(LEFT) LEFT_ARROW  &mt LC(RIGHT) RIGHT  &trans
-                                   &hm_l_gui LGUI H    &hm_l_alt LALT SPACE   &mkp MB1    &mkp MB1  &hm_l_alt RALT SPACE  &hm_r_gui RGUI L
-                                   &hm_l_shft LSHFT T  &hm_l_ctrl LCTRL BSPC  &mkp MB2    &mkp MB3  &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT R
+&trans  &as N1   &as N2   &as N3   &as N4              &as N5                             &as N6       &as N7                &as N8               &as N9                   &as N0               &trans
+&trans  &qu      &kp Y    &kp O    &kp U               &as EQUAL                          &kp X        &kp G                 &kp K                &kp F                    &kp B                &trans
+&trans  &kp W    &kp I    &kp A    &kp E               &as MINUS                          &key_repeat  &kp C                 &kp D                &kp S                    &kp N                &trans
+&trans  &kp F19  &kp F7   &kp F8   &ak_rti             &kp GRAVE                          &kp Z        &kp J                 &kp M                &kp V                    &kp P                &trans
+&trans  &kp F20  &kp F11  &kp F12  &kp F13                                                             &mt HOME DOWN_ARROW   &mt END UP           &mt LC(LEFT) LEFT_ARROW  &mt LC(RIGHT) RIGHT  &trans
+                                   &hm_l_gui LGUI H    &hm_l_alt LALT SPACE   &mkp MB1    &mkp MB1     &hm_l_alt RALT SPACE  &hm_r_gui RGUI L
+                                   &hm_l_shft LSHFT T  &hm_l_ctrl LCTRL BSPC  &mkp MB2    &mkp MB3     &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT R
             >;
         };
 

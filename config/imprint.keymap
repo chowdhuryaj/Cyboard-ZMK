@@ -598,13 +598,13 @@
 
         base {
             bindings = <
-&tog 1    &as N1    &as N2     &as N3    &as N4              &as N5                            &as N6  &as N7                &as N8                   &as N9    &as N0     &tog 2
-&trans    &qu       &ak_rti    &kp O     &kp U               &as EQUAL                         &trans  &kp M                 &kp G                    &kp B     &kp F      &trans
-&kp W     &kp C     &kp I      &kp A     &kp E               &as MINUS                         &kp K   &kp H                 &kp T                    &kp N     &kp S      &kp X
-&kp Z     &kp F19   &kp GRAVE  &kp F20   &kp F7              &kp F8                            &trans  &kp D                 &kp J                    &kp P     &kp V      &trans
+&tog 1    &as N1    &as N2     &as N3    &as N4              &as N5                          &as N6    &as N7                &as N8                   &as N9    &as N0     &tog 2
+&trans    &ak_rti   &kp J      &kp O     &kp U               &as EQUAL                       &trans    &kp V                 &kp M                    &kp F     &ak_rti    &trans
+&kp P     &kp N     &kp I      &kp A     &kp E               &as MINUS                       &kp K     &kp T                 &kp H                    &kp S     &kp C      &kp W
+&trans    &kp F19   &kp GRAVE  &kp F20   &kp F7              &kp F8                          &trans    &kp D                 &kp B                    &kp V     &kp G      &trans
 &mkp MB4  &mkp MB5  &mkp MB2   &mkp MB3  &mkp MB1                                                      &mt HOME DOWN_ARROW   &mt END UP               &kp LEFT  &kp RIGHT  &trans
-                                         &hm_l_gui LGUI L    &hm_l_alt LALT GRAVE   &kp F19    &kp F7  &th_r_rep RALT 0      &hm_r_gui RGUI Y
-                                         &hm_l_shft LSHFT R  &hm_l_ctrl LCTRL BSPC  &kp F20    &kp F8  &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT SPACE
+                                         &hm_l_gui LGUI L    &hm_l_alt LALT X       &qu      &mkp MB1  &th_r_rep RALT 0      &hm_r_gui RGUI Y
+                                         &hm_l_shft LSHFT R  &hm_l_ctrl LCTRL BSPC  &kp Z    &mkp MB3  &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT SPACE
             >;
         };
 

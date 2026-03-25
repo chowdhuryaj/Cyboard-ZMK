@@ -448,13 +448,31 @@
 
         m4 {
             bindings = <&mkp MB4>;
-            key-positions = <58 64>;
+            key-positions = <51 50>;
             timeout-ms = <35>;
         };
 
         m5 {
             bindings = <&mkp MB5>;
+            key-positions = <52 51>;
+            timeout-ms = <35>;
+        };
+
+        z {
+            bindings = <&lt 1 Z>;
+            key-positions = <58 64>;
+            timeout-ms = <35>;
+        };
+
+        x {
+            bindings = <&lt 2 X>;
             key-positions = <59 65>;
+            timeout-ms = <35>;
+        };
+
+        rrep {
+            bindings = <&key_repeat>;
+            key-positions = <63 69>;
             timeout-ms = <35>;
         };
     };
@@ -598,13 +616,13 @@
 
         base {
             bindings = <
-&trans  &as N1   &as N2    &as N3    &as N4              &as N5                          &as N6    &as N7                &as N8                   &as N9    &as N0     &trans
-&trans  &kp W    &kp G     &kp O     &kp U               &as EQUAL                       &trans    &kp M                 &kp G                    &kp B     &kp F      &trans
-&trans  &kp C    &kp I     &kp A     &kp E               &as MINUS                       &kp K     &kp H                 &kp T                    &kp N     &kp S      &trans
-&trans  &kp F19  &kp F7    &kp F8    &kp F7              &kp GRAVE                       &trans    &kp D                 &kp V                    &kp P     &kp J      &trans
-&trans  &kp F20  &mkp MB2  &mkp MB3  &mkp MB1                                                      &mt HOME DOWN_ARROW   &mt END UP               &kp LEFT  &kp RIGHT  &trans
-                                     &hm_l_gui LGUI L    &hm_l_alt LALT X       &qu      &mkp MB1  &th_r_rep RALT 0      &hm_r_gui RGUI Y
-                                     &hm_l_shft LSHFT R  &hm_l_ctrl LCTRL BSPC  &kp Z    &mkp MB3  &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT SPACE
+&trans  &as N1   &as N2    &as N3    &as N4              &as N5                             &as N6    &as N7                &as N8               &as N9    &as N0     &trans
+&trans  &qu      &kp Y     &kp O     &kp U               &as EQUAL                          &trans    &kp G                 &kp K                &kp F     &kp B      &trans
+&trans  &kp W    &kp I     &kp A     &kp E               &as MINUS                          &trans    &kp C                 &kp D                &kp S     &kp N      &trans
+&trans  &kp F19  &kp F7    &kp F8    &ak_rti             &kp GRAVE                          &trans    &kp J                 &kp M                &kp V     &kp P      &trans
+&trans  &kp F20  &mkp MB2  &mkp MB3  &mkp MB1                                                         &mt HOME DOWN_ARROW   &mt END UP           &kp LEFT  &kp RIGHT  &trans
+                                     &hm_l_gui LGUI H    &hm_l_alt LALT SPACE   &mkp MB4    &mkp MB1  &hm_l_alt RALT SPACE  &hm_r_gui RGUI L
+                                     &hm_l_shft LSHFT T  &hm_l_ctrl LCTRL BSPC  &mkp MB5    &mkp MB3  &hm_r_ctrl RCTRL DEL  &hm_r_shift RSHFT R
             >;
         };
 

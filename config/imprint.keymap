@@ -1,6 +1,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <scroll-snap.dtsi>
+#include <flask_scroll.dtsi>
 #include <behaviors.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -793,12 +794,27 @@
     };
 };
 
+/* Left ball = scroll, through the Flask PACS-safe converter (replaces the
+ * old scaler + mapper + transform chain): divisor 12 ≈ the old 1/12 y-scale,
+ * invert-x replicates the old INPUT_TRANSFORM_X_INVERT. 16 ms dump window,
+ * ≤3 notches per window, surplus carried — fast rolls can't flood iSite,
+ * reversals cancel surplus before output flips. Bench-tune divisor to taste
+ * (Flask used 8 on PC / 120 on macOS at 800 CPI). */
+&flask_scroll {
+    divisor = <12>;
+    interval-ms = <16>;
+    max-notches = <3>;
+    invert-x;
+};
+
 &trackball_central_listener {
-    input-processors = <
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
-        &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
-        &zip_scroll_snap
-    >;
+    input-processors = <&flask_scroll>;
+};
+
+/ {
+    flask_scroll_out {
+        compatible = "zmk,input-listener";
+        device = <&flask_scroll>;
+        input-processors = <&zip_scroll_snap>;
+    };
 };

@@ -1,0 +1,164 @@
+{
+  "protocol_version": 10,
+  "dragscroll": {
+    "divisor": 120,
+    "inverted": 0,
+    "interval_ms": 16,
+    "max_notches": 3
+  },
+  "dpi": {
+    "left_index": 3,
+    "right_index": 5,
+    "left_cpi": 0,
+    "right_cpi": 0
+  },
+  "accel": {
+    "enabled": 0,
+    "takeoff": 200,
+    "growth": 25,
+    "offset": 220,
+    "limit": 20
+  },
+  "smoothing": {
+    "enabled": 0,
+    "factor": 40,
+    "timeout": 200
+  },
+  "wiggle": {
+    "interval": 150,
+    "cooldown": 250,
+    "threshold": 3,
+    "enabled": 1,
+    "action": 1,
+    "set": 0,
+    "source": 2
+  },
+  "autoscroll": {
+    "inverted": 0,
+    "speed_scale": 100,
+    "deadzone": 15,
+    "range": 300,
+    "state": 0,
+    "stop_on_key": null
+  },
+  "automouse": {
+    "enabled": 1,
+    "timeout_index": 2,
+    "threshold": 0,
+    "layer": 15
+  },
+  "os": {
+    "follow": 1,
+    "mac": 1,
+    "detected": 3
+  },
+  "numword": {
+    "timeout_ms": 5000,
+    "layer": 1
+  },
+  "selword_mac": 1,
+  "sentence_enabled": 0,
+  "csk": {
+    "enabled": 1,
+    "slots": []
+  },
+  "leader": [],
+  "gestures": {
+    "ratchet": 400,
+    "active_set": 255,
+    "sets": [
+      {
+        "set": 0,
+        "dirs": {
+          "E": {
+            "raw": 79,
+            "key": "RIGHT"
+          },
+          "S": {
+            "raw": 81,
+            "key": "DOWN"
+          },
+          "W": {
+            "raw": 80,
+            "key": "LEFT"
+          },
+          "N": {
+            "raw": 82,
+            "key": "UP"
+          }
+        }
+      },
+      {
+        "set": 1,
+        "dirs": {
+          "E": {
+            "raw": 76,
+            "key": "DEL"
+          },
+          "S": {
+            "raw": 40,
+            "key": "ENTER"
+          },
+          "W": {
+            "raw": 42,
+            "key": "BSPC"
+          },
+          "N": {
+            "raw": 41,
+            "key": "ESC"
+          }
+        }
+      },
+      {
+        "set": 2,
+        "dirs": {
+          "E": {
+            "raw": 171,
+            "key": "0x00AB"
+          },
+          "S": {
+            "raw": 170,
+            "key": "0x00AA"
+          },
+          "W": {
+            "raw": 172,
+            "key": "0x00AC"
+          },
+          "N": {
+            "raw": 169,
+            "key": "0x00A9"
+          }
+        }
+      },
+      {
+        "set": 3,
+        "dirs": {
+          "E": {
+            "raw": 299,
+            "key": "LCTL(TAB)"
+          },
+          "S": {
+            "raw": 44,
+            "key": "SPACE"
+          },
+          "W": {
+            "raw": 811,
+            "key": "LCTL+LSFT(TAB)"
+          },
+          "N": {
+            "raw": 43,
+            "key": "TAB"
+          }
+        }
+      }
+    ]
+  },
+  "wheelchords": {
+    "enabled": 1,
+    "step": 200,
+    "hold_ms": 200,
+    "buttons": []
+  },
+  "combo_layer_masks": {},
+  "combo_count": 64
+}

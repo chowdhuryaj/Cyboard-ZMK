@@ -775,12 +775,14 @@
     acceleration-exponent = <2>;
 };
 
-/* Right ball = cursor. Motion pops the auto-mouse layer (Flask MBO, 500 ms =
- * Svalboard mh_timer default); snipe layer scales 1/3 on top of the base chain. */
+/* Right ball = cursor. Motion pops the auto-mouse layer (Flask MBO, 400 ms —
+ * AJ's live Svalboard setting, dumped 2026-07-07, see
+ * docs/flask-svalboard-dump.json); snipe layer scales 1/3 on top of the base
+ * chain. */
 &trackball_peripheral_listener {
     input-processors = <
         &zip_xy_scaler 1 1
-        &zip_temp_layer L_MOUSE 500
+        &zip_temp_layer L_MOUSE 400
         // &pointer_accel
     >;
 

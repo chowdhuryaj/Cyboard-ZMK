@@ -19,6 +19,7 @@
 #define L_FN      2
 #define L_MOUSE   3
 #define L_SNIPE   4
+#define L_NUM     5
 
 /* OS mode = switch-layout index (mctechnology17/zmk-switch-layout), stored in
  * settings so it survives reboot/reflash. slk_* behaviors below pick the
@@ -234,6 +235,53 @@
                 max-prior-idle-ms = <500>;
                 bindings = <&slk_wdel>;
             };
+        };
+
+        /* Second adaptive key (urob/zmk-adaptive-key): the QMK Alt Repeat —
+         * taps the REVERSE companion of the last key (→ after ←, PgDn after
+         * PgUp, ⇧Tab after Tab, closing bracket after opening). No
+         * max-prior-idle: works whenever. Falls back to plain repeat. More
+         * of these can coexist (ak_rti = completions, ak_alt = reversals). */
+        ak_alt: ak_alt {
+            compatible = "zmk,behavior-adaptive-key";
+            label = "AK_ALT";
+            #binding-cells = <0>;
+            bindings = <&key_repeat>;
+
+            alt_left    { trigger-keys = <LEFT>;  bindings = <&kp RIGHT>; };
+            alt_right   { trigger-keys = <RIGHT>; bindings = <&kp LEFT>; };
+            alt_up      { trigger-keys = <UP>;    bindings = <&kp DOWN>; };
+            alt_down    { trigger-keys = <DOWN>;  bindings = <&kp UP>; };
+            alt_pgup    { trigger-keys = <PG_UP>; bindings = <&kp PG_DN>; };
+            alt_pgdn    { trigger-keys = <PG_DN>; bindings = <&kp PG_UP>; };
+            alt_home    { trigger-keys = <HOME>;  bindings = <&kp END>; };
+            alt_end     { trigger-keys = <END>;   bindings = <&kp HOME>; };
+            alt_tab     { trigger-keys = <TAB>;   bindings = <&kp LS(TAB)>; };
+            alt_lbkt    { trigger-keys = <LBKT>;  bindings = <&kp RBKT>; };
+            alt_rbkt    { trigger-keys = <RBKT>;  bindings = <&kp LBKT>; };
+        };
+
+        /* Smart num layer (urob/zmk-auto-layer): &num_word L_NUM latches the
+         * num layer; digits and the continue-list keep it alive, anything
+         * else drops back. */
+        num_word: num_word {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            ignore-numbers;
+        };
+
+        /* App switcher (urob/zmk-tri-state): tap = ⌘Tab and ⌘ STAYS HELD;
+         * more taps cycle; any non-ignored key press (or releasing the
+         * Control layer) drops ⌘ and commits. Ignored positions = the
+         * Control layer's Tab/⇧Tab/arrows/Enter so the app grid can be
+         * navigated mid-swap. (pc hosts: swap LGUI→LALT here.) */
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <20 21 22 31 32 33 34>;
         };
 
         as_ht: as_ht {
@@ -773,8 +821,8 @@
 
         control {
             bindings = <
-&bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &trans           &trans           &trans
-&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &trans          &kp LS(TAB)      &kp UP           &kp TAB          &trans
+&bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &trans
+&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
 &trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
 &trans       &trans        &trans    &trans        &trans                                                   &trans          &trans           &trans           &trans           &trans
@@ -820,6 +868,21 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+                                &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        /* Smart-num layer — latched by &num_word (auto-layer). Right-hand
+         * numpad on the home block, operators on the outer column; digits +
+         * the num_word continue-list keep it alive, anything else exits. */
+        num {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans   &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8   &kp N9  &kp FSLH   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5   &kp N6  &kp STAR   &kp MINUS
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2   &kp N3  &kp PLUS   &kp EQUAL
+&trans  &trans  &trans  &trans  &trans                    &kp N0  &kp DOT  &kp COMMA  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
                                 &trans  &trans  &trans    &trans  &trans  &trans
             >;

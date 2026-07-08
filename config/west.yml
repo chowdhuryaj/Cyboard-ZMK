@@ -43,6 +43,10 @@ manifest:
       remote: urob
       revision: v0.3
 
+    - name: zmk-tri-state
+      remote: urob
+      revision: v0.3
+
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1

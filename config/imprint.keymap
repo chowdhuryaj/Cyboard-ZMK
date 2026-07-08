@@ -840,15 +840,17 @@
 };
 
 /* Mouse gestures (kot149/zmk-mouse-gesture): hold S-position on the mouse
- * layer, stroke the cursor ball. The four Adept/Svalboard gesture sets
- * (keymap.c gesture_set_defaults — arrows / editing / media / tab-nav),
- * mapped by stroke count: singles = set 1 (arrows), same-direction doubles
- * = set 2 (editing), same-direction triples = set 3 (media), and set 4
- * (tab-nav) = the set direction then a clockwise hook (E→ES, S→SW, W→WN,
- * N→NE). stroke-size 400 = Flask ratchet step; movement suppressed while
- * recognizing, like Flask's capture. */
+ * layer, stroke EITHER ball (cursor or scroll — the processor is wired into
+ * both listeners). The four Adept/Svalboard gesture sets (keymap.c
+ * gesture_set_defaults — arrows / editing / media / tab-nav), mapped by
+ * stroke count: singles = set 1 (arrows), same-direction doubles = set 2
+ * (editing), same-direction triples = set 3 (media), and set 4 (tab-nav) =
+ * the set direction then a clockwise hook (E→ES, S→SW, W→WN, N→NE).
+ * stroke-size = counts per recognized stroke: lowered 400→150 (400 needed a
+ * full swipe per keypress — too slow on hardware). Movement suppressed while
+ * recognizing. */
 &zip_mouse_gesture {
-    stroke-size = <400>;
+    stroke-size = <150>;
     suppress-movement;
 
     /* set 1 "arrows" */
@@ -928,6 +930,7 @@
  * motion while jogging (ball = jog wheel). */
 &trackball_central_listener {
     input-processors = <
+        &zip_mouse_gesture
         &flask_autoscroll
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12

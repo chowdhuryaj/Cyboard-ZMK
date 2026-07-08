@@ -12,6 +12,10 @@ manifest:
       url-base: https://github.com/ssbb
     - name: oleksandrmaslov
       url-base: https://github.com/oleksandrmaslov
+    - name: tadakado
+      url-base: https://github.com/tadakado
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
 
   projects:
     - name: zmk
@@ -53,6 +57,18 @@ manifest:
 
     - name: zmk-flask-modules
       remote: chowdhuryaj
+      revision: main
+
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
+
+    - name: zmk-ble-mouse-host
+      remote: tadakado
+      revision: main
+
+    - name: zmk-switch-layout
+      remote: mctechnology17
       revision: main
 
   self:

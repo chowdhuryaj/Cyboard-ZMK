@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <scroll-snap.dtsi>
 #include <flask_scroll.dtsi>
+#include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -9,6 +10,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk-switch-layout/switch-layout.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #define L_BASE    0
@@ -16,21 +18,14 @@
 #define L_FN      2
 #define L_MOUSE   3
 #define L_SNIPE   4
-#define L_MAC     5
 
-/* OS shortcut flavor for combos & adaptive keys (compile-time for now).
- * The MAC toggle layer (control + right inner thumb) swaps nav/word arrows at
- * runtime; combos can't be OS-switched natively — that lands with the
- * Phase-1 os-shortcuts module. Default: PC (ctrl). Uncomment for mac flavor.
- */
-// #define FLASK_OS_MAC
-#ifdef FLASK_OS_MAC
-#define OSK(k) LG(k) /* clipboard-style shortcuts: cmd on mac */
-#define OSW(k) LA(k) /* word nav/delete: opt on mac */
-#else
-#define OSK(k) LC(k)
-#define OSW(k) LC(k)
-#endif
+/* OS mode = switch-layout index (mctechnology17/zmk-switch-layout), stored in
+ * settings so it survives reboot/reflash. slk_* behaviors below pick the
+ * right chord per OS; &sw_layout OS_NEXT (control + right inner thumb)
+ * toggles. */
+#define OS_PC  0
+#define OS_MAC 1
+#define OS_NEXT ZMK_SWITCH_LAYOUT_NEXT
 
 &mt {
     quick-tap-ms = <150>;
@@ -228,13 +223,13 @@
             rti_bspc {
                 trigger-keys = <BSPC>;
                 max-prior-idle-ms = <500>;
-                bindings = <&kp OSW(BSPC)>;
+                bindings = <&slk_wbspc>;
             };
 
             rti_del {
                 trigger-keys = <DEL>;
                 max-prior-idle-ms = <500>;
-                bindings = <&kp OSW(DEL)>;
+                bindings = <&slk_wdel>;
             };
         };
 
@@ -344,13 +339,105 @@
                 bindings = <&out OUT_BLE>;
             };
         };
+
+        /* --- OS-aware shortcuts (zmk-switch-layout): index 0 = PC, 1 = mac.
+         * Persisted in settings; swap with &sw_layout OS_NEXT. --- */
+        sw_layout: sw_layout {
+            compatible = "zmk-switch-layout,behavior-switch-layout-mode";
+            #binding-cells = <1>;
+            layout-count = <2>;
+            default-layout = <OS_PC>;
+        };
+
+        slk_copycut: slk_copycut {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt LC(X) LC(C)>, <&mt LG(X) LG(C)>;
+        };
+
+        slk_paste: slk_paste {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>, <&kp LG(V)>;
+        };
+
+        slk_undoredo: slk_undoredo {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt LC(Y) LC(Z)>, <&mt LG(LS(Z)) LG(Z)>;
+        };
+
+        slk_selall: slk_selall {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>, <&kp LG(A)>;
+        };
+
+        slk_close: slk_close {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(W)>, <&kp LG(W)>;
+        };
+
+        slk_ntab: slk_ntab {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(T)>, <&kp LG(T)>;
+        };
+
+        slk_wbspc: slk_wbspc {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(BSPC)>, <&kp LA(BSPC)>;
+        };
+
+        slk_wdel: slk_wdel {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&kp LC(DEL)>, <&kp LA(DEL)>;
+        };
+
+        slk_home_down: slk_home_down {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt HOME DOWN_ARROW>, <&mt LG(LEFT) DOWN_ARROW>;
+        };
+
+        slk_end_up: slk_end_up {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt END UP>, <&mt LG(RIGHT) UP>;
+        };
+
+        slk_wleft: slk_wleft {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt LC(LEFT) LEFT_ARROW>, <&mt LA(LEFT) LEFT_ARROW>;
+        };
+
+        slk_wright: slk_wright {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&mt LC(RIGHT) RIGHT>, <&mt LA(RIGHT) RIGHT>;
+        };
+
+        /* --- BLE mouse host (tadakado/zmk-ble-mouse-host) --- */
+        mouse_pair: mouse_pair {
+            compatible = "zmk,behavior-mouse-host-pair";
+            #binding-cells = <0>;
+        };
+
+        mouse_unpair: mouse_unpair {
+            compatible = "zmk,behavior-mouse-host-unpair";
+            #binding-cells = <0>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
         copy_cut {
-            bindings = <&mt OSK(X) OSK(C)>;
+            bindings = <&slk_copycut>;
             key-positions = <27 26>;
             timeout-ms = <35>;
             require-prior-idle-ms = <150>;
@@ -375,21 +462,21 @@
         };
 
         paste {
-            bindings = <&kp OSK(V)>;
+            bindings = <&slk_paste>;
             key-positions = <28 27>;
             timeout-ms = <35>;
             require-prior-idle-ms = <150>;
         };
 
         undo_redo {
-            bindings = <&mt OSK(Y) OSK(Z)>;
+            bindings = <&slk_undoredo>;
             key-positions = <26 25>;
             timeout-ms = <35>;
             require-prior-idle-ms = <150>;
         };
 
         sel_all {
-            bindings = <&kp OSK(A)>;
+            bindings = <&slk_selall>;
             key-positions = <29 17>;
             timeout-ms = <35>;
             require-prior-idle-ms = <140>;
@@ -402,13 +489,13 @@
         };
 
         close {
-            bindings = <&kp OSK(W)>;
+            bindings = <&slk_close>;
             key-positions = <28 40>;
             timeout-ms = <35>;
         };
 
         ntab {
-            bindings = <&kp OSK(T)>;
+            bindings = <&slk_ntab>;
             key-positions = <27 39>;
             timeout-ms = <35>;
         };
@@ -675,7 +762,7 @@
 &trans  &kp Q    &kp W    &kp E    &kp R               &kp T                               &kp Y     &kp U                    &kp I                &kp O                    &kp P                &trans
 &trans  &kp A    &kp S    &kp D    &kp F               &kp G                               &kp H     &kp J                    &kp K                &kp L                    &kp SEMI             &kp SQT
 &trans  &kp Z    &kp X    &kp C    &kp V               &kp B                               &kp N     &kp M                    &kp COMMA            &kp DOT                  &kp FSLH             &kp LS(RPAR)
-&trans  &kp F20  &kp F11  &kp F12  &kp GRAVE                                                         &mt HOME DOWN_ARROW      &mt END UP           &mt LC(LEFT) LEFT_ARROW  &mt LC(RIGHT) RIGHT  &trans
+&trans  &kp F20  &kp F11  &kp F12  &kp GRAVE                                                         &slk_home_down           &slk_end_up          &slk_wleft               &slk_wright          &trans
                                    &hm_l_gui LGUI H    &hm_l_shft LSHFT SPACE  &mkp MB1    &mkp MB1  &hm_r_shift RSHFT SPACE  &hm_r_gui RGUI L
                                    &hm_l_shft LCTRL T  &hm_l_ctrl LCTRL BSPC   &mkp MB2    &mkp MB3  &hm_r_ctrl RCTRL DEL     &hm_r_shift RSHFT R
             >;
@@ -684,11 +771,11 @@
         control {
             bindings = <
 &bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &trans          &trans           &trans           &trans           &trans
-&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &trans                        &trans          &trans          &kp LS(TAB)      &kp UP           &kp TAB          &trans
+&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &trans          &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
 &trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
 &trans       &trans        &trans    &trans        &trans                                                   &trans          &trans           &trans           &trans           &trans
-                                                   &trans     &bt BT_SEL 0  &bt BT_SEL 1    &tog L_MAC      &sys_reset      &bt BT_CLR
+                                                   &trans     &bt BT_SEL 0  &bt BT_SEL 1    &sw_layout OS_NEXT  &sys_reset  &bt BT_CLR
                                                    &trans     &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans          &trans
             >;
         };
@@ -706,17 +793,18 @@
         };
 
         /* Auto-mouse overlay (Flask MBO): popped by cursor-ball motion via
-         * zip_temp_layer, drops 500 ms after last motion. Home-row clicks on
-         * both hands; hold A-position for snipe. Thumb MB1/2/3 stay via &trans. */
+         * zip_temp_layer, drops 400 ms after last motion. Home-row clicks on
+         * both hands; hold A-position for snipe, hold S-position for mouse
+         * gestures. Thumb MB1/2/3 stay via &trans. */
         mouse {
             bindings = <
-&trans  &trans       &trans  &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans       &trans  &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &mo L_SNIPE  &trans  &mkp MB2  &mkp MB1  &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2  &trans  &trans  &trans
-&trans  &trans       &trans  &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &trans       &trans  &trans    &trans                          &trans    &trans    &trans  &trans  &trans
-                                       &trans    &trans    &trans    &trans    &trans    &trans
-                                       &trans    &trans    &trans    &trans    &trans    &trans
+&trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
+&trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
+&trans  &mo L_SNIPE  &mouse_gesture  &mkp MB2  &mkp MB1  &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2  &trans  &trans  &trans
+&trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
+&trans  &trans       &trans          &trans    &trans                          &trans    &trans    &trans  &trans  &trans
+                                               &trans    &trans    &trans    &trans    &trans    &trans
+                                               &trans    &trans    &trans    &trans    &trans    &trans
             >;
         };
 
@@ -734,21 +822,6 @@
             >;
         };
 
-        /* Mac overlay (toggle: control + right inner thumb): swaps the nav row
-         * to mac idioms — Home/End -> cmd+arrow, word-jump -> opt+arrow.
-         * Combos keep the compile-time OSK() flavor until the Phase-1
-         * os-shortcuts module brings runtime switching. */
-        mac {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans           &trans                    &trans  &trans               &trans              &trans               &trans                &trans
-&trans  &trans  &trans  &trans  &trans           &trans                    &trans  &trans               &trans              &trans               &trans                &trans
-&trans  &trans  &trans  &trans  &trans           &trans                    &trans  &trans               &trans              &trans               &trans                &trans
-&trans  &trans  &trans  &trans  &trans           &trans                    &trans  &trans               &trans              &trans               &trans                &trans
-&trans  &trans  &trans  &trans  &trans                                             &mt LG(LEFT) DOWN_ARROW  &mt LG(RIGHT) UP  &mt LA(LEFT) LEFT_ARROW  &mt LA(RIGHT) RIGHT  &trans
-                                &trans           &trans  &trans    &trans  &trans  &trans
-                                &trans           &trans  &trans    &trans  &trans  &trans
-            >;
-        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
@@ -756,11 +829,30 @@
 
 /* Auto-mouse layer processor: don't pop the layer mid-typing (150 ms idle gate,
  * matches HRM require-prior-idle), and don't drop it when clicking — excluded
- * positions are the mouse-layer click keys (25 27 28 29 30 31 32) plus the
- * always-on thumb mouse buttons (60 61 66 67). */
+ * positions are the mouse-layer snipe/gesture/click keys (25 26 27 28 29 30
+ * 31 32) plus the always-on thumb mouse buttons (60 61 66 67). */
 &zip_temp_layer {
     require-prior-idle-ms = <150>;
-    excluded-positions = <25 27 28 29 30 31 32 60 61 66 67>;
+    excluded-positions = <25 26 27 28 29 30 31 32 60 61 66 67>;
+};
+
+/* Mouse gestures (kot149/zmk-mouse-gesture): hold S-position on the mouse
+ * layer, stroke the cursor ball. Single strokes = Flask gesture set 0
+ * (arrows); doubled strokes = set 1 (edit keys). stroke-size 400 = Flask
+ * ratchet step; movement suppressed while recognizing, like Flask's capture. */
+&zip_mouse_gesture {
+    stroke-size = <400>;
+    suppress-movement;
+
+    g_right { pattern = <GESTURE_RIGHT>; bindings = <&kp RIGHT>; };
+    g_left  { pattern = <GESTURE_LEFT>;  bindings = <&kp LEFT>; };
+    g_up    { pattern = <GESTURE_UP>;    bindings = <&kp UP>; };
+    g_down  { pattern = <GESTURE_DOWN>;  bindings = <&kp DOWN>; };
+
+    g_del   { pattern = <GESTURE_RIGHT GESTURE_RIGHT>; bindings = <&kp DEL>; };
+    g_bspc  { pattern = <GESTURE_LEFT GESTURE_LEFT>;   bindings = <&kp BSPC>; };
+    g_enter { pattern = <GESTURE_DOWN GESTURE_DOWN>;   bindings = <&kp ENTER>; };
+    g_esc   { pattern = <GESTURE_UP GESTURE_UP>;       bindings = <&kp ESC>; };
 };
 
 /* Flask-flavored accel (maccel curve: precision floor 0.2x at crawl speed,
@@ -776,12 +868,13 @@
     acceleration-exponent = <2>;
 };
 
-/* Right ball = cursor. Motion pops the auto-mouse layer (Flask MBO, 400 ms —
- * AJ's live Svalboard setting, dumped 2026-07-07, see
- * docs/flask-svalboard-dump.json); snipe layer scales 1/3 on top of the base
- * chain. */
+/* Right ball = cursor. Gestures see raw counts first (matches the Flask
+ * pipeline order); motion pops the auto-mouse layer (400 ms — AJ's live
+ * Svalboard setting, see docs/flask-svalboard-dump.json); snipe layer scales
+ * 1/3 on top of the base chain. */
 &trackball_peripheral_listener {
     input-processors = <
+        &zip_mouse_gesture
         &zip_xy_scaler 1 1
         &zip_temp_layer L_MOUSE 400
         // &pointer_accel
@@ -794,14 +887,28 @@
     };
 };
 
-/* Left ball = scroll, through the Flask PACS-safe converter (replaces the
- * old scaler + mapper + transform chain): divisor 12 ≈ the old 1/12 y-scale,
+/* External BLE mouse → this keyboard as HID host (tadakado/zmk-ble-mouse-host).
+ * Pair/unpair keys live on the control layer (inner top row). The mouse
+ * follows whichever output the keyboard is on. */
+/ {
+    mouse_host: mouse_host {
+        compatible = "zmk,ble-mouse-host";
+    };
+
+    mouse_host_listener {
+        compatible = "zmk,input-listener";
+        device = <&mouse_host>;
+    };
+};
+
+/* Left ball = scroll, through the Flask rate-capped converter. Per-axis
+ * divisors reproduce the original 1/16 x + 1/12 y scaler feel exactly;
  * invert-x replicates the old INPUT_TRANSFORM_X_INVERT. 16 ms dump window,
- * ≤3 notches per window, surplus carried — fast rolls can't flood iSite,
- * reversals cancel surplus before output flips. Bench-tune divisor to taste
- * (Flask used 8 on PC / 120 on macOS at 800 CPI). */
+ * ≤3 notches per window, surplus carried — fast rolls can't flood slow
+ * scroll consumers, reversals cancel surplus before output flips. */
 &flask_scroll {
-    divisor = <12>;
+    divisor-x = <16>;
+    divisor-y = <12>;
     interval-ms = <16>;
     max-notches = <3>;
     invert-x;

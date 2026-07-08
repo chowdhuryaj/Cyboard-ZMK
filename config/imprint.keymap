@@ -35,7 +35,9 @@
 &sl { lazy; };
 
 / {
-    chosen { zmk,matrix-transform = &imprint_number_row_full_bottom_row; };
+    /* Physical layout (carries the same matrix transform) — required for
+     * ZMK Studio; geometry generated from config/info.json. */
+    chosen { zmk,physical-layout = &imprint_physical_layout; };
 
     behaviors {
         hm_l_ctrl: hm_l_ctrl {

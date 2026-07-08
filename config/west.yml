@@ -39,13 +39,17 @@ manifest:
       revision: main
       path: modules/zmk/adaptive-key
 
+    # urob behavior modules track `main` — our zmk pin is main (post-v0.3),
+    # and the v0.3 tags call pre-Studio keymap APIs (zmk_keymap_layer_activate
+    # grew an argument; v0.3 auto-layer fails to compile the moment a node
+    # references it).
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.3
+      revision: main
 
     - name: zmk-tri-state
       remote: urob
-      revision: v0.3
+      revision: main
 
     - name: zmk-scroll-snap
       remote: kot149

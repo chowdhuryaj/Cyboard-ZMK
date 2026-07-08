@@ -1,7 +1,6 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <scroll-snap.dtsi>
-#include <flask_scroll.dtsi>
 #include <flask_autoscroll.dtsi>
 #include <dt-bindings/flask/autoscroll.h>
 #include <mouse-gesture.dtsi>
@@ -923,35 +922,23 @@
     };
 };
 
-/* Left ball = scroll, through the Flask rate-capped converter. Per-axis
- * divisors reproduce the original 1/16 x + 1/12 y scaler feel exactly;
- * invert-x replicates the old INPUT_TRANSFORM_X_INVERT. 16 ms dump window,
- * ≤3 notches per window, surplus carried — fast rolls can't flood slow
- * scroll consumers, reversals cancel surplus before output flips. */
-&flask_scroll {
-    divisor-x = <16>;
-    divisor-y = <12>;
-    interval-ms = <16>;
-    max-notches = <3>;
-    invert-x;
-};
-
+/* Left ball = scroll, the stock ZMK chain (the Flask rate-capped converter
+ * was tried and removed 2026-07-08 — AJ prefers this feel). flask_autoscroll
+ * rides in front: transparent while idle or stepped, swallows raw ball
+ * motion while jogging (ball = jog wheel). */
 &trackball_central_listener {
-    input-processors = <&flask_autoscroll &flask_scroll>;
+    input-processors = <
+        &flask_autoscroll
+        &zip_x_scaler 1 16
+        &zip_y_scaler 1 12
+        &zip_xy_to_scroll_mapper
+        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+        &zip_scroll_snap
+    >;
 };
 
-/ {
-    flask_scroll_out {
-        compatible = "zmk,input-listener";
-        device = <&flask_scroll>;
-        input-processors = <&zip_scroll_snap>;
-    };
-};
-
-/* Autoscroll (flask port, Ben White intervals + jog): sits ahead of
- * flask_scroll on the scroll ball — transparent while idle or stepped,
- * swallows ball motion while jogging (ball = jog wheel). Wheel ticks are
- * ±1 already paced by the interval, so no snap/cap needed on the way out.
+/* Autoscroll (flask port, Ben White intervals + jog). Wheel ticks are ±1
+ * already paced by the interval, so no snap/cap needed on the way out.
  * Defaults = AJ's live Svalboard dump (scale 100, deadzone 15, range 300).
  * Keys: control layer &asc ASC_UP / ASC_DOWN / ASC_JOG (Studio-movable). */
 &flask_autoscroll {

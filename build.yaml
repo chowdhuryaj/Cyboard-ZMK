@@ -18,7 +18,10 @@
 #
 ---
 include:
+  # raw_hid_adapter (zzeneg/zmk-raw-hid) rides the central half only — it
+  # carries CONFIG_RAW_HID=y + the extra USB HID device for the Flask
+  # tuning protocol.
   - board: assimilator-bt
-    shield: imprint_left
+    shield: imprint_left raw_hid_adapter
   - board: assimilator-bt
     shield: imprint_right

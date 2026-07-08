@@ -10,11 +10,14 @@ manifest:
       url-base: https://github.com/kot149
     - name: ssbb
       url-base: https://github.com/ssbb
+    - name: oleksandrmaslov
+      url-base: https://github.com/oleksandrmaslov
 
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Pinned (main @ 2026-06-29) for reproducible builds; bump deliberately.
+      revision: 484a0547078228f6957ed164523823e39fbedec4
       import: app/west.yml
 
     - name: zmk-keyboards
@@ -39,6 +42,14 @@ manifest:
     - name: zmk-listeners
       remote: ssbb
       revision: v1
+
+    - name: zmk-leader-key
+      remote: urob
+      revision: main
+
+    - name: zmk-pointing-acceleration
+      remote: oleksandrmaslov
+      revision: main
 
   self:
     path: config

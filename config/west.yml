@@ -51,9 +51,10 @@ manifest:
       remote: urob
       revision: main
 
-    - name: zmk-scroll-snap
-      remote: kot149
-      revision: v1
+    # kot149/zmk-scroll-snap and oleksandrmaslov/zmk-pointing-acceleration
+    # were dropped in the v9 parity round (2026-07-09): flask_scrollsnap and
+    # flask_accel in zmk-flask-modules port the same engines with runtime
+    # GUI tuning over the Flask protocol.
 
     - name: zmk-listeners
       remote: ssbb
@@ -63,15 +64,11 @@ manifest:
       remote: urob
       revision: main
 
-    - name: zmk-pointing-acceleration
-      remote: oleksandrmaslov
-      revision: main
-
     - name: zmk-flask-modules
       remote: chowdhuryaj
-      # flask-macros branch (stacked on flask-combos) until both rounds
-      # merge — repoint to main at merge (same dance as flask_rgb).
-      revision: flask-macros
+      # flask-parity branch (stacked on flask-macros ← flask-combos) until
+      # the rounds merge — repoint to main at merge (same dance as flask_rgb).
+      revision: flask-parity
 
     - name: zmk-mouse-gesture
       remote: kot149

@@ -69,7 +69,9 @@ manifest:
 
     - name: zmk-flask-modules
       remote: chowdhuryaj
-      revision: main
+      # flask-combos branch until the combos round merges — repoint to main
+      # at merge (same dance as flask_rgb).
+      revision: flask-combos
 
     - name: zmk-mouse-gesture
       remote: kot149

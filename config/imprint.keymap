@@ -494,6 +494,17 @@
             bindings = <&mt LC(RIGHT) RIGHT>, <&mt LA(RIGHT) RIGHT>;
         };
 
+        /* Runtime macros (flask_macros, channel 0x25): &fmac <slot> plays a
+         * live-editable 16-step macro slot (0-15), edited from the Flask
+         * app. Unbound by default — assign from Studio / the app's editor;
+         * the node existing is what compiles the behavior in and puts it on
+         * Studio's behavior list (slot range rides parameter metadata). */
+        fmac: fmac {
+            compatible = "zmk,behavior-flask-macros";
+            #binding-cells = <1>;
+            display-name = "Flask Macro";
+        };
+
         /* --- BLE mouse host (tadakado/zmk-ble-mouse-host) --- */
         mouse_pair: mouse_pair {
             compatible = "zmk,behavior-mouse-host-pair";

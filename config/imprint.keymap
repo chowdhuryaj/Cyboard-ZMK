@@ -3,6 +3,8 @@
 #include <scroll-snap.dtsi>
 #include <flask_autoscroll.dtsi>
 #include <dt-bindings/flask/autoscroll.h>
+#include <flask_rgb.dtsi>
+#include <dt-bindings/flask/rgb.h>
 #include <mouse-gesture.dtsi>
 #include <behaviors.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
@@ -46,7 +48,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_L_CTRL";
             #binding-cells = <2>;
-            bindings = <&ctrl_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -60,7 +62,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_L_ALT";
             #binding-cells = <2>;
-            bindings = <&alt_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -74,7 +76,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_L_GUI";
             #binding-cells = <2>;
-            bindings = <&gui_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -88,7 +90,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_L_SHFT";
             #binding-cells = <2>;
-            bindings = <&shft_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -327,7 +329,7 @@
         th_r_rep: th_r_rep {
             compatible = "zmk,behavior-hold-tap";
             label = "TH_R_REP";
-            bindings = <&alt_rgb>, <&key_repeat>;
+            bindings = <&kp>, <&key_repeat>;
 
             #binding-cells = <2>;
             tapping-term-ms = <180>;
@@ -341,7 +343,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_R_CTRL";
             #binding-cells = <2>;
-            bindings = <&ctrl_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -355,7 +357,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_R_GUI";
             #binding-cells = <2>;
-            bindings = <&gui_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -369,7 +371,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HM_R_SHIFT";
             #binding-cells = <2>;
-            bindings = <&shft_rgb>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
@@ -707,91 +709,11 @@
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
         };
 
-        ctrl_rgb: ctrl_rgb {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "CTRL_RGB";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(167,62,40)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-        };
-
-        alt_rgb: alt_rgb {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "ALT_RGB";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(19,100,66)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-        };
-
-        gui_rgb: gui_rgb {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "GUI_RGB";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(269,87,47)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-        };
-
-        shft_rgb: shft_rgb {
-            compatible = "zmk,behavior-macro-one-param";
-            label = "SHFT_RGB";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings =
-                <&macro_press>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(93,100,50)>,
-                <&macro_pause_for_release>,
-                <&macro_release>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_tap>,
-                <&rgb_ug RGB_OFF>;
-        };
-
-        rgb_cont: rgb_cont {
-            compatible = "zmk,behavior-macro";
-            label = "RGB_CONT";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(0,25,94)>;
-        };
-
-        rgb_fn: rgb_fn {
-            compatible = "zmk,behavior-macro";
-            label = "RGB_FN";
-            #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON &rgb_ug RGB_COLOR_HSB(50,100,39)>;
-        };
+        /* The rgb_ug mod-hold color macros (ctrl/alt/gui/shft_rgb) and the
+         * per-layer color listeners (rgb_cont/rgb_fn) were removed
+         * 2026-07-09 — flask_rgb's per-key per-layer map replaces them
+         * (paint layer colors in the Flask app; RGB_UNDERGLOW is off).
+         * Mod-hold color feedback is a candidate flask_rgb v2 overlay. */
 
         qu: qu {
             compatible = "zmk,behavior-macro";
@@ -810,18 +732,17 @@
         };
     };
 
-    layer_listeners {
-        compatible = "zmk,layer-listeners";
-
-        control_rgb_listener {
-            layers = <1>;
-            bindings = <&rgb_cont &rgb_ug RGB_OFF>;
-        };
-
-        fn_rgb_listener {
-            layers = <2>;
-            bindings = <&rgb_fn &rgb_ug RGB_OFF>;
-        };
+    /* flask_rgb: runtime per-key per-layer RGB (Flask channel 0x21). Both
+     * halves compile this node; the peripheral's global LED offset comes
+     * from build.yaml (CONFIG_ZMK_FLASK_RGB_LED_OFFSET=35). led-count /
+     * total-leds assume AJ's 70 = whole-board count (35 per half) — if the
+     * bench paint-sweep says 70 per half, bump these + the offset. */
+    flask_rgb: flask_rgb {
+        compatible = "flask,rgb";
+        led-strip = <&led_strip>;
+        led-count = <35>;
+        total-leds = <70>;
+        layers = <10>;
     };
 
     keymap {
@@ -844,7 +765,7 @@
 &bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &kp LS(TAB)
 &trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
-&trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans
+&trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &frgb FRGB_ON   &frgb FRGB_OFF   &frgb FRGB_TOG   &trans           &trans
 &trans       &trans        &trans    &trans        &trans                                                   &trans          &trans           &trans           &trans           &trans
                                                    &trans     &bt BT_SEL 0  &bt BT_SEL 1    &sw_layout OS_NEXT  &sys_reset  &bt BT_CLR
                                                    &trans     &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans          &trans

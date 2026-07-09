@@ -271,17 +271,37 @@
             ignore-numbers;
         };
 
-        /* App switcher (urob/zmk-tri-state): tap = ⌘Tab and ⌘ STAYS HELD;
-         * more taps cycle; any non-ignored key press (or releasing the
-         * Control layer) drops ⌘ and commits. Ignored positions = the
-         * Control layer's Tab/⇧Tab/arrows/Enter so the app grid can be
-         * navigated mid-swap. (pc hosts: swap LGUI→LALT here.) */
-        swapper: swapper {
+        /* App switcher (urob/zmk-tri-state): tap = mod+Tab and the mod STAYS
+         * HELD; more taps cycle; any non-ignored key press (or releasing the
+         * Control layer) drops the mod and commits. OS-aware since 2026-07-08:
+         * &swapper is a switch-layout-key wrapping two tri-states — ⌘ on mac,
+         * Alt on PC — following the same persisted &sw_layout OS_NEXT toggle
+         * as every slk_* key (ZMK has no host-OS auto-detection; zmk#2553).
+         * Ignored positions = Control's Tab/⇧Tab/arrows/Enter (20 21 22 /
+         * 31-34) so the app grid can be navigated mid-swap, plus 11 = the
+         * dedicated reverse key (⇧Tab, right of num_word): shift applies to
+         * whichever mod the swapper holds, so one reverse key serves both
+         * OSes. */
+        swapper_mac: swapper_mac {
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            label = "SWAPPER_MAC";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <20 21 22 31 32 33 34>;
+            ignored-key-positions = <11 20 21 22 31 32 33 34>;
+        };
+
+        swapper_win: swapper_win {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER_WIN";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <11 20 21 22 31 32 33 34>;
+        };
+
+        swapper: swapper {
+            compatible = "zmk-switch-layout,behavior-switch-layout-key";
+            #binding-cells = <0>;
+            bindings = <&swapper_win>, <&swapper_mac>;
         };
 
         as_ht: as_ht {
@@ -821,7 +841,7 @@
 
         control {
             bindings = <
-&bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &trans
+&bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &kp LS(TAB)
 &trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
 &trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &trans                        &trans          &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &trans

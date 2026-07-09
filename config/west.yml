@@ -29,9 +29,9 @@ manifest:
     - name: zmk-keyboards
       remote: chowdhuryaj
       repo-path: Cyboard-ZMK-keyboards
-      # flask-studio branch: adds the imprint physical layout ZMK Studio
-      # needs. Merge to main after the Studio build is verified on-device.
-      revision: flask-studio
+      # main carries the imprint physical layout ZMK Studio needs
+      # (flask-studio merged to main 2026-07-09 after bench pass).
+      revision: main
       import: config/west.yml
 
     - name: zmk-adaptive-key

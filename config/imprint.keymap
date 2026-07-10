@@ -6,7 +6,7 @@
 #include <dt-bindings/flask/autoscroll.h>
 #include <flask_rgb.dtsi>
 #include <dt-bindings/flask/rgb.h>
-#include <mouse-gesture.dtsi>
+#include <flask_gestures.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -499,6 +499,16 @@
          * app. Unbound by default — assign from Studio / the app's editor;
          * the node existing is what compiles the behavior in and puts it on
          * Studio's behavior list (slot range rides parameter metadata). */
+        /* Runtime leader (flask_leader, channel 0x19): &fled opens a
+         * capture matched against the app-edited sequence table. Unbound
+         * by default — assign from Studio / the app. urob's &leader (the
+         * compiled email/USB/BLE sequences) stays on its own key. */
+        fled: fled {
+            compatible = "zmk,behavior-flask-leader";
+            #binding-cells = <0>;
+            display-name = "Flask Leader";
+        };
+
         fmac: fmac {
             compatible = "zmk,behavior-flask-macros";
             #binding-cells = <1>;
@@ -803,7 +813,7 @@
             bindings = <
 &trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
 &trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
-&trans  &mo L_SNIPE  &mouse_gesture  &mkp MB2  &mkp MB1  &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2  &trans  &trans  &trans
+&trans  &mo L_SNIPE  &fges 255  &mkp MB2  &mkp MB1  &mkp MB3    &mkp MB3  &mkp MB1  &mkp MB2  &trans  &trans  &trans
 &trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
 &trans  &trans       &trans          &trans    &trans                          &trans    &trans    &trans  &trans  &trans
                                                &trans    &trans    &trans    &trans    &trans    &trans
@@ -900,44 +910,15 @@
     excluded-positions = <25 26 27 28 29 30 31 32 60 61 66 67>;
 };
 
-/* Mouse gestures (kot149/zmk-mouse-gesture): hold S-position on the mouse
- * layer, stroke EITHER ball (cursor or scroll — the processor is wired into
- * both listeners). The four Adept/Svalboard gesture sets (keymap.c
- * gesture_set_defaults — arrows / editing / media / tab-nav), mapped by
- * stroke count: singles = set 1 (arrows), same-direction doubles = set 2
- * (editing), same-direction triples = set 3 (media), and set 4 (tab-nav) =
- * the set direction then a clockwise hook (E→ES, S→SW, W→WN, N→NE).
- * stroke-size = counts per recognized stroke: lowered 400→150 (400 needed a
- * full swipe per keypress — too slow on hardware). Movement suppressed while
- * recognizing. */
-&zip_mouse_gesture {
-    stroke-size = <150>;
-    suppress-movement;
-
-    /* set 1 "arrows" */
-    g_right { pattern = <GESTURE_RIGHT>; bindings = <&kp RIGHT>; };
-    g_left  { pattern = <GESTURE_LEFT>;  bindings = <&kp LEFT>; };
-    g_up    { pattern = <GESTURE_UP>;    bindings = <&kp UP>; };
-    g_down  { pattern = <GESTURE_DOWN>;  bindings = <&kp DOWN>; };
-
-    /* set 2 "editing" */
-    g_del   { pattern = <GESTURE_RIGHT GESTURE_RIGHT>; bindings = <&kp DEL>; };
-    g_bspc  { pattern = <GESTURE_LEFT GESTURE_LEFT>;   bindings = <&kp BSPC>; };
-    g_enter { pattern = <GESTURE_DOWN GESTURE_DOWN>;   bindings = <&kp ENTER>; };
-    g_esc   { pattern = <GESTURE_UP GESTURE_UP>;       bindings = <&kp ESC>; };
-
-    /* set 3 "media" (E=next S=vol- W=prev N=vol+) */
-    g_next  { pattern = <GESTURE_RIGHT GESTURE_RIGHT GESTURE_RIGHT>; bindings = <&kp C_NEXT>; };
-    g_prev  { pattern = <GESTURE_LEFT GESTURE_LEFT GESTURE_LEFT>;    bindings = <&kp C_PREV>; };
-    g_vold  { pattern = <GESTURE_DOWN GESTURE_DOWN GESTURE_DOWN>;    bindings = <&kp C_VOL_DN>; };
-    g_volu  { pattern = <GESTURE_UP GESTURE_UP GESTURE_UP>;          bindings = <&kp C_VOL_UP>; };
-
-    /* set 4 "app/tab nav" (E=^Tab S=Space W=^⇧Tab N=Tab) */
-    g_tabn  { pattern = <GESTURE_RIGHT GESTURE_DOWN>; bindings = <&kp LC(TAB)>; };
-    g_spc   { pattern = <GESTURE_DOWN GESTURE_LEFT>;  bindings = <&kp SPACE>; };
-    g_tabp  { pattern = <GESTURE_LEFT GESTURE_UP>;    bindings = <&kp LC(LS(TAB))>; };
-    g_tab   { pattern = <GESTURE_UP GESTURE_RIGHT>;   bindings = <&kp TAB>; };
-};
+/* Mouse gestures (flask_gestures, channel 0x11, proto v10 — replaced
+ * kot149/zmk-mouse-gesture): hold the gesture key (Mouse layer S-position,
+ * &fges 255 = follow the app's active set) and stroke EITHER ball. The
+ * QMK set model is back: 8 runtime sets x 8 directions, live-editable
+ * from the app's Gestures tab; sets 0-3 seed the Adept/Svalboard defaults
+ * (arrows / editing / media / tab-nav — the stroke-count emulation the
+ * kot149 patterns used is gone, switch sets in the app instead). Ratchet
+ * step defaults to 150 (the benched stroke feel); motion is swallowed
+ * while a gesture is open. */
 
 /* Flask accel (proto v9, channel 0x10) — the QMK pd_accel sigmoid, runtime-
  * tunable from the app's Acceleration card. Boots DISABLED (matches AJ's
@@ -956,7 +937,7 @@
  * base chain. */
 &trackball_peripheral_listener {
     input-processors = <
-        &zip_mouse_gesture
+        &flask_gestures
         &flask_accel
         &zip_xy_scaler 1 1
         &zip_temp_layer L_MOUSE 400
@@ -992,7 +973,7 @@
  * knob is live from the app's Scroll snap card. */
 &trackball_central_listener {
     input-processors = <
-        &zip_mouse_gesture
+        &flask_gestures
         &zip_x_scaler 1 16
         &zip_y_scaler 1 12
         &zip_xy_to_scroll_mapper

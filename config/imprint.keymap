@@ -804,6 +804,20 @@
         led-count = <35>;
         total-leds = <70>;
         layers = <10>;
+        /* LED index → keymap position (per-half chains run in per-half
+         * position order; keymap positions interleave halves per row:
+         * 12/12/12/12/10/6/6). Entry i = the position LED i lights. Feeds
+         * the reactive-overlay API (leader candidate lighting). Same
+         * assumption as flask-web's ledKeyOrder — if the bench paint sweep
+         * disagrees, fix the chain order HERE and there. */
+        key-positions = <
+             0  1  2  3  4  5   12 13 14 15 16 17
+            24 25 26 27 28 29   36 37 38 39 40 41
+            48 49 50 51 52      58 59 60   64 65 66
+             6  7  8  9 10 11   18 19 20 21 22 23
+            30 31 32 33 34 35   42 43 44 45 46 47
+            53 54 55 56 57      61 62 63   67 68 69
+        >;
     };
 
     keymap {

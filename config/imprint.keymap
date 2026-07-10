@@ -515,6 +515,46 @@
             display-name = "Flask Macro";
         };
 
+        /* --- Smart one-shot/hold (2026-07-10, AJ's ask) ---
+         * Tri-state modifier/layer keys by composition: a hold-tap whose
+         * HOLD binding is a sticky behavior.
+         *   tap                                → the tap binding (any usage)
+         *   hold past tapping-term, release
+         *     with nothing else pressed        → ONE-SHOT (next key gets it)
+         *   keep holding and type              → plain held modifier/layer
+         * The one-shot window is skm's release-after-ms (1.5 s). Unbound by
+         * default — Studio-assignable two-param behaviors, the same shape
+         * Studio renders for &mt / &lt (param1 = mod / layer, param2 = tap
+         * usage). */
+        skm: skm {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            display-name = "Sticky Mod (smart)";
+            release-after-ms = <1500>;
+            bindings = <&kp>;
+            ignore-modifiers; /* chain ⇧ then ⌘ as stacked one-shots */
+        };
+
+        smart_mod: smart_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Smart Mod";
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&skm>, <&kp>;
+        };
+
+        smart_layer: smart_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Smart Layer";
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            bindings = <&sl>, <&kp>;
+        };
+
         /* --- BLE mouse host (tadakado/zmk-ble-mouse-host) --- */
         mouse_pair: mouse_pair {
             compatible = "zmk,behavior-mouse-host-pair";

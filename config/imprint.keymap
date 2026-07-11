@@ -876,7 +876,7 @@
 &bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &kp LS(TAB)
 &trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
-&trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &bswap 0                      &bswap 1        &frgb FRGB_ON   &frgb FRGB_OFF   &frgb FRGB_TOG   &ext_power EP_TOG  &trans
+&trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &bswap 0                      &bswap 1        &frgb FRGB_ON   &frgb FRGB_OFF   &frgb FRGB_TOG   &ext_power EP_TOG  &to L_BASE
 &trans       &trans        &trans    &trans        &trans                                                   &trans          &trans           &trans           &trans           &trans
                                                    &trans     &bt BT_SEL 0  &bt BT_SEL 1    &sw_layout OS_NEXT  &sys_reset  &bt BT_CLR
                                                    &trans     &bt BT_SEL 2  &bt BT_SEL 3    &studio_unlock  &trans          &trans
@@ -1060,7 +1060,11 @@
 };
 
 /* Swapped right ball → the SCROLL chain (a copy of the left ball's chain
- * below, minus gestures, which already ran on the physical chain). */
+ * below, minus gestures, which already ran on the physical chain).
+ * Transform differs from the left chain: the halves are mirror images, so
+ * the right ball needs the OPPOSITE correction — bench 2026-07-11 found
+ * both axes inverted with the left chain's X-invert (X twice = none, so
+ * the net fix is a Y-invert). */
 / {
     bswap_right_out_listener {
         compatible = "zmk,input-listener";
@@ -1069,7 +1073,7 @@
             &zip_x_scaler 1 16
             &zip_y_scaler 1 12
             &zip_xy_to_scroll_mapper
-            &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+            &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             &flask_scrollsnap
         >;
     };
@@ -1110,12 +1114,15 @@
 
 /* Swapped left ball → the CURSOR chain (a copy of the right ball's chain
  * above, minus gestures; auto-mouse and the snipe scaler come along so a
- * swapped left ball behaves exactly like the right one did). */
+ * swapped left ball behaves exactly like the right one did). The XY invert
+ * up front mirrors the left sensor's orientation onto the right ball's
+ * frame (bench 2026-07-11: both axes inverted without it). */
 / {
     bswap_left_out_listener {
         compatible = "zmk,input-listener";
         device = <&bswap_left>;
         input-processors = <
+            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &flask_accel
             &zip_xy_scaler 1 1
             &zip_temp_layer L_MOUSE 400

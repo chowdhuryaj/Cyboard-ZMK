@@ -51,6 +51,10 @@ include:
   # (they wipe settings + bonds and sit in a blinking no-op), then flash
   # the normal images back and re-pair. Crash gone afterwards = the
   # trigger lives in stored state, and we bisect settings keys next.
+  # (stacked on imprint_left: the board DT leans on shield pinctrl, so a
+  # bare settings_reset shield does not build. The kscan chosen is
+  # overridden by settings_reset, which is the part that matters — flash
+  # this SAME image to EACH half in turn.)
   - board: assimilator-bt
-    shield: settings_reset
+    shield: imprint_left settings_reset
     artifact-name: imprint_settings_reset

@@ -41,4 +41,16 @@ include:
   - board: assimilator-bt
     shield: imprint_left raw_hid_adapter
     snippet: zmk-usb-logging
+    # Immediate mode: a hard hang never flushes deferred log buffers — the
+    # tail before the freeze is the whole point of this image.
+    cmake-args: -DCONFIG_LOG_MODE_IMMEDIATE=y
     artifact-name: imprint_left_logging
+  # Stored-state differential (bench 4b: both halves die ~30-45 s after
+  # boot with NO app attached — every bench has grown the settings
+  # partition, and settings survive reflashing). Flash these ONCE per half
+  # (they wipe settings + bonds and sit in a blinking no-op), then flash
+  # the normal images back and re-pair. Crash gone afterwards = the
+  # trigger lives in stored state, and we bisect settings keys next.
+  - board: assimilator-bt
+    shield: settings_reset
+    artifact-name: imprint_settings_reset

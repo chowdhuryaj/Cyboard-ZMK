@@ -12,8 +12,6 @@ manifest:
       url-base: https://github.com/ssbb
     - name: oleksandrmaslov
       url-base: https://github.com/oleksandrmaslov
-    - name: tadakado
-      url-base: https://github.com/tadakado
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
     - name: zzeneg
@@ -70,10 +68,6 @@ manifest:
       # flask-parity branch (stacked on flask-macros ← flask-combos) until
       # the rounds merge — repoint to main at merge (same dance as flask_rgb).
       revision: flask-parity
-
-    - name: zmk-ble-mouse-host
-      remote: tadakado
-      revision: main
 
     - name: zmk-switch-layout
       remote: mctechnology17

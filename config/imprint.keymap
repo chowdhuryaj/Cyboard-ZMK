@@ -591,16 +591,6 @@
             display-name = "Ball Swap";
         };
 
-        /* --- BLE mouse host (tadakado/zmk-ble-mouse-host) --- */
-        mouse_pair: mouse_pair {
-            compatible = "zmk,behavior-mouse-host-pair";
-            #binding-cells = <0>;
-        };
-
-        mouse_unpair: mouse_unpair {
-            compatible = "zmk,behavior-mouse-host-unpair";
-            #binding-cells = <0>;
-        };
     };
 
     combos {
@@ -874,7 +864,7 @@
         control {
             bindings = <
 &bootloader  &trans        &trans    &trans        &trans     &trans                        &trans          &asc ASC_UP     &asc ASC_DOWN    &swapper         &num_word L_NUM  &kp LS(TAB)
-&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &mouse_pair                   &mouse_unpair   &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
+&trans       &kp C_VOL_UP  &kp HOME  &kp UP        &kp END    &trans                        &trans          &ak_alt         &kp LS(TAB)      &kp UP           &kp TAB          &trans
 &trans       &kp C_VOL_DN  &kp LEFT  &kp DOWN      &kp RIGHT  &leader                       &caps_word      &kp RET         &kp LEFT         &kp DOWN         &kp RIGHT        &kp ESC
 &trans       &kp C_MUTE    &kp C_PP  &kp C_REWIND  &kp C_FF   &bswap 0                      &bswap 1        &frgb FRGB_ON   &frgb FRGB_OFF   &frgb FRGB_TOG   &ext_power EP_TOG  &to L_BASE
 &trans       &trans        &trans    &trans        &trans                                                   &trans          &trans           &trans           &trans           &trans
@@ -1079,19 +1069,10 @@
     };
 };
 
-/* External BLE mouse → this keyboard as HID host (tadakado/zmk-ble-mouse-host).
- * Pair/unpair keys live on the control layer (inner top row). The mouse
- * follows whichever output the keyboard is on. */
-/ {
-    mouse_host: mouse_host {
-        compatible = "zmk,ble-mouse-host";
-    };
-
-    mouse_host_listener {
-        compatible = "zmk,input-listener";
-        device = <&mouse_host>;
-    };
-};
+/* BLE mouse host (tadakado/zmk-ble-mouse-host) REMOVED 2026-07-12 (AJ's
+ * bench-3 ask) — it held a second central-role connection that kept
+ * muddying the rgb split-link diagnosis. Re-adding = west.yml project +
+ * this node block + pair/unpair behaviors + Control 17/18 bindings. */
 
 /* Left ball = scroll, the stock ZMK chain (the Flask rate-capped converter
  * was tried and removed 2026-07-08 — AJ prefers this feel). Autoscroll is

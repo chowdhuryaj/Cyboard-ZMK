@@ -28,9 +28,13 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
   # Peripheral half: its strip sits after the central's 35 LEDs in the
   # global flask_rgb index space (bench paint-sweep confirms the counts).
+  # Named "Imprint R" so a Mac Bluetooth list can tell it from the central
+  # — pairing a HOST to this half never completes (it only accepts the
+  # split central), which reads as a "stuck connecting" loop. Pair the
+  # LEFT half's entry. The name is cosmetic to the split link itself.
   - board: assimilator-bt
     shield: imprint_right
-    cmake-args: -DCONFIG_ZMK_FLASK_RGB_LED_OFFSET=35
+    cmake-args: -DCONFIG_ZMK_FLASK_RGB_LED_OFFSET=35 -DCONFIG_ZMK_KEYBOARD_NAME='"Imprint R"'
   # Hang-capture central: USB console logging instead of the Studio CDC
   # snippet (one CDC each — they'd fight over the port; the logging
   # snippet also provides the cdc_acm_uart DT node the bare Kconfig

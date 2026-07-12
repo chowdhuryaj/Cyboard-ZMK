@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <flask_scrollsnap.dtsi>
 #include <flask_accel.dtsi>
+#include <flask_automouse.dtsi>
 #include <flask_autoscroll.dtsi>
 #include <dt-bindings/flask/autoscroll.h>
 #include <flask_rgb.dtsi>
@@ -886,9 +887,10 @@
         };
 
         /* Auto-mouse overlay (Flask MBO): popped by cursor-ball motion via
-         * zip_temp_layer, drops 400 ms after last motion. Home-row clicks on
-         * both hands; hold A-position for snipe, hold S-position for mouse
-         * gestures. Thumb MB1/2/3 stay via &trans. */
+         * flask_automouse (v13 — runtime timeout/threshold/extend; default
+         * 750 ms, timeout 0 latches until a transparent key). Home-row
+         * clicks on both hands; hold A-position for snipe, hold S-position
+         * for mouse gestures. Thumb MB1/2/3 stay via &trans. */
         mouse {
             bindings = <
 &trans  &trans       &trans          &trans    &trans    &trans      &trans    &trans    &trans    &trans  &trans  &trans
@@ -981,13 +983,22 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
-/* Auto-mouse layer processor: don't pop the layer mid-typing (150 ms idle gate,
- * matches HRM require-prior-idle), and don't drop it when clicking — excluded
- * positions are the mouse-layer snipe/gesture/click keys (25 26 27 28 29 30
- * 31 32) plus the always-on thumb mouse buttons (60 61 66 67). */
-&zip_temp_layer {
+/* Auto-mouse layer = flask_automouse since proto v13 (replaced
+ * &zip_temp_layer): runtime threshold/timeout/extend from the app's Mouse
+ * tab, and timeout 0 latches the layer until a transparent key is pressed
+ * (which is swallowed). Defaults mirror AJ's ask: 750 ms, extend on
+ * non-transparent keys, trigger on any motion (threshold 0). The 150 ms
+ * idle gate matches HRM require-prior-idle. Excluded positions = ONLY the
+ * always-on thumb mouse buttons (60 61 66 67), which are transparent ON
+ * the Mouse layer but must read as "still mousing"; the old zip list's
+ * mouse-layer snipe/gesture/click keys (25-32) are covered by the module's
+ * binding check — non-transparent keys on the layer extend, not drop. */
+&flask_automouse {
+    layer = <L_MOUSE>;
+    timeout-ms = <750>;
+    threshold = <0>;
     require-prior-idle-ms = <150>;
-    excluded-positions = <25 26 27 28 29 30 31 32 60 61 66 67>;
+    excluded-positions = <60 61 66 67>;
 };
 
 /* Mouse gestures (flask_gestures, channel 0x11, proto v10 — replaced
@@ -1030,8 +1041,8 @@
 
 /* Right ball = cursor. Gestures see raw counts first (matches the Flask
  * pipeline order); accel scales in place before the unit scaler; motion
- * pops the auto-mouse layer (400 ms — AJ's live Svalboard setting, see
- * docs/flask-svalboard-dump.json); snipe layer scales 1/3 on top of the
+ * pops the auto-mouse layer via flask_automouse (runtime-tunable since
+ * v13 — see the node config above); snipe layer scales 1/3 on top of the
  * base chain. */
 &trackball_peripheral_listener {
     input-processors = <
@@ -1039,7 +1050,7 @@
         &bswap_right
         &flask_accel
         &zip_xy_scaler 1 1
-        &zip_temp_layer L_MOUSE 400
+        &flask_automouse
     >;
 
     snipe {
@@ -1106,7 +1117,7 @@
             &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &flask_accel
             &zip_xy_scaler 1 1
-            &zip_temp_layer L_MOUSE 400
+            &flask_automouse
         >;
 
         snipe {

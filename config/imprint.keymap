@@ -521,6 +521,64 @@
             display-name = "Flask Macro";
         };
 
+        /* Runtime tap dance (flask_tapdance, channel 0x28, v14): &ftd <slot>
+         * runs a live-editable dance — per-slot tapping term + one typed
+         * output per tap count, all from the app's wizard. Unbound by
+         * default — assign from Studio / the app; the node existing is what
+         * compiles the behavior in (slot range rides parameter metadata). */
+        ftd: ftd {
+            compatible = "zmk,behavior-flask-tapdance";
+            #binding-cells = <1>;
+            display-name = "Tap Dance";
+        };
+
+        /* Composer tap-hold timing variants (v14, AJ's "behavior
+         * modification settings" ask). Core hold-tap params are const DT —
+         * not runtime-tunable — so the app's Tap-hold section offers a
+         * TIMING choice among these precompiled instances instead: &mt
+         * stays the core 200 ms (quick-tap 150 via the &mt override up
+         * top), fast resolves at 150, slow at 300. Same two-param shape
+         * Studio already renders for &mt. */
+        mt_fast: mt_fast {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Mod-Tap (fast 150)";
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <125>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        mt_slow: mt_slow {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Mod-Tap (slow 300)";
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <175>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        lt_fast: lt_fast {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Layer-Tap (fast 150)";
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <125>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        lt_slow: lt_slow {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            display-name = "Layer-Tap (slow 300)";
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <175>;
+            bindings = <&mo>, <&kp>;
+        };
+
         /* --- Smart one-shot/hold (2026-07-10, AJ's ask) ---
          * Tri-state modifier/layer keys by composition: a hold-tap whose
          * HOLD binding is a sticky behavior.
@@ -594,8 +652,15 @@
 
     };
 
-    combos {
-        compatible = "zmk,combos";
+    /* Combos migrated to RUNTIME slots 2026-07-12 (AJ's ask: every combo
+     * visible and editable in the Flask app, with its per-combo timing).
+     * Same child shape as zmk,combos, but these are compiled DEFAULTS for
+     * flask_combos (channel 0x24): each child seeds one runtime slot in
+     * declaration order; app edits — and deletions — persist via settings
+     * and win over these seeds on boot. The combos master toggle now
+     * governs ALL of them (the old DT combos had no off switch). */
+    flask_combos_defaults {
+        compatible = "flask,combos-defaults";
 
         copy_cut {
             bindings = <&slk_copycut>;

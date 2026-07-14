@@ -275,6 +275,7 @@
         num_word: num_word {
             compatible = "zmk,behavior-auto-layer";
             #binding-cells = <1>;
+            display-name = "Num Word";
             continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
             ignore-numbers;
         };

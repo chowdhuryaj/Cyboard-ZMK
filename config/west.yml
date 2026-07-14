@@ -42,8 +42,12 @@ manifest:
     # grew an argument; v0.3 auto-layer fails to compile the moment a node
     # references it).
     - name: zmk-auto-layer
-      remote: urob
-      revision: main
+      # Our fork: urob main + Studio parameter metadata (LAYER_ID param1)
+      # so &num_word is app-assignable — upstream rejects every assignment
+      # with INVALID PARAMETERS (no metadata = -ENODEV). PR upstream later;
+      # repoint to urob main if it merges.
+      remote: chowdhuryaj
+      revision: flask-metadata
 
     - name: zmk-tri-state
       remote: urob

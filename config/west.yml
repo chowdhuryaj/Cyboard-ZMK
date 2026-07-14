@@ -75,7 +75,9 @@ manifest:
 
     - name: zmk-raw-hid
       remote: zzeneg
-      revision: main
+      # Pinned (main @ 2026-05-11) — this module IS the Flask transport;
+      # keep transport debugging reproducible. Bump deliberately.
+      revision: e25e325adc90fccb60cc08393b8c2b0ba6d647c7
 
   self:
     path: config

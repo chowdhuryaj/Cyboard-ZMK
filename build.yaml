@@ -21,11 +21,31 @@ include:
   # Central half: raw_hid_adapter (zzeneg/zmk-raw-hid) carries the Flask
   # tuning protocol's HID device; the studio snippet + config enable live
   # keymap editing over ZMK Studio's USB-serial RPC (plus BLE GATT, which
-  # needs no snippet). &studio_unlock is on the control layer.
+  # needs no snippet).
+  #
+  # STUDIO_LOCKING=n (2026-07-15, AJ's ask): Studio boots UNLOCKED and never
+  # re-locks, so &studio_unlock is no longer needed to edit the keymap.
+  # &studio_unlock stays bound (control layer, position 67 — RIGHT thumb) and
+  # is simply a no-op now.
+  #
+  # Why: unlock is PHYSICAL-ONLY by design and there is no way around it —
+  # core.proto has a `lock` RPC but no `unlock`, and every keymap RPC plus
+  # get_behavior_details is SECURED, so a locked board cannot even be read.
+  # With only the LEFT half at work, position 67 is unreachable and the
+  # keymap is uneditable.
+  #
+  # ⚠ TRADEOFF: the lock exists so a random web page with WebSerial access
+  # cannot rewrite the keymap without a physical confirmation. Off = it can.
+  # ZMK implies locking ON for real hardware; this explicitly overrides that
+  # (`imply` is a weak default, so an explicit =n wins). Revert by dropping
+  # this flag.
+  #
+  # Studio only runs on central, so this flag only belongs here — the LEFT
+  # half alone carries it, and flashing just the left half applies it.
   - board: assimilator-bt
     shield: imprint_left raw_hid_adapter
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
   # Peripheral half: its strip sits after the central's 35 LEDs in the
   # global flask_rgb index space (bench paint-sweep confirms the counts).
   # Named "Imprint R" so a Mac Bluetooth list can tell it from the central

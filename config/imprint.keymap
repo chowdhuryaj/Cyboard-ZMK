@@ -1,6 +1,7 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 #include <flask_scrollsnap.dtsi>
+#include <flask_scrollscale.dtsi>
 #include <flask_accel.dtsi>
 #include <flask_automouse.dtsi>
 #include <flask_autoscroll.dtsi>
@@ -1137,8 +1138,8 @@
         compatible = "zmk,input-listener";
         device = <&bswap_right>;
         input-processors = <
-            &zip_x_scaler 1 16
-            &zip_y_scaler 1 12
+            &flask_scroll_scaler_x 1 16
+            &flask_scroll_scaler_y 1 12
             &zip_xy_to_scroll_mapper
             &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
             &flask_scrollsnap
@@ -1157,15 +1158,35 @@
  * never intercepts ball motion (jog mode, which needed to swallow motion,
  * was removed 2026-07-08). Snap/lock at the end is flask_scrollsnap since
  * proto v9 — same engine as kot149's zip_scroll_snap it replaced, but every
- * knob is live from the app's Scroll snap card. */
+ * knob is live from the app's Scroll snap card.
+ *
+ * The leading xy_transform (2026-07-15) normalizes this ball into the RIGHT
+ * ball's frame before anything else sees it. The halves are mirror images,
+ * so the left sensor reports both axes inverted relative to the right — the
+ * same correction the bswap_*_out chains have carried since 2026-07-11.
+ * flask_gestures runs on RAW counts at the front of both chains, so without
+ * this it saw the two balls in opposite frames and every left-ball gesture
+ * came out inverted on both axes. Normalizing here (rather than inside the
+ * gesture module) keeps one frame for the whole chain.
+ *
+ * Scroll output is UNCHANGED by that transform: pre-inverting X and Y flips
+ * both wheel axes, and swapping this chain's scroll transform from X_INVERT
+ * to Y_INVERT flips them back — net identical, and now identical to the
+ * right ball's scroll chain, which is what the mirror-image geometry
+ * predicts. Only gestures change.
+ *
+ * The scalers are flask_scrollscale (proto v15) rather than the stock
+ * zip_*_scaler: same math, same divisors, but the app can scale them live
+ * (channel 0x29). Speed 100 = these compiled values verbatim. */
 &trackball_central_listener {
     input-processors = <
+        &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
         &flask_gestures
         &bswap_left
-        &zip_x_scaler 1 16
-        &zip_y_scaler 1 12
+        &flask_scroll_scaler_x 1 16
+        &flask_scroll_scaler_y 1 12
         &zip_xy_to_scroll_mapper
-        &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+        &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
         &flask_scrollsnap
     >;
 };
@@ -1173,14 +1194,15 @@
 /* Swapped left ball → the CURSOR chain (a copy of the right ball's chain
  * above, minus gestures; auto-mouse and the snipe scaler come along so a
  * swapped left ball behaves exactly like the right one did). The XY invert
- * up front mirrors the left sensor's orientation onto the right ball's
- * frame (bench 2026-07-11: both axes inverted without it). */
+ * that used to lead this chain (bench 2026-07-11: both axes inverted without
+ * it) moved to the FRONT of the physical chain on 2026-07-15, so counts
+ * arrive here already in the right ball's frame — inverting again would
+ * undo it. This chain is now literally the right ball's chain. */
 / {
     bswap_left_out_listener {
         compatible = "zmk,input-listener";
         device = <&bswap_left>;
         input-processors = <
-            &zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
             &flask_accel
             &zip_xy_scaler 1 1
             &flask_automouse
